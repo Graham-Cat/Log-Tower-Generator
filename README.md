@@ -139,7 +139,11 @@ The source code (files within `src/` and `tests/`) is licensed under the **MIT L
 ### Content (Theory & Documentation)
 The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretical discoveries (specifically the F/G-sector symmetry and related alphabet) are licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
+
 [![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
 **Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
 > [Christopher Feick]. (2026). *Log-Tower-Generator: An explicit n-th derivative generator via F/G-sector symmetry*. (https://github.com/Graham-Cat/Log-Tower-Generator).
+
+
+<img width="191" height="20" alt="image" src="https://github.com/user-attachments/assets/3bd1a43c-6deb-44e0-b84b-e3f74a8a4fc5" />
