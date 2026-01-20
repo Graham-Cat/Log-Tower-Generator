@@ -102,6 +102,13 @@ Summary of Terms
 2. $F_k$: The $k$-th element of $F$.
 3. $B_k(\dots)$: The $k$-th Complete Bell Polynomial.
 4. Indices: Note carefully that the arguments for the Bell polynomials are shifted: the $k$-th polynomial takes inputs $(F_0, \dots, F_{k-1})$.
+
+# **Corrolary**
+
+This derivative structure also implies that
+
+$$ P(R_n) = \Gamma_{n-1} - R_0 \Phi_{n-1} $$
+
 ---
 
 
