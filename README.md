@@ -115,7 +115,7 @@ Summary of Terms
 3. $B_k(\dots)$: The $k$-th Complete Bell Polynomial.
 4. Indices: Note carefully that the arguments for the Bell polynomials are shifted: the $k$-th polynomial takes inputs $(F_0, \dots, F_{k-1})$.
 
-# **Corrolary**
+# **Corollary**
 
 This derivative structure also implies that
 
