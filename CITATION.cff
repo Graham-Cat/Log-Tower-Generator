@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this formula or derivation in your research, please cite it as follows."
+type: dataset
 authors:
 - family-names: "Feick"
   given-names: "Christopher"
