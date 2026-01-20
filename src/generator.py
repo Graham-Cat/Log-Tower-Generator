@@ -130,7 +130,7 @@ class LogTowerGenerator:
 
 # --- Verification Block ---
 if __name__ == "__main__":
-    # Create dummy symbolic variables to verify the structure matches your notes
+    # Create dummy symbolic variables to verify the structure matches notes
     num_terms = 5
     h = [Symbol(f'h_{i}') for i in range(num_terms)]
     F = [Symbol(f'F_{i}') for i in range(num_terms)]
@@ -144,7 +144,7 @@ if __name__ == "__main__":
     print(gen.get_Pn(1).expand())
 
     print("\n--- Verifying P(R_2) ---")
-    # Should be (G1 + G0*F0) - R0*(F1 + F0^2) ... checking against your manual derivation
+    # Should be (G1 + G0*F0) - R0*(F1 + F0^2) ... checking against manual derivation
     print(gen.get_Pn(2).expand())
     
     print("\n--- Verifying P(A_1) ---")
