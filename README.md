@@ -1,4 +1,3 @@
-
 # **Log‑Tower-Generator Framework**  
 ### *A Canonical, Recursive, Self‑Similar Algebra for Logarithmic Derivative Towers*
 
@@ -47,6 +46,15 @@ Define two recursively corrected sector operators:
 - $\Phi_n$ (F‑sector, the G→F mapping of $\Gamma_n$)
 
 These sectors absorb all induced cross‑sector structure and form the backbone of the canonical expansion.
+
+---
+
+# **Domain Constraints** 
+
+The domain conditions follow the usual logarithmic/arithmetic constraints:  
+- $\(f(x) > 0\)$ and $\(f(x) \neq 1\)$,  
+- $\(g(x) > 0\)$ wherever $\(\ln(g(x))\)$ appears,  
+- with additional care near points where $\(f\)$ or $\(g\)$ vanish, or where $\(\ln(f(x))\)$ crosses $\(0\)$.
 
 ---
 
@@ -114,7 +122,6 @@ This derivative structure also implies that
 $$ P(R_n) = \Gamma_{n-1} - R_0 \Phi_{n-1} $$
 
 ---
-
 
 
 # **Contributing**
