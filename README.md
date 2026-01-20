@@ -46,24 +46,24 @@ These sectors absorb all induced cross‑sector structure and form the backbone 
 
 # **Domain Constraints** 
 
-The domain conditions follow the usual logarithmic/arithmetic constraints:  
-- $\(f(x) > 0\)$ and $\(f(x) \neq 1\)$,  
-- $\(g(x) > 0\)$ wherever $\(\ln(g(x))\)$ appears,  
-- with additional care near points where $\(f\)$ or $\(g\)$ vanish, or where $\(\ln(f(x))\)$ crosses $\(0\)$.
-
+To ensure the Log-Tower expression $A(x) = h(x) \frac{\ln g(x)}{\ln f(x)}$ remains well-defined, the following conditions must be satisfied on the domain of $x$:
+- Positivity: Both $f(x) > 0$ and $g(x) > 0$ must hold to satisfy the requirements of the natural logarithm.
+- Non-Vanishing Denominator: $f(x) \neq 1$ is required to prevent a zero-valued denominator in the quotient $\ln f(x)$.
+- Singularity Analysis: Special consideration is required at points where $f(x) \to 1$, $f(x) \to 0$, or $g(x) \to 0$. Depending on the local behavior of $h(x)$ and the logarithmic growth rates, these points may represent poles, branch points, or removable singularities requiring limit-based evaluation.
 ---
 
 # **Log Tower Nth Derivative Generator**
 
-For $n \ge 1$, the polynomial generator $P(A_n)$ is:
+For $n \geq 1$, the $n$-th derivative of the Log-Tower function $A(x) = h(x) \frac{\ln g(x)}{\ln f(x)}$ is given by the polynomial generator $P(A_n)$:
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-This expresses the $n$‑th derivative of $A = \frac{ln(g)}{ln(f)}h$ in terms of:
+This formulation expresses the complex derivative as a linear superposition of binomial convolutions, providing an explicit map of how the individual components contribute to the total structure:
+- Raw $h$-sector ($h_n$): The direct $n$-th derivative of the scaling function $h(x)$.
+- Recursively corrected F-sector ($\Phi_n$): The homogeneous component accounting for the internal dynamics of the denominator $f(x)$.
+- Recursively corrected G-sector ($\Gamma_n$): The particular component accounting for the forcing input of the numerator $g(x)$.
 
-- the raw $h$‑sector  
-- the recursively corrected F‑sector $\Phi_n$  
-- the recursively corrected G‑sector $\Gamma_n$
+By decoupling these sectors, the generator enables the direct computation of higher-order derivatives while bypassing the combinatorial complexity of repeated applications of the quotient rule.
 
 ---
 
