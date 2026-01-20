@@ -1,13 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this formula or derivation in your research, please cite it as follows."
-type: dataset
+message: "If you use this software or the F/G-sector symmetry framework, please cite it as below."
 authors:
 - family-names: "Feick"
   given-names: "Christopher"
-  # orcid: "https://orcid.org/0000-0000-0000-0000" Optional: Delete if you don't have one
-title: "Log-Tower-Generator: An explicit n-th derivative generator for h(x)⋅ln(g(x))/ln(f(x)) via F/G-sector symmetry"
-  # version: 1.0.0
-  # doi: 10.5281/zenodo.1234567 Optional: Replace if you use Zenodo to archive the repo
-date-released: 2026-01-19
-url: "https://github.com/Graham-Cat/Log-Tower-Generator"
-license: CC-BY-4.0
+  # orid: "https://orcid.org/0000-0000-0000-0000"  <-- Optional if you have one
+title: "Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry"
+version: 0.1.0
+date-released: 2026-01-20
+url: "https://github.com/Graham-Cat/log-tower-generator"
+license: MIT
