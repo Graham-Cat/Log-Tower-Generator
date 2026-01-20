@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this formula or derivation in your research, please cite it as follows."
+authors:
+- family-names: "Feick"
+  given-names: "Christopher"
+  # orcid: "https://orcid.org/0000-0000-0000-0000" Optional: Delete if you don't have one
+title: "General Formula for the nth Derivative of h*ln(g)/ln(f)"
+version: 1.0.0
+  # doi: 10.5281/zenodo.1234567 Optional: Replace if you use Zenodo to archive the repo
+date-released: 2026-01-19
+url: "https://github.com/Graham-Cat/Log-Tower-Generator"
+license: CC-BY-4.0
