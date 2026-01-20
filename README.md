@@ -1,5 +1,5 @@
 # **Log‑Tower-Generator Framework**  
-### *A Canonical, Recursive, Self‑Similar Algebra for Logarithmic Derivative Towers*
+### *A Canonical, Self‑Similar Algebra for Logarithmic Derivative Towers*
 
 This repository hosts a symbolic engine for computing the n-th derivatives of functions in the class $A(x) = h(x) \cdot \ln(g(x)) / \ln(f(x))$.
 
