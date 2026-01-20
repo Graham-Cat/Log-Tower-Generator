@@ -4,7 +4,11 @@
 
 The Log‑Tower-Generator is a recursive framework for organizing the rapidly growing algebraic structure that appears when repeatedly differentiating composite logarithmic expressions. Standard symbolic systems expand these derivatives but do not expose the underlying **triangular**, **self‑similar**, and **operator‑theoretic** structure.  
 
-This project introduces a canonical decomposition of the derivative tower into **F‑sector**, **G‑sector**, and **h‑sector** components, together with recursively defined **sector operators** that reveal the hidden algebraic fractal.
+This project introduces a canonical decomposition of the derivative tower into **F‑sector**, **G‑sector**, and **h‑sector** components, together with recursively defined **sector operators** that reveal the hidden algebraic fractal. We denote the particular solution driven by the forcing term G as the 'G-sector'.
+
+This repository provides an explicit, closed-form solution for general first-order linear recurrence relations. While the generating function solution for such recurrences is well-known via the integrating factor method, explicit formulas for the $n$-th term typically require ad-hoc expansions.
+
+This project generalizes that process, utilizing Bell Polynomials to expand the integrating factor, resulting in a double-sum generator that computes the $n$-th term directly from the sequence inputs without iteration. This allows for the rapid computation of 'exotic' sequences where no obvious algebraic pattern exists.
 
 ---
 
@@ -52,7 +56,7 @@ For $n \ge 1$, the polynomial generator $P(A_n)$ is:
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-This expresses the $n$‑th derivative of $A$ in terms of:
+This expresses the $n$‑th derivative of $A = \frac{ln(g)}{ln(f)}h$ in terms of:
 
 - the raw $h$‑sector  
 - the recursively corrected F‑sector $\Phi_n$  
