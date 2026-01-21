@@ -185,11 +185,11 @@ $$ u'= \frac{d}{dx} \left(\frac{f'}{f}\right) = \frac{f''}{f}-\left(\frac{f'}{f}
 
 So, I started treating $u$ and $v$ as modules, letting $u^{(n)}=\frac{f^{(n)}}{f}$ and $v^{(n)}=\frac{g^{(n)}}{g}$, yielding:
 
-$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g^{(n)}}{g}\right) = \frac{g^{(n+1)}}{g}-\left(\frac{g^{(n)}}{g}\right)g = v^{(n+1)}-v^{(n)}v $$
+$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g^{(n)}}{g}\right) = \frac{g^{(n+1)}}{g}-\left(\frac{g^{(n)}}{g}\right)\frac{g'}{g} = v^{(n+1)}-v^{(n)}v $$
 
 and
 
-$$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f^{(n)}}{f}\right) = \frac{f^{(n+1)}}{f}-\left(\frac{f^{(n)}}{f}\right)f = u^{(n+1)}-u^{(n)}u $$
+$$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f^{(n)}}{f}\right) = \frac{f^{(n+1)}}{f}-\left(\frac{f^{(n)}}{f}\right)\frac{f'}{f} = u^{(n+1)}-u^{(n)}u $$
 
 This result showed that, no matter how many times A was differentiated, one would only see this family of ${R,F,G,u,v}$.
 
