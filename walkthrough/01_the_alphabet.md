@@ -161,11 +161,11 @@ Note that, out of frustration, I collapsed $F^{(2)}-F(\frac{f'}{f} + F)$ into $F
 
 And I thought, "Am I allowed to do that"? (**Spoiler alert:** Yes, I was. Doing so was, in fact, a critical step toward future simplification.)
 
-I didn't even know if I had gotten it correct, so I tested it on random differentiable functions in Desmos, and somehow, miraculously, I entered all the terms correctly the first time, successfully mapped $G \mapsto F$ to create the F-sector of $A_3$.
+I didn't even know if I had gotten it correct, so I tested it on random differentiable functions in Desmos, and somehow, miraculously, I entered all the terms correctly the first time, successfully mapping $G \mapsto F$ to create the F-sector of $A_3$.
 
 Suddenly I was matching Desmos' brute force differentiation curves, but developing them entirely while derivative estimator functionality couldn't render them more than a few units away from the origin.
 
-Head to the Desmos file I created and turn $D(x)$ on and off by clicking the colorful circle to its left. Watch how the graph changes. Even enter some random differentiable test functions at the top.
+Feel free to click on the link below to visit the Desmos file I created and switch $D(x)$ (the candidate $A_3$ monster) on and off by clicking the colorful circle to its left. Watch how the graph changes. Even enter some random differentiable test functions at the top.
 
 https://www.desmos.com/calculator/a3ugeh8nwa
 
