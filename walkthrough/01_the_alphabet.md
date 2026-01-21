@@ -145,7 +145,7 @@ Over the next few months, my mind would sometimes return to $A_3$. I began to se
 
 But which ones?
 
-One would come from $\frac{d}{dx} Rh''$ in the form of $Gh''$ just like $Gh'$ came from $\frac{d}{dx} Rh'$ in $A_1$. This pattern showed a "leakage" of terms into the G-sector from the next lower order F-sector where each of the four $R⋅(F-sector)$ terms from $A_2F$ would simply map $R\mapsto G$ for $A_{3G}$, or:
+One would come from $\frac{d}{dx} Rh''$ in the form of $Gh''$ just like $Gh'$ came from $\frac{d}{dx} Rh'$ in $A_1$. This pattern showed a "leakage" of terms into the G-sector from the next lower order F-sector where each of the four $R⋅(F-sector)$ terms from $A_\text{2F}$ would simply map $R\mapsto G$ for $A_{3G}$, or:
 
 $$\left(-RF^{(2)}h -2RFh'+RhF\frac{f'}{f}+2RhF^2\right) \mapsto \left(-GF^{(2)}h -2GFh' + GhF\frac{f'}{f}+2GhF^2 \right)$$
 
