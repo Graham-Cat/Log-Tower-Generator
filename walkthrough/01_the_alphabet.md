@@ -197,7 +197,7 @@ For those uninitiated into differential algebra, this phenomenon is what is know
 
 Once this realization hit, I knew I was, in fact, "allowed" to present derivatives of $F$ and $G$ in any $A_n$ by simply marking them with their derivative order rather than expanding them algebraically, making $F$ and $G$ **first-class objects**.
 
-The closed alphabet was suddenly complete:
+The closed alphabet was complete:
 
 $$h$$ (The exponent)
 
