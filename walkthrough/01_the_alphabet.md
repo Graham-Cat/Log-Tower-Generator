@@ -133,7 +133,7 @@ $$(F^{(n)})' = \frac{d}{dx}\left( \frac{f^{(n)}}{f \ln f} \right) = F^{(n+1)} - 
 
 After substituting these partial modular formulations back into $F'$ and $G'$ and rearranging into canonical form, $A_2$ became
 
-$$A_2 = R\left(h''-\left(F^{(2)}h + F\left(2h'-h\left(\frac{f'}{f}+2F\right)\right)\right)\right) +\left(hG^{(2)} + G\left(2h'-h\left(\frac{g'}{g}+2F\right)\right)\right)$$
+$$A_2 = R\left(h''-\left(F^{(2)}h + F\left(2h'-h\left(\frac{f'}{f}+2F\right)\right)\right)\right) +\left(G^{(2)}h + G\left(2h'-h\left(\frac{g'}{g}+2F\right)\right)\right)$$
 
 Satisfied that this symmetry did indeed exist between the F-sector and the G-sector for at least one higher order derivative, I left it at that and went on to learn more advanced calculus.
 
