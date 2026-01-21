@@ -45,7 +45,7 @@ Substituting these back into the quotient derivative, I found a clean identity f
     
 $$\frac{d}{dx}\left( \frac{\ln g}{\ln f} \right) = G - \left( \frac{\ln g}{\ln f} \right)F$$
 
-If we define the log-ratio as $R = \frac{\ln g}{\ln f}$, then the identity becomes:[^1]
+If we define the log-ratio as $R = \frac{\ln g}{\ln f}$ then the identity becomes:[^1]
 
 $$ R' = G - RF $$
 
