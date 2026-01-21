@@ -58,7 +58,7 @@ $$A_1 = \underbrace{R'h + Rh'}_{\text{Structural Form}} = \underbrace{R(h' - hF)
 
 When using the identity $R'=G-RF$ and the initial equation $A = Rh$, the structural form[^2] expands to 
 
-$$A_1 = \underbrace{hG - AF + \frac{A}{h}h}_{\text{Structural Form}} = \underbrace{R(h' - hF) + hG}_{\text{Canonical Form}}$$
+$$A_1 = \underbrace{hG - AF + \frac{A}{h}h'}_{\text{Structural Form}} = \underbrace{R(h' - hF) + hG}_{\text{Canonical Form}}$$
 
 [^2]: Note that this form rearranges to A' + (F - h'/h)A = hG which is also a first order differential equation of the form y' + P(x)y = Q(x), this time with h as a passenger.
 
