@@ -24,7 +24,7 @@ To make $A$ differentiable, I first converted it to natural logs using the chang
 
 $$ A = h \frac{\ln g}{\ln f} $$
 
-The goal was to find $A'$ (or $A_1$ in Bell notation). I applied the standard Product Rule and Quotient Rule.
+To find $A'$ (or $A_1$ in Bell notation) I applied the standard Product Rule and Quotient Rule.
 
 1.  **Differentiating the Quotient** $\left( \frac{\ln g}{\ln f} \right)$:
 
@@ -41,7 +41,7 @@ At this early stage (Day 1) wasn't looking for a new theorem, but two distinct "
 * **The Base Module:** $F = \frac{f'}{f \ln f}$
 * **The Input Module:** $G = \frac{g'}{g \ln f}$
 
-Substituting these back into the quotient derivative, I found a clean identity for the derivative of the log-ratio:
+Substituting $F$ and $G$ back into the quotient derivative, I found a clean identity for the derivative of the log-ratio:
     
 $$\frac{d}{dx}\left( \frac{\ln g}{\ln f} \right) = G - \left( \frac{\ln g}{\ln f} \right)F$$
 
@@ -145,7 +145,7 @@ Over the next few months, my mind would sometimes return to $A_3$. I began to se
 
 But which ones?
 
-One would come from $\frac{d}{dx} Rh''$ in the form of $Gh''$ just like $Gh'$ came from $\frac{d}{dx} Rh'$ in $A_1$. This pattern showed a "leakage" of terms into the G-sector from the next lower order F-sector where each of the four $R⋅(F-sector)$ terms from $A_\text{2F}$ would simply map $R\mapsto G$ for $A_{3G}$, or:
+One would come from $\frac{d}{dx} Rh''$ in the form of $Gh''$ just like $Gh'$ came from $\frac{d}{dx} Rh'$ in $A_1$. This pattern showed a "leakage" of terms into the G-sector from the next lower order F-sector where each of the other four $R⋅(F-sector)$ terms from $A_\text{2F}$ would simply map $R\mapsto G$ for $A_{3G}$, or:
 
 $$\left(-RF^{(2)}h -2RFh'+RhF\frac{f'}{f}+2RhF^2\right) \mapsto \left(-GF^{(2)}h -2GFh' + GhF\frac{f'}{f}+2GhF^2 \right)$$
 
@@ -163,7 +163,7 @@ And I thought, "Am I allowed to do that"? (**Spoiler alert:** Yes, I was. Doing 
 
 I didn't even know if I had gotten it correct, so I tested it on random differentiable functions in Desmos, and somehow, miraculously, I entered all the terms correctly the first time, successfully mapping $G \mapsto F$ to create the F-sector of $A_3$.
 
-Suddenly I was matching Desmos' brute force differentiation curves, but developing them entirely while derivative estimator functionality couldn't render them more than a few units away from the origin.
+Suddenly, I was matching Desmos' brute force differentiation curves, but my factored version rendered the same curves much farther out from the origin along the x-axis than Desmos' derivative estimator could.
 
 Feel free to click on the link below to visit the Desmos file I created and switch $D(x)$ (the candidate $A_3$ monster) on and off by clicking the colorful circle to its left. Watch how the graph changes. Even enter some random differentiable test functions at the top.
 
@@ -191,7 +191,7 @@ and
 
 $$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f^{(n)}}{f}\right) = \frac{f^{(n+1)}}{f}-\left(\frac{f^{(n)}}{f}\right)\frac{f'}{f} = u^{(n+1)}-u^{(n)}u $$
 
-This result showed that, no matter how many times A was differentiated, one would only see this family of ${R,F,G,u,v}$.
+This result showed that, no matter how many times A was differentiated, one would only see this family of { $R$, $F$, $G$, $u$, $v$}.
 
 For those uninitiated into differential algebra, this phenomenon is what is known as a **closed alphabet** making them a family of objects that are **closed under differentiation** with regard to $A_n$.
 
