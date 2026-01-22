@@ -164,7 +164,7 @@ This pattern is expressed in summation notation as:
 
 $$A_n = \sum_{k=0}^{n} \binom{n}{k} R_{n-k} h_k$$
 
-But it only gives us part of the story. This structure explains the binomial weights on the $h_n$-coefficients, but it doesn't clearly explain the structure of the tacked-on $G$-coefficient tail.
+But it only gives us part of the story. This structure explains the binomial weights on the $h_n$-coefficients and which derivative order of $R_n$ populates them, but it doesn't clearly explain the structure of the tacked-on $G$-coefficient tail.
 
 For that, we need to go down to the _subbasement_ of the Log-Tower.
 
