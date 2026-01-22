@@ -191,13 +191,15 @@ and
 
 $$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f^{(n)}}{f}\right) = \frac{f^{(n+1)}}{f}-\left(\frac{f^{(n)}}{f}\right)\frac{f'}{f} = u^{(n+1)}-u^{(n)}u $$
 
-This result showed that, no matter how many times A was differentiated, one would only see this family of { $R$, $F$, $G$, $u$, $v$}.
+This result showed that, no matter how many times A was differentiated, one would only see this family of { $R$, $h$, $F$, $G$, $u$, $v$}.
 
 For those uninitiated into differential algebra, this phenomenon is what is known as a **closed alphabet**, making them a family of objects that are **closed under differentiation** with regard to $A_n$.
 
 Once this realization hit, I knew I was, in fact, "allowed" to present derivatives of $F$ and $G$ in any $A_n$ by simply marking them with their derivative order rather than expanding them algebraically, making $F$ and $G$ **first-class objects**.
 
 The closed alphabet was complete:
+
+$$R$$ (The log ratio)
 
 $$h$$ (The exponent)
 
