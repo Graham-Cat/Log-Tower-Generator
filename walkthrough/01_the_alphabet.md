@@ -203,8 +203,8 @@ $$R$$ (The log ratio)
 
 $$h$$ (The exponent)
 
-$$F, G$$ (The Log-Tower lodules)
+$$F, G$$ (The Log-Tower modules)
 
-$$u, v$$ (The logarithmic lerivatives)
+$$u, v$$ (The logarithmic derivatives)
 
 Suddenly, $A_4$ was back on the menu.
