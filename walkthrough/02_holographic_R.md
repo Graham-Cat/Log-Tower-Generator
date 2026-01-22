@@ -88,7 +88,7 @@ I know it seems like a lot of steps, but it's still *vastly* superior to perform
 
 Instead of putting it all here, I'll just show you the end result. [^3]
 
-[^3]: The derivation of A3 via candidate-forming method is detailed in *** insert the appropriate appendix here ***
+[^3]: The derivation of A3 via candidate-forming method is detailed in https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/A3_candidate_process.md
 
 $$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - FF) + h(F_2 - F_1F + F(-2F_1 + F^2))))$$
 $$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2)))$$
