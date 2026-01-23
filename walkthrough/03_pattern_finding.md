@@ -89,39 +89,39 @@ All of a sudden, the waterfall structure popped into crisp focus.
   
     -F( G5
     
-        -F( G4  <----------------------------------------------------------|
+        -F( G4  <----------------------------------------------------------┐
         
-            -F( G3 <-------------------------------------------|           |
+            -F( G3 <-------------------------------------------┐           |
             
-                -F( G2  <---------------------|                |           |
+                -F( G2  <---------------------┐                |           |
                 
                     -F( G1                    | G2 Group       |           |
                     
                         -FG)  <- G0 Group     |                |           |
                         
-                    -2G F1) <-----------------|                | G3 Group  |
+                    -2G F1) <-----------------┘                | G3 Group  |
                     
-                -3F1( G1  <---| G1 Group                       |           |
+                -3F1( G1  <---┐ G1 Group                       |           |
                 
-                    -FG)  <---|                                |           |
+                    -FG)  <---┘                                |           |
                     
-                -3G F2) <--------------------------------------|           |
+                -3G F2) <--------------------------------------┘           |
                 
-            -4F1( G2 <-------|                                             | G4 Group
+            -4F1( G2 <-------┐                                             | G4 Group
             
                 -F( G1       |G2 Group                                     |
                 
                     -FG)     |                                             |
                     
-                -2G F1) <----|                                             |
+                -2G F1) <----┘                                             |
                 
             -6F2( G1                                                       |
             
                 -FG)                                                       |
                 
-            -4G F3)  <-----------------------------------------------------|
+            -4G F3)  <-----------------------------------------------------┘
             
-        -5F1( G3  <------------|
+        -5F1( G3  <------------┐
         
             -F( G2             |
             
@@ -135,7 +135,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
             
                 -FG)           | 
                 
-            -3G F2) <----------|
+            -3G F2) <----------┘
             
         -10F2( G2
         
@@ -151,7 +151,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
             
         -5G F4)
         
-    -6F1( G4  <-----------------|
+    -6F1( G4  <-----------------┐
     
         -F( G3                  |
         
@@ -181,7 +181,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
         
             -FG)                |
             
-        -4G F3)  <--------------|
+        -4G F3)  <--------------┘
         
     -15F2( G3
     
@@ -213,7 +213,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
         
     -6G F5)
 
-If one looks at these tabs in terms of $G_n$ "groups," (i.e., terms enclosed in parentheses staring with a $G_n$ term) it's obvious that all groups with the same derivative order are identical except for their Pascal weighting.
+If one looks at these tabs in terms of $G_n$ "groups," (i.e., terms enclosed in parentheses staring with a $G_n$ term) it's obvious that all groups with the same derivative order are identical except for their Pascal weighting and the derivative order of $F_n$ by which they are multiplied.
 
 Now defining these groups is easy. Since we're in the home stretch, it's time to name names.
 
@@ -235,7 +235,7 @@ $$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
 
 This recursive engine is the beating heart of the Log-Tower generator.
 
-Since $\Gamma_0$ is the $h_\text{n-1}$ -coefficient of $A_\text{nG}$ and $\Gamma_1$ is its $h_\text{n-2}$ -coefficient, and so on, 
+Since $\Gamma_0$ is the binomially-weighted $h_\text{n-1}$ -coefficient of $A_\text{nG}$ and $\Gamma_1$ is that of the $h_\text{n-2}$ -coefficient, and so on, 
 
 $$ A_\text{nG} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
@@ -247,8 +247,10 @@ Which leads to the canonical format of
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-While this feels like a satisfying ending, it's not quite the end yet since recursive engines like this are technically not closed forms.
+While this mathematical conclusion feels like a satisfying ending, we're not quite to the finish line yet since recursive engines like this one are technically _not_ closed form solutions[^2].
 
-Honestly, though, it's the end of the exciting reading since everything in the next part is well known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
+[^2]: A definition of "closed form solution" is available here at Wolfram: https://mathworld.wolfram.com/Closed-FormSolution.html . The definition is fuzzier than one might think, but in this case, clear and accepted closed forms are straightforward to produce.
+
+Honestly, though, it's the end of the exciting reading since everything in the next part is well-known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
 
 Their connection to this closed family of derivative modules { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $A_n = h\frac{ln(g)}{ln(f)}$ is, however, as far as I can tell, novel.
