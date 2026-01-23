@@ -84,7 +84,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
 
 ### The Recursive "Spine" of $R_{7G}$
 
-
+```text
   (G6
   
     -F( G5
@@ -212,6 +212,9 @@ All of a sudden, the waterfall structure popped into crisp focus.
         -FG)
         
     -6G F5)
+
+```
+
 
 If one looks at these tabs in terms of $G_n$ "groups," (i.e., terms enclosed in parentheses staring with a $G_n$ term) it's obvious that all groups with the same derivative order are identical except for their Pascal weighting and the derivative order of $F_n$ by which they are multiplied.
 
