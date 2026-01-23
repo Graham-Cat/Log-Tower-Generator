@@ -151,7 +151,7 @@ $$\left(-RF^{(2)}h -2RFh'+RhF\frac{f'}{f}+2RhF^2\right) \mapsto \left(-GF^{(2)}h
 
 So I tediously accumulated all terms by taking the derivative of $A_{2G}$, adding the above cross-sector induced (or **forced**) terms to the result, and wound up with this monster of a composite polynomial representation:
 
-$$A_{3G} = G^{(3)}h + G^{(2)}(3h'-h \left(\left(\frac{g'}{g}+F \right) + \left(\frac{g'}{g}+2F \right)\right) + G(3h''-3h'\left(\frac{g'}{g}+2F \right) + hK) $$
+$$A_{3G} = G^{(3)}h + G^{(2)}\left(3h'-h \left(\left(\frac{g'}{g}+F \right) + \left(\frac{g'}{g}+2F \right)\right)\right) + G(3h''-3h'\left(\frac{g'}{g}+2F \right) + hK) $$
 
 where
 
