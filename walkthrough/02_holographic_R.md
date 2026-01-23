@@ -160,11 +160,11 @@ $$A_1 = R_1h + Rh_1$$
 $$A_2 = (R_2h + R_1h_1) + (R_1h_1 + Rh_2) = R_2h + 2R_1h_1 + Rh_2$$
 $$A_3 = (R_3h + R_2h_1) + 2(R_2h_1 + R_1h_2) + (R_1h_2 + Rh_3) = R_3h + 3R_2h_1 + 3R_1h_2 + Rh_3$$
 
-The "general Leibniz rule"[^1] expresses this derivative pattern in summation notation as:
+The Leibniz identity[^1] expresses this derivative pattern in summation notation as:
 
 $$A_n = \sum_{k=0}^{n} \binom{n}{k} R_{n-k} h_k$$
 
-[^1]: See a description of the "general Leibniz rule" here: https://en.wikipedia.org/wiki/General_Leibniz_rule . While I realize linking to Wikipedia is not considered best practice, it presented the clearest description at the time of publication.
+[^1]: See a definition of the Leibniz identity (a.k.a., the "general Leibniz rule") here at Wolfram: https://mathworld.wolfram.com/LeibnizIdentity.html .
 
 But it only gives us part of the story. This structure explains the binomial weights on the $h_n$-coefficients and which derivative order of $R_n$ populates them, but it doesn't clearly explain the structure of the tacked-on $G$-coefficient tail.
 
