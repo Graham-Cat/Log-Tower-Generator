@@ -256,4 +256,4 @@ While this mathematical conclusion feels like a satisfying ending, we're not qui
 
 Honestly, though, it's the end of the exciting reading since everything in the next part is well-known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
 
-However, its connection to this closed family of derivative modules { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $P(A_n) = \frac{d^n}{dx^n} \left(h\frac{ln(g)}{ln(f)}\right)$ is, as far as I can tell, novel.
+However, its connection to this closed alphabet { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $P(A_n) = \frac{d^n}{dx^n} \left(h\frac{ln(g)}{ln(f)}\right)$ is, as far as I can tell, novel.
