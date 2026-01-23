@@ -97,7 +97,7 @@ Just for fun, I'll paste the previous version of **just the G-sector of A3** nex
 
 *Old Version of* $A_{3G}$ *:*
 
-$$A_{3G} = G^{(3)}h + G^{(2)}(3h'-h \left(\left(\frac{g'}{g}+F \right) + \left(\frac{g'}{g}+2F \right)\right) + G(3h''-3h'\left(\frac{g'}{g}+2F \right) + hK) $$
+$$A_{3G} = G^{(3)}h + G^{(2)}\left(3h'-h \left(\left(\frac{g'}{g}+F \right) + \left(\frac{g'}{g}+2F \right)\right)\right) + G(3h''-3h'\left(\frac{g'}{g}+2F \right) + hK) $$
 
 where
 
