@@ -73,3 +73,16 @@ Key differential equations driving the system.
 4.  **The Canonical Generator Form:**
   
     $$A_n = R(h_n - A_{\text{nF}}) + A_{\text{nG}}$$
+
+5. **The Sector Recursion ($\Gamma_n$)**
+
+The recursive engine for the G-Sector coefficients, utilizing the **Negative Sign Convention** (subtraction of decay terms).
+
+**General Formula:**
+$$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
+
+**Expanded Examples:**
+* $\Gamma_0 = G$
+* $\Gamma_1 = G_1 - GF$
+* $\Gamma_2 = G_2 - G_1F - G(2F_1 - F^2)$
+* $\Gamma_3 = G_3 - G_2F - G_1(3F_1 - F^2) - G(3F_2 - 5FF_1 + F^3)$
