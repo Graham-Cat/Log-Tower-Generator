@@ -8,7 +8,7 @@ Microsoft. Word.
 
 [^1]: Note that one of the two words is literally "Word."
 
-Specifically, the find-and-replace mechanism in MS Word facilitated pattern finding that would have been very difficult (if not practically impossible) for me to perform on paper.
+Specifically, the find-and-replace and copy/paste mechanisms in MS Word facilitated pattern finding that would have been very difficult (if not practically impossible) for me to perform on paper.
 
 ## Replace
 
