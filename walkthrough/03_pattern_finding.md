@@ -56,8 +56,6 @@ $$A_2 = R(h_2 - (2h_1F + h\underbrace{(F_1 - FF)}_{\text{h-coeff}})) + (2h_1G + 
 
 Unsurprisingly, $R_3$ and $R_4$ yielded the same result. Each displayed the h-coefficients of $A_3$ and $A_4$ when grouped on R.
 
-## Find
-
 But I still couldn't see how to formalize. The pattern got muddled in the simplification process.
 
 So, I un-simplified.
@@ -71,6 +69,8 @@ $$ R7=G6-(R6)F-6(R5)F1-15(R4)F2-20(R3)F3-15(R2)F4-6(R1)F5-RF6 $$
 $$ =G6-(G5-(G4-(G3-(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F-3(G1-(G-RF)F-RF1)F1-3(G-RF)F2-RF3)F-4(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F1-6(G1-(G-RF)F-RF1)F2-4(G-RF)F3-RF4)F-5(G3-(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F-3(G1-(G-RF)F-RF1)F1-3(G-RF)F2-RF3)F1-10(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F2-10(G1-(G-RF)F-RF1)F3-5(G-RF)F4-RF5)F-6(G4-(G3-(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F-3(G1-(G-RF)F-RF1)F1-3(G-RF)F2-RF3)F-4(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F1-6(G1-(G-RF)F-RF1)F2-4(G-RF)F3-RF4)F1-15(G3-(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F-3(G1-(G-RF)F-RF1)F1-3(G-RF)F2-RF3)F2-20(G2-(G1-(G-RF)F-RF1)F-2(G-RF)F1-RF2)F3-15(G1-(G-RF)F-RF1)F4-6(G-RF)F5-RF6 $$
 
 I know it doesn't look useful at the moment, but once I realized that symmetry meant I could delete half the terms without losing any of the algebra, I focused on examining $G_n$ only. I found all $-RF_n$ terms and replaced them with blanks.
+
+## Find
 
 It was still a blurry block of parentheses, letters, numbers, and minus signs, though, until one final magical MS Word function came to my rescue.
 
