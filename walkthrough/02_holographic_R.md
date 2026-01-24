@@ -90,8 +90,8 @@ Instead of putting it all here, I'll just show you the end result. [^3]
 
 [^3]: The derivation of A3 via candidate-forming method is detailed in https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/A3_candidate_process.md
 
-$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - FF) + h(F_2 - F_1F + F(-2F_1 + F^2))))$$
-$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2)))$$
+$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - FF) + h(F_2 - F_1F - F(2F_1 - F^2))))$$
+$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)))$$
 
 Just for fun, I'll paste the previous version of **just the G-sector of A3** next to this one so you can see the improvement.
 
@@ -111,13 +111,13 @@ I went through the same process for $A_4$ and $A_5$. Those math walls are not in
 
 Here they are:
 
-$$A_4 = R\Big(h_4 - \big(4h_3 F + 6h_2(F_1 - FF) + 4h_1(F_2 - F_1 F + F(-2F_1 + F^2)) + h(F_3 - F_2 F + F_1(-3F_1 + F^2) + F(-3F_2 + 5F_1 F - F^3))\big)\Big)$$
-$$+ \Big(4h_3 G + 6h_2(G_1 - GF) + 4h_1(G_2 - G_1 F + G(-2F_1 + F^2)) + h(G_3 - G_2 F + G_1(-3F_1 + F^2) + G(-3F_2 + 5F_1 F - F^3))\Big)$$
+$$A_4 = R\Big(h_4 - \big(4h_3 F + 6h_2(F_1 - FF) + 4h_1(F_2 - F_1 F - F(2F_1 - F^2)) + h(F_3 - F_2 F - F_1(3F_1 - F^2) - F(3F_2 - 5F_1 F + F^3))\big)\Big)$$
+$$+ \Big(4h_3 G + 6h_2(G_1 - GF) + 4h_1(G_2 - G_1 F - G(2F_1 - F^2)) + h(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3))\Big)$$
 
-$$A_5 = R\Big(h_5 - \big(5h_4 F + 10h_3(F_1 - F^2) + 10h_2(F_2 - F_1 F + F(-2F_1 + F^2)) + 5h_1(F_3 - F_2 F + F_1(-3F_1 + F^2) + F(-3F_2 + 5F_1 F - F^3)) $$
-$$+ h(F_4 - F_3 F + F_2(-4F_1 + F^2) + F_1(-6F_2 + 7F F_1 - F^3) + F(-4F_3 + 9F F_2 + F_1(-8F_1 + 9F^2) - F^4))\big)\Big) $$
-$$+ \Big(5h_4 G + 10h_3(G_1 - GF) + 10h_2(G_2 - G_1 F + G(-2F_1 + F^2)) + 5h_1(G_3 - G_2 F + G_1(-3F_1 + F^2) + G(-3F_2 + 5F_1 F - F^3))$$
-$$+ h(G_4 - G_3 F + G_2(-4F_1 + F^2) + G_1(-6F_2 + 7F F_1 - F^3) + G(-4F_3 + 9F F_2 + F_1(-8F_1 + 9F^2) - F^4))\Big)$$
+$$A_5 = R\Big(h_5 - \big(5h_4 F + 10h_3(F_1 - F^2) + 10h_2(F_2 - F_1 F - F(2F_1 - F^2)) + 5h_1(F_3 - F_2 F - F_1(3F_1 - F^2) - F(3F_2 - 5F_1 F + F^3)) $$
+$$+ h(F_4 - F_3 F - F_2(4F_1 - F^2) - F_1(6F_2 - 7F F_1 + F^3) - F(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4))\big)\Big) $$
+$$+ \Big(5h_4 G + 10h_3(G_1 - GF) + 10h_2(G_2 - G_1 F - G(2F_1 - F^2)) + 5h_1(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3))$$
+$$+ h(G_4 - G_3 F - G_2(4F_1 - F^2) - G_1(6F_2 - 7F F_1 + F^3) - G(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4))\Big)$$
 
 Kudos to Copilot who, with appropriately specific commands, was able to parse the terms like datasets.
 
@@ -127,16 +127,16 @@ A student of combinatorics should see the binomially-driven accumulation pattern
 
 * $A_{1G} = hG$
 * $A_{2G} = 2h_1G + h(G_1 - GF)$
-* $A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2)$
-* $A_{4G} = 4h_3G + 6h_2(G_1 - GF) + 4h_1(G_2 - G_1 F + G(-2F_1 + F^2)) + h(G_3 - G_2 F + G_1(-3F_1 + F^2) + G(-3F_2 + 5F_1 F - F^3))$
-* $A_{5G} = 5h_4G + 10h_3(G_1 - GF) + 10h_2(G_2 - G_1 F + G(-2F_1 + F^2)) + 5h_1(G_3 - G_2 F + G_1(-3F_1 + F^2) + G(-3F_2 + 5F_1 F - F^3)) + h(G_4 - G_3 F + G_2(-4F_1 + F^2) + G_1(-6F_2 + 7F F_1 - F^3) + G(-4F_3 + 9F F_2 + F_1(-8F_1 + 9F^2) - F^4))$
+* $A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)$
+* $A_{4G} = 4h_3G + 6h_2(G_1 - GF) + 4h_1(G_2 - G_1 F - G(2F_1 - F^2)) + h(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3))$
+* $A_{5G} = 5h_4G + 10h_3(G_1 - GF) + 10h_2(G_2 - G_1 F - G(2F_1 - F^2)) + 5h_1(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3)) + h(G_4 - G_3 F - G_2(4F_1 - F^2) - G_1(6F_2 - 7F F_1 + F^3) - G(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4))$
 
 ### Pattern Mining for Structure
 
 1.  **Pascal's Triangle:** The clearest pattern is in the binomial multiplier attached to the $h_n$ terms in the form of a Pascal's triangle with the leading 1 removed on each row [i.e., (1), (2,1), (3,3,1), (4,6,4,1)]. 
 2.  **The Holographic Shift:** We also see that the coefficient of $h_n$ becomes the binomially-weighted coefficient for $h_{n+1}$ in the next higher derivative and remains **structurally frozen** for all higher derivatives. This displays a "holograph" of itself into all higher order derivatives.
 3.  **The Skeleton:** Within the $h$-coefficient itself (i.e., $h_0$) there is a $G$-coefficient (i.e., $G_0$) at the tail that populates binomially with a less obvious structure. Looking closely, an algebraic skeleton of ($F_nF^0$, $F_{n-1}F^1$, ..., $F_0F^n$) emerges.
-4.  **Weighted Holography:** Even within the $G_n$-coefficients of the $h$-coefficient we see weighted holographic behavior like $G(-2F_1 + F^2)$ in $A_{3G}$, $G_1(-3F_1 + F^2)$ in $A_{4G}$, and $G_2(-4F_1 + F^2)$ in $A_{5G}$.
+4.  **Weighted Holography:** Even within the $G_n$-coefficients of the $h$-coefficient we see weighted holographic behavior like $G(2F_1 - F^2)$ in $A_{3G}$, $G_1(3F_1 - F^2)$ in $A_{4G}$, and $G_2(4F_1 - F^2)$ in $A_{5G}$.
 
 So, what to make of all this data? And why are we talking about $G$-coefficients when the section title only involves $R$?
 
