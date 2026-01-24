@@ -76,10 +76,10 @@ Key differential equations driving the system.
 
 5. **The Sector Recursion ($\Gamma_n$)**
 
-The recursive engine for the G-Sector coefficients, utilizing the **Negative Sign Convention** (subtraction of decay terms).
+The recursive engine for the G-Sector coefficients.
 
 **General Formula:**
-$$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
+$$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1} = \sum_{m=0}^{n} \binom{n+1}{m+1} B_{n-m}(-F_0, \dots, -F_{n-m-1}) \left[ \sum_{j=0}^{m} \binom{m}{j} G_j B_{m-j}(F_0, \dots, F_{m-j-1}) \right]$$
 
 **Expanded Examples:**
 * $\Gamma_0 = G$
