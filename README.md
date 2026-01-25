@@ -13,7 +13,7 @@ This project generalizes that process, utilizing Bell Polynomials to expand the 
 
 # **Motivation**
 
-Directly differentiating "Log-Tower" expressions of the form $A(x) = h(x)⋅\log_{f(x)}(g(x)$ leads to a combinatorial explosion. The raw higher-order derivatives $A_n$ become increasingly opaque, tangling the contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
+Directly differentiating "Log-Tower" expressions of the form $A(x) = h(x)⋅\log_{f(x)}(g(x))$ leads to a combinatorial explosion. The raw higher-order derivatives $A_n$ become increasingly opaque, tangling the contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
 
 The Log‑Tower-Generator resolves this by mapping the derivatives into a canonical normal form. By isolating the distinct "forcing" and "decay" dynamics of the components, the framework reorganizes the expansion into:
 - Sector Decomposition: Splitting the solution into a homogeneous $\Phi$-sector and a particular $\Gamma$-sector.
