@@ -32,7 +32,7 @@ $$A_2 = \frac{d}{dx} [ R(h_1 - hF) ] + \frac{d}{dx} [ hG ]$$
 
 In differentiating the first term, $R(h_1 - hF)$, we apply the product rule $(uv)' = u_1v + uv_1$. Here, $u = R$ and $v = (h_1 - hF)$. Recall that $R_1 = G - RF$.
 
-> *Note: This $u$ and $v$ are **not** the closed family members. They are just illustrating use of the product rule.*
+> *Note: This u and v are **not** the closed family members. They are just illustrating use of the product rule.*
 
 $$R_1(h_1 - hF) = (G - RF)(h_1 - hF)$$
 
