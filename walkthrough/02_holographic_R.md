@@ -1,6 +1,6 @@
 # Part 2: The Holography of R
 
-Sequential derivatives of $A_n$ display holographic behavior; coefficients of $h_n$ freeze within the sectors and become the coefficients of $h_{n+1}$ in the next derivative. Seeing and understanding this required, at least for me, calculating higher derivatives.
+Sequential derivatives of $A_n$ display holographic behavior; coefficients of $h_n$ freeze within the sectors and become binomially-weighted coefficients of $h_{n+1}$ in the next derivative. Seeing and understanding this required, at least for me, calculating higher derivatives.
 
 ## Compacted Forms
 
