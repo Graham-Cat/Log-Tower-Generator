@@ -52,7 +52,7 @@ To ensure the Log-Tower expression $A(x) = h(x) \frac{\ln g(x)}{\ln f(x)}$ remai
 - Singularity Analysis: Special consideration is required at points where $f(x) \to 1$, $f(x) \to 0$, or $g(x) \to 0$. Depending on the local behavior of $h(x)$ and the logarithmic growth rates, these points may represent poles, branch points, or removable singularities requiring limit-based evaluation.
 ---
 
-# **Log Tower Nth Derivative Generator**
+# **Log Tower N-th Derivative Generator**
 
 For $n \geq 1$, the $n$-th derivative of the Log-Tower function $A(x) = h(x) \frac{\ln g(x)}{\ln f(x)}$ is given by the polynomial generator $P(A_n)$:
 
