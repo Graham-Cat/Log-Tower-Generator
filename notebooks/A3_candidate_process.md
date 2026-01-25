@@ -4,9 +4,9 @@ This appendix details the step-by-step construction of the third derivative cand
 
 ### Target Form:
 
-$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F + F(-2F_1 + F^2))))$$
+$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F - F(2F_1 - F^2))))$$
 
-$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2)))$$
+$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)))$$
 
 ## Step 1: Derivative of the $A_2$ G-Sector
 
@@ -72,7 +72,7 @@ $$h(G_2 - G_1F + G(-2F_1 + F^2))$$
 
 Final Candidate for $A_{3G}$:
 
-$$A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2))$$
+$$A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2))$$
 
 ## Step 5: Perform $G \mapsto F$ Mapping ($A_{3F}$)
 
@@ -82,16 +82,16 @@ $$3h_2G \mapsto 3h_2F$$
 
 $$3h_1(G_1 - GF) \mapsto 3h_1(F_1 - FF) = 3h_1(F_1 - F^2)$$
 
-$$h(G_2 - G_1F + G(-2F_1 + F^2)) \mapsto h(F_2 - F_1F + F(-2F_1 + F^2))$$
+$$h(G_2 - G_1F + G(-2F_1 + F^2)) \mapsto h(F_2 - F_1F - F(2F_1 - F^2))$$
 
 Final Candidate for $A_{3F}$:
 
-$$A_{3F} = 3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F + F(-2F_1 + F^2))$$
+$$A_{3F} = 3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F - F(2F_1 - F^2))$$
 
 ## Step 6: Insert into Canonical Format
 
 Recall the canonical format $A_3 = R(h_3 - A_{3F}) + A_{3G}$.
 
-$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F + F(-2F_1 + F^2))))$$
+$$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - F^2) + h(F_2 - F_1F - F(2F_1 - F^2))))$$
 
-$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F + G(-2F_1 + F^2)))$$
+$$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)))$$
