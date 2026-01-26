@@ -3,7 +3,7 @@
 This appendix serves as a glossary for the specific notation used throughout the **Log-Tower Generator** walkthrough. While most symbols follow standard calculus conventions, some (like the module operators and sector definitions) are specific to the F/G-sector symmetry framework.
 
 ## The Closed Alphabet $\{ R, h, F, G, u, v \}$
-The complete family of objects that are **closed under differentiation** with regard to $A_n$.
+The complete family of objects that are **closed under differentiation** with regard to $A_n$:
 
 | Symbol | Definition | Role | Description |
 | :--- | :--- | :--- | :--- |
@@ -31,10 +31,10 @@ To keep equations compact, this walkthrough uses subscript notation for derivati
 
 > **Note 1:** The notation $F^\text{(n)}$ refers to the **module order**, not the $n$-th derivative of the function $F(x)$ itself.
 > * $F^\text{(n)} = \frac{f^{(n)}}{f \ln f}$
-> * $\frac{d^n} {dx^n}(F) = F_n$ (The derivative of the module).
+> * $\frac{d^n} {dx^n}(F) = F_n$ (the derivative of the module)
 
 ## Structural Variables
-Variables used to define the recursive architecture of the derivative.
+Variables used to define the recursive architecture of the derivative:
 
 | Symbol | Definition | Description |
 | :--- | :--- | :--- |
