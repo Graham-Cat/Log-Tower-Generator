@@ -17,7 +17,9 @@ and set about finding the first and second derivatives.
 
 I figured, "How hard could it be?"
 
-Lol. Silly summer 2025 me.
+Perhaps hard enough to devote a GitHub repo to when taken to its logical conclusion?
+
+Let's find out.
 
 ## Step 1: The First Derivative ($A_1$)
 To make $A$ differentiable, I first converted it to natural logs using the change-of-base formula, then separated the exponent, turning the tower of powers into a product of quotients:
