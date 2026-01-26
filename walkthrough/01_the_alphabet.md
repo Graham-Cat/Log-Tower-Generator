@@ -53,6 +53,10 @@ $$ R' = G - RF $$
 
 [^1]: Students of advanced calculus will recognize this identity as a first-order differential equation of the form y' + P(x)y = Q(x) where R = y, F = P(x), and G = Q(x). Its structure becomes important while developing the closed form of the recursion.
 
+So,
+
+$$ A' = \frac{d}{dx} Rh = R'h + Rh' = (G - RF)h + Rh' = hG - RhF + Rh' = R(h'-hF)+hG $$
+
 ### The First Checkpoint: Emerging Structure
 When I substituted back into the full product rule for $A$, two ways of looking at the derivative seemed to highlight different aspects of the function's architecture:
 
@@ -60,9 +64,9 @@ $$A_1 = \underbrace{R'h + Rh'}_{\text{Structural Form}} = \underbrace{R(h' - hF)
 
 When using the identity $R'=G-RF$ and the initial equation $A = Rh$, the structural form[^2] expands to 
 
-$$A_1 = \underbrace{hG - AF + \frac{A}{h}h'}_{\text{Structural Form}} = \underbrace{R(h' - hF) + hG}_{\text{Canonical Form}}$$
+$$A_1 = hG - AF + \frac{A}{h}h' = hG - A(F-\frac{h'}{h})$$
 
-[^2]: Note that this form rearranges to A' + (F - h'/h)A = hG which is also a first order differential equation of the form y' + P(x)y = Q(x), this time with h as a passenger.
+[^2]: Note that this form is also a first order differential equation of the form y' + P(x)y = Q(x) where P(x) = (F-h'/h) and Q(x) = hG (i.e., h is now a passenger).
 
 * **The Structural Form ($R'h + Rh'$):** This form treats $A$ as a simple product of $h$ and $R$, foreshadowing the "holographic" nature of the higher derivatives (where $h$ is a passenger).
 * **The Canonical Form ($R(\dots) + G\dots$):** This form groups the terms by $R$ and $G$. Even here, at $n=1$, we can see the prototype of the final generator:
