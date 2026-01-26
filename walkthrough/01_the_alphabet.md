@@ -58,7 +58,7 @@ So,
 $$ A' = \frac{d}{dx} Rh = R'h + Rh' = (G - RF)h + Rh' = hG - RhF + Rh' = R(h'-hF)+hG $$
 
 ### The First Checkpoint: Emerging Structure
-When I substituted back into the full product rule for $A$, two ways of looking at the derivative seemed to highlight different aspects of the function's architecture:
+Two ways of looking at the derivative seemed to highlight different aspects of the function's architecture:
 
 $$A_1 = \underbrace{R'h + Rh'}_{\text{Structural Form}} = \underbrace{R(h' - hF) + hG}_{\text{Canonical Form}}$$
 
@@ -91,7 +91,9 @@ Now came the tricky part. It was clear that
 
 $$ \frac{d}{dx}(hG) = h'G + hG' $$
 
-but what was $G'$? It was also clear that
+but what was $G'$?
+
+It was also clear that
 
 $$ \frac{d}{dx}(RhF) = \left(\frac{d}{dx}(Rh)\right)F+RhF' $$
 
