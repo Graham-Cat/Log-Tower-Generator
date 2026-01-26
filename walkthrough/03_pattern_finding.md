@@ -78,7 +78,17 @@ It was still a blurry block of parentheses, letters, numbers, and minus signs, t
 
 AIs like Copilot automatically tab parentheses while writing math code for users. While watching it try to write something in Python code for me, I saw the tabs and figured I should give it a try.
 
-The rules for tabbing were simple. If a parenthesis opened, hit enter and tab one out. If a parenthesis closed, hit enter and tab one back. Only one term was allowed per line.
+The rules for tabbing were simple. If a parenthesis opened,
+
+1. put the cursor just to the right of the term,
+2. hit enter to move the balance of the expression down to the next line, and
+3. hit tab until the next term is one tab beyond the one on the previous line.
+
+If a parenthesis closed,
+
+1. put the cursor just to the right of the closed parenthesis,
+2. hit enter to move the balance of the expression down to the next line, and
+3. hit tab until the next term is one tab **behind** the one on the previous line.
 
 All of a sudden, the waterfall structure popped into crisp focus.
 
