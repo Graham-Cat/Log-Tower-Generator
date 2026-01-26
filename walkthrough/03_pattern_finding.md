@@ -216,11 +216,11 @@ All of a sudden, the waterfall structure popped into crisp focus.
 ```
 
 
-If one looks at these tabs in terms of $G_n$ "groups," (i.e., terms enclosed in parentheses staring with a $G_n$ term) it's obvious that all groups with the same derivative order are identical except for their Pascal weighting and the derivative order of $F_n$ by which they are multiplied.
+If one looks at these tabs in terms of $G_n$ "groups" (i.e., terms enclosed in parentheses staring with a $G_n$ term), it's obvious that all groups with the same derivative order are identical except for their Pascal weighting and the derivative order of $F_n$ by which they are multiplied.
 
 Now defining these groups is easy. Since we're in the home stretch, it's time to name names.
 
-Each one of these $G_n$ groups is the definition of $\Gamma_n$.
+Each one of these $G_n$ groups is the definition of $\Gamma_n$:
 
 $$ \Gamma_0 = G $$
 
@@ -232,7 +232,7 @@ $$ \Gamma_3 = G_3 - \Gamma_2F - 3\Gamma_1F_1 - 3\Gamma_0F_2 $$
 
 $$ \Gamma_4 = G_4 - \Gamma_3F - 4\Gamma_2F_1 - 6\Gamma_1F_2 - 4\Gamma_0F_3 $$
 
-Which leads to the formula:
+which leads to the formula:
 
 $$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
 
@@ -246,7 +246,7 @@ Since $\Phi_n$ is the $G \mapsto F$ mapping of $\Gamma_n$,
 
 $$ A_\text{nF} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}$$
 
-Which leads to the canonical format of 
+which leads to the canonical format of: 
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
