@@ -117,7 +117,7 @@ Substituting back, the derivative collapsed into a clean, recursive identity:
 
 $$F' = F^{(2)} - F\left(\frac{f'}{f} + F\right)$$
 
-I applied the same logic to the input module $G$, yielding
+I applied the same logic to the input module $G$, yielding:
 
 $$G' = G^{(2)} - G\left(\frac{g'}{g} + F\right)$$
 
@@ -125,13 +125,13 @@ This was the "magic" moment. I realized that taking the derivative of a module d
 
 $$(F^{(2)})' = \frac{d}{dx}\left( \frac{f''}{f \ln f} \right) = F^{(3)} - F^{(2)}\left(\frac{f'}{f} + F\right)$$$$(G^{(2)})' = \frac{d}{dx}\left( \frac{g''}{g \ln f} \right) = G^{(3)} - G^{(2)}\left(\frac{g'}{g} + F\right)$$
 
-leading to the general formulas
+leading to the general formulas:
 
 $$(F^{(n)})' = \frac{d}{dx}\left( \frac{f^{(n)}}{f \ln f} \right) = F^{(n+1)} - F^{(n)}\left(\frac{f'}{f} + F\right)$$$$(G^{(n)})' = \frac{d}{dx}\left( \frac{g^{(n)}}{g \ln f} \right) = G^{(n+1)} - G^{(n)}\left(\frac{g'}{g} + F\right)$$
 
 ### $A_2$: Initial Form Confirms the Symmetry
 
-After substituting these partial modular formulations back into $F'$ and $G'$ and rearranging into canonical form, $A_2$ became
+After substituting these partial modular formulations back into $F'$ and $G'$ and rearranging into canonical form, $A_2$ became:
 
 $$A_2 = R\left(h''-\left(F^{(2)}h + F\left(2h'-h\left(\frac{f'}{f}+2F\right)\right)\right)\right) +\left(G^{(2)}h + G\left(2h'-h\left(\frac{g'}{g}+2F\right)\right)\right)$$
 
@@ -199,12 +199,12 @@ Once this realization hit, I knew I was, in fact, "allowed" to present derivativ
 
 The closed alphabet was complete:
 
-$$R$$ (The log ratio)
+$$R$$ (the log ratio)
 
-$$h$$ (The exponent)
+$$h$$ (the exponent)
 
-$$F, G$$ (The Log-Tower modules)
+$$F, G$$ (the Log-Tower modules)
 
-$$u, v$$ (The logarithmic derivatives)
+$$u, v$$ (the logarithmic derivatives)
 
 Suddenly, $A_4$ was back on the menu.
