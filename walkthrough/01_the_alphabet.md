@@ -66,7 +66,7 @@ When using the identity $R'=G-RF$ and the initial equation $A = Rh$, the structu
 
 $$A_1 = hG - AF + \frac{A}{h}h' = hG - A(F-\frac{h'}{h})$$
 
-[^2]: Note that this form is also a first order differential equation of the form y' + P(x)y = Q(x) where P(x) = (F-h'/h) and Q(x) = hG (i.e., h is now a passenger).
+[^2]: This form is also a first order differential equation of the form y' + P(x)y = Q(x) where P(x) = (F-h'/h) and Q(x) = hG (i.e., h is now a passenger).
 
 * **The Structural Form ($R'h + Rh'$):** This form treats $A$ as a simple product of $h$ and $R$, foreshadowing the "holographic" nature of the higher derivatives (where $h$ is a passenger).
 * **The Canonical Form ($R(\dots) + G\dots$):** This form groups the terms by $R$ and $G$. Even here, at $n=1$, we can see the prototype of the final generator:
