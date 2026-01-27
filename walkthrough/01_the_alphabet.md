@@ -119,7 +119,10 @@ $$F' = \underbrace{\frac{f''}{f \ln f}}_{F^{(2)}} - \underbrace{\frac{f'}{f \ln 
 
 Doing so allowed me to define a new superset of modules using superscript notation to denote the **module order** (based on the derivative order of the underlying function):
 
-$$F^{(n)} = \frac{f^{(n)}}{f \ln f}$$
+$$F^{(n)} = \frac{f_n}{f \ln f}$$
+
+> [!NOTE]
+> The subscript on $f_n$ denotes _derivative_ order (consistent with Bell notation) and the superscript on $F^{(n)}$ denotes _module_ order. I use this notation through the entire walkthrough for the sake of clarity.
 
 Substituting back, the derivative collapsed into a clean, recursive identity:
 
@@ -135,7 +138,7 @@ $$(F^{(2)})' = \frac{d}{dx}\left( \frac{f''}{f \ln f} \right) = F^{(3)} - F^{(2)
 
 leading to the general formulas:
 
-$$(F^{(n)})' = \frac{d}{dx}\left( \frac{f^{(n)}}{f \ln f} \right) = F^{(n+1)} - F^{(n)}\left(\frac{f'}{f} + F\right)$$$$(G^{(n)})' = \frac{d}{dx}\left( \frac{g^{(n)}}{g \ln f} \right) = G^{(n+1)} - G^{(n)}\left(\frac{g'}{g} + F\right)$$
+$$(F^{(n)})' = \frac{d}{dx}\left( \frac{f_n}{f \ln f} \right) = F^{(n+1)} - F^{(n)}\left(\frac{f'}{f} + F\right)$$$$(G^{(n)})' = \frac{d}{dx}\left( \frac{g_n}{g \ln f} \right) = G^{(n+1)} - G^{(n)}\left(\frac{g'}{g} + F\right)$$
 
 ### $A_2$: Initial Form Confirms the Symmetry
 
@@ -191,15 +194,15 @@ and
 
 $$ u'= \frac{d}{dx} \left(\frac{f'}{f}\right) = \frac{f''}{f}-\left(\frac{f'}{f}\right)^2 = u^{(2)}-u^2$$
 
-So, I started treating $u$ and $v$ as modules, letting $u^{(n)}=\frac{f^{(n)}}{f}$ and $v^{(n)}=\frac{g^{(n)}}{g}$, yielding:
+So, I started treating $u$ and $v$ as modules, letting $u^{(n)}=\frac{f_n}{f}$ and $v^{(n)}=\frac{g_n}{g}$, yielding:
 
-$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g^{(n)}}{g}\right) = \frac{g^{(n+1)}}{g}-\left(\frac{g^{(n)}}{g}\right)\frac{g'}{g} = v^{(n+1)}-v^{(n)}v $$
+$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g_n}{g}\right) = \frac{g_\text{n+1}}{g}-\left(\frac{g_n}{g}\right)\frac{g'}{g} = v^{n+1}-v^{(n)}v $$
 
 and
 
-$$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f^{(n)}}{f}\right) = \frac{f^{(n+1)}}{f}-\left(\frac{f^{(n)}}{f}\right)\frac{f'}{f} = u^{(n+1)}-u^{(n)}u $$
+$$ \frac{d}{dx} u^{(n)}= \frac{d}{dx} \left(\frac{f_n}{f}\right) = \frac{f_\text{(n+1)}}{f}-\left(\frac{f_n}{f}\right)\frac{f'}{f} = u^{(n+1)}-u^{(n)}u $$
 
-This result showed that, no matter how many times A was differentiated, one would only see this family of { $R$, $h$, $F$, $G$, $u$, $v$}.
+This result showed that, no matter how many times $A = h\frac{\ln g}{\ln f}$ was differentiated, one would only see this family of { $R$, $h$, $F$, $G$, $u$, $v$}.
 
 For those uninitiated into differential algebra, this phenomenon is what is known as a **closed alphabet**, making them a family of objects that are **closed under differentiation** with regard to $A_n$.
 
