@@ -26,11 +26,11 @@ To keep equations compact, this walkthrough uses subscript notation for derivati
 | **$h_k$** |  | the $k$-th derivative of the exponent $h$ |
 | **$F_n$** | $\frac{d^n} {dx^n} \frac{f'}{f \ln f}$ | the $n$-th derivative of **Base Module** $F$ (See Note 1) |
 | **$G_n$** | $\frac{d^n} {dx^n} \frac{g'}{g \ln f}$ | the $n$-th derivative of **Input Module** $G$ (See Note 1) |
-| **$F^{(n)}$** | $\frac{f^{(n)}}{f \ln f}$ | the $n$-th order **Base Module** (See Note 1) |
-| **$G^{(n)}$** | $\frac{g^{(n)}}{g \ln f}$ | the $n$-th order **Input Module** (See Note 1) |
+| **$F^{(n)}$** | $\frac{f_n}{f \ln f}$ | the $n$-th order **Base Module** (See Note 1) |
+| **$G^{(n)}$** | $\frac{g_n}{g \ln f}$ | the $n$-th order **Input Module** (See Note 1) |
 
 > **Note 1:** The notation $F^\text{(n)}$ refers to the **module order**, not the $n$-th derivative of the function $F(x)$ itself.
-> * $F^\text{(n)} = \frac{f^{(n)}}{f \ln f}$
+> * $F^\text{(n)} = \frac{f_n}{f \ln f}$
 > * $\frac{d^n} {dx^n}(F) = F_n$ (the derivative of the module)
 
 ## Structural Variables
