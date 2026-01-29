@@ -116,7 +116,9 @@ That's a start. But what exactly do we do with it? That's where the selection pr
 
 But before we use it, we need to know what expression we're going to use it on and why.
 
-### The Standard Binomial Convolution Formula
+### The Standard Binomial Convolution Formula [^4]
+
+[^4]: This formula is also known as the "Cauchy product formula" for EGFs. Credit where credit is due.
 
 Since you've made it this far, you likely know how binomials relate to Pascal's triangle in the form of $\binom{n}{k}$, or "n choose k."
 
@@ -363,11 +365,9 @@ By the properties of generating functions, extracting the coefficient of $\frac{
 
 $$\text{Product}(x) = \left( \sum_{i=0}^{\infty} B_i^- \frac{x^i}{i!} \right) \left( \sum_{k=1}^{\infty} K_{k-1} \frac{x^k}{k!} \right)$$
 
-Luckily for us, we know how to extract this product since we established the Standard Binomial Convolution Formula [^4] in a prior section:
+Luckily for us, we know how to extract this product since we established the Standard Binomial Convolution Formula (a.k.a. the "Cauchy Product Formula") in a prior section:
 
 $$\left[ \frac{x^n}{n!} \right]C(x) = c_n = \sum_{k=0}^{n} \binom{n}{k} a_k b_{n-k} = \sum_{k=0}^{n} \binom{n}{k} b_{n-k} a_k$$
-
-[^4]: This formula is also known as the "Cauchy product formula" for EGFs. Credit where credit is due.
 
 Now all we have to do is apply it to Product($x$) using $n+1$:
 
