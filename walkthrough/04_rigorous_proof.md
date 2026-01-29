@@ -331,7 +331,7 @@ where $B_n(c_1, c_2, \dots, c_n)$ represents the set of Bell polynomials applied
 
 Hmm. Where did $c_0$ go? It's there in the first part and gone in the second.
 
-Usually $c_0$ is set to zero in this context, so the formula begins with $c_1$, allowing the Bell subscripts match the subscripts on $c$. However, for our purposes, $F_0 = F = \frac{f'}{f\text{ln}f}$ so we have to shift the subscripts to begin with the correct coefficient. Otherwise, the Bell polynomials will be attached to the wrong atoms by plus one.
+Usually $c_0$ is set to zero in this context, so the formula begins with $c_1$, allowing the Bell subscripts match the subscripts of $c_n$. However, for our purposes, $F_0 = F = \frac{f'}{f\text{ln}f}$ so we have to shift the subscripts to begin with the correct coefficient. Otherwise, the Bell polynomials will be attached to the wrong atoms by plus one.
 
 Recall that
 
