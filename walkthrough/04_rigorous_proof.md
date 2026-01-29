@@ -363,7 +363,7 @@ We are looking for $\Gamma_n$, which is defined as the coefficient of $\frac{x^n
 
 $$e^{-H(x)} \times \int_0^x K(t) dt = \left( \sum_{i=0}^{\infty} B_i^- \frac{x^i}{i!} \right) \left( \sum_{k=1}^{\infty} K_{k-1} \frac{x^k}{k!} \right)$$
 
-By the properties of generating functions, extracting the coefficient of $\frac{x^n}{n!}$ from the derivative of a function is equivalent to extracting the coefficient of $\frac{x^{n+1}}{(n+1)!}$ from the function itself, so this time around we're looking for the $(n+1)$-th term of the product:
+By the properties of generating functions, extracting the coefficient of $\frac{x^n}{n!}$ from the derivative of a function is equivalent to extracting the coefficient of $\frac{x^{n+1}}{(n+1)!}$ from the function itself, so this time around we're looking for the $(n+1)$-th term of the product.
 
 Luckily for us, we know how to extract this product since we established the Standard Binomial Convolution Formula (a.k.a. the "Cauchy Product Formula") in a prior section:
 
