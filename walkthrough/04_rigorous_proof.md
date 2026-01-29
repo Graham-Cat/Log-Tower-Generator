@@ -72,7 +72,7 @@ $$\overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
 Whoa. Wait a minute. Aren't $\Gamma_n$, $G_n$, and $F_n$ polynomials? They definitely aren't constants like $c_n$. So, why am I treating them like constants? Wouldn't the product rule apply when I take their derivatives? What happens when we integrate these weird things?
 
-In the world of Generating Functions, $x$ is just a 'clothesline' we hang the coefficients on. It doesn't interact with the variable $x$ inside the functions $F(x)$ or $G(x)$. To avoid confusion, we often use a different variable, like $z$ or $t$, for the clothesline, but here we are treating the internal structure of $F$ and $G$ as 'frozen' constants.
+In the world of Generating Functions, $x$ is just a 'clothesline' to hang the coefficients on. It doesn't interact with the variable $x$ inside the functions $F(x)$ or $G(x)$. To avoid confusion, different variables, like $z$ or $t$, can be used for the clothesline, but here we treat the internal structure of $F$ and $G$ as 'frozen' constants.
 
 Recall that $F$ and $G$ are mathematical atoms. They define the derivative series $(F_0,F_1,F_2,...)$ and $(G_0,G_1,G_2,...)$. In turn, they work together to form the $\Gamma_n$ series. At this point, all we're doing is _selecting_ the terms.
 
