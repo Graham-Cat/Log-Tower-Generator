@@ -359,17 +359,17 @@ For any $k \ge 1$, the coefficient of $\frac{x^k}{k!}$ in the integral is the co
 
 $$\left[ \frac{x^k}{k!} \right] \int_0^x K(t)dt = K_{k-1} = \sum_{j=0}^{k-1} \binom{k-1}{j} G_j B_{k-j-1}(F_0, \dots, F_{k-j-2})$$
 
-We are looking for $\Gamma_n$, which is defined as the coefficient of $\frac{x^n}{n!}$ in the derivative of the product $e^{-H(x)} \times \int_0^x K(t) dt$.
+We are looking for $\Gamma_n$, which is defined as the coefficient of $\frac{x^n}{n!}$ in the derivative of the product 
+
+$$e^{-H(x)} \times \int_0^x K(t) dt = \left( \sum_{i=0}^{\infty} B_i^- \frac{x^i}{i!} \right) \left( \sum_{k=1}^{\infty} K_{k-1} \frac{x^k}{k!} \right)$$
 
 By the properties of generating functions, extracting the coefficient of $\frac{x^n}{n!}$ from the derivative of a function is equivalent to extracting the coefficient of $\frac{x^{n+1}}{(n+1)!}$ from the function itself, so this time around we're looking for the $(n+1)$-th term of the product:
-
-$$\text{Product}(x) = \left( \sum_{i=0}^{\infty} B_i^- \frac{x^i}{i!} \right) \left( \sum_{k=1}^{\infty} K_{k-1} \frac{x^k}{k!} \right)$$
 
 Luckily for us, we know how to extract this product since we established the Standard Binomial Convolution Formula (a.k.a. the "Cauchy Product Formula") in a prior section:
 
 $$\left[ \frac{x^n}{n!} \right]C(x) = c_n = \sum_{k=0}^{n} \binom{n}{k} a_k b_{n-k} = \sum_{k=0}^{n} \binom{n}{k} b_{n-k} a_k$$
 
-Now all we have to do is apply it to Product($x$) using $n+1$:
+Now all we have to do is apply it to the product using $n+1$:
 
 $$\left[ \frac{x^n}{n!} \right]\gamma(x) = \Gamma_n = \sum_{k=1}^{n+1} \binom{n+1}{k} B_{n+1-k}^- K_{k-1}$$
 
@@ -387,7 +387,7 @@ Have at it, happy coders and computers.
 
 It's been quite a journey from that practice problem I made up about five months ago. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
 
-Many thanks to Copilot and Gemini for being my tutor/research grunt/productivity boosters.
+Many thanks to Copilot and Gemini for being my tutors/research grunts/productivity boosters.
 
 Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra into notebooks late nights while on a beach vacation around New Year's.
 
