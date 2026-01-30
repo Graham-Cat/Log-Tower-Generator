@@ -96,131 +96,68 @@ All of a sudden, the waterfall structure popped into crisp focus.
 
 ```text
   (G6
-  
-    -F( G5
-    
+     -F( G5
         -F( G4  <----------------------------------------------------------┐
-        
             -F( G3 <-------------------------------------------┐           |
-            
                 -F( G2  <---------------------┐                |           |
-                
                     -F( G1                    | G2 Group       |           |
-                    
                         -FG)  <- G0 Group     |                |           |
-                        
                     -2G F1) <-----------------┘                | G3 Group  |
-                    
                 -3F1( G1  <---┐ G1 Group                       |           |
-                
                     -FG)  <---┘                                |           |
-                    
                 -3G F2) <--------------------------------------┘           |
-                
             -4F1( G2 <-------┐                                             | G4 Group
-            
                 -F( G1       |G2 Group                                     |
-                
                     -FG)     |                                             |
-                    
                 -2G F1) <----┘                                             |
-                
             -6F2( G1                                                       |
-            
                 -FG)                                                       |
-                
             -4G F3)  <-----------------------------------------------------┘
-            
         -5F1( G3  <------------┐
-        
             -F( G2             |
-            
                 -F( G1         |
-                
                     -FG)       |
-                    
                 -2G F1)        | G3 Group
-                
             -3F1( G1           |
-            
                 -FG)           | 
-                
             -3G F2) <----------┘
-            
         -10F2( G2
-        
             -F( G1
-            
                 -FG)
-                
             -2G F1)
-            
         -10F3( G1
-        
             -FG)
-            
         -5G F4)
-        
     -6F1( G4  <-----------------┐
-    
         -F( G3                  |
-        
             -F( G2              |
-
                 -F( G1          |
-                
                     -FG)        |
-                    
                 -2G F1)         |
-                
             -3F1( G1            |
-            
                 -FG)            |
-                
             -3G F2)             |  G4 Group
-            
         -4F1( G2                |
-        
             -F( G1              |
-            
                 -FG)            |
-                
             -2G F1)             |
-            
         -6F2( G1                |
-        
             -FG)                |
-            
         -4G F3)  <--------------┘
-        
     -15F2( G3
-    
         -F( G2
-        
             -F( G1
-            
                 -FG)
-                
             -2G F1)
-            
         -3F1( G1
-        
             -FG)
-            
         -3G F2)
-        
     -20F3( G2
-    
         -F( G1
-        
             -FG)
-            
         -2G F1)
-        
     -15F4( G1
-    
         -FG)
-        
     -6G F5)
 
 ```
@@ -252,7 +189,126 @@ Since $\Gamma_0$ is the binomially-weighted $h_\text{n-1}$ -coefficient of $A_\t
 
 $$ A_\text{nG} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-Since $\Phi_n$ is the $G \mapsto F$ mapping of $\Gamma_n$, 
+Now all we need to do is independently prove that $\Phi_n$ looks just like $\Gamma_n$ except with the $G$'s switched to $F$'s and we'll have the mapping. 
+
+Turns out it is, but with a little twist.
+
+### The Upside Down
+
+When we perform the same operation on $R_7$, except remove all the $G$'s and $-R$'s, we should see a one-to-one term correspoondence with $\Gamma_n$ except with the $G$'s replaced by $F$'s.
+
+To see it, though, you might need to turn your screen over. [^3]
+
+[^3]: Kidding, of course. Please don't.
+
+
+```text
+
+(-F
+      (-F
+            (-F   <------------------------------------------------------------------┐
+                  (-F   <----------------------------------------------┐             |
+                        (-F   <-------------------------┐              |             |
+                              (-F(F)   <--- F0 Group    |              |             |
+                                    F1)                 | F2 Group     |             |
+                              -2F1(F)                   |              |             |
+                              F2)   <-------------------┘              | F3 Group    |
+                        -3F1(-F(F)   <---┐ F1 Group                    |             |
+                              F1)    <---┘                             |             |
+                        -3F2(F)                                        |             |
+                        F3)   <----------------------------------------┘             | F4 Group
+                  -4F1(-F   <---------------------┐                                  |
+                        (-F(F)   <--- F0 Group    |                                  |
+                              F1)                 | F2 Group                         |
+                        -2F1(F)                   |                                  |
+                        F2)   <-------------------┘                                  |
+                  -6F2(-F(F)   <---┐ F1 Group                                        |
+                        F1)    <---┘                                                 |
+                  -4F3(F)                                                            |
+                  F4)   <------------------------------------------------------------┘
+            -5F1(-F   <------------------------------------------┐
+                  (-F   <-------------------------┐              |
+                        (-F(F)   <--- F0 Group    |              |
+                              F1)                 | F2 Group     |
+                        -2F1(F)                   |              |
+                        F2)   <-------------------┘              | F3 Group 
+                  -3F1(-F(F)   <---┐ F1 Group                    |
+                        F1)    <---┘                             |
+                  -3F2(F)                                        |
+                  F3)   <----------------------------------------┘
+            -10F2(-F
+                  (-F(F)
+                        F1)
+                  -2F1(F)
+                  F2)
+            -10F3(-F(F)
+                  F1)
+            -5F4(F)
+            F5)
+      -6F1(-F   <-------------------------┐
+            (-F                           |
+                  (-F                     |    
+                        (-F(F)            |             
+                              F1)         |                
+                        -2F1(F)           |              
+                        F2)               |          
+                  -3F1(-F(F)              |           
+                        F1)               |          
+                  -3F2(F)                 |        
+                  F3)                     |  F4 Group  
+            -4F1(-F                       |  
+                  (-F(F)                  |       
+                        F1)               |          
+                  -2F1(F)                 |        
+                  F2)                     |    
+            -6F2(-F(F)                    |     
+                  F1)                     |    
+            -4F3(F)                       |  
+            F4)   <-----------------------┘
+      -15F2(-F
+            (-F
+                  (-F(F)
+                        F1)
+                  -2F1(F)
+                  F2)
+            -3F1(-F(F)
+                  F1)
+            -3F2(F)
+            F3)
+      -20F3(-F
+            (-F(F)
+                  F1)
+            -2F1(F)
+            F2)
+      -15F4(-F(F)
+            F1)
+      -6F5(F)
+      F6)
+
+
+```
+
+This time I left parentheses around the $F$'s that represent the $F_0$ groups so they don't get lost in the homogeneity.
+
+We see an identical pattern but with the group headers on the bottom as opposed to the top.
+
+A close reading of the contents of each group will show you that 
+
+$$ \Phi_0 = F $$
+
+$$ \Phi_1 = F_1 - \Phi_0F $$
+
+$$ \Phi_2 = F_2 - \Phi_1F - 2\Phi_0F_1 $$
+
+$$ \Phi_3 = F_3 - \Phi_2F - 3\Phi_1F_1 - 3\Phi_0F_2 $$
+
+$$ \Phi_4 = F_4 - \Phi_3F - 4\Phi_2F_1 - 6\Phi_1F_2 - 4\Phi_0F_3 $$
+
+which leads to the formula:
+
+$$\Phi_n = F_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Phi_{n-k-1}$$
+
+proving $\Phi_n$ is the $G \mapsto F$ mapping of $\Gamma_n$, so
 
 $$ A_\text{nF} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}$$
 
@@ -267,5 +323,3 @@ While this mathematical conclusion feels like a satisfying ending, we're not qui
 Honestly, though, it's the end of the exciting reading since everything in the next part is well-known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
 
 However, its connection to this closed alphabet { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $P(A_n) = \frac{d^n}{dx^n} \left(h\frac{ln(g)}{ln(f)}\right)$ is, as far as I can tell, novel.
-
-
