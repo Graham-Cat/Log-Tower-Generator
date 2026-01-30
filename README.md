@@ -83,11 +83,11 @@ $$\Phi_n = \text{G→F mapping of } \Gamma_n$$
 
 ### Closed form of G-sector recursion
 
-$$\Gamma_n = n! [x^n] \gamma(x)$$
+$$\Gamma_n = n! [x^n] \overline{\gamma}(x)$$
 
 Where
 
-$$\gamma(x) = \overline{g}(x) - \overline{f}(x) e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt$$
+$$\overline{\gamma}(x) = \overline{g}(x) - \overline{f}(x) e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt$$
 
 $$\overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
