@@ -201,6 +201,7 @@ To see it, though, you might need to turn your screen over. [^3]
 
 [^3]: Kidding, of course. Please don't.
 
+### The Recursive "Spine" of $R_{7F}$
 
 ```text
 
@@ -210,87 +211,89 @@ To see it, though, you might need to turn your screen over. [^3]
                   (-F   <----------------------------------------------┐             |
                         (-F   <-------------------------┐              |             |
                               (-F(F)   <--- F0 Group    |              |             |
-                                    F1)                 | F2 Group     |             |
+                                    +F1)                | F2 Group     |             |
                               -2F1(F)                   |              |             |
-                              F2)   <-------------------┘              | F3 Group    |
+                              +F2)   <------------------┘              | F3 Group    |
                         -3F1(-F(F)   <---┐ F1 Group                    |             |
-                              F1)    <---┘                             |             |
+                              +F1)   <---┘                             |             |
                         -3F2(F)                                        |             |
-                        F3)   <----------------------------------------┘             | F4 Group
+                        +F3)   <---------------------------------------┘             | F4 Group
                   -4F1(-F   <---------------------┐                                  |
                         (-F(F)   <--- F0 Group    |                                  |
-                              F1)                 | F2 Group                         |
+                              +F1)                | F2 Group                         |
                         -2F1(F)                   |                                  |
-                        F2)   <-------------------┘                                  |
+                        +F2)   <------------------┘                                  |
                   -6F2(-F(F)   <---┐ F1 Group                                        |
-                        F1)    <---┘                                                 |
+                        +F1)   <---┘                                                 |
                   -4F3(F)                                                            |
-                  F4)   <------------------------------------------------------------┘
+                  +F4)   <-----------------------------------------------------------┘
             -5F1(-F   <------------------------------------------┐
                   (-F   <-------------------------┐              |
                         (-F(F)   <--- F0 Group    |              |
-                              F1)                 | F2 Group     |
+                              +F1)                | F2 Group     |
                         -2F1(F)                   |              |
-                        F2)   <-------------------┘              | F3 Group 
+                        +F2)   <------------------┘              | F3 Group 
                   -3F1(-F(F)   <---┐ F1 Group                    |
-                        F1)    <---┘                             |
+                        +F1)   <---┘                             |
                   -3F2(F)                                        |
-                  F3)   <----------------------------------------┘
+                  +F3)   <---------------------------------------┘
             -10F2(-F
                   (-F(F)
-                        F1)
+                        +F1)
                   -2F1(F)
-                  F2)
+                  +F2)
             -10F3(-F(F)
-                  F1)
+                  +F1)
             -5F4(F)
-            F5)
+            +F5)
       -6F1(-F   <-------------------------┐
             (-F                           |
                   (-F                     |    
                         (-F(F)            |             
-                              F1)         |                
+                              +F1)        |                
                         -2F1(F)           |              
-                        F2)               |          
+                        +F2)              |          
                   -3F1(-F(F)              |           
-                        F1)               |          
+                        +F1)              |          
                   -3F2(F)                 |        
-                  F3)                     |  F4 Group  
+                  +F3)                    |  F4 Group  
             -4F1(-F                       |  
                   (-F(F)                  |       
-                        F1)               |          
+                        +F1)              |          
                   -2F1(F)                 |        
-                  F2)                     |    
+                  +F2)                    |    
             -6F2(-F(F)                    |     
-                  F1)                     |    
+                  +F1)                    |    
             -4F3(F)                       |  
-            F4)   <-----------------------┘
+            +F4)   <----------------------┘
       -15F2(-F
             (-F
                   (-F(F)
-                        F1)
+                        +F1)
                   -2F1(F)
-                  F2)
+                  +F2)
             -3F1(-F(F)
-                  F1)
+                  +F1)
             -3F2(F)
-            F3)
+            +F3)
       -20F3(-F
             (-F(F)
-                  F1)
+                  +F1)
             -2F1(F)
-            F2)
+            +F2)
       -15F4(-F(F)
-            F1)
+            +F1)
       -6F5(F)
-      F6)
+      +F6)
 
 
 ```
 
+Note that plus signs have been added for clarity regarding addition versus multiplication.
+
 This time I left parentheses around the $F$'s that represent the $F_0$ groups so they don't get lost in the homogeneity.
 
-We see an identical pattern but with the group headers on the bottom as opposed to the top.
+We see an identical pattern but with the group headers on the bottom as opposed to the top this time.
 
 A close reading of the contents of each group will show you that 
 
