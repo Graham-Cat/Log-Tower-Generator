@@ -249,7 +249,7 @@ That's it. [^1]
 
 [^1]: That was quick. Anyone looking for a primer (or refresher) on the use of integrating factors in solving first-order ODEs will find that openstax offers a thorough, digestible review here: https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations .
 
-### Solving for $\gamma_n$ and $\Gamma_n$
+### Solving for $\overline{\gamma}_n$ and $\Gamma_n$
 
 We're looking for $\overline{\gamma}(x)$ so we can use it to extract coefficients for $\Gamma_n$.
 
