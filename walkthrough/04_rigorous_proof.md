@@ -66,7 +66,7 @@ Let's proceed step by step.
 
 First, let's define the EGFs for the sequences $\Gamma_n$, $G_n$, and $F_n$:
 
-$$\gamma(x) = \sum_{n=0}^{\infty} \Gamma_n \frac{x^n}{n!}$$
+$$\overline{\gamma}(x) = \sum_{n=0}^{\infty} \Gamma_n \frac{x^n}{n!}$$
 $$\overline{g}(x) = \sum_{n=0}^{\infty} G_n \frac{x^n}{n!}$$
 $$\overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
@@ -88,9 +88,9 @@ Note that I only summed from 1 to $\infty$ here, not from 0 to $\infty$. Why wil
 
 **Analyzing the Left Hand Side (LHS):**
 
-$$\sum_{n=1}^{\infty} \Gamma_n \frac{x^n}{n!} = \gamma(x) - \Gamma_0$$
+$$\sum_{n=1}^{\infty} \Gamma_n \frac{x^n}{n!} = \overline{\gamma}(x) - \Gamma_0$$
 
-See how $\Gamma_0$ appears there on the end? Since it's the first term of $\gamma(x)$, subtracting it from $\gamma(x)$ is equivalent to the new EGF term I just folded into the recurrence.
+See how $\Gamma_0$ appears there on the end? Since it's the first term of $\overline{\gamma}(x)$, subtracting it from $\overline{\gamma}(x)$ is equivalent to the new EGF term I just folded into the recurrence.
 
 **Analyzing the Right Hand Side (RHS):**
 
@@ -106,11 +106,11 @@ Note how the recurrence has a similar structure with $\Gamma_{\text{n-1}}$ on th
 
 $$\underbrace{\Gamma_n}\_{\text{similar to y'}} = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \underbrace{\Gamma_{n-k-1}}\_{\text{similar to y}}$$
 
-Since we already have $\gamma(x)$ (like $y'$) on the LHS, let's see what happens if we try to put $\int_0^x \gamma(t)dt$ (like $y$) on the right.
+Since we already have $\overline{\gamma}(x)$ (like $y'$) on the LHS, let's see what happens if we try to put $\int_0^x \overline{\gamma}(t)dt$ (like $y$) on the right.
 
 Recall that integration shifts indices in EGFs:
 
-$$\int_0^x \gamma(t) dt = \sum_{n=0}^{\infty} \Gamma_n \frac{x^{n+1}}{(n+1)!} = \sum_{m=1}^{\infty} \Gamma_{m-1} \frac{x^m}{m!}$$
+$$\int_0^x \overline{\gamma}(t) dt = \sum_{n=0}^{\infty} \Gamma_n \frac{x^{n+1}}{(n+1)!} = \sum_{m=1}^{\infty} \Gamma_{m-1} \frac{x^m}{m!}$$
 
 That's a start. But what exactly do we do with it? That's where the selection process comes into play via the **Coefficient Extraction Operator**, represented in this context by $[x^n]$, or, more formally, $\left[\frac{x^n}{n!}\right]$.
 
@@ -180,7 +180,7 @@ Now that we know what the standard binomial convolution formula is, let's use it
 
 Recall from earlier:
 
-$$\int_0^x \gamma(t) dt = \sum_{n=0}^{\infty} \Gamma_n \frac{x^{n+1}}{(n+1)!} = \sum_{m=1}^{\infty} \Gamma_{m-1} \frac{x^m}{m!}$$
+$$\int_0^x \overline{\gamma}(t) dt = \sum_{n=0}^{\infty} \Gamma_n \frac{x^{n+1}}{(n+1)!} = \sum_{m=1}^{\infty} \Gamma_{m-1} \frac{x^m}{m!}$$
 
 Let's call the integral $I(x)$
 
@@ -215,13 +215,13 @@ $$\sum_{n=1}^{\infty} \Gamma_n \frac{x^n}{n!} = \sum_{n=1}^{\infty} G_n \frac{x^
 
 $$↓↓↓↓$$
 
-$$\gamma(x) - \Gamma_0 = \overline{g}(x) - \Gamma_0 - \overline{f}(x)·I(x)$$
+$$\overline{\gamma}(x) - \Gamma_0 = \overline{g}(x) - \Gamma_0 - \overline{f}(x)·I(x)$$
 
 $$↓↓↓↓$$
 
-$$\gamma(x) = \overline{g}(x) - \overline{f}(x)\int_0^x \gamma(t) dt$$
+$$\overline{\gamma}(x) = \overline{g}(x) - \overline{f}(x)\int_0^x \overline{\gamma}(t) dt$$
 
-If we set $\gamma(x) = y'$ and $\int_0^x \gamma(t) dt = y$ then we get
+If we set $\overline{\gamma}(x) = y'$ and $\int_0^x \overline{\gamma}(t) dt = y$ then we get
 
 $$y'=\overline{g} - \overline{f}y \implies  y' + \overline{f}y = \overline{g} $$
 
@@ -251,15 +251,15 @@ That's it. [^1]
 
 ### Solving for $\gamma_n$ and $\Gamma_n$
 
-We're looking for $\gamma(x)$ so we can use it to extract coefficients for $\Gamma_n$.
+We're looking for $\overline{\gamma}(x)$ so we can use it to extract coefficients for $\Gamma_n$.
 
-Since $y(x) = \int \gamma(t) dt$, we know that $\gamma(x) = y'(x)$. Differentiating our solution for $y(x)$:
+Since $y(x) = \int \overline{\gamma}(t) dt$, we know that $\overline{\gamma}(x) = y'(x)$. Differentiating our solution for $y(x)$:
 
-$$ \gamma(x) = \frac{d}{dx} \left( e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt \right) $$
+$$ \overline{\gamma}(x) = \frac{d}{dx} \left( e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt \right) $$
 
 By the product rule:
 
-$$ \gamma(x) = \left( \frac{d}{dx} e^{-H(x)} \right) \cdot \int_0^x \overline{g}(t) e^{H(t)} dt + e^{-H(x)} \cdot \left( \frac{d}{dx} \int_0^x \overline{g}(t) e^{H(t)} dt \right) $$
+$$ \overline{\gamma}(x) = \left( \frac{d}{dx} e^{-H(x)} \right) \cdot \int_0^x \overline{g}(t) e^{H(t)} dt + e^{-H(x)} \cdot \left( \frac{d}{dx} \int_0^x \overline{g}(t) e^{H(t)} dt \right) $$
 
 Recalling that $\frac{d}{dx} H(x) = \overline{f}(x)$ and using the Fundamental Theorem of Calculus:
 
@@ -267,25 +267,25 @@ $$ = \left( -\overline{f}(x) e^{-H(x)} \right) \int_0^x \overline{g}(t) e^{H(t)}
 
 The $e^{-H(x)}$ and $e^{H(x)}$ in the second term cancel out, leaving:
 
-$$ \gamma(x) = \overline{g}(x) - \overline{f}(x) e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt $$
+$$ \overline{\gamma}(x) = \overline{g}(x) - \overline{f}(x) e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt $$
 
 ### Extracting $\Gamma_n$
 
-The whole point of this exercise was to develop an infinite polynomial that we could apply the **coefficient extraction operator** to so we can get the correct terms out of $\gamma(x)$ which we initially defined as
+The whole point of this exercise was to develop an infinite polynomial that we could apply the **coefficient extraction operator** to so we can get the correct terms out of $\overline{\gamma}(x)$ which we initially defined as
 
-$$\gamma(x) = \sum_{n=0}^{\infty} \Gamma_n \frac{x^n}{n!}$$
+$$\overline{\gamma}(x) = \sum_{n=0}^{\infty} \Gamma_n \frac{x^n}{n!}$$
 
-Applying the operator to this version of $\gamma(x)$ would be circular logic, so we needed to come up with an expression for it in terms of $F_n$ and $G_n$, which we did: [^2]
+Applying the operator to this version of $\overline{\gamma}(x)$ would be circular logic, so we needed to come up with an expression for it in terms of $F_n$ and $G_n$, which we did: [^2]
 
-$$\Gamma_n = n![x^n]\gamma(x)$$
+$$\Gamma_n = n![x^n]\overline{\gamma}(x)$$
 
 which can also be written as [^3]
 
-$$\Gamma_n = \left[\frac{x^n}{n!}\right]\gamma(x)$$ 
+$$\Gamma_n = \left[\frac{x^n}{n!}\right]\overline{\gamma}(x)$$ 
 
 where
 
-$$\gamma(x) = \overline{g}(x) - \overline{f}(x)e^{-H(x)}\int_0^x \overline{g}(t) e^{H(t)} dt$$
+$$\overline{\gamma}(x) = \overline{g}(x) - \overline{f}(x)e^{-H(x)}\int_0^x \overline{g}(t) e^{H(t)} dt$$
 $$\overline{g}(x) = \sum_{n=0}^{\infty} G_n \frac{x^n}{n!}$$
 $$\overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
@@ -345,9 +345,9 @@ Since we also have an $e^{-H}$ in the closed form, let's define that as well:
 
 $$\left[ \frac{x^n}{n!} \right] e^{-H(x)} = B_n(-F_0, -F_1, \dots, -F_{n-1}) = B_n^{-}$$
 
-We need to turn $\left[ \frac{x^n}{n!} \right]\gamma(x) = \Gamma_n$ into a double sum, so let's remind ourselves what $\gamma(x)$ is:
+We need to turn $\left[ \frac{x^n}{n!} \right]\overline{\gamma}(x) = \Gamma_n$ into a double sum, so let's remind ourselves what $\overline{\gamma}(x)$ is:
 
-$$\gamma(x) = \frac{d}{dx} \left( e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt \right)$$
+$$\overline{\gamma}(x) = \frac{d}{dx} \left( e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt \right)$$
 
 Using the expressions we just defined, the coefficients of the integrand $K(t) = g(t)e^{H(t)}$ are the convolution of the sequence $G$ and the sequence $B^+$:
 
@@ -371,7 +371,7 @@ $$\left[ \frac{x^n}{n!} \right]C(x) = c_n = \sum_{k=0}^{n} \binom{n}{k} a_k b_{n
 
 Now all we have to do is apply it to the product using $n+1$:
 
-$$\left[ \frac{x^n}{n!} \right]\gamma(x) = \Gamma_n = \sum_{k=1}^{n+1} \binom{n+1}{k} B_{n+1-k}^- K_{k-1}$$
+$$\left[ \frac{x^n}{n!} \right]\overline{\gamma}(x) = \Gamma_n = \sum_{k=1}^{n+1} \binom{n+1}{k} B_{n+1-k}^- K_{k-1}$$
 
 If we re-index the summation by setting $m = k-1$ (so that $m$ runs from $0$ to $n$), we obtain the final expression:
 
