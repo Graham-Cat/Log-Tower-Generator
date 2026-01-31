@@ -56,7 +56,7 @@ $$A_2 = R(h_2 - (2h_1F + h\underbrace{(F_1 - FF)}_{\text{h-coeff}})) + (2h_1G + 
 
 Unsurprisingly, $R_3$ and $R_4$ yielded the same result. Each displayed the h-coefficients of $A_3$ and $A_4$ when grouped on R.  [^4]
 
-[^4]: An algebraic confirmation of this result can be seen at https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/R3_R4_h-coeff_match.md
+[^4]: An algebraic confirmation of this result can be seen [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/R3_R4_h-coeff_match.md)
 
 But I still couldn't see how to formalize. The pattern got muddled in the simplification process.
 
@@ -319,7 +319,7 @@ $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \
 
 While this mathematical conclusion feels like a satisfying ending, we're not quite to the finish line yet since recursive engines like this one are technically _not_ closed form solutions[^2].
 
-[^2]: A definition of "closed form solution" is available here at Wolfram: https://mathworld.wolfram.com/Closed-FormSolution.html . The definition is fuzzier than one might think, but in this case, clear and accepted closed forms are straightforward to produce.
+[^2]: A definition of "closed form solution" is available [here](https://mathworld.wolfram.com/Closed-FormSolution.html) at Wolfram. The definition is fuzzier than one might think, but in this case, clear and accepted closed forms are straightforward to produce.
 
 Honestly, though, it's the end of the exciting reading since everything in the next part is well-known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
 
