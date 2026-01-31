@@ -94,7 +94,7 @@ If a parenthesis closed,
 
 All of a sudden, the waterfall structure popped into crisp focus.
 
-### The Recursive "Spine" of $R_{7G}$
+### The Recursive "Spine" of $R_7$ (G-Sector)
 
 ```text
   (G6
@@ -191,19 +191,19 @@ Since $\Gamma_0$ is the binomially-weighted $h_\text{n-1}$ -coefficient of $A_\t
 
 $$ A_\text{nG} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-Now all we need to do is independently prove that $\Phi_n$ looks just like $\Gamma_n$ except with the $G$'s switched to $F$'s and we'll have the mapping. 
+Now all we need to do is independently prove that $\Phi_n$ looks just like $\Gamma_n$, except with the $G$'s substituted for $F$'s, and we will have the mapping.
 
 Turns out it is, but with a little twist.
 
 ### The Upside Down
 
-When we perform the same operation on $R_7$, except remove all the $G$'s and $-R$'s, we should see a one-to-one term correspoondence with $\Gamma_n$ except with the $G$'s replaced by $F$'s.
+When we perform the same operation on $R_7$, except removing all the $G$'s and $-R$'s, we should see a one-to-one term correspondence with $\Gamma_n$—except with the $G$'s replaced by $F$'s.
 
 To see it, though, you might need to turn your screen over. [^3]
 
 [^3]: Kidding, of course. Please don't.
 
-### The Recursive "Spine" of $R_{7F}$
+### The Recursive "Spine" of $R_7$ (F-Sector)
 
 ```text
 
@@ -295,27 +295,23 @@ Note that plus signs have been added for clarity regarding addition versus multi
 
 This time I left parentheses around the $F$'s that represent the $F_0$ groups so they don't get lost in the homogeneity.
 
-We see an identical pattern but with the group headers on the bottom as opposed to the top this time.
+We see an identical pattern, but with the defining terms ($+F_n$) on the bottom as opposed to the top this time.
 
-A close reading of the contents of each group will show you that 
+A close reading of the contents of each group will show you that:
 
-$$ \Phi_0 = F $$
+$$\Phi_0 = F$$
+$$\Phi_1 = F_1 - \Phi_0 F$$
+$$\Phi_2 = F_2 - \Phi_1 F - 2\Phi_0 F_1$$
+$$\Phi_3 = F_3 - \Phi_2 F - 3\Phi_1 F_1 - 3\Phi_0 F_2$$
+$$\Phi_4 = F_4 - \Phi_3 F - 4\Phi_2 F_1 - 6\Phi_1 F_2 - 4\Phi_0 F_3$$
 
-$$ \Phi_1 = F_1 - \Phi_0F $$
-
-$$ \Phi_2 = F_2 - \Phi_1F - 2\Phi_0F_1 $$
-
-$$ \Phi_3 = F_3 - \Phi_2F - 3\Phi_1F_1 - 3\Phi_0F_2 $$
-
-$$ \Phi_4 = F_4 - \Phi_3F - 4\Phi_2F_1 - 6\Phi_1F_2 - 4\Phi_0F_3 $$
-
-which leads to the formula:
+This leads to the formula:
 
 $$\Phi_n = F_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Phi_{n-k-1}$$
 
-proving $\Phi_n$ is the $G \mapsto F$ mapping of $\Gamma_n$, so
+This proves $\Phi_n$ is the $G \to F$ mapping of $\Gamma_n$, so the F-sector of $A_n$ is:
 
-$$ A_\text{nF} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}$$
+$$\text{F-sector} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}$$
 
 which leads to the canonical format of: 
 
