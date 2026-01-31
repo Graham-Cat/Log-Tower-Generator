@@ -88,7 +88,7 @@ I know it seems like a lot of steps, but it's still *vastly* superior to perform
 
 Instead of putting it all here, I'll just show you the end result. [^3]
 
-[^3]: The derivation of A3 via candidate-forming method is detailed in https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/A3_candidate_process.md
+[^3]: The derivation of A3 via candidate-forming method is detailed [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/A3_candidate_process.md).
 
 $$A_3 = R(h_3 - (3h_2F + 3h_1(F_1 - FF) + h(F_2 - F_1F - F(2F_1 - F^2))))$$
 $$+ (3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)))$$
@@ -164,7 +164,7 @@ The Leibniz identity[^1] expresses this derivative pattern in summation notation
 
 $$A_n = \sum_{k=0}^{n} \binom{n}{k} R_{n-k} h_k$$
 
-[^1]: See a definition of the Leibniz identity (a.k.a., the "general Leibniz rule") here at Wolfram: https://mathworld.wolfram.com/LeibnizIdentity.html .
+[^1]: See a definition of the Leibniz identity (a.k.a., the "general Leibniz rule") [here](https://mathworld.wolfram.com/LeibnizIdentity.html) at Wolfram: .
 
 But it only gives us part of the story. This structure explains the binomial weights on the $h_n$-coefficients and which derivative order of $R_n$ populates them, but it doesn't clearly explain the structure of the tacked-on $G$-coefficient tail.
 
