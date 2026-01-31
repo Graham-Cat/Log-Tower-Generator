@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "log_tower_generator"
+version = "1.0.0"
+description = "A generator for Log-Tower polynomials P(An) and P(Rn)"
+authors = [{name = "Christopher Feick", email = "iamnotreallyacat@gmail.com"}]
+dependencies = ["sympy"]
+requires-python = ">=3.8"
