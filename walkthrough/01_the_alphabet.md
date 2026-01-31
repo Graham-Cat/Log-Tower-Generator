@@ -1,7 +1,5 @@
 # Part 1: The Practice Problem & The Alphabet
 
-> *"I did a silly thing; I made a practice problem for myself... looking at functions more like Lego blocks that snap together."*
-
 ## On a Whim
 In August 2025, I was reviewing calculus with a specific goal: I wanted to treat functions ($f$, $g$) as individual objects rather than just processes applied to $x$ to see how they cobbled together.
 
