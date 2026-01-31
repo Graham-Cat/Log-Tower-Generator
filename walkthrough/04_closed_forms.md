@@ -247,7 +247,7 @@ $$y(x) = e^{-H(x)} \int_0^x g(t) e^{H(t)} dt$$
 
 That's it. [^1]
 
-[^1]: That was quick. Anyone looking for a primer (or refresher) on the use of integrating factors in solving first-order ODEs will find that openstax offers a thorough, digestible review here: https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations .
+[^1]: That was quick. Anyone looking for a primer (or refresher) on the use of integrating factors in solving first-order ODEs will find that openstax offers a thorough, digestible review [here](https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations).
 
 ### Solving for $\overline{\gamma}_n$ and $\Gamma_n$
 
@@ -327,7 +327,7 @@ $$\left[ \frac{x^n}{n!} \right] e^{C(x)} = B_n(c_1, c_2, \dots, c_n)$$
 
 where $B_n(c_1, c_2, \dots, c_n)$ represents the set of **Complete Bell Polynomials** applied to the series of coefficients defined by $c_n$. [^5]
 
-[^5]: For those unfamiliar with this extraction identity, I've provided a transparently AI-generated tutorial at https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/EGF_to_Bell_tutorial.md. I plan in future to lend my personal voice to the section when time and mental energy allow.
+[^5]: For those unfamiliar with this extraction identity, I've provided a transparently AI-generated tutorial [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/EGF_to_Bell_tutorial.md). I plan in future to lend my personal voice to the section when time and mental energy allow.
 
 Hmm. Where did $c_0$ go? It's there in the first part and gone in the second.
 
@@ -383,7 +383,7 @@ Now that $\Gamma_n$ is calculable in terms of $F_n$ and $G_n$ lined up purely in
 
 Have at it, happy coders and computers. [^7]
 
-[^7]: Python code that estimates processor load of various methods of calculating P(An) and P(Rn) from n=1 to n=8 is available to run in the src/ section here: https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/src/benchmark_suite.py . It shows that the "double sum + mapping" method is superior until n=5 at which point "recursion + mapping" takes over for n>=6 due to proliferation of Bell polynomial terms. Prototype P(An) and P(Rn) generators based on this analysis are included in the same folder.
+[^7]: Python code that estimates processor load of various methods of calculating P(An) and P(Rn) from n=1 to n=8 is available to run in the benchmarks/ section [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/benchmarks/benchmark_suite.py). It shows that the "double sum + mapping" method is superior until n=5 at which point "recursion + mapping" takes over for n>=6 due to proliferation of Bell polynomial terms. Prototype P(An) and P(Rn) generators based on this analysis are included in the same folder.
 
 ## Epilogue
 
