@@ -127,7 +127,7 @@ A student of combinatorics should see the binomially-driven accumulation pattern
 
 * $A_{1G} = hG$
 * $A_{2G} = 2h_1G + h(G_1 - GF)$
-* $A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2)$
+* $A_{3G} = 3h_2G + 3h_1(G_1 - GF) + h(G_2 - G_1F - G(2F_1 - F^2))$
 * $A_{4G} = 4h_3G + 6h_2(G_1 - GF) + 4h_1(G_2 - G_1 F - G(2F_1 - F^2)) + h(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3))$
 * $A_{5G} = 5h_4G + 10h_3(G_1 - GF) + 10h_2(G_2 - G_1 F - G(2F_1 - F^2)) + 5h_1(G_3 - G_2 F - G_1(3F_1 - F^2) - G(3F_2 - 5F_1 F + F^3)) + h(G_4 - G_3 F - G_2(4F_1 - F^2) - G_1(6F_2 - 7F F_1 + F^3) - G(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4))$
 
