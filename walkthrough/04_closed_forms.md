@@ -385,14 +385,3 @@ Have at it, happy coders and computers. [^7]
 
 [^7]: Python code that estimates processor load of various methods of calculating P(An) and P(Rn) from n=1 to n=8 is available to run in the benchmarks/ section [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/benchmarks/benchmark_suite.py). It shows that the "double sum + mapping" method is superior up through n=5 at which point "recursion + mapping" takes over for n>=6 due to proliferation of Bell polynomial terms.
 
-## Epilogue
-
-It's been quite a journey from that practice problem I made up about five months ago. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
-
-Many thanks to Copilot and Gemini for being my tutors/research grunts/productivity boosters.
-
-Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on a beach vacation around New Year's.
-
-In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds. [^6]
-
-[^6]: I strongly suspect appearances were deceiving. ;-)
