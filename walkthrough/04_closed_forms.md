@@ -379,9 +379,4 @@ $$\Gamma_n =\sum_{m=0}^{n} \binom{n+1}{m+1} B_{n-m}^- K_{m} = \sum_{m=0}^{n} \bi
 
 It may seem like I'm playing fast and loose with the indexing to those unfamiliar with turning EGFs into a Bell-polynomial-driven summation (as I was a few weeks ago), but that's the power of power series. Lining up the coefficients like Rockettes just involves shifting them left or right.
 
-Now that $\Gamma_n$ is calculable in terms of $F_n$ and $G_n$ lined up purely in terms of Bell polynomials, the mathematicians aren't the only ones who are satisfied.
-
-Have at it, happy coders and computers. [^7]
-
-[^7]: Python code that estimates processor load of various methods of calculating P(An) and P(Rn) from n=1 to n=8 is available to run in the benchmarks/ section [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/benchmarks/benchmark_suite.py). It shows that the "double sum + mapping" method is superior up through n=5 at which point "recursion + mapping" takes over for n>=6 due to proliferation of Bell polynomial terms.
 
