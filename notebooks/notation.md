@@ -79,7 +79,18 @@ Key differential equations driving the system:
 The recursive engine for the G-Sector coefficients.
 
 **General Formula:**
-$$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1} = \sum_{m=0}^{n} \binom{n+1}{m+1} B_{n-m}(-F_0, \dots, -F_{n-m-1}) \left[ \sum_{j=0}^{m} \binom{m}{j} G_j B_{m-j}(F_0, \dots, F_{m-j-1}) \right]$$
+
+$$\Gamma_n  = \sum_{m=0}^{n} G_{n-m} \Omega_{m, n+1}$$
+
+where
+
+$$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
+
+Base cases:
+
+$$\Omega_{0,n} = 1$$
+$$\Omega_{1,n} = -F_0$$
+
 
 **Expanded Examples:**
 * $\Gamma_0 = G$
