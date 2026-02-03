@@ -231,7 +231,7 @@ This is a classical first order ODE of the form $y'+Py=Q$ which is solved using 
 
 The integrating factor that solves for $y$ in this form is $e^{\int P}=e^{\int \overline{f}}$.
 
-If we let $H(x) = \int_0^x f(t) dt$, The integrating factor is $e^{H(x)}$.
+If we let $H(x) = \int_0^x f(t) dt$, the integrating factor is $e^{H(x)}$.
 
 We multiply through by the integrating factor and recognize the LHS as the derivative of the factor times $y(x)$,
 
