@@ -167,7 +167,7 @@ All of a sudden, the waterfall structure popped into crisp focus.
 
 If one looks at these tabs in terms of $G_n$ "groups" (i.e., terms enclosed in parentheses starting with a $G_n$ term), it's obvious that all groups with the same derivative order are identical except for their Pascal weighting and the derivative order of $F_n$ by which they are multiplied.
 
-Now defining these groups is easy. Since we're in the home stretch, it's time to name names.
+Now defining these groups is easy. It's time to name names.
 
 Each one of these $G_n$ groups is the definition of $\Gamma_n$:
 
@@ -184,8 +184,6 @@ $$ \Gamma_4 = G_4 - \Gamma_3F - 4\Gamma_2F_1 - 6\Gamma_1F_2 - 4\Gamma_0F_3 $$
 which leads to the formula:
 
 $$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
-
-This recursive engine is the beating heart of the Log-Tower generator.
 
 Since $\Gamma_0$ is the binomially-weighted $h_\text{n-1}$ -coefficient of $A_\text{nG}$ and $\Gamma_1$ is that of the $h_\text{n-2}$ -coefficient, and so on, 
 
