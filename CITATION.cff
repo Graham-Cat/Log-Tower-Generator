@@ -11,8 +11,8 @@ abstract: >
   A Python library implementing a discrete convolution engine for generating 
   Log-Tower polynomials P(An) and P(Rn). This tool replaces recursive 
   differentiation with a cached F-Kernel (Omega) approach, enabling O(n^3) 
-  complexity for high-order derivatives of f'/f*ln(f). It includes a 
-  robust verification suite and supports symbolic output via SymPy.
+  complexity for high-order derivatives of h·ln(g)/ln(f). It includes a 
+  verification suite and supports symbolic output via SymPy.
 keywords:
   - mathematics
   - differential-algebra
