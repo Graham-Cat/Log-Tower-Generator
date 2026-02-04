@@ -527,6 +527,5 @@ Many thanks to Copilot and Gemini for being my tutors/research grunts/productivi
 
 Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on a beach vacation around New Year's.
 
-In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds. [^6]
+In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
 
-[^6]: I strongly suspect appearances were deceiving. ;-)
