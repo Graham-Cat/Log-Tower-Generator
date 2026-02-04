@@ -17,6 +17,7 @@ All notable changes to the **Log-Tower-Generator** will be documented in this fi
 
 * **Architecture Shift:** Replaced the initial recursive class-based structure with an optimized functional framework to prevent symbolic "combinatorial explosion."
 * **Symbol Management:** Transitioned to `sympy.IndexedBase` for internal symbol handling, ensuring consistent variable naming () across all derivative orders.
+* **Walkthrough Updates:** Walkthrough updated to reflect architecture shift and improve clarity of derivations.
 
 ### **Fixed**
 
