@@ -86,10 +86,9 @@ where
 
 $$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
 
-Base cases:
+Base case:
 
 $$\Omega_{0,n} = 1$$
-$$\Omega_{1,n} = -F_0$$
 
 
 **Expanded Examples:**
