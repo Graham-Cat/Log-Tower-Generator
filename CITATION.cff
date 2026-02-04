@@ -1,11 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this software or the F/G-sector symmetry framework, please cite it as below."
+message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Feick"
-  given-names: "Christopher"
-  # orid: "https://orcid.org/0000-0000-0000-0000"  <-- Optional if you have one
-title: "Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry"
-version: 0.1.0
-date-released: 2026-01-20
-url: "https://github.com/Graham-Cat/log-tower-generator"
+  - family-names: "Feick"
+    given-names: "Christopher"
+    email: "iamnotreallyacat@gmail.com"
+title: "Log-Tower-Generator: A Discrete Convolution Engine for Higher-Order Log-Derivatives"
+version: 1.0.0
+date-released: 2026-02-04
+abstract: >
+  A Python library implementing a discrete convolution engine for generating 
+  Log-Tower polynomials P(An) and P(Rn). This tool replaces recursive 
+  differentiation with a cached F-Kernel (Omega) approach, enabling O(n^3) 
+  complexity for high-order derivatives of f'/f*ln(f). It includes a 
+  robust verification suite and supports symbolic output via SymPy.
+keywords:
+  - mathematics
+  - differential-algebra
+  - polynomials
+  - sympy
+  - log-tower
+  - discrete-convolution
 license: MIT
+repository-code: "https://github.com/Graham-Cat/Log-Tower-Generator"
