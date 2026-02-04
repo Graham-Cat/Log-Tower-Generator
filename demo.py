@@ -1,53 +1,44 @@
 """
-Log Tower Generator - Quick Start Demo
---------------------------------------
+Log Tower Generator - Quick Start Demo (v1.0)
+---------------------------------------------
 This script demonstrates how to generate P(A_n) and P(R_n) polynomials
-using the LogTowerGenerator library.
+using the optimized Convolution Engine.
 
 Usage:
     python demo.py
 """
 
-from sympy import symbols, init_printing
-from src import LogTowerGenerator
+from sympy import init_printing
+# Import the new functional interface
+from src import generate_A_n, generate_R_n
 
 def run_demo():
-    # Optional: Enable pretty printing for nicer console output
+    # Enable pretty printing for nicer console output (e.g., F[0] instead of F_0)
     init_printing(use_unicode=True)
 
-    print("=== Log Tower Generator Demo ===")
+    print("=== Log Tower Generator Demo (Convolution Engine) ===")
 
     # 1. Configuration
     N = 3
     print(f"\n[1] Configuration: Generating polynomials for N = {N}")
 
-    # 2. Define SymPy Symbols
-    # We need lists of symbols for F, G, and h up to order N
-    # Syntax 'F_0:4' creates symbols F_0, F_1, F_2, F_3
-    F = symbols(f'F_0:{N+1}')
-    G = symbols(f'G_0:{N+1}')
-    h = symbols(f'h_0:{N+1}')
-    R0 = symbols('R_0')
-
-    # 3. Initialize the Generator
-    print("[2] Initializing Generator...")
-    gen = LogTowerGenerator()
-
-    # 4. Generate P(A_n)
-    # Formula: P(A_n) = R0 * [h_n - F-sector] + G-sector
-    print(f"[3] Generating P(A_{N})...")
-    poly_An = gen.generate_An(N, h, F, G, R0)
+    # 2. Generate P(A_n)
+    # The new engine handles symbol creation internally.
+    # It uses IndexedBase symbols: h[n], F[n], G[n], R[0]
+    print(f"[2] Generating P(A_{N})...")
+    poly_An = generate_A_n(N)
     
     print(f"\n--- Result: P(A_{N}) ---")
-    print(poly_An)
+    # We expand the result to ensure terms are grouped clearly
+    print(poly_An.expand())
 
-    # 5. Generate P(R_n)
+    # 3. Generate P(R_n)
     # Formula: P(R_n) = Gamma_{n-1} - R0 * Phi_{n-1}
-    print(f"\n[4] Generating P(R_{N})...")
-    poly_Rn = gen.generate_Rn(N, F, G, R0)
+    print(f"\n[3] Generating P(R_{N})...")
+    poly_Rn = generate_R_n(N)
     
     print(f"\n--- Result: P(R_{N}) ---")
-    print(poly_Rn)
+    print(poly_Rn.expand())
 
 if __name__ == "__main__":
     run_demo()
