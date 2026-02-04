@@ -1,12 +1,23 @@
-"""
-Log Tower Generator Library
----------------------------
-Exposes the main generator class for calculating Log-Tower polynomials P(A_n) and P(R_n).
-"""
+# src/__init__.py
 
-# Expose the main class directly to the package level
-from .generator import LogTowerGenerator
+# Import the new functional generator and the symbol bases
+from .generator import (
+    generate_A_n,
+    generate_R_n,
+    omega_cache_generator,
+    F,
+    G_base,
+    H_base,
+    R_base
+)
 
-# Package Metadata
-__version__ = "1.0.0"
-__all__ = ["LogTowerGenerator"]
+# Define what gets exported when someone does "from src import *"
+__all__ = [
+    'generate_A_n',
+    'generate_R_n',
+    'omega_cache_generator',
+    'F',
+    'G_base',
+    'H_base',
+    'R_base'
+]
