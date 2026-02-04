@@ -317,10 +317,8 @@ which leads to the canonical format of:
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-While this mathematical conclusion feels like a satisfying ending, we're not quite to the finish line yet since recursive engines like this one are technically _not_ closed form solutions[^2].
+While this mathematical conclusion feels like a satisfying ending, we're not to the finish line yet. Not only will we be developing a closed form for this engine, we stil have yet to optimize it. [^2].
 
 [^2]: A definition of "closed form solution" is available [here](https://mathworld.wolfram.com/Closed-FormSolution.html) at Wolfram. The definition is fuzzier than one might think, but in this case, clear and accepted closed forms are straightforward to produce.
 
-Honestly, though, it's the end of the exciting reading since everything in the next part is well-known math. Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs). Developing the closed double sum is also well-trodden soil.
-
-However, its connection to this closed alphabet { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $P(A_n) = \frac{d^n}{dx^n} \left(h\frac{ln(g)}{ln(f)}\right)$ is, as far as I can tell, novel.
+Closing a recursion like $\Gamma_n$ is a classical problem solved through use of exponential generating functions (EGFs), so it's a well-known process, but its connection to this closed alphabet { $R, h, F, G, u, v$} and its use as an explicit n-th derivative generator for $P(A_n) = \frac{d^n}{dx^n} \left(h\frac{ln(g)}{ln(f)}\right)$ is, as far as I can tell, novel.
