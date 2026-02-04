@@ -111,7 +111,7 @@ $$P(R_n) = \Gamma_{n-1} - R_0 \Phi_{n-1}$$
 
 # Walkthrough
 
-The walkthrough of how all equations were derived and the narrative behind their discovery is available to read starting [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/walkthrough/01_the_alphabet.md) and spans five parts.
+The walkthrough of how all equations were derived and the narrative behind their discovery is available to read starting [here](https://github.com/Graham-Cat/Log-Tower-Generator/tree/main/walkthrough) and spans five parts.
 
 ---
 
