@@ -327,7 +327,7 @@ $$\left[ \frac{x^n}{n!} \right] e^{C(x)} = B_n(c_1, c_2, \dots, c_n)$$
 
 where $B_n(c_1, c_2, \dots, c_n)$ represents the set of **Complete Bell Polynomials** applied to the series of coefficients defined by $c_n$. [^5]
 
-[^5]: For those unfamiliar with this extraction identity, I've provided a transparently AI-generated tutorial [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/EGF_to_Bell_tutorial.md). I plan in future to lend my personal voice to the section when time and mental energy allow.
+[^5]: For those unfamiliar with this extraction identity, I've provided a transparently AI-generated tutorial [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/EFG_to_Bell_tutorial.md)). I plan in future to lend my personal voice to the section when time and mental energy allow.
 
 Hmm. Where did $c_0$ go? It's there in the first part and gone in the second.
 

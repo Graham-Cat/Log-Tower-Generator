@@ -477,7 +477,7 @@ $$\frac{\partial}{\partial x} \overline{\omega}(x,y) = \underbrace{e^x}_{\text{b
 
 ### And Now For Something Even More Completely Differential
 
-Now we have our first-order _partial_ ODE that can be solved using an integrating factor.
+Now we have our linear first-order _partial_ differential equation that can be solved using an integrating factor.
 
 $$\frac{\partial \overline{\omega}}{\partial x} + y \overline{f}(xy) \overline{\omega} = e^x$$
 
@@ -507,7 +507,7 @@ $$\frac{\partial}{\partial x} \left( \overline{\omega} \cdot e^{\mathcal{H}(xy)}
 
 Integrate both sides from $0$ to $x$:
 
-$$\overline{\omega}(x, y) e^{\mathcal{H}(xy)} - \underbrace{\overline{\omega}(0,y)}\_{1} \underbrace{e^{\mathcal{H}(0)}}_{1} = \int_0^x e^t e^{\mathcal{H}(ty)} dt$$
+$$\int_0^x \frac{\partial}{\partial t} \left( \overline{\omega}(ty) \cdot e^{\mathcal{H}(ty)} \right) = \left. \left( \overline{\omega}(xy) \cdot e^{\mathcal{H}(xy)} \right) \right|\_{0}^{x} = \overline{\omega}(x, y) e^{\mathcal{H}(xy)} - \underbrace{\overline{\omega}(0,y)}\_{1} \underbrace{e^{\mathcal{H}(0)}}_{1} = \int_0^x e^t e^{\mathcal{H}(ty)} dt$$
 
 So, the **Final Bivariate Closed Form** becomes
 
@@ -527,6 +527,5 @@ Many thanks to Copilot and Gemini for being my tutors/research grunts/productivi
 
 Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on a beach vacation around New Year's.
 
-In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds. [^6]
+In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
 
-[^6]: I strongly suspect appearances were deceiving. ;-)

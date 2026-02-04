@@ -108,6 +108,69 @@ $$P(R_n) = \Gamma_{n-1} - R_0 \Phi_{n-1}$$
 
 ---
 
+## **Installation**
+
+### **Prerequisites**
+
+* **Python 3.8+**
+* **SymPy**: The library relies on SymPy for symbolic mathematics.
+
+### **1. Clone the Repository**
+
+```bash
+git clone https://github.com/Graham-Cat/Log-Tower-Generator.git
+cd Log-Tower-Generator
+
+```
+
+### **2. Set Up a Virtual Environment (Recommended)**
+
+```bash
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+
+```
+
+### **3. Install Dependencies**
+
+You can install the package in "editable" mode, which allows you to run the demo and tests immediately:
+
+```bash
+pip install -e .
+
+```
+
+*Note: This will automatically install `sympy` as a dependency.*
+
+### **4. Verify Installation**
+
+Run the verification suite to ensure the **Convolution Engine** is correctly generating and validating polynomials on your system:
+
+```bash
+python tests/test_verification.py
+
+```
+
+*You should see `[SUCCESS] P(A_n) matches exactly` for orders 3, 4, and 5.*
+
+---
+
+### **Quick Start**
+
+To see the generator in action, run the provided demo script:
+
+```bash
+python demo.py
+
+```
+
+This will output the expanded canonical forms for $P(A_3)$ and $P(R_3)$ .
+
+---
+
 # **Contributing**
 
 Contributions are welcome.

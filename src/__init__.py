@@ -1,6 +1,6 @@
 # src/__init__.py
 
-# Import the new functional generator and the symbol bases
+# Import functional generator and the symbol bases
 from .generator import (
     generate_A_n,
     generate_R_n,
