@@ -1,10 +1,10 @@
 """
-Robust Verification Suite (v2.0.0)
+Verification Suite (v1.0.0)
 ----------------------------------
 Verifies the LogTowerGenerator (Convolution Engine) by separating 
 "Structure Generation" from "Value Substitution."
 
-Adapts the new generator.py export style (IndexedBase) to the verification logic.
+Adapts generator.py export style (IndexedBase) to the verification logic.
 """
 
 import unittest
