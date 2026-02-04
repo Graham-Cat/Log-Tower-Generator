@@ -171,6 +171,13 @@ This will output the expanded canonical forms for $P(A_3)$ and $P(R_3)$ .
 
 ---
 
+### Features
+
+New in v1.0.0: The $\Omega$-Kernel Engine
+Replaces recursive calls with a cached dynamic programming grid ( $O(n^3)$ ), allowing for rapid generation of high-order polynomials without combinatorial explosion.
+
+---
+
 # **Contributing**
 
 Contributions are welcome.
