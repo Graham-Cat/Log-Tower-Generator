@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1137909460.svg)](https://doi.org/10.5281/zenodo.18318465)
+
 # **Log‑Tower-Generator Framework**
 ### *A Canonical, Self‑Similar Algebra for Logarithmic Derivative Towers*
 
@@ -210,6 +212,3 @@ The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretica
 
 **Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
 > [Christopher Feick]. (2026). *Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry*. (https://github.com/Graham-Cat/Log-Tower-Generator).
-
-
-<img width="191" height="20" alt="image" src="https://github.com/user-attachments/assets/3bd1a43c-6deb-44e0-b84b-e3f74a8a4fc5" />
