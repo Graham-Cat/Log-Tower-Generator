@@ -299,4 +299,4 @@ $$H(x) = \sum_{n=0}^{\infty} F_n \frac{x^{n+1}}{(n+1)!}$$
 
 The closed form is now complete.
 
-
+But the optimization is not.
