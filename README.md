@@ -81,6 +81,7 @@ $$\Gamma_n = \sum_{m=0}^{n} G_{n-m} \Omega_{m, n+1}$$
 The coefficients $\Omega_{m,n}$ represent the "Drag" of the system—purely a function of the base $f$. They form a stable 2D grid that can be cached and reused for both the F-Sector and G-Sector.
 
 **Recursive Definition (Caching Algorithm):**
+
 $$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
 
 (With Base Case $\Omega_{0,n} = 1$)
