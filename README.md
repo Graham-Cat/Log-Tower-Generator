@@ -81,6 +81,7 @@ $$\Gamma_n = \sum_{m=0}^{n} G_{n-m} \Omega_{m, n+1}$$
 The coefficients $\Omega_{m,n}$ represent the "Drag" of the system—purely a function of the base $f$. They form a stable 2D grid that can be cached and reused for both the F-Sector and G-Sector.
 
 **Recursive Definition (Caching Algorithm):**
+
 $$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
 
 (With Base Case $\Omega_{0,n} = 1$)
@@ -105,6 +106,12 @@ This proves that the complex behavior of the higher derivatives is deterministic
 This derivative structure also implies that the "Spine" derivative $R_n$ is simply the projection of the sectors onto the base:
 
 $$P(R_n) = \Gamma_{n-1} - R_0 \Phi_{n-1}$$
+
+---
+
+# Walkthrough
+
+The walkthrough of how all equations were derived and the narrative behind their discovery is available to read starting [here](https://github.com/Graham-Cat/Log-Tower-Generator/tree/main/walkthrough) and spans five parts.
 
 ---
 
