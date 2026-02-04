@@ -477,7 +477,7 @@ $$\frac{\partial}{\partial x} \overline{\omega}(x,y) = \underbrace{e^x}_{\text{b
 
 ### And Now For Something Even More Completely Differential
 
-Now we have our first-order _partial_ ODE that can be solved using an integrating factor.
+Now we have our linear first-order _partial_ differential equation that can be solved using an integrating factor.
 
 $$\frac{\partial \overline{\omega}}{\partial x} + y \overline{f}(xy) \overline{\omega} = e^x$$
 
