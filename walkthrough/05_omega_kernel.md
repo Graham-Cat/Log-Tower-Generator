@@ -473,7 +473,7 @@ Since the RHS (recursion) produces 0 for this row, but the LHS (reality) contain
 
 So,
 
-$$\frac{\partial}{\partial x} \overline{\omega}(x,y) = -y\overline{f}(x,y)\overline{\omega}(x,y) + \underbrace{e^x}_{\text{base case}}$$
+$$\frac{\partial}{\partial x} \overline{\omega}(x,y) = \underbrace{e^x}_{\text{base case}} - y\overline{f}(x,y)\overline{\omega}(x,y)$$
 
 ### And Now For Something Even More Completely Differential
 
