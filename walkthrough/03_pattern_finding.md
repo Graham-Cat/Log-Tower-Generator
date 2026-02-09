@@ -315,7 +315,7 @@ which leads to the canonical format of:
 
 $$P(A_n) = R_0\big[h_n - \sum_{k=0}^{n-1} \binom{n}{k} h_k \Phi_{n-k-1}\big] + \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
-While this mathematical conclusion feels like a satisfying ending, we're not to the finish line yet. Not only will we be developing a closed form for this engine, we stil have yet to optimize it. [^2].
+While this mathematical conclusion feels like a satisfying ending, we're not to the finish line yet. Not only will we be developing a closed form for this engine, we still have yet to optimize it. [^2].
 
 [^2]: A definition of "closed form solution" is available [here](https://mathworld.wolfram.com/Closed-FormSolution.html) at Wolfram. The definition is fuzzier than one might think, but in this case, clear and accepted closed forms are straightforward to produce.
 
