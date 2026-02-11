@@ -507,7 +507,7 @@ $$\frac{\partial}{\partial x} \left( \overline{\omega} \cdot e^{\mathcal{H}(xy)}
 
 Integrate both sides from $0$ to $x$:
 
-$$\int_0^x \frac{\partial}{\partial t} \left( \overline{\omega}(ty) \cdot e^{\mathcal{H}(ty)} \right) = \left. \left( \overline{\omega}(xy) \cdot e^{\mathcal{H}(xy)} \right) \right|\_{0}^{x} = \overline{\omega}(x, y) e^{\mathcal{H}(xy)} - \underbrace{\overline{\omega}(0,y)}\_{1} \underbrace{e^{\mathcal{H}(0)}}_{1} = \int_0^x e^t e^{\mathcal{H}(ty)} dt$$
+$$\int_0^x \frac{\partial}{\partial t} \left( \overline{\omega}(ty) \cdot e^{\mathcal{H}(ty)} \right) = \left. \left( \overline{\omega}(ty) \cdot e^{\mathcal{H}(ty)} \right) \right|\_{0}^{x} = \overline{\omega}(x, y) e^{\mathcal{H}(xy)} - \underbrace{\overline{\omega}(0,y)}\_{1} \underbrace{e^{\mathcal{H}(0)}}_{1} = \int_0^x e^t e^{\mathcal{H}(ty)} dt$$
 
 So, the **Final Bivariate Closed Form** becomes
 
