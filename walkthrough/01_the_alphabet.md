@@ -194,7 +194,7 @@ $$ u'= \frac{d}{dx} \left(\frac{f'}{f}\right) = \frac{f''}{f}-\left(\frac{f'}{f}
 
 So, I started treating $u$ and $v$ as modules, letting $u^{(n)}=\frac{f_n}{f}$ and $v^{(n)}=\frac{g_n}{g}$, yielding:
 
-$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g_n}{g}\right) = \frac{g_\text{n+1}}{g}-\left(\frac{g_n}{g}\right)\frac{g'}{g} = v^{n+1}-v^{(n)}v $$
+$$ \frac{d}{dx} v^{(n)}= \frac{d}{dx} \left(\frac{g_n}{g}\right) = \frac{g_\text{n+1}}{g}-\left(\frac{g_n}{g}\right)\frac{g'}{g} = v^{(n+1)}-v^{(n)}v $$
 
 and
 
