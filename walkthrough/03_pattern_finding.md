@@ -14,7 +14,7 @@ Specifically, the find-and-replace and copy/paste mechanisms in MS Word facilita
 
 Once I had established that $A = Rh$ expanded via the Leibniz rule and that each $R_\text{n-k}$ determined the entire contents of a matching $h_k$ coefficient, the analysis turned on understanding the algebra behind $R_n$.
 
-### R_n Structure
+### $R_n$ Structure
 
 Recall the identity, $R_1 = G - RF$. To get $R_2$, we take the derivative of $G - RF$:
 
