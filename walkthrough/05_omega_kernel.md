@@ -404,14 +404,16 @@ That last bullet point brings our path to a solution into focus.
 
 **Bivariate EGFs** can be used to package a two-dimensional **dependency graph** (i.e., where every new value relies on previously computed ones) into a single object, which is what we have with the subscripts $m$ and $n$. Instead of using the EGFs above that only select on $x^n$, we'll be creating ones that use both $x$ and $y$ to trace $n$ **and** $m$ simultaneously.
 
-Let's see what it looks like when we apply this technique to $\Omega_{m,n}$:
+Let's see what it looks like when we apply this technique to $\Omega_{m,n}$ and $F_n$:
 
 $$\overline{\omega}(x, y) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} \Omega_{m,n} \frac{x^n}{n!} y^m$$
+
+$$\overline{f}(x, y) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} F_n \frac{x^n}{n!} y^m$$
 
 Now we're looking at a double sum, one for $m$ and one for $n$, with two corresponding variables, $x$ and $y$, that packages the entire infinite 2-D grid of possible $\Omega_{m,n}$ 's. Since we see that we have $\frac{x^n}{n!}$ and $y^m$ to play with, let's choose what to do with each one strategically.
 
 1) We've seen $\frac{x^n}{n!}$ do well with binomial convolutions and $n$ chooses rows binomially in our recursion, so it looks like a good choice to be paired with the factorial in the denominator.
-2) The other one (i.e., $y^m$) is the only term we have left, so let's try using that variable to track $m$ and see how it goes.
+2) The other one (i.e., $y^m$) doesn't have a factorial in the denominator, so it could work for something that's not binomially weighted. Let's try using that variable to track our sum counter $m$ and see how it goes.
 
 Let's take a look at the recursion again so we can plan our attack:
 
