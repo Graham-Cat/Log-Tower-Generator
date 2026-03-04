@@ -428,7 +428,7 @@ We establish the structural hypothesis for the $n$-th derivative. Knowing that $
 
 $$z^{(n)}(x) = \Gamma_n(x) - \Phi_n(x) z(x)$$
 
-(Notice this holds for $n=0$: $z^{(0)} = 0 - (-1)z = z$)$
+(Notice this holds for $n=0$: $z^{(0)} = 0 - (-1)z = z$)
 
 We repeat the inductive process by taking the derivative of the $(n-1)$-th state:
 
