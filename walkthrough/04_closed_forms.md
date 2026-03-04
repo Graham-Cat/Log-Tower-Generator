@@ -1,4 +1,4 @@
-# Closing Time
+# Part 4: Closing Time
 
 After bragging to Copilot that I had cracked the $\Gamma_n$ recursion, I asked it to come up with a README draft for this GitHub. It rendered a "Future Directions" section where one of the bullet points was "Establish a closed-form solution."
 
