@@ -141,19 +141,26 @@ Since we seem to have multiple versions of each individual $\Omega_n$, let's sta
 
 so let's use those numbers. Since this whole repo is about $A_n$ we'll let the derivative designation remain $n$ and we'll instead start referring to $\Omega_n$ as $\Omega_m$.
 
-Let's start with something we've already talked about, the skeleton of $\Omega_2 = -(2F_1 - F^2)$. We know that one first appears in the third derivative, so we'll call it $\Omega_{2,3} = \Omega_{m,n}$. Let's go ahead and label all the ones we've seen so far:
+Let's start with something we've already talked about, the skeleton of $\Omega_2 = -(2F_1 - F^2)$. We know that one first appears in the third derivative, so we'll call it $\Omega_2^3 = \Omega_m^n$.
 
-$$\Omega_{2,3} = -(2F_1 - F^2)$$
-$$\Omega_{2,4} = -(3F_1 - F^2)$$
-$$\Omega_{2,5} = -(4F_1 - F^2)$$
+> [!NOTE]
+> Note that the superscript notation does not indicate raising $\Omega$ to a power. Rather, it labels the derivative order in which that form first appears.
+
+Superscripts are commonly used to denote derivative operators, so hopefully this notation will help compact our equations without causing confusion.
+
+Let's go ahead and label all the ones we've seen so far:
+
+$$\Omega_2^3 = -(2F_1 - F^2)$$
+$$\Omega_2^4 = -(3F_1 - F^2)$$
+$$\Omega_2^5 = -(4F_1 - F^2)$$
 
 The pattern here is obvious; the binomial weight of $F_1$ is $n-1$.
 
-The next doesn't become obvious until I give you a look-ahead at $\Omega_{3,6}$, so let's do that even though you haven't seen it yet.
+The next doesn't become obvious until I give you a look-ahead at $\Omega_3^6$, so let's do that even though you haven't seen it yet.
 
-$$\Omega_{3,4} = -(3F_2 - 5F_1 F + F^3)$$
-$$\Omega_{3,5} = -(6F_2 - 7F_1 F + F^3)$$
-$$\Omega_{3,6} = -(10F_2 - 9F_1 F + F^3)$$
+$$\Omega_3^4 = -(3F_2 - 5F_1 F + F^3)$$
+$$\Omega_3^5 = -(6F_2 - 7F_1 F + F^3)$$
+$$\Omega_3^6 = -(10F_2 - 9F_1 F + F^3)$$
 
 Students of combinatorics will immediately recognize the weights on the left as an excerpt from the "choose 2" column of Pascal's triangle. Now that we have this context, they'll also see the "choose 1" column in the $\Omega_2$ series:
 
@@ -170,116 +177,114 @@ Students of combinatorics will immediately recognize the weights on the left as 
 
 The 5, 7, 9 pattern is obviously an addition of 2 for each successive derivative, but that doesn't give us enough information to figure out how to encode mathematical instructions that relate to the Pascal. For that, we'll need to go one deeper and un-simplify.
 
-$$\Omega_{4,5} = -(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4)$$
-$$\Omega_{4,6} = -(10F_3 - 16F F_2 - F_1(15F_1 - 12F^2) - F^4)$$
-$$\Omega_{4,7} = -(20F_3 - 25F F_2 - F_1(24F_1 - 15F^2) - F^4)$$
+$$\Omega_4^5 = -(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4)$$
+$$\Omega_4^6 = -(10F_3 - 16F F_2 - F_1(15F_1 - 12F^2) - F^4)$$
+$$\Omega_4^7 = -(20F_3 - 25F F_2 - F_1(24F_1 - 15F^2) - F^4)$$
 
 See how the weights climb? Now we're walking down the column of "choose 3" on the left and the rest are climbing with predictable patterns, but it's not immediately obvious how they relate to the triangle.
 
 Let's head back to $\Omega_2$ and present it slightly differently, this time in **recursive** terms. Make sure to note the sign change as we factor out $\Omega_1 = -F$
 
-$$\Omega_{2,3} = -(2F_1 + F(-F)) = -(2F_1 + F\Omega_1)$$
-$$\Omega_{2,4} = -(3F_1 + F(-F)) = -(3F_1 + F\Omega_1)$$
-$$\Omega_{2,5} = -(4F_1 + F(-F)) = -(4F_1 + F\Omega_1)$$
+$$\Omega_2^3 = -(2F_1 + F(-F)) = -(2F_1 + F\Omega_1)$$
+$$\Omega_2^4 = -(3F_1 + F(-F)) = -(3F_1 + F\Omega_1)$$
+$$\Omega_2^5 = -(4F_1 + F(-F)) = -(4F_1 + F\Omega_1)$$
 
 When we try to do the same for $\Omega_3$, things begin to clear up as the triangle comes into focus.
 
-$$\Omega_{3,4} = -(3F_2 - 5F_1 F + F^3) = -(3F_2 + 3F_1\Omega_1 + F\Omega_{2,3})$$
-$$\Omega_{3,5} = -(6F_2 - 7F_1 F + F^3) = -(6F_2 + 4F_1\Omega_1 + F\Omega_{2,4})$$
-$$\Omega_{3,6} = -(10F_2 - 9F_1 F + F^3) = -(10F_2 + 5F_1\Omega_1 + F\Omega_{2,5})$$
+$$\Omega_3^4 = -(3F_2 - 5F_1 F + F^3) = -(3F_2\Omega_0^1 + 3F_1\Omega_1^2 + F\Omega_2^3)$$
+$$\Omega_3^5 = -(6F_2 - 7F_1 F + F^3) = -(6F_2\Omega_0^2 + 4F_1\Omega_1^3 + F\Omega_2^4)$$
+$$\Omega_3^6 = -(10F_2 - 9F_1 F + F^3) = -(10F_2\Omega_0^3 + 5F_1\Omega_1^4 + F\Omega_2^5)$$
 
 Now we see it clearly. We're just looking at truncated sections of Pascal's triangle when we see it from the recursive perspective.
 
-You may have noticed that I started adding the {m,n} notation here on the $\Omega_2$ 's. It was necessary to have those $n$ 's climb with the $\Omega_{3}$ 's on the left to have the algebra work out. From now on, I'll be adding the {n} designations for clarity. [^1]
+You may have noticed that I started adding the $\Omega_m^n$ notation here. It was necessary to have those $n$ 's climb with the $\Omega_3^n$ 's on the left to have the algebra work out. From now on, I'll be adding the $n$ designations for clarity. [^1]
 
-Also note that the $\Omega_0$ 's are left out of the leading terms to declutter since they're all just equal to 1.
+Note again that all $\Omega_0^n = 1$.
 
 [^1]: Feel free to satisfy yourself that the algebra works in this section. Trust me, I checked.
 
-Let's go up one more level for the sake of completeness: [^2]
+Let's go up one more level for the sake of completeness:
 
-$$\Omega_{4,5} = -(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4) = -(4F_3 + 6F_2\Omega_{1,2} + 4F_1\Omega_{2,3} + F\Omega_{3,4})$$
-$$\Omega_{4,6} = -(10F_3 - 16F F_2 - F_1(15F_1 - 12F^2) - F^4) = -(10F_3 + 10F_2\Omega_{1,3} + 5F_1\Omega_{2,4} + F\Omega_{3,5})$$
-$$\Omega_{4,7} = -(20F_3 - 25F F_2 - F_1(24F_1 - 15F^2) - F^4) = -(20F_3 + 15F_2\Omega_{1,4} + 6F_1\Omega_{2,5} + F\Omega_{3,6})$$
+$$\Omega_4^5 = -(4F_3 - 9F F_2 - F_1(8F_1 - 9F^2) - F^4) = -(4F_3\Omega_0^1 + 6F_2\Omega_1^2 + 4F_1\Omega_2^3 + F\Omega_3^4)$$
+$$\Omega_4^6 = -(10F_3 - 16F F_2 - F_1(15F_1 - 12F^2) - F^4) = -(10F_3\Omega_0^2 + 10F_2\Omega_1^3 + 5F_1\Omega_2^4 + F\Omega_3^5)$$
+$$\Omega_4^7 = -(20F_3 - 25F F_2 - F_1(24F_1 - 15F^2) - F^4) = -(20F_3\Omega_0^3 + 15F_2\Omega_1^4 + 6F_1\Omega_2^5 + F\Omega_3^6)$$
 
 Now we have straightforward encoding. The binomial convolutions are obvious.
 
-[^2]: Even though it's not strictly necessary, you likely noticed that I've started adding {m,n} desginations for Omega_1's (even though they're all equal to -F) to get you ready for the next section.
-
 ## That's Cache!
 
-The real processor savings will come with the caching method that the $\Omega_{m,n}$ recursion provides us with the opportunity to implement.
+The real processor savings will come with the caching method that the $\Omega_m^n$ recursion provides us with the opportunity to implement.
 
-Now that we are grounded in the structure of $\Omega_{m,n}$, let's do a test run on $A_5$ to see how everything plays out.
+Now that we are grounded in the structure of $\Omega_m^n$, let's do a test run on $A_5$ to see how everything plays out.
 
-First, we recursively define all required $\Omega_{m,n}$ by starting with $m=0$:
+First, we recursively define all required $\Omega_m^n$ by starting with $m=0$:
 
-$$\Omega_{0,1} = \Omega_{0,2} = ... = \Omega_{0,5} = 1$$
+$$\Omega_0^1 = \Omega_0^2 = ... = \Omega_0^5 = 1$$
 
 or
 
-$$\Omega_{0,n} = 1$$
+$$\Omega_0^n = 1$$
 
 Then we do the same with $m=1$:
 
-$$\Omega_{1,2} = \Omega_{1,3} = ... = \Omega_{1,5} = -F_0\Omega_{0,n-1} = -F_0$$
+$$\Omega_1^2 = \Omega_1^3 = ... = \Omega_1^5 = -F_0\Omega_0^{n-1} = -F_0$$
 
 or
 
-$$\Omega_{1,n} = -\binom{n-1}{0}F_0\Omega_{0,n}$$
+$$\Omega_1^n = -\binom{n-1}{0}F_0\Omega_0^n$$
 
 Now we start on the "choose 1" column of Pascal's triangle:
 
-$$\Omega_{2,3} = -(2F_1\Omega_{0,1} + F\Omega_{1,2})$$
-$$\Omega_{2,4} = -(3F_1\Omega_{0,2} + F\Omega_{1,3})$$
-$$\Omega_{2,5} = -(4F_1\Omega_{0,3} + F\Omega_{1,4})$$
+$$\Omega_2^3 = -(2F_1\Omega_0^1 + F\Omega_1^2)$$
+$$\Omega_2^4 = -(3F_1\Omega_0^2 + F\Omega_1^3)$$
+$$\Omega_2^5 = -(4F_1\Omega_0^3 + F\Omega_1^4)$$
 
 or
 
-$$\Omega_{2,n} = -\left(\binom{n-1}{1}F_1\Omega_{0,n-2} + \binom{n-1}{0}F_0\Omega_{1,n-1}\right)$$
+$$\Omega_2^n = -\left(\binom{n-1}{1}F_1\Omega_0^{n-2} + \binom{n-1}{0}F_0\Omega_1^{n-1}\right)$$
 
 Then we hit "choose 2":
 
-$$\Omega_{3,4} = -(3F_2\Omega_{0,1} + 3F_1\Omega_{1,2} + F\Omega_{2,3})$$
-$$\Omega_{3,5} = -(6F_2\Omega_{0,2} + 4F_1\Omega_{1,3} + F\Omega_{2,4})$$
+$$\Omega_3^4= -(3F_2\Omega_0^1 + 3F_1\Omega_1^2 + F\Omega_2^3)$$
+$$\Omega_3^5 = -(6F_2\Omega_0^2 + 4F_1\Omega_1^3 + F\Omega_2^4)$$
 
 or
 
-$$\Omega_{3,n} = -\left(\binom{n-1}{2}F_2\Omega_{0,n-3} + \binom{n-1}{1}F_1\Omega_{1,n-2} + \binom{n-1}{0}F\Omega_{2,n-1}\right)$$
+$$\Omega_3^n = -\left(\binom{n-1}{2}F_2\Omega_0^{n-3} + \binom{n-1}{1}F_1\Omega_1^{n-2} + \binom{n-1}{0}F\Omega_2^{n-1}\right)$$
 
 Then "choose 3":
 
-$$\Omega_{4,5} =  -(4F_3\Omega_{0,1} + 6F_2\Omega_{1,2} + 4F_1\Omega_{2,3} + F\Omega_{3,4})$$
+$$\Omega_4^5 =  -(4F_3\Omega_0^1 + 6F_2\Omega_1^2 + 4F_1\Omega_2^3 + F\Omega_3^4)$$
 
 or
 
-$$\Omega_{4,n} = -\left(\binom{n-1}{3}F_3\Omega_{0,n-4} + \binom{n-1}{2}F_2\Omega_{1,n-3} + \binom{n-1}{1}F_1\Omega_{2,n-2} + \binom{n-1}{0}F\Omega_{3,n-1}\right)$$
+$$\Omega_4^n = -\left(\binom{n-1}{3}F_3\Omega_0^{n-4} + \binom{n-1}{2}F_2\Omega_1^{n-3} + \binom{n-1}{1}F_1\Omega_2^{n-2} + \binom{n-1}{0}F\Omega_3^{n-1}\right)$$
 
-each successive step of the way using the $\Omega_n$ 's that came before.
+each successive step of the way using the $\Omega_m^n$ 's that came before.
 
 Computer scientists will recognize this process as **memoization**. It boosts performance by preventing repeated, taxing function calls.
 
 Since the structure of the recursion is staring us in the face, let's generalize it:
 
-$$\Omega_{m,n} = -\sum_{k=0}^{m-1}\binom{n-1}{m-k-1}F_{m-k-1}\Omega_{k,k+n-m}$$
+$$\Omega_m^n = -\sum_{k=0}^{m-1}\binom{n-1}{m-k-1}F_{m-k-1}\Omega_k^{k+n-m}$$
 
 and then clean up by letting $j = m - k - 1$:
 
-$$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
+$$\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$$
 
-Now that we have our $\Omega_{m,n}$ "memoized", we use the cache to create $A_5$.
+Now that we have our $\Omega_m^n$ "memoized", we use the cache to create $A_5$.
 
 First, we create $A_{5G}$:
 
-$$(5h_4G_0\Omega_{0,1}+10h_3(G_1\Omega_{0,2}+G_0\Omega_{1,2})+10h_2(G_2\Omega_{0,3}+G_1\Omega_{1,3}+G_0\Omega_{2,3})+5h_1(G_3\Omega_{0,4}+G_2\Omega_{1,4}+G_1\Omega_{2,4}+G_0\Omega_{3,4})+h_0(G_4\Omega_{0,5}+G_3\Omega_{1,5}+G_2\Omega_{2,5}+G_1\Omega_{3,5}+G_0\Omega_{4,5}))$$
+$$(5h_4G_0\Omega_0^1+10h_3(G_1\Omega_0^2+G_0\Omega_1^2)+10h_2(G_2\Omega_0^3+G_1\Omega_1^3+G_0\Omega_2^3)+5h_1(G_3\Omega_0^4+G_2\Omega_1^4+G_1\Omega_2^4+G_0\Omega_3^4)+h_0(G_4\Omega_0^5+G_3\Omega_1^5+G_2\Omega_2^5+G_1\Omega_3^5+G_0\Omega_4^5))$$
 
 or, more succinctly,
 
-$$\sum_{k=0}^{5-1}\binom{5}{k}h_{k}\sum_{m=0}^{5-k-1}G_{5-k-1-m}\Omega_{m,n-k}$$
+$$\sum_{k=0}^{5-1}\binom{5}{k}h_{k}\sum_{m=0}^{5-k-1}G_{5-k-1-m}\Omega_m^{n-k}$$
 
 As you can see from where I put the 5's, the generalized formula for $A_{nG}$ is
 
-$$A_{nG} = \sum_{k=0}^{n-1}\binom{n}{k}h_{k}\sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_{m,n-k}$$
+$$A_{nG} = \sum_{k=0}^{n-1}\binom{n}{k}h_{k}\sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_m^{n-k}$$
 
 Then, simply mapping $G \mapsto F$ gives us $A_{nF}$, at which point we slot both into the canonical form of
 
@@ -291,11 +296,11 @@ If you compare this new $A_{nG}$ generator to our canonical $A_{nG}$ generating 
 
 $$A_{nG} = \underbrace{\sum_{k=0}^{n-1} \binom{n}{k} h_k}\_{h_k \text{ portion}} \underbrace{\Gamma_{n-k-1}}_{\Gamma_n \text{ portion}}$$
 
-$$A_{nG} = \underbrace{\sum_{k=0}^{n-1}\binom{n}{k}h_{k}}\_{h_k \text{ portion}}\underbrace{\sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_{m,n-k}}_{\Gamma_n \text{ portion}}$$
+$$A_{nG} = \underbrace{\sum_{k=0}^{n-1}\binom{n}{k}h_{k}}\_{h_k \text{ portion}}\underbrace{\sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_m^{n-k}}_{\Gamma_n \text{ portion}}$$
 
 You'll see we have a new expression for $\Gamma_n$ in the form of
 
-$$\Gamma_{n-k-1} = \sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_{m,n-k}$$
+$$\Gamma_{n-k-1} = \sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_m^{n-k}$$
 
 Or, if we allow the sum to run from 0 to $n$ instead of $n-k-1$ to put it on comparable terms to our old expression for $\Gamma_n$,
 
@@ -305,7 +310,7 @@ $$\Gamma_n = G_n - \sum_{k=0}^{n-1} \binom{n}{k} F_k \Gamma_{n-k-1}$$
 
 *New Expression*
 
-$$\Gamma_{n} = \sum_{m=0}^{n}G_{n-m}\Omega_{m,n+1}$$
+$$\Gamma_{n} = \sum_{m=0}^{n}G_{n-m}\Omega_m^{n+1}$$
 
 ## Are We There Yet, Papa Smurf?
 
@@ -388,11 +393,11 @@ $$\overline{\gamma} = \overline{g} - \overline{f} e^{-H} \int \overline{g} e^{H}
 
 $\overline{o}$ is just $\overline{\gamma}$ with the $\overline{g}$ 's removed and replaced by ones, which makes sense, because that's almost literally what we did in the waterfall diagram using MS Word's find and replace function.
 
-Unfortunately, this closed form is not particularly useful except as an exemplar. We know that $\overline{o}$ is a special case that can only extract the G-coefficient inside the h-coefficient of the G-sector, and, by extension, its analog in the F-sector, so it can't do much else except elucidate structure and clue us into how to attack the final closed form of $\Omega_{m,n}$.
+Unfortunately, this closed form is not particularly useful except as an exemplar. We know that $\overline{o}$ is a special case that can only extract the G-coefficient inside the h-coefficient of the G-sector, and, by extension, its analog in the F-sector, so it can't do much else except elucidate structure and clue us into how to attack the final closed form of $\Omega_m^n$.
 
 ### It Takes Two
 
-We've seen how to close $\Omega_n$, but the second subscript in $\Omega_{m,n}$ complicates matters.
+We've seen how to close $\Omega_n$, but the new superscript in $\Omega_m^n$ complicates matters.
 
 We do, however, know a few things about closing recursions like $\Omega$;
 
@@ -404,18 +409,18 @@ That last bullet point brings our path to a solution into focus.
 
 **Bivariate EGFs** can be used to package a two-dimensional **dependency graph** (i.e., where every new value relies on previously computed ones) into a single object, which is what we have with the subscripts $m$ and $n$. Instead of using the EGFs above that only select on $x^n$, we'll be creating ones that use both $x$ and $y$ to trace $n$ **and** $m$ simultaneously.
 
-Let's see what it looks like when we apply this technique to $\Omega_{m,n}$:
+Let's see what it looks like when we apply this technique to $\Omega_m^n$:
 
-$$\overline{\omega}(x, y) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} \Omega_{m,n} \frac{x^n}{n!} y^m$$
+$$\overline{\omega}(x, y) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!} y^m$$
 
-Now we're looking at a double sum, one for $m$ and one for $n$, with two corresponding variables, $x$ and $y$, that packages the entire infinite 2-D grid of possible $\Omega_{m,n}$ 's. Since we see that we have $\frac{x^n}{n!}$ and $y^m$ to play with, let's choose what to do with each one strategically.
+Now we're looking at a double sum, one for $m$ and one for $n$, with two corresponding variables, $x$ and $y$, that packages the entire infinite 2-D grid of possible $\Omega_m^n$ 's. Since we see that we have $\frac{x^n}{n!}$ and $y^m$ to play with, let's choose what to do with each one strategically.
 
 1) We've seen $\frac{x^n}{n!}$ do well with binomial convolutions and $n$ chooses rows binomially in our recursion, so it looks like a good choice to be paired with the factorial in the denominator.
-2) The other one (i.e., $y^m$) is the only term we have left, so let's try using that variable to track $m$ and see how it goes.
+2) The other one (i.e., $y^m$) might be useful for tracking a simple counter, so let's try using that variable on $m$ and see how it goes.
 
 Let's take a look at the recursion again so we can plan our attack:
 
-$$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
+$$\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$$
 
 See that $n-1$ in the binomial? That's exactly what happens when one takes a derivative of a power series.
 
@@ -423,27 +428,27 @@ $$\frac{d}{dx} C(x) = \frac{d}{dx} \sum_{n=0}^{\infty} c_n \frac{x^n}{n!} = \sum
 
 So let's multiply both sides by $\frac{x^{n-1}}{(n-1)!}y^m$ while summing them over all $m$ and $n$ and see what it looks like.
 
-$$\sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_{m,n}\frac{x^{n-1}}{(n-1)!}y^m = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\frac{x^{n-1}}{(n-1)!}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
+$$\sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_m^n\frac{x^{n-1}}{(n-1)!}y^m = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\frac{x^{n-1}}{(n-1)!}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$$
 
 Hmm. Looks intimidatingly large. Let's break it down.
 
 The left hand side looks like the derivative of a power series, but where only $x$ has been subjected to the derivative operator. We know that as a **partial derivative with respect to $x$**.
 
-$$\text{LHS} = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_{m,n}\frac{x^{n-1}}{(n-1)!}y^m = \frac{\partial}{\partial x} \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_{m,n}\frac{x^{n}}{(n)!}y^m = \frac{\partial}{\partial x} \overline{\omega}(x,y)$$
+$$\text{LHS} = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_m^n\frac{x^{n-1}}{(n-1)!}y^m = \frac{\partial}{\partial x} \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\Omega_m^n\frac{x^{n}}{(n)!}y^m = \frac{\partial}{\partial x} \overline{\omega}(x,y)$$
 
 Well, that was quick. Now the entire LHS is simply the partial derivative of $\overline{\omega}(x,y)$ with respect to $x$.
 
 The RHS looks like a huge jumble of symbols, so let's rearrange a bit to combine like objects. Those factorials we just multiplied by don't depend on $j$, so they can move inside the inner sum:
 
-$$- \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\frac{x^{n-1}}{(n-1)!}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j} = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} \frac{x^{n-1}}{(n-1)!} F_j \Omega_{m-1-j, \ n-1-j}$$
+$$- \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\frac{x^{n-1}}{(n-1)!}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j} = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}y^m\sum_{j=0}^{m-1} \binom{n-1}{j} \frac{x^{n-1}}{(n-1)!} F_j \Omega_{m-1-j}^{n-1-j}$$
 
 We know what $\binom{n-1}{j} = \frac{(n-1)!}{j!(n-1-j)!}$, so let's use that and manipulate powers by adding and subtracting $j$:
 
 $$\binom{n-1}{j} \frac{x^{n-1}}{(n-1)} = \frac{(n-1)!}{j!(n-1-j)!}·\frac{x^{n-1}}{(n-1)!} = \frac{x^j}{j!}·\frac{x^{n-1-j}}{(n-1-j)!}$$
 
-Suddenly, we have objects that we can attach to $F_j$ and $\Omega_{m-1-j, \ n-1-j}$:
+Suddenly, we have objects that we can attach to $F_j$ and $\Omega_{m-1-j}^{n-1-j}$:
 
-$$ RHS = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}y^m\sum_{j=0}^{m-1} \left[\left(F_j\frac{x^j}{j!}\right) \left(\Omega_{m-1-j,n-1-j}\frac{x^{n-1-j}}{(n-1-j)!}\right)\right]$$
+$$ RHS = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}y^m\sum_{j=0}^{m-1} \left[\left(F_j\frac{x^j}{j!}\right) \left(\Omega_{m-1-j}^{n-1-j}\frac{x^{n-1-j}}{(n-1-j)!}\right)\right]$$
 
 We're almost there. All we have left to do is move that $y^m$ inside the inner sum. But how?
 
@@ -453,7 +458,7 @@ $$y^m = y^1 \cdot y^{m-1} = y \cdot y^j \cdot y^{m-1-j}$$
 
 Now we can move $y$ inside the sum and match up powers with indices:
 
-$$ RHS = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\sum_{j=0}^{m-1} \left[\left(yF_j\frac{x^j}{j!}y^j\right) \left(\Omega_{m-1-j,n-1-j}\frac{x^{n-1-j}}{(n-1-j)!}y^{m-1-j}\right)\right]$$
+$$ RHS = - \sum_{m=0}^{\infty} \sum_{n=0}^{\infty}\sum_{j=0}^{m-1} \left[\left(yF_j\frac{x^j}{j!}y^j\right) \left(\Omega_{m-1-j}^{n-1-j}\frac{x^{n-1-j}}{(n-1-j)!}y^{m-1-j}\right)\right]$$
 
 This manipulation of $y^m$ clearly exposes the RHS as a convolution of $y\overline{f}(x,y)$ and $\overline{\omega}(x,y)$.
 
@@ -467,7 +472,7 @@ It comes from the boundary condition.
 
 Our recursion works perfectly for $m \ge 1$, matching the derivative (LHS) to the previous term (RHS). However, for the row $m=0$, the recursion tries to look back at $m=-1$, which is empty (0).
 
-In reality, the $m=0$ row exists as an identity row where every $\Omega_{0,n} = 1$, and the derivative of this identity row is $\frac{\partial}{\partial x} \sum \frac{x^n}{n!} = e^x$.
+In reality, the $m=0$ row exists as an identity row where every $\Omega_0^n = 1$, and the derivative of this identity row is $\frac{\partial}{\partial x} \sum \frac{x^n}{n!} = e^x$.
 
 Since the RHS (recursion) produces 0 for this row, but the LHS (reality) contains $e^x$, we must manually add $e^x$ to the equation to balance the scales.
 
@@ -517,15 +522,15 @@ The $\Omega$ grid is now successfully **closed**.
 
 $\mathcal{H}(xy)$ represents the "accumulated drag" of the system, or, in other words, the "cost" of taking derivatives of a logarithmic function with a variable base, $\text{ln}f$.
 
-We now have proven that the interaction between the identity ($e^x$) and the base function ($\overline{f}$) generates every single $\Omega_{m,n}$ coefficient and that the " $\Omega$ kernel" is mathematically consistent and stable for all derivatives to infinity.
+We now have proven that the interaction between the identity ($e^x$) and the base function ($\overline{f}$) generates every single $\Omega_m^n$ coefficient and that the " $\Omega$ kernel" is mathematically consistent and stable for all derivatives to infinity.
 
 ## Epilogue
 
-It's been quite a journey from that practice problem I made up about five months ago. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
+It's been quite a journey from that practice problem I made for myself last summer. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
 
 Many thanks to Copilot and Gemini for being my tutors/research grunts/productivity boosters.
 
-Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on a beach vacation around New Year's.
+Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on beach vacations.
 
 In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
 
