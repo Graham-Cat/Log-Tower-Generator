@@ -4,7 +4,7 @@ You may have noticed that most talk of $\Omega_\beta^\alpha$ was conspicuously a
 
 It's time to wrap up our multidimensional expansion, so let's get to it.
 
-## Caching in
+## $\Omega$ Gets a Promotion
 
 Recall that our 1-D version of the $\Omega_m^n$ recursion is given by
 
@@ -18,17 +18,13 @@ $$\Gamma_{n} = \sum_{m=0}^{n}G_{n-m}\Omega_m^{n+1}$$
 
 Aha. That's where the indexing problem was. $\Gamma$ needs to be indexed back by one on the right. Let's fix that.
 
-$$\Gamma_{n} = \sum_{m=0}^{n-1}G_{n-m-1}\Omega_{m,n}$$
+$$\Gamma_{n} = \sum_{m=0}^{n-1}G_{n-m-1}\Omega_m^n$$
 
-Note how the equation still only calls $\Omega_{m,n}$, so the $\Omega$ recursion doesn't need to be changed at all. Since the caching algorithm exists independently of $\Gamma$ and $\Phi$ indexing, it's already sitting pretty.
+Note how the equation still only calls $\Omega_m^n$, so the $\Omega$ recursion doesn't need to be changed at all. Since the caching algorithm exists independently of $\Gamma$ and $\Phi$ indexing, it's already sitting pretty.
 
 Although we never explicitly created the formula for $\Phi_n$ before, instead relying on $G \mapsto F$ to create it, let's go ahead and put it here.
 
-$$\Phi_{n} = \sum_{m=0}^{n-1}F_{n-m-1}\Omega_{m,n}$$
-
-There's one last cleanup item we need to perform before the next step. See how there are multiple subscripts on $\Omega$, both of which mean different things?
-
-If we put all multivariate designations down there, equations will be unnecessarily long. Instead, let's put the derivative order marker in the superscript position. In my admittedly limited experience with multi-index notation, I've seen this convention, like how $D^\alpha$ isn't $D$ raised to the power of $\alpha$, but an operator index, so it shouldn't cause confusion.
+$$\Phi_{n} = \sum_{m=0}^{n-1}F_{n-m-1}\Omega_m^n$$
 
 It's finally time to promote $\Omega_m^n$ to multivariate status and take it for a test drive.
 
