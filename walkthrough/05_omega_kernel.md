@@ -1,4 +1,4 @@
-# The Weight of a Kernel
+# Part 5: The Weight of a Kernel
 
 How much does a kernel weigh? When it comes to calculating $\Gamma_n$, turns out it gets heavier and heavier as $n$ gets bigger.
 
