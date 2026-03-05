@@ -616,4 +616,8 @@ Let's set them equal and drop the negative sign on each side
 
 $$\sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Phi_\beta = \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
 
-which shows that dropping a tensor index is the same as integrating across that dimension's continuous path, meaning we're looking at a multidimensional continuous space.
+and then do the same for $\Gamma_\gamma$
+
+$$D^{\gamma - e_w} G^{(w)} - \sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Gamma_\beta = \int_0^w \left[ D^\gamma G^{(\tau)} + \Phi_\gamma(\tau) G^{(\tau)} - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} \left( D^{\gamma - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
+
+which shows that dropping a tensor index is the same as integrating across that dimension's continuous path, meaning we're looking at a proven multidimensional continuous space.
