@@ -500,7 +500,17 @@ This equation in no uncertain terms tells us that _every derivative of_ $\Phi\_\
 
 If we can take derivatives in the ring to climb the order ladder, we should be able to integrate to step back, so let's see what happens when we subject these siblings, $\Phi_\gamma$ and $\Gamma_\gamma$, to **Volterra integration**.
 
-Volterra integration involves integrating when unknown functions comprise some or all of the integrand. In this case, we're using it to assemble polynomials made of unknown differentiable functions.
+Volterra integration involves integrating when unknown functions comprise some or all of the integrand. In this case, we're using **linear Volterra equations of the first kind** to assemble polynomials made of unknown differentiable functions.
+
+This kind of Volterra integration is of the form
+
+$$g(x) = \int_{a}^{x} K(x, t) f(t) dt$$
+
+where
+
+- $g(x)$ is a given function,
+- $K(x, t)$ is the kernel of the integral equation, and
+- $f(t)$ is the unknown function to be determined.
 
 Let's start with the above equation regarding $\Phi_\gamma$, using $w$ for the dummy integration variable $\tau$, and integrate both sides from $0$ to $w$.
 
@@ -572,7 +582,7 @@ $$- \left[ 1 \cdot F^{(\tau)}_2 (0) + 2 \cdot F^{(\tau)}_1 (G^{(\tau)}) \right] 
 
 Now, let's place all of those expanded blocks back inside the integral:
 
-$$= \int_0^w \left[ G^{(\tau)}_2 + F^{(\tau)}_1 G^{(\tau)} - (F^{(\tau)})^2 G^{(\tau)} - F^{(\tau)} G^{(\tau)}_1 + (F^{(\tau)})^2 G^{(\tau)} - 2 F^{(\tau)}_1 G^{(\tau)} \right] \, d\tau$$
+$$= \int_0^w \left[ G^{(\tau)}_2 + F^{(\tau)}_1 G^{(\tau)} - (F^{(\tau)})^2 G^{(\tau)} - F^{(\tau)} G^{(\tau)}_1 + (F^{(\tau)})^2 G^{(\tau)} - 2 F^{(\tau)}_1 G^{(\tau)} \right] d\tau$$
 
 The cubed-complexity terms cancel: $-(F^{(\tau)})^2 G^{(\tau)}$ and $+(F^{(\tau)})^2 G^{(\tau)}$
 
@@ -604,7 +614,18 @@ So, the $\Phi$ and $\Gamma$ sectors appear together as counterweights. The polyn
 
 ### Liberté
 
-Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turn these integrals into an integration by parts shearing machine, but this section is already too long, so I'll leave you with one last thought.
+Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turn these integrals into an integration by parts shearing machine, utilizing **linear Volterra equations of the second kind**
+
+$$f(x) = g(x) + \lambda \int_{a}^{x} K(x, t) f(t) dt$$
+
+Where
+
+- $f(x)$ is the unknown function,
+- $g(x)$ is a given function (often representing the "source" or "initial" state),
+- $\lambda$ is A scalar parameter, and
+- $K(x, t)$ is the kernel,
+
+but this section is already too long, so I'll leave you with one last thought.
 
 We have discovered two equations that represent $\Phi_\gamma$:
 
@@ -620,4 +641,4 @@ and then do the same for $\Gamma_\gamma$
 
 $$D^{\gamma - e_w} G^{(w)} - \sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Gamma_\beta = \int_0^w \left[ D^\gamma G^{(\tau)} + \Phi_\gamma(\tau) G^{(\tau)} - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} \left( D^{\gamma - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
 
-which shows that dropping a tensor index is the same as integrating across that dimension's continuous path, meaning we're looking at a proven multidimensional continuous space.
+which shows that dropping a tensor index is the same as integrating across that dimension's continuous path, meaning we're looking at a **proven multidimensional continuous space**.
