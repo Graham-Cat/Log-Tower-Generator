@@ -286,11 +286,21 @@ As you can see from where I put the 5's, the generalized formula for $A_{nG}$ is
 
 $$A_{nG} = \sum_{k=0}^{n-1}\binom{n}{k}h_{k}\sum_{m=0}^{n-k-1}G_{n-k-1-m}\Omega_m^{n-k}$$
 
-Then, simply mapping $G \mapsto F$ gives us $A_{nF}$, at which point we slot both into the canonical form of
+Then, simply generate the $F$ -sector through
+
+$$A_{nF} = \sum_{k=0}^{n-1}\binom{n}{k}h_{k}\sum_{m=0}^{n-k-1}F_{n-k-1-m}\Omega_m^{n-k}$$
+
+Piece the canonical form together,
 
 $$A_n = R(h_n - A_{\text{nF}}) + A_{\text{nG}}$$
 
 and $A_n$ is complete.
+
+Wait a minute... Where did the mapping go?
+
+Turns out that mapping _in this case_ is a processor killer compared to the memoization we just performed with $\Omega_m^n$.
+
+Before, when the recursion fed its own values of $F_n$ through, it was recalculating each time, so mapping was a less intensive solution. Now it's just folding in memoized data through straight convolutions, so going through the symbolic call, find, and replace required with mapping is _outmoded_.
 
 If you compare this new $A_{nG}$ generator to our canonical $A_{nG}$ generating function:
 
