@@ -604,7 +604,7 @@ So, the $\Phi$ and $\Gamma$ sectors appear together as counterweights. The polyn
 
 ### Liberté
 
-Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional shift operators turn these integrals into an integration by parts shearing machine, but this section is already too long, so I'll leave you with one last thought.
+Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turn these integrals into an integration by parts shearing machine, but this section is already too long, so I'll leave you with one last thought.
 
 We have discovered two equations that represent $\Phi_\gamma$:
 
