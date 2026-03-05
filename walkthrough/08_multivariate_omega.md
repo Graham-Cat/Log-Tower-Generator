@@ -68,13 +68,13 @@ Let's evaluate $\alpha = (1, 1)$. Because this is a mixed derivative, our formul
 
 Let's test Path 1 (stepping back along $x$):
 
-$$\Gamma_{(1,1)} \big|_{x\text{-path}} = G^{(x)}_{(0,1)} \Omega^{(1,1)}_{(0,0)} + G^{(x)}_{(0,0)} \Omega^{(1,1)}_{(0,1)}$$
+$$\Gamma_{(1,1)} \big|\_{x\text{-path}} = G^{(x)}\_{(0,1)} \Omega^{(1,1)}_{(0,0)} + G^{(x)}_{(0,0)} \Omega^{(1,1)}_{(0,1)}$$
 
 Now, let's test Path 2 (stepping back along $y$):
 
-$$\Gamma_{(1,1)} \big|_{y\text{-path}} = G^{(y)}_{(1,0)} \Omega^{(1,1)}_{(0,0)} + G^{(y)}_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
+$$\Gamma_{(1,1)} \big|\_{y\text{-path}} = G^{(y)}\_{(1,0)} \Omega^{(1,1)}\_{(0,0)} + G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
 
-Assuming standard continuous mixed partials (Clairaut's theorem), the first terms match perfectly since $G^{(x)}_{(0,1)} = G^{(y)}_{(1,0)}$. But look at the second terms. We are left with $G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$ versus $G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$.
+Assuming standard continuous mixed partials (Clairaut's theorem), the first terms match perfectly since $G^{(x)}\_{(0,1)} = G^{(y)}\_{(1,0)}$. But look at the second terms. We are left with $G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$ versus $G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$.
 
 While the $G$ coefficients simply represent $G^{(x)}$ and $G^{(y)}$, the $\Omega$ terms are different. Because the multidimensional $\Omega^\alpha_\beta$ recursively absorbs $F$-sector derivatives, $\Omega^{(1,1)}\_{(0,1)}$ and $\Omega^{(1,1)}_{(1,0)}$ evaluate to vastly different polynomials.
 
@@ -92,7 +92,7 @@ After the disaster of Attempt 1, applying this to the mixed second derivative $\
 
 If we take the two diverging paths from Attempt 1, sum them, and divide by $2$:
 
-$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
+$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|\_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
 
 When we expanded the $\Omega^{(1,1)}$ terms, the asymmetrical parts perfectly counterbalanced. The fractions neatly combined into whole integers, and the resulting polynomial matched the exact $F/G$-sector decomposition we expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
 
