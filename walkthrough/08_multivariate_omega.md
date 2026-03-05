@@ -1,7 +1,3 @@
-Here is the full text, completely cleaned of those pesky backslashes, with the grammar corrected ("When we expanded..."), the proper LaTeX arrows applied, and all block equations isolated on their own lines to prevent GitHub's Markdown parser from turning your underscores into italics.
-
----
-
 # Part 8: ...and the Omega
 
 You may have noticed that most talk of $\Omega_\beta^\alpha$ was conspicuously absent in the last part. The information below was initially slated for inclusion in Part 7 as you likely see from the title here being a continuation of the last.
