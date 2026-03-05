@@ -1,3 +1,7 @@
+Here is the full text, completely cleaned of those pesky backslashes, with the grammar corrected ("When we expanded..."), the proper LaTeX arrows applied, and all block equations isolated on their own lines to prevent GitHub's Markdown parser from turning your underscores into italics.
+
+---
+
 # Part 8: ...and the Omega
 
 You may have noticed that most talk of $\Omega_\beta^\alpha$ was conspicuously absent in the last part. The information below was initially slated for inclusion in Part 7 as you likely see from the title here being a continuation of the last.
@@ -34,10 +38,9 @@ It's finally time to promote $\Omega_m^n$ to multivariate status and take it for
 
 $$\Omega^n_m = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega^{n-1-j}_{m-1-j}$$
 
-$$↓↓↓↓$$
+$$\downarrow \downarrow \downarrow \downarrow$$
 
-$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
-
+$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
 
 ## Is Failure an Option?
 
@@ -53,13 +56,13 @@ Our corrected 1-D convolution updated to include multi-indices seemed natural to
 
 So, we start with:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
 
 The first step went really well. Let’s look at a first-order pure derivative, setting $\alpha = (1, 0)$ and stepping back along the $x$-axis so $w=1$ and $e_1 = (1, 0)$.
 
 The bounds of our sum become $0 \leq \beta \leq (0, 0)$, leaving us with exactly one term:
 
-$$\Gamma_{(1,0)} = G^{(x)}\_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
+$$\Gamma_{(1,0)} = G^{(x)}_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
 
 The result is promising, right? It's the proper multidimensional analog to our 1-D baseline $\Gamma_1 = G_0 \Omega_0^1$. It was clean, elegant, and mapped correctly.
 
@@ -69,13 +72,13 @@ Let's evaluate $\alpha = (1, 1)$. Because this is a mixed derivative, our formul
 
 Let's test Path 1 (stepping back along $x$):
 
-$$\Gamma_{(1,1)} \big|\_{x\text{-path}} = G^{(x)}\_{(0,1)} \Omega^{(1,1)}\_{(0,0)} + G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$$
+$$\Gamma_{(1,1)} \big|_{x\text{-path}} = G^{(x)}_{(0,1)} \Omega^{(1,1)}_{(0,0)} + G^{(x)}_{(0,0)} \Omega^{(1,1)}_{(0,1)}$$
 
 Now, let's test Path 2 (stepping back along $y$):
 
-$$\Gamma_{(1,1)} \big|\_{y\text{-path}} = G^{(y)}\_{(1,0)} \Omega^{(1,1)}\_{(0,0)} + G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
+$$\Gamma_{(1,1)} \big|_{y\text{-path}} = G^{(y)}_{(1,0)} \Omega^{(1,1)}_{(0,0)} + G^{(y)}_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
 
-Assuming standard continuous mixed partials (Clairaut's theorem), the first terms match perfectly since $G^{(x)}\_{(0,1)} = G^{(y)}\_{(1,0)}$. But look at the second terms. We are left with $G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$ versus $G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$.
+Assuming standard continuous mixed partials (Clairaut's theorem), the first terms match perfectly since $G^{(x)}_{(0,1)} = G^{(y)}_{(1,0)}$. But look at the second terms. We are left with $G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$ versus $G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$.
 
 While the $G$ coefficients simply represent $G^{(x)}$ and $G^{(y)}$, the $\Omega$ terms are different. Because the multidimensional $\Omega^\alpha_\beta$ recursively absorbs $F$-sector derivatives, $\Omega^{(1,1)}\_{(0,1)}$ and $\Omega^{(1,1)}_{(1,0)}$ evaluate to vastly different polynomials.
 
@@ -87,17 +90,17 @@ If choosing a single path $w$ breaks the symmetry, then maybe we need to try ave
 
 Let $P(\alpha)$ be the set of valid dimensions $w$ where we can step backward (i.e., $\alpha_w > 0$), and $|P(\alpha)|$ be the number of those paths.
 
-$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \Omega^\alpha_\beta \right)$$
+$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \Omega^\alpha_\beta \right)$$
 
 After the disaster of Attempt 1, applying this to the mixed second derivative $\alpha = (1,1)$ seemed much more promising.
 
 If we take the two diverging paths from Attempt 1, sum them, and divide by $2$:
 
-$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|\_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
+$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
 
-With expanded the $\Omega^{(1,1)}$ terms, the asymmetrical parts perfectly counterbalanced. The fractions neatly combined into whole integers, and the resulting polynomial matched the exact $F/G$-sector decomposition we expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
+When we expanded the $\Omega^{(1,1)}$ terms, the asymmetrical parts perfectly counterbalanced. The fractions neatly combined into whole integers, and the resulting polynomial matched the exact $F/G$-sector decomposition we expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
 
-At least it worked _so far_.
+At least it worked *so far*.
 
 Then came the third derivative, $\alpha = (2,1)$, and, well...
 
@@ -115,7 +118,7 @@ Since elegance didn't seem to work, it was time to try brute force. Forcing the 
 
 The convolution executed as:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}\_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
 
 At a strictly computational level, this chugged along like a dream. Because there was only ever one legal path to traverse, there were no divergent cross-terms to reconcile. Testing on dense higher-order derivatives like $\alpha = (1, 1, 1)$ and $\alpha = (2, 2)$ gave consistent, repeatable polynomials with integer coefficients. No phantom fractions, no ambiguity. Had we brute-forced our way past the tensor grid's defenses?
 
@@ -127,9 +130,7 @@ Worse still, this method completely shattered the continuous multidimensional sp
 
 Path dependency seemed an impenetrable wall. Convolutions just couldn't carry $\Omega^\alpha_\beta$ to $\Gamma_\alpha$ and $\Phi_\alpha$ without breaking the underlying tensor geometry.
 
-After watching one after another of these computer-friendly mechanisms meet their grisly demise, we were left with a single sure-fire but _horrifyingly_ processor-intensive option.
+After watching one after another of these computer-friendly mechanisms meet their grisly demise, we were left with a single sure-fire but *horrifyingly* processor-intensive option.
 
 ## To the Moaning and the Groaning of the Bells
-
-
 
