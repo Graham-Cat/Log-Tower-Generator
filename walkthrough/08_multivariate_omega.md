@@ -1,6 +1,6 @@
 # Part 8: ...and the Omega
 
-You may have noticed that most talk of $\Omega_\beta^\alpha$ was conspicuously absent in the last part. The information below was initially slated for inclusion in Part 7 as you likely see from the title here being a continuation of the last. The prior part got too long, in particular because of the inclusion of our coverage of Volterra integrals at the end, so our concluding work on the formalization of $\Omega_\beta^\alpha$ will be included here instead.
+You may have noticed that most talk of $\Omega_\beta^\alpha$ was conspicuously absent in the last part. The information below was initially slated for inclusion in Part 7 as you likely see from the title here being a continuation of the last. The prior part got too long, in particular because of the inclusion of our coverage of Volterra integrals at the end to prove the $\Gamma / \Phi$ differential ring is a continuous multidimensional space, so our concluding work on the formalization of $\Omega_\beta^\alpha$ will be included here instead.
 
 It's time to wrap up our multidimensional expansion, so let's get to it.
 
