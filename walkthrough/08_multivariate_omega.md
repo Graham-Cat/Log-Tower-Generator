@@ -127,5 +127,9 @@ Worse still, this method completely shattered the continuous multidimensional sp
 
 Path dependency seemed an impenetrable wall. Convolutions just couldn't carry $\Omega^\alpha_\beta$ to $\Gamma_\alpha$ and $\Phi_\alpha$ without breaking the underlying tensor geometry.
 
-After watching one after another of these computer-friendly mechanisms meet their grisly demise, we were left with a single sure fire but _horrifyingly_ processor-intensive option.
+After watching one after another of these computer-friendly mechanisms meet their grisly demise, we were left with a single sure-fire but _horrifyingly_ processor-intensive option.
+
+## To the Moaning and the Groaning of the Bells
+
+
 
