@@ -496,7 +496,60 @@ $$\frac{\partial}{\partial w} \Phi_\gamma = - \sum_{0 \le \beta < \gamma} \binom
 
 This equation in no uncertain terms tells us that _every derivative of_ $\Phi\_\alpha$ _is the multi-index binomial convolution between the partial derivatives of_ $-F^{(w)}$ _and its own corresponding lower-order states_.
 
-I think the technical term computer scientists use to refer to that kind of processing is "a piece of cake," but they perform even better when the siblings work together.
-
 ### Fraternité
 
+If we can take derivatives in the ring to climb the order ladder, we should be able to integrate to step back, so let's see what happens when we subject these siblings, $\Phi_\gamma$ and $\Gamma_\gamma$, to **Volterra integration**.
+
+Volterra integration involves integrating when unknown functions comprise some or all of the integrand. In this case, we're using it to assemble polynomials made of unknown differentiable functions.
+
+Let's start with the above equation regarding $\Phi_\gamma$, using $w$ for the dummy integration variable $\tau$, and integrate both sides from $0$ to $w$.
+
+$$\int_0^w \frac{\partial}{\partial \tau} \Phi_\gamma(\dots \tau \dots) d\tau = - \int_0^w \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\dots \tau \dots) d\tau$$
+
+The LHS resolves into $\Phi_\gamma$ evaluated from 0 to $w$ giving us our explicit integral generator on the RHS:
+
+$$\Phi_\gamma \Big|\_{0}^{w} = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
+
+Let's watch this alternative polynomial generator in action by running the first two levels through it.
+
+Let $\gamma = e_w$, or a vector with a 1 in the $w$ position and 0s elsewhere.
+
+Because our summation strictly requires $\beta < e_w$, the only valid multi-index for $\beta$ is the zero vector, $\vec{0}$.
+
+Let's plug $\beta = \vec{0}$ and the baseline $\Phi_{\vec{0}} = -1$ into the integral:
+
+$$\Phi_{e_w}(w) - \Phi_{e_w}(0) = - \int_0^w \binom{e_w}{\vec{0}} \left( D^{e_w} F^{(\tau)} \right) (-1)  d\tau$$
+
+The negative signs cancel. Since $D^{e_w}$ with respect to $\tau$ is simply the first partial derivative $\frac{\partial}{\partial \tau}$, the equation simplifies to:
+
+$$\Phi_{e_w}(w) - \Phi_{e_w}(0) = \int_0^w \frac{\partial}{\partial \tau} F^{(\tau)}  d\tau$$
+
+So integrating a direct derivative gives us the function back as expected:
+
+$$\Phi_{e_w}(w) - \Phi_{e_w}(0) = F^{(w)} \Big|\_{0}^{w}$$
+
+Since the first order works, let's push it one step further to see if the integral generates the correct higher-order polynomial.
+
+Let $\gamma = 2e_w$ this time.
+
+The summation now steps through $\beta = \vec{0}$ and $\beta = e_w$.
+
+$$\Phi_{2e_w} \Big|\_{0}^{w} = - \int_0^w \left[ \binom{2}{0} \left( D^{2e_w} F^{(\tau)} \right) \Phi_{\vec{0}} + \binom{2}{1} \left( D^{e_w} F^{(\tau)} \right) \Phi_{e_w} \right] d\tau$$
+
+Now we substitute our base case $\Phi_{\vec{0}} = -1$ and our newly integrated $\Phi_{e_w} = F^{(\tau)}$:
+
+$$\Phi_{2e_w} \Big|\_{0}^{w} = - \int_0^w \left[ - \frac{\partial^2}{\partial \tau^2} F^{(\tau)} + 2 \left( \frac{\partial}{\partial \tau} F^{(\tau)} \right) F^{(\tau)} \right] d\tau$$
+
+Let's move the negative sign into the integral. Notice what happens to the terms inside:
+
+$$= \int_0^w \left[ \frac{\partial^2}{\partial \tau^2} F^{(\tau)} - 2 F^{(\tau)} \left( \frac{\partial}{\partial \tau} F^{(\tau)} \right) \right] d\tau$$
+
+So the integral of the second derivative is the first derivative as expected. 
+
+Using the reverse chain rule, the integral of $-2 F^{(\tau)} \frac{\partial}{\partial \tau} F^{(\tau)}$ is $-(F^{(\tau)})^2$, so
+
+$$\Phi_{2e_w}(w) - \Phi_{2e_w}(0) = \left[ F^{(w)}_{(1,0)} - (F^{(w)})^2 \right] \Bigg|\_{0}^{w}$$
+
+which shows that $\Phi_{2e_w} = F^{(w)}_{(1,0)} - (F^{(w)})^2$. From our 1-D work $\Phi_2 = F_1 - F^2$, so we've been here before.
+
+Needless to say, the same thing happens when we subject the corresponding $\Gamma_\gamma$ equation to the same treatment.
