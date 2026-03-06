@@ -152,7 +152,7 @@ So, the discrete convolution, while elegant in 1-D, was betraying itself as a sp
 
 But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of times it would need to be applied to create even a small useful dataset.
 
-If mapping the multidimensional indices using matrix routing wasn't going to give $\Omega_\beta^\alpha$ its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn in desperation...
+If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to see its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn in desperation...
 
 ## To the Moaning and the Groaning of the Bells
 
