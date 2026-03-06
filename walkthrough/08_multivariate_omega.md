@@ -52,7 +52,7 @@ Our corrected 1-D convolution updated to include multi-indices seemed natural to
 
 So, we start with:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
 
 The first step went really well. Let’s look at a first-order pure derivative, setting $\alpha = (1, 0)$ and stepping back along the $x$-axis so $w=1$ and $e_1 = (1, 0)$.
 
@@ -88,9 +88,9 @@ Let $P(\alpha)$ be the set of valid dimensions $w$ where we can step backward (i
 
 $$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \text{ } \Omega^\alpha_\beta \right)$$
 
-After the disaster of Attempt 1, applying this to the mixed second derivative $\alpha = (1,1)$ seemed much more promising.
+After the gruesome fate that befell Victim 1, applying this to the mixed second derivative $\alpha = (1,1)$ seemed much more promising.
 
-If we take the two diverging paths from Attempt 1, sum them, and divide by $2$:
+If we take the two diverging paths, sum them, and divide by $2$:
 
 $$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|\_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
 
@@ -114,7 +114,7 @@ Since elegance didn't seem to work, it was time to try brute force. Forcing the 
 
 The convolution executed as:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}\_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
 
 At a strictly computational level, this chugged along like a dream. Because there was only ever one legal path to traverse, there were no divergent cross-terms to reconcile. Testing on dense higher-order derivatives like $\alpha = (1, 1, 1)$ and $\alpha = (2, 2)$ gave consistent, repeatable polynomials with integer coefficients. No phantom fractions, no ambiguity. Had we brute-forced our way past the tensor grid's defenses?
 
@@ -130,9 +130,9 @@ Path dependency seemed an impenetrable wall. Convolutions just couldn't carry $\
 
 Since using scalars kept leading to disaster, the next logical upgrade would be to a mechanism that had natural path-routing capabilities -- matrices. **Rank 2 tensors** and vectors might have held the key to zeroing out the main diagonal and cross-wiring the off-diagonal elements with our $-F$ modules.
 
-The first test on the mixed second derivative $\Gamma_{(1,1)}$ went really well. Both rows of the output vector evaluated to the exact same multidimensional surface, bypassing the commutative roadblocks that killed Attempts 1, 2, and 3. 
+The first test on the mixed second derivative $\Gamma_{(1,1)}$ went really well. Both rows of the output vector evaluated to the exact same multidimensional surface, bypassing the commutative roadblocks that murdered Victims 1, 2, and 3. 
 
-Then came $\Gamma_{(2,1)}$, and the engine ground to yet another sputtering halt. The newly minted tensor output compared to that of our established derivative shift operator, $\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$ held obvious, glaring errors.
+Then came $\Gamma_{(2,1)}$, and the engine ground to yet another sputtering halt. The newly minted tensor output compared to that of our established derivative shift operator, $\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$ held glaring errors.
 
 _Shift operator output along $x$ -path:_
 
@@ -142,17 +142,17 @@ _Rank 2 tensor output:_
 
 $$[\vec{\mathbf{\Gamma}}_{(2,1)}]^x = G^{(x)}\_{(1,1)} - F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)} - F^{(x)}\_{(0,1)} G^{(x)}\_{(1,0)} - F^{(x)}\_{(1,1)} G^{(x)} + F^{(x)} F^{(x)}\_{(0,1)} G^{(x)} + F^{(x)}_{(1,0)} F^{(y)} G^{(y)}$$
 
-Not even close. The continuous operator correctly paired first-order $F$ derivatives with base $G$ modules (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}$), while the tensor operator backwardly paired base $F$ modules with first-order $G$ derivatives (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)}$). Worse, the tensor spawned a second-order $F$ derivative ($- F^{(x)}_{(1,1)} G^{(x)}$) that didn't exist in the correct continuous expansion, meaning we had an **index assignment** mismatch.
+Not even close. The continuous operator correctly paired first-order $F$ derivatives with base $G$ modules (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}$), while the tensor operator paired base $F$ modules with first-order $G$ derivatives backwards (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)}$). Worse, the tensor spawned a second-order $F$ derivative ($- F^{(x)}_{(1,1)} G^{(x)}$) that didn't exist in the correct continuous expansion, meaning we had an **index assignment** mismatch.
 
 In one dimension, we can use $\Gamma_n = \sum G_{n-m-1} \Omega^n_m$ since the "remaining" derivatives ($n-m-1$) are explicitly assigned to the $G$ module. Since everything sits on one axis, the symmetry of Bell polynomials and integration-by-parts allows the derivatives to slide back and forth between $F$ and $G$ without breaking the engine.
 
 In a multidimensional environment, that symmetry shatters. By forcing the remaining multi-index vector $(\alpha - e_i - \beta)$ onto $\vec{\mathbf{G}}$, the tensor equation artificially inflated the derivatives of $G$ while starving $F$, wrecking the geometric reality.
 
-So, the discrete convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous derivative shift operator as the undisputed heavyweight champion of holding the multidimensional tensor grid together.
+So, the discrete convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous recursive $\Gamma_\alpha$ and $\Phi_\alpha$ shift operators as the undisputed heavyweight champions of holding the multidimensional tensor grid together.
 
-But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of times it would need to be applied to create even a small useful dataset.
+But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of recursive calculations required to create even a small useful dataset.
 
-If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to see its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn in desperation...
+If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to have its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn, out of sheer desperation...
 
 ## To the Moaning and the Groaning of the Bells
 
