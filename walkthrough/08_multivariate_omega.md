@@ -42,11 +42,11 @@ $$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_
 
 The next logical step after promoting $\Omega^\alpha_\beta$ seemed inevitable. Plugging the multidimensional analog for $\Omega$ into a multidimensional version of our 1-D convolution to generate $\Gamma_\alpha$ and $\Phi_\alpha$ made complete sense and would be a snap to code.
 
-Unfortunately, the transition from a single-variable integer line to a multidimensional tensor grid has a brutal stream to ford known as **path dependency**.
+Unfortunately, the transition from a single-variable integer line to a multidimensional tensor grid has a brutal mathematical barrier to breach known as **path dependency**.
 
-Come take a morbid tour of the graveyard of attempts to compute $\Gamma_\alpha$ and $\Phi_\alpha$ via direct $\Omega^\alpha_\beta$ convolutions, and watch as each seemingly viable method shatters on impact with reality.
+Come take a morbid tour of the graveyard of diabolical experiments in computing $\Gamma_\alpha$ and $\Phi_\alpha$ via direct $\Omega^\alpha_\beta$ convolutions, and watch in horror as each seemingly viable method meets its grisly demise.
 
-### Attempt 1: The Naive Multi-Index Substitution
+### Victim 1: The Naive Multi-Index Substitution
 
 Our corrected 1-D convolution updated to include multi-indices seemed natural to try after all our other multidimensional work. If $\Gamma_{n} = \sum_{m=0}^{n-1}G_{n-m-1}\Omega_m^n$, then the tensor equivalent may have just required choosing a dimension $w$ and shifting backward by its standard basis vector $e_w$.
 
@@ -58,7 +58,7 @@ The first step went really well. Let’s look at a first-order pure derivative, 
 
 The bounds of our sum become $0 \leq \beta \leq (0, 0)$, leaving us with exactly one term:
 
-$$\Gamma_{(1,0)} = G^{(x)}_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
+$$\Gamma_{(1,0)} = G^{(x)}\_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
 
 The result is promising, right? It's the proper multidimensional analog to our 1-D baseline $\Gamma_1 = G_0 \Omega_0^1$. It was clean, elegant, and mapped correctly.
 
@@ -80,13 +80,13 @@ While the $G$ coefficients simply represent $G^{(x)}$ and $G^{(y)}$, the $\Omega
 
 By forcing a choice of $w$, the convolution algorithm inherently privileges one coordinate axis over the other, destroying the symmetry required for a valid tensor. This wasn't a universal generator; it was a directional artifact.
 
-### Attempt 2: The Symmetrized Average
+### Victim 2: The Symmetrized Average
 
 If choosing a single path $w$ breaks the symmetry, then maybe we need to try averaging over all possible paths. If we sum the convolutions across all valid dimensional paths and divided by the number of paths, the directional biases could cancel out, leaving us with the true invariant $\Gamma_\alpha$.
 
 Let $P(\alpha)$ be the set of valid dimensions $w$ where we can step backward (i.e., $\alpha_w > 0$), and $|P(\alpha)|$ be the number of those paths.
 
-$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \Omega^\alpha_\beta \right)$$
+$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \text{ } \Omega^\alpha_\beta \right)$$
 
 After the disaster of Attempt 1, applying this to the mixed second derivative $\alpha = (1,1)$ seemed much more promising.
 
@@ -94,7 +94,7 @@ If we take the two diverging paths from Attempt 1, sum them, and divide by $2$:
 
 $$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|\_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
 
-When we expanded the $\Omega^{(1,1)}$ terms, the asymmetrical parts perfectly counterbalanced. The fractions neatly combined into whole integers, and the resulting polynomial matched the exact $F/G$-sector decomposition we expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
+When expanding the $\Omega^{(1,1)}$ terms, the asymmetrical parts counterbalanced. The fractions combined into whole integers, and the resulting polynomial matched the $F/G$-sector decomposition expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
 
 At least it worked *so far*.
 
@@ -108,7 +108,7 @@ When averaging the paths, it wasn't utterly unreasonable to hope the cross-terms
 
 Instead of whole numbers, the matrix was suddenly littered with unresolvable phantom fractions like $\frac{1}{2} F_{(1,0)} G_{(0,1)}$. The real matrix could only have integer coefficients dictated by Bell polynomial structures and generating functions. Our formula had generated a perfectly symmetric but nakedly fictional tensor.
 
-### Attempt 3: Strict Lexicographical Forcing
+### Victim 3: Strict Lexicographical Forcing
 
 Since elegance didn't seem to work, it was time to try brute force. Forcing the algorithm to evaluate indices in a strict lexicographical order, for example, always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$, could reasonably have fit the bill.
 
@@ -126,7 +126,33 @@ Worse still, this method completely shattered the continuous multidimensional sp
 
 Path dependency seemed an impenetrable wall. Convolutions just couldn't carry $\Omega^\alpha_\beta$ to $\Gamma_\alpha$ and $\Phi_\alpha$ without breaking the underlying tensor geometry.
 
-After watching one after another of these computer-friendly mechanisms meet their grisly demise, we were left with a single sure-fire but *horrifyingly* processor-intensive option.
+### Victim 4: The Rank 2 Tensor Framework
+
+Since using scalars kept leading to disaster, the next logical upgrade would be to a mechanism that had natural path-routing capabilities -- matrices. **Rank 2 tensors** and vectors might have held the key to zeroing out the main diagonal and cross-wiring the off-diagonal elements with our $-F$ modules.
+
+The first test on the mixed second derivative $\Gamma_{(1,1)}$ went really well. Both rows of the output vector evaluated to the exact same multidimensional surface, bypassing the commutative roadblocks that killed Attempts 1, 2, and 3. 
+
+Then came $\Gamma_{(2,1)}$, and the engine ground to yet another sputtering halt. The newly minted tensor output compared to that of our established derivative shift operator, $\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$ held obvious, glaring errors.
+
+_Shift operator output along $x$ -path:_
+
+$$\Gamma_{(2,1)} = G^{(x)}\_{(1,1)} - F^{(x)}\_{(0,1)} G^{(x)} - F^{(x)}\_{(1,0)} G^{(y)} - F^{(x)} G^{(x)}_{(0,1)} + (F^{(x)})^2 G^{(y)}$$
+
+_Rank 2 tensor output:_
+
+$$[\vec{\mathbf{\Gamma}}_{(2,1)}]^x = G^{(x)}\_{(1,1)} - F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)} - F^{(x)}\_{(0,1)} G^{(x)}\_{(1,0)} - F^{(x)}\_{(1,1)} G^{(x)} + F^{(x)} F^{(x)}\_{(0,1)} G^{(x)} + F^{(x)}_{(1,0)} F^{(y)} G^{(y)}$$
+
+Not even close. The continuous operator correctly paired first-order $F$ derivatives with base $G$ modules (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}$), while the tensor operator backwardly paired base $F$ modules with first-order $G$ derivatives (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)}$). Worse, the tensor spawned a second-order $F$ derivative ($- F^{(x)}_{(1,1)} G^{(x)}$) that didn't exist in the correct continuous expansion, meaning we had an **index assignment** mismatch.
+
+In one dimension, we can use $\Gamma_n = \sum G_{n-m-1} \Omega^n_m$ since the "remaining" derivatives ($n-m-1$) are explicitly assigned to the $G$ module. Since everything sits on one axis, the symmetry of Bell polynomials and integration-by-parts allows the derivatives to slide back and forth between $F$ and $G$ without breaking the engine.
+
+In a multidimensional environment, that symmetry shatters. By forcing the remaining multi-index vector $(\alpha - e_i - \beta)$ onto $\vec{\mathbf{G}}$, the tensor equation artificially inflated the derivatives of $G$ while starving $F$, wrecking the geometric reality.
+
+So, the discrete convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous derivative shift operator as the undisputed heavyweight champion of holding the multidimensional tensor grid together.
+
+But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of times it would need to be applied to create even a small useful dataset.
+
+If mapping the multidimensional indices using matrix routing wasn't going to give $\Omega_\beta^\alpha$ its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn in desperation...
 
 ## To the Moaning and the Groaning of the Bells
 
