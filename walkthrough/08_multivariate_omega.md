@@ -108,9 +108,9 @@ When averaging the paths, it wasn't utterly unreasonable to hope the cross-terms
 
 Instead of whole numbers, the matrix was suddenly littered with unresolvable phantom fractions like $\frac{1}{2} F_{(1,0)} G_{(0,1)}$. The real matrix could only have integer coefficients dictated by Bell polynomial structures and generating functions. Our formula had generated a perfectly symmetric but nakedly fictional tensor.
 
-### Victim 3: Strict Lexicographical Forcing
+### Victim 3: Strict Lexicographical Forcing within Naive Multi-Index Substitution
 
-Since elegance didn't seem to work, it was time to try brute force. Forcing the algorithm to evaluate indices in a strict lexicographical order, for example, always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$, could reasonably have fit the bill.
+Since elegance didn't seem to work, it was time to try brute force. Forcing the naive multi-index substitution of our linear convolution algorithm to evaluate indices in a strict lexicographical order, for example, always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$, could reasonably have fit the bill.
 
 The convolution executed as:
 
@@ -122,9 +122,9 @@ Yeah, no. We hadn't. While we had bypassed path dependency, the underlying geome
 
 Forcing a specific path (say, always exhausting $z$-derivatives, then $y$, then $x$) stripped the resulting $\Gamma_\alpha$ of its coordinate independence. Swapping $x$ and $y$ indices provided an entirely different polynomial. The matrix was just an artifact of whatever alphabet we arbitrarily chose.
 
-Worse still, this method completely shattered the continuous multidimensional space we just spent Part 7 proving. The Volterra integral equations that establish the continuity of the $\Gamma / \Phi$ differential ring rely on **isotropic geometry** (i.e., no single dimension can hold a privileged position in the integration limits). Yet the lexicographical algorithm inherently weighted the "first" chosen dimension differently than the "last" during the convolution step. Forcing an artificial hierarchy onto a continuous space shredded its algebraic fabric.
+Worse still, this method completely shattered the continuous multidimensional space we just spent Part 7 proving existed for this n-dimensional algebraic fractal expression. The Volterra integral equations that establish the continuity of the $\Gamma / \Phi$ differential ring rely on **isotropic geometry** (i.e., no single dimension can hold a privileged position in the integration limits). Yet the lexicographical algorithm inherently weighted the "first" chosen dimension differently than the "last" when used in the context of our linear convolution. Forcing an artificial hierarchy onto a continuous space shredded its algebraic fabric.
 
-Path dependency seemed an impenetrable wall. Convolutions just couldn't carry $\Omega^\alpha_\beta$ to $\Gamma_\alpha$ and $\Phi_\alpha$ without breaking the underlying tensor geometry.
+Path dependency loomed ever more horrifyingly large as a foe. Convolutions just couldn't carry $\Omega^\alpha_\beta$ to $\Gamma_\alpha$ and $\Phi_\alpha$ without breaking the underlying tensor geometry.
 
 ### Victim 4: The Rank 2 Tensor Framework
 
@@ -134,7 +134,7 @@ The first test on the mixed second derivative $\Gamma_{(1,1)}$ went really well.
 
 Then came $\Gamma_{(2,1)}$, and the engine ground to yet another sputtering halt. The newly minted tensor output compared to that of our established derivative shift operator, $\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$ held glaring errors.
 
-_Shift operator output along $x$ -path:_
+_Shift operator output along x-path:_
 
 $$\Gamma_{(2,1)} = G^{(x)}\_{(1,1)} - F^{(x)}\_{(0,1)} G^{(x)} - F^{(x)}\_{(1,0)} G^{(y)} - F^{(x)} G^{(x)}_{(0,1)} + (F^{(x)})^2 G^{(y)}$$
 
@@ -146,13 +146,25 @@ Not even close. The continuous operator correctly paired first-order $F$ derivat
 
 In one dimension, we can use $\Gamma_n = \sum G_{n-m-1} \Omega^n_m$ since the "remaining" derivatives ($n-m-1$) are explicitly assigned to the $G$ module. Since everything sits on one axis, the symmetry of Bell polynomials and integration-by-parts allows the derivatives to slide back and forth between $F$ and $G$ without breaking the engine.
 
-In a multidimensional environment, that symmetry shatters. By forcing the remaining multi-index vector $(\alpha - e_i - \beta)$ onto $\vec{\mathbf{G}}$, the tensor equation artificially inflated the derivatives of $G$ while starving $F$, wrecking the geometric reality.
+In a multidimensional environment, however, that symmetry shatters. By forcing the remaining multi-index vector $(\alpha - e_i - \beta)$ onto $\vec{\mathbf{G}}$, the tensor equation artificially inflated the derivatives of $G$ while starving $F$, wrecking the geometric reality.
 
 So, the discrete convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous recursive $\Gamma_\alpha$ and $\Phi_\alpha$ shift operators as the undisputed heavyweight champions of holding the multidimensional tensor grid together.
 
 But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of recursive calculations required to create even a small useful dataset.
 
-If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to have its day in the sun, we are ultimately forced to emerge from the graveyard of good intentions only to turn, out of sheer desperation...
+If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to emerge from this ghastly cemetary replete with our deceased good intentions and have its day in the sun, we are ultimately forced to emerge into the world through the stately front gates, only to turn, out of sheer desperation,...
 
 ## To the Moaning and the Groaning of the Bells
+
+Bell polynomial expressions are notoriously processor heavy, so they're not an option to be turned to lightly when CPU load is at a premium. While exceptional at predicting outcomes of repeated application of the product rule (_a la_ Faà di Bruno), their inherent combinatorial explosion when calculating higher-order derivatives makes it an unwieldy tool at best (and, at worst, a research killer) to implement.
+
+Let's do a quick runthrough of how **Complete Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
+
+Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after being viciously scarred by myriad, fatal algorithmic catastrophes.
+
+
+
+
+
+
 
