@@ -1,3 +1,9 @@
+# Recursive Generation of $\Gamma_{(2,2)}$
+
+Recall the recursive operator is given by
+
+$$\Gamma_\alpha = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) \Gamma_\beta$$
+
 By prescribing the path "exhaust $x$-steps, then proceed to $y$-steps" to reach $\Gamma_{(2,2)}$, the chronological path is strictly $x \to x \to y \to y$. This means the *last* operation to reach state $(2,2)$ was a $y$-step.
 
 Here is the step-by-step execution using the established recursive operator.
