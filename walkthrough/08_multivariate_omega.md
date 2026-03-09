@@ -396,5 +396,70 @@ Things are shaping up nicely so far. We have two grids here, one with each dimen
 
 But if we look at the known terms in $\Gamma_{(2,2)}$ above, the only $G$ terms present are $G^{(x)}$, $G^{(y)}$, $G^{(x)}\_{(1,0)}$, $G^{(y)}\_{(1,0)}$, $G^{(y)}\_{(2,0)}$, and $G^{(y)}_{(2,1)}$.
 
-That's six $G$ -terms and 12 slots, so half of them are empty. Does that mean half of these $\Omega_\beta^\alpha$ values are zero?
+That's six $G$ -terms and 12 slots, so half of them are empty. Does that mean half of these $\Omega_\beta^\alpha$ values are zero? But that can't be. There are non-zero vector designations in the superscripts and subscripts, so the $\Omega_\beta^\alpha$ values must have polynomials attached to them, and even where there are zeroes, we know that $\Omega_\emptyset^\alpha = 1$.
+
+Our lexicographic ordering convention of $x \to y \to z \to$ etc. only allows certain partials of $G^{(w)}$ to filter through, so our answer as to which $\Omega_\beta^\alpha$ polynomials we allow the algorithm to calculate comes from a dramatically slimmed-down version of our new Bell partitioning scheme that flawlessly calculated $\Gamma_{(2,2)}$.
+
+We still have to work from outside-in, so
+
+* **1:** $y$ (The fourth step, applied last)
+* **2:** $y$ (The third step)
+* **3:** $x$ (The second step)
+* **4:** $x$ (The first step, applied first)
+
+The new rule set becomes
+
+1. **The Root Anchor:** The root of any block is still its minimum integer.
+2. **Base Variable Designation:** The integer value of the root still dictates the base function.
+3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block still dictate the derivative subscript.
+4. **The $G$-Genesis Rule:** The base function $G$ is still assigned to the block containing the highest root in the partition. All other blocks are *ignored*.
+5. **The Group 2 Exit Rule:** Once group 2 is done processing, exit the algorithm.
+
+Note that the rules regarding ordering and overall sign have been removed since all results are positive by definition and there is only one term in each result, so ordering doesn't apply.
+
+### Group 1: 1-Block Partitions
+
+* **Partition 1:** $[1, 2, 3, 4]$
+* The single block has root $1 \implies y$ base. The highest root ($4$) determines the $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
+* *Result:* $G^{(y)}_{(2,1)}$
+
+### Group 2: 2-Block Partitions
+
+* **Partitions 2 & 3:** $[1, 2, 3], [4]$ and $[1, 2, 4], [3]$
+* Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. Ignore all other blocks.
+* *Result:* $G^{(x)}$
+
+* **Partition 4:** $[1, 3, 4], [2]$
+* Highest root is $2 \implies G^{(y)}$. Ignore the other block.
+* *Result:* $G^{(y)}$
+
+* **Partition 5:** $[2, 3, 4], [1]$
+* Highest root is $2$. Block is $[2(y), 3(x), 4(x)] \implies G^{(y)}_{(2,0)}$. Ignore the other block.
+* *Result:* $G^{(y)}_{(2,0)}$
+
+* **Partition 6:** $[1, 2], [3, 4]$
+* Highest root is $3$. Block $[3(x), 4(x)] \implies G^{(x)}\_{(1,0)}$. Ignore the other block.
+* *Result:* $G^{(x)}_{(1,0)}$
+
+* **Partitions 7 & 8:** $[1, 3], [2, 4]$ and $[1, 4], [2, 3]$
+* Highest root is $2$. Block contains $[y, x] \implies G^{(y)}\_{(1,0)}$. Ignore all other blocks.
+* *Result:* $G^{(y)}_{(1,0)}$
+
+And that's it. We've reached six distinct terms at the end of processing group 2, so we're done mapping out which $G_\alpha^{(w)}$ terms get an $\Omega_\beta^\alpha$ in the jet space.
+
+Why only process groups one and two?
+
+Every element in the timeline is numbered outside-in, meaning the last chronological step is always assigned the integer 1. Because of the $G$-Genesis Rule (the block with the highest root becomes the $G$-term), the location of the integer 1 controls everything.
+
+Group 1 is unique because if a block contains the integer 1, its root is 1. Because 1 is the lowest possible integer, the only way for it to be the "highest root" of the partition is if there are literally no other roots to compete with it.
+
+Group 2 contains everything else because one can always form this block in a 2-block partition by putting $B$ on one side, and lumping every other timeline element (including 1) into a single "garbage" block on the other side, so group 2 ($|P|=2$) mathematically guarantees the discovery of every other possible $G$-block.
+
+If you move to a 3-block partition ($|P|=3$), we are simply taking the "garbage" block from Group 2 (the one containing 1) and shattering it into two smaller pieces which provides no new information.
+
+We now have a *dramatically* reduced Bell set partitioning mechanism that can produce the list of necessary jet space addresses to populate, so we're done, right?
+
+Not quite. Wouldn't be worth just a *bit* more effort to be free of the Bell sets altogether, creating a true $O(S)$ generator for the valid jet space addresses? We saw how geometric explosion can bog down processors. Even a _partially_ tamed combinatorial monster is still only partially tamed.
+
+### Escaping the Monster
 
