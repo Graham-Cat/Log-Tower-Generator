@@ -36,7 +36,11 @@ $$\Omega^n_m = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega^{n-1-j}_{m-1-j}$$
 
 $$\downarrow \downarrow \downarrow \downarrow$$
 
-$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
+$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
+
+Huh. Are we allowed to do that? Seems like we just replaced the Roman lettering with Greek. Is going multidimensional with Omega just that easy?
+
+The answers are, in order, "yes and no." Let's find out why.
 
 ## Is Failure an Option?
 
@@ -205,7 +209,7 @@ For the lexicographical path $x \to x \to y \to y$, the final $y$-derivative is 
 * **3:** $x$ (The second step)
 * **4:** $x$ (The first step, applied first)
 
-### Always with the Rules
+### Rules, Rules, Always with the Rules
 
 With $S = [1, 2, 3, 4]$, we partition the set into all 15 possible geometric blocks (the Bell number $B_4 = 15$). To translate these abstract integer partitions into our polynomial string, we apply the following six rules:
 
@@ -348,5 +352,49 @@ So, jet spaces turn differential engines into rockets in terms of processing spe
 
 But once you're set up to run derivatives on 100,000 $g(X)^{h(X)}$ forcing functions against a single given base $f(X)$ function, the processor savings are massive.
 
+We now have all the tools we need, but there's one crucial piece missing.
 
+### Am I Allowed to Do That?
+
+Let's take a look at how $\Gamma_n$ looks with respect to $\Omega_m^n$ from our 1-D work. A copy of $\Gamma_2$ should do since we're already working with $\Gamma_{(2,2)}$:
+
+$$\Gamma_2 = G_1\Omega_0^2+G_0\Omega_1^2$$
+
+So, $\Gamma_{(2,2)}$ should logically become its 2-D extension (shown in matrix format for easy display and understanding):
+
+$$\Gamma_{(2,2)} = \begin{bmatrix}
+    1 & 1 & 1 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    G_{(2,1)}^{(x)}\Omega_{0,0}^{2,2} & G_{(2,0)}^{(x)}\Omega_{0,1}^{2,2} \\
+    G_{(1,1)}^{(x)}\Omega_{1,0}^{2,2} & G_{(1,0)}^{(x)}\Omega_{1,1}^{2,2} \\
+    G_{(0,1)}^{(x)}\Omega_{2,0}^{2,2} & G_{(0,0)}^{(x)}\Omega_{2,1}^{2,2} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    1  \\
+    1  
+\end{bmatrix}
++
+\begin{bmatrix}
+    1 & 1 & 1 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    G_{(2,1)}^{(y)}\Omega_{0,0}^{2,2} & G_{(2,0)}^{(y)}\Omega_{0,1}^{2,2} \\
+    G_{(1,1)}^{(y)}\Omega_{1,0}^{2,2} & G_{(1,0)}^{(y)}\Omega_{1,1}^{2,2} \\
+    G_{(0,1)}^{(y)}\Omega_{2,0}^{2,2} & G_{(0,0)}^{(y)}\Omega_{2,1}^{2,2} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    1  \\
+    1  
+\end{bmatrix}$$
+
+Things are shaping up nicely so far. We have two grids here, one with each dimension ($x$ and $y$) represented and attached to every possible $G_\alpha$ combination.
+
+But if we look at the known terms in $\Gamma_{(2,2)}$ above, the only $G$ terms present are $G^{(x)}$, $G^{(y)}$, $G^{(x)}\_{(1,0)}$, $G^{(y)}\_{(1,0)}$, $G^{(y)}\_{(2,0)}$, and $G^{(y)}_{(2,1)}$.
+
+That's six $G$ -terms and 12 slots, so half of them are empty. Does that mean half of these $\Omega_\beta^\alpha$ values are zero?
 
