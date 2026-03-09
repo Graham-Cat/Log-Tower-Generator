@@ -152,19 +152,153 @@ So, the discrete convolution, while elegant in 1-D, was betraying itself as a sp
 
 But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of recursive calculations required to create even a small useful dataset.
 
-If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to emerge from this ghastly cemetary replete with our deceased good intentions and have its day in the sun, we are ultimately forced to emerge into the world through the stately front gates, only to turn, out of sheer desperation,...
+If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ever to emerge from this ghastly cemetary replete with our deceased good intentions and have its day in the sun, we are ultimately forced to turn, out of sheer desperation,...
 
 ## To the Moaning and the Groaning of the Bells
 
 Bell polynomial expressions are notoriously processor heavy, so they're not an option to be turned to lightly when CPU load is at a premium. While exceptional at predicting outcomes of repeated application of the product rule (_a la_ Faà di Bruno), their inherent combinatorial explosion when calculating higher-order derivatives makes it an unwieldy tool at best (and, at worst, a research killer) to implement.
 
-Let's do a quick runthrough of how **Complete Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
+Let's do a quick runthrough of how **Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
 
-Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after being viciously scarred by myriad, fatal algorithmic catastrophes.
+Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after our myriad, fatal algorithmic catastrophes.
+
+Let's begin by coming up with a standard form of $\Gamma_{(2,2)}$ to test against.
+
+Since we're working with partial derivatives, the order in which we take them doesn't matter. To standardize, let's make a strict **lexicographical ordering** rule that we'll exhaust all $x$ 's first, then $y$ 's, then $z$ 's, etc. within the framework of the **derivative shift operator**. That way, while each $\Gamma_\alpha$ and $\Phi_\alpha$ will have several algebraically equvialent forms, they will only have one representative from their class. It'll prevent confusion and keep any databases we create free of redundant clutter.
+
+This ordering is not in and of itself what got us into trouble earlier (the discrete convolution engine was) so it's a safe policy to adopt.
+
+Recall the _recursive_ operator is given by
+
+$$\Gamma_\alpha = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) \Gamma_\beta$$
+
+If we execute step by step, exhausting all $x$ 's and then all $y$ 's and concatenate the resulting terms, we get: [^1]
+
+$$\Gamma_{(2,2)} = G^{(y)}_{(2,1)}$$
+
+$$- 2 F^{(y)}_{(1,1)} G^{(x)}$$
+
+$$- F^{(y)}\_{(0,1)} G^{(x)}\_{(1,0)} + F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$$
+
+$$- F^{(y)}_{(2,0)} G^{(y)}$$
+
+$$- 2 F^{(y)}\_{(1,0)} G^{(y)}\_{(1,0)} + 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$$
+
+$$- F^{(y)} G^{(y)}\_{(2,0)} + 2 F^{(y)} F^{(y)}\_{(1,0)} G^{(x)} + F^{(y)} F^{(y)} G^{(x)}_{(1,0)} - F^{(y)} F^{(y)} F^{(x)} G^{(x)}$$
+
+[^1]: The detailed execution of the operator is listed in [this](https://github.com/Graham-Cat/log-tower-v2-staging/blob/v2-development/notebooks/Gamma_2%2C2_recursive.md) (obviously AI generated) appendix.
+
+Even a cursory look at the AI-generated appendix shows that under a lexicographic $x \to y$ generation of terms by the proven **derivative shift operator**
+
+$$\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$$
+
+we are required to move _backwards_ from $y \to x$, like peeling the layers off an onion from the outside in to obtain the desired result.
+
+The recursive operator mirrors the structure of **Bell polynomial set partitioning** by expressing all set combinations, so we must do the same here.
+
+### Outside-In
+
+For the lexicographical path $x \to x \to y \to y$, the final $y$-derivative is the outermost operation, so we define our 4-element set $S = [1, 2, 3, 4]$ as:
+
+* **1:** $y$ (The fourth step, applied last)
+* **2:** $y$ (The third step)
+* **3:** $x$ (The second step)
+* **4:** $x$ (The first step, applied first)
+
+### Always with the Rules
+
+With $S = [1, 2, 3, 4]$, we partition the set into all 15 possible geometric blocks (the Bell number $B_4 = 15$). To translate these abstract integer partitions into our polynomial string, we apply the following six rules:
+
+1. **The Root Anchor:** The mathematical root of any block is strictly its *minimum* integer.
+2. **Base Variable Designation:** The integer value of the root dictates the base function ($1 \text{ or } 2 \implies y$; $3 \text{ or } 4 \implies x$).
+3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block dictate the derivative subscript (e.g., if a $y$-rooted block contains two $x$-integers, the subscript is $(2,0)$ ).
+4. **The $G$-Genesis Rule:** The base function $G$ is assigned strictly to the block containing the **highest root** in the entire partition. All other blocks default to $F$ factors.
+5. **Chronological Ordering:** Factors are multiplied in strictly ascending order of their roots (Root $1 \to$ Root $2 \to \dots$).
+6. **The Alternating Sign:** The overall sign of the translated partition is $(-1)^{|P|-1}$, where $|P|$ is the total number of blocks in the partition.
+
+### Group 1: 1-Block Partitions ($|P|=1$, Sign: $+$)
+
+* **Partition 1:** $[1, 2, 3, 4]$
+* The single block has root $1 \implies y$ base. It contains the highest root ($4$), making it a $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
+* *Result:* $+ G^{(y)}_{(2,1)}$
+
+### Group 2: 2-Block Partitions ($|P|=2$, Sign: $-$)
+
+* **Partitions 2 & 3:** $[1, 2, 3], [4]$ and $[1, 2, 4], [3]$
+* Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. The $F$-block in both contains root $1(y)$ with one $x$ and one $y$.
+* *Result:* $- 2 F^{(y)}_{(1,1)} G^{(x)}$
+
+
+* **Partition 4:** $[1, 3, 4], [2]$
+* Highest root is $2 \implies G^{(y)}$. The $F$-block has root $1(y)$ with two $x$'s.
+* *Result:* $- F^{(y)}_{(2,0)} G^{(y)}$
+
+
+* **Partition 5:** $[2, 3, 4], [1]$
+* Highest root is $2$. Block is $[2(y), 3(x), 4(x)] \implies G^{(y)}_{(2,0)}$. The isolated $F$-block is $[1(y)] \implies F^{(y)}$.
+* *Result:* $- F^{(y)} G^{(y)}_{(2,0)}$
+
+
+* **Partition 6:** $[1, 2], [3, 4]$
+* Highest root is $3$. Block $[3(x), 4(x)] \implies G^{(x)}\_{(1,0)}$. The $F$-block $[1(y), 2(y)] \implies F^{(y)}_{(0,1)}$.
+* *Result:* $- F^{(y)}\_{(0,1)} G^{(x)}_{(1,0)}$
+
+
+* **Partitions 7 & 8:** $[1, 3], [2, 4]$ and $[1, 4], [2, 3]$
+* Highest root is $2$. Block contains $[y, x] \implies G^{(y)}\_{(1,0)}$. $F$-block contains $[y, x] \implies F^{(y)}_{(1,0)}$.
+* *Result:* $- 2 F^{(y)}\_{(1,0)} G^{(y)}_{(1,0)}$
 
 
 
+### Group 3: 3-Block Partitions ($|P|=3$, Sign: $+$)
+
+* **Partition 9:** $[1, 2], [3], [4]$
+* Highest root $4 \implies G^{(x)}$. Root $1$ block is $[1(y), 2(y)] \implies F^{(y)}_{(0,1)}$. Root $3$ block is $[3(x)] \implies F^{(x)}$.
+* *Result:* $+ F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$
+
+
+* **Partitions 10 & 11:** $[1, 3], [2], [4]$ and $[1, 4], [2], [3]$
+* Highest root gives $G^{(x)}$. Root $1$ block has one $x \implies F^{(y)}_{(1,0)}$. Root $2$ block is $[2(y)] \implies F^{(y)}$.
+* *Result:* $+ 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$
+
+
+* **Partitions 12 & 13:** $[2, 3], [1], [4]$ and $[2, 4], [1], [3]$
+* Highest root gives $G^{(x)}$. Root $1$ block is $[1(y)] \implies F^{(y)}$. Root $2$ block has one $x \implies F^{(y)}_{(1,0)}$.
+* *Result:* $+ 2 F^{(y)} F^{(y)}_{(1,0)} G^{(x)}$
+
+
+* **Partition 14:** $[3, 4], [1], [2]$
+* Highest root $3$ block is $[3(x), 4(x)] \implies G^{(x)}_{(1,0)}$. Roots $1$ and $2$ are single $y$'s $\implies F^{(y)} F^{(y)}$.
+* *Result:* $+ F^{(y)} F^{(y)} G^{(x)}_{(1,0)}$
 
 
 
+### Group 4: 4-Block Partitions ($|P|=4$, Sign: $-$)
 
+* **Partition 15:** $[1], [2], [3], [4]$
+* Highest root $4 \implies G^{(x)}$. The remaining single-element blocks ordered by root yield $F^{(y)}$, $F^{(y)}$, and $F^{(x)}$.
+* *Result:* $- F^{(y)} F^{(y)} F^{(x)} G^{(x)}$
+
+Feel free to match each resulting term with the initial list.
+
+Seems like magic, but it's just Bell set partitioning being isomorphic with repeated use of the product rule, which is well established in differential math, so it shouldn't be a surprise.
+
+So, why don't we just use this algorithm to create every $\Gamma_\alpha$ and $\Phi_\alpha$ since we know for sure that it works?
+
+Because we're not just stopping at two dimensions and a net depth of four. To be properly useful, we need this tool to function in four dimensions to a net depth of at least eight, or possibly _many_ more when performing Taylor-style approximations.
+
+Let's have a look at how many partitions a processor would have wrangle just to get to the second partial on each of four dimensions:
+
+- $B_4$ (like $\Gamma_{(2,2)}$ above) = 15 partitions
+- $B_5$ = 52 partitions
+- $B_6$ = 203 partitions
+- $B_7$ = 877 partitions
+- $B_8$ = 4,140 partitions
+
+Let's not forget that these partitions would be needed to calculate a _single_ $\Gamma_\alpha$ at that depth, and we would need to calculate a _lot_ of $\Gamma_\alpha$ 's.
+
+The geometric explosion here is obvious. It would be a sure-fire processor killer in the context of large-scale use, like an aerospace corporation pitting a hypersonic fin design against tens (or even hundreds) of thousands of varying pressure and temperature conditions or a drug corporation testing a vast array of electron density fluctuations against a specific nanosurface.
+
+So why are we even bothering to talk about this kind of set partitioning in this context at all?
+
+Because _if you only have to do it **once**_ instead of millions of times, all of a sudden, the CPU cost becomes much more palatable.
