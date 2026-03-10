@@ -534,13 +534,4 @@ $\mathcal{H}(xy)$ represents the "accumulated drag" of the system, or, in other 
 
 We now have proven that the interaction between the identity ($e^x$) and the base function ($\overline{f}$) generates every single $\Omega_m^n$ coefficient and that the " $\Omega$ kernel" is mathematically consistent and stable for all derivatives to infinity.
 
-## Epilogue
-
-It's been quite a journey from that practice problem I made for myself last summer. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
-
-Many thanks to Copilot and Gemini for being my tutors/research grunts/productivity boosters.
-
-Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on beach vacations.
-
-In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
 
