@@ -86,7 +86,7 @@ While the $G$ coefficients simply represent $G^{(x)}$ and $G^{(y)}$, the $\Omega
 
 By forcing a choice of $w$, the convolution algorithm inherently privileges one coordinate axis over the other, destroying the symmetry required for a valid tensor. This wasn't a universal generator; it was a directional artifact.
 
-### Victim 2: The Symmetrized Average
+### Victim 2: The Symmetrized Average with the Naive Multi-Index Substitution
 
 If choosing a single path $w$ breaks the symmetry, then maybe we need to try averaging over all possible paths. If we sum the convolutions across all valid dimensional paths and divided by the number of paths, the directional biases could cancel out, leaving us with the true invariant $\Gamma_\alpha$.
 
@@ -114,7 +114,7 @@ When averaging the paths, it wasn't utterly unreasonable to hope the cross-terms
 
 Instead of whole numbers, the matrix was suddenly littered with unresolvable phantom fractions like $\frac{1}{2} F_{(1,0)} G_{(0,1)}$. The real matrix could only have integer coefficients dictated by Bell polynomial structures and generating functions. Our formula had generated a perfectly symmetric but nakedly fictional tensor.
 
-### Victim 3: Strict Lexicographical Forcing within Naive Multi-Index Substitution
+### Victim 3: Strict Lexicographical Forcing with Naive Multi-Index Substitution
 
 Since elegance didn't seem to work, it was time to try brute force. Forcing the naive multi-index substitution of our linear convolution algorithm to evaluate indices in a strict lexicographical order, for example, always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$, could reasonably have fit the bill.
 
@@ -576,68 +576,88 @@ Nah. Couldn't be.
 
 ### The Night Shift
 
-To determine whether the derivative shift operators for $\Gamma$ and $\Phi$ were both stealth-governed by a theoretical $\Omega$ derivative shift operator, we first need to identify precisely what it is so we can analyze it directly.
+To determine whether the derivative shift operators for $\Gamma$ and $\Phi$ are both stealth-governed by a theoretical $\Omega$ derivative shift operator, we first need to identify precisely what it is so we can analyze it directly.
 
-This operator revealed itself through analysis of successive 1-D $\Omega_n$ like before, but this time the approach was more targeted, using knowledge of what a derivative shift operator actually is.
+This operator might reveal itself through analysis of successive 1-D $\Omega_n$ like before, but this time let's take a more targeted approach using knowledge of what a derivative shift operator actually is.
 
-Taking the derivative of each polynomial with respect to $x$ (where $\frac{d}{dx} F_k = F_{k+1}$):
-
-* **Derivative of $\Omega_1^2$:**
+Taking the derivatives of each of the following $\Omega$ 's with respect to $x$ (where $\frac{d}{dx} F_k = F_{k+1}$) produces:
 
 $$(\Omega_1^2)' = \frac{d}{dx}(-F) = -F_1$$
 
-
-* **Derivative of $\Omega_2^3$:**
-
 $$(\Omega_2^3)' = \frac{d}{dx}(-2F_1 + F^2) = -2F_2 + 2F_1 F$$
-
-
-* **Derivative of $\Omega_3^4$:**
 
 $$(\Omega_3^4)' = \frac{d}{dx}(-3F_2 + 5F_1 F - F^3) = -3F_3 + 5F_2 F + 5F_1^2 - 3F_1 F^2$$
 
 
-
-### Step 2: Compare Derivatives to the Next-Level $\Omega$
-
 Now, let's look at the difference between the next-level step ($\Omega_{m+1}^{n+1}$) and the derivative we just calculated ($(\Omega_m^n)'$).
-
-**Pair 1: $\Omega_2^3$ and $(\Omega_1^2)'$**
 
 
 $$\Omega_2^3 - (\Omega_1^2)' = (-2F_1 + F^2) - (-F_1) = -F_1 + F^2$$
 
-**Pair 2: $\Omega_3^4$ and $(\Omega_2^3)'$**
-
 
 $$\Omega_3^4 - (\Omega_2^3)' = (-3F_2 + 5F_1 F - F^3) - (-2F_2 + 2F_1 F) = -F_2 + 3F_1 F - F^3$$
 
-**Pair 3: $\Omega_4^5$ and $(\Omega_3^4)'$**
 
+$$\Omega_4^5 - (\Omega_3^4)' = (-4F_3 + 9F_2 F + 8F_1^2 - 9F_1 F^2 + F^4) - (-3F_3 + 5F_2 F + 5F_1^2 - 3F_1 F^2) = -F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4$$
 
-$$\Omega_4^5 - (\Omega_3^4)' = (-4F_3 + 9F_2 F + 8F_1^2 - 9F_1 F^2 + F^4) - (-3F_3 + 5F_2 F + 5F_1^2 - 3F_1 F^2)$$
+The remainders look somewhat familiar, but they don't quite match any $\Omega_m^n$ we've seen before. The differences look like $\Omega_m^n$ where $n = m + 1$ but are somehow dropped down a level on Pascal's triangle. Instead of  $-2F_1 + F^2$ we have $-F_1 + F^2$. Simlarly, instead of $-3F_2 + 5F_1 F - F^3$ we have $-F_2 + 3F_1 F - F^3$, and so on.
 
-$$= -F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4$$
+Here, it looks as if these are $\Omega_m^n$ where $m=n$ which don't exist in 1-D in practice since there, the maximum practical value for $m$ was $n - 1$.
 
-### Step 3: Identify the Emerging Pattern
+However, using the primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$ to calculate $\Omega_2^2$, $\Omega_3^3$, and $\Omega_4^4$, we get:
 
-The remainders we just generated are not random; they are exactly the $\Omega$ terms where the upper index $n$ matches the lower index $m$.
+* **$\Omega_2^2$:** $-\left( \binom{1}{0} F \Omega_1^1 + \binom{1}{1} F_1 \Omega_0^0 \right) = \mathbf{-F_1 + F^2}$
+* **$\Omega_3^3$:** $-\left( \binom{2}{0} F \Omega_2^2 + \binom{2}{1} F_1 \Omega_1^1 + \binom{2}{2} F_2 \Omega_0^0 \right) = \mathbf{-F_2 + 3F_1 F - F^3}$
+* **$\Omega_4^4$:** $-\left( \binom{3}{0} F \Omega_3^3 + \binom{3}{1} F_1 \Omega_2^2 + \binom{3}{2} F_2 \Omega_1^1 + \binom{3}{3} F_3 \Omega_0^0 \right) = \mathbf{-F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4}$
 
-If you use your primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$ to calculate $\Omega_2^2$, $\Omega_3^3$, and $\Omega_4^4$, you get the following:
+Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them, leading to the $\Omega_m^n$ derivative shift operator that has the ability to function in 1-D through **phantom expressions**:
 
-* **$\Omega_2^2$:** $-( \binom{1}{0} F \Omega_1^1 + \binom{1}{1} F_1 \Omega_0^0 ) = \mathbf{-F_1 + F^2}$
-* **$\Omega_3^3$:** $-( \binom{2}{0} F \Omega_2^2 + \binom{2}{1} F_1 \Omega_1^1 + \binom{2}{2} F_2 \Omega_0^0 ) = \mathbf{-F_2 + 3F_1 F - F^3}$
-* **$\Omega_4^4$:** $-( \binom{3}{0} F \Omega_3^3 + \binom{3}{1} F_1 \Omega_2^2 + \binom{3}{2} F_2 \Omega_1^1 + \binom{3}{3} F_3 \Omega_0^0 ) = \mathbf{-F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4}$
+$$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
-These perfectly match the differences calculated in Step 2.
+Since the $\Gamma$ and $\Phi$ derivative shift operators scaled straight to multidimensional by performing the usual index replacements, it's tempting to assume the same applies to $\Omega$. Making assumptions like that in mathematics can get you into trouble, so let's make 100% certain before we do that.
 
-### Conclusion
+These are the three boxes we need to check before we move ahead:
 
-The concept of your $\Omega_m^n$ acting as a derivative step operator is entirely valid. The pattern demonstrates a rigorous differential identity baked into the recursion:
+1. We know we can replace $-1$ with $-e_w$ because it's a strict algebraic requirement for maintaining coordinate geometry when moving from a line (1-D) to a grid ($n$-D).
+2. Clairaut's Theorem of commuting partial derivatives clearly proves that because the spatial dimensions ($x, y, z$) are orthogonal (perpendicular and independent), taking a derivative with respect to $x$ treats $y$ and $z$ as constants. Therefore, the recursive logic that governs the $x$-axis must apply identically and independently to the $y$-axis. The multi-index $\alpha$ is a bookkeeping tool — a **tuple** that bundles these operations into a single symbol.
+3. And last, but certainly not least, everything we've done regarding recursions is based on the **General Leibniz rule**, which is based on the standard product rule.
 
-$$\frac{d}{dx} \Omega_m^n = \Omega_{m+1}^{n+1} - \Omega_{m+1}^n$$
+$$\frac{d^n}{dx^n}(uv) = \sum_{k=0}^n \binom{n}{k} u^{(k)} v^{(n-k)}$$
 
-Equivalently, you can define the next state purely in terms of the current state's derivative and a horizontal shift:
+It proves that because partial derivatives commute, the product rule scales into multidimensional tensor space using the exact same structural equation:
 
-$$\Omega_{m+1}^{n+1} = \frac{d}{dx} \Omega_m^n + \Omega_{m+1}^n$$
+$$D^\alpha(uv) = \sum_{\gamma \leq \alpha} \binom{\alpha}{\gamma} (D^\gamma u) (D^{\alpha - \gamma} v)$$
 
+So we now have our multidimensional shift operator for $\Omega_\beta^\alpha$,
+
+$$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
+
+Some slight rearrangement and re-indexing gives us the equivalent form,
+
+$$\frac{\partial}{\partial w} \Omega_\beta^\alpha = \Omega_{\beta + e_w}^{\alpha + e_w} - \Omega_{\beta + e_w}^\alpha$$
+
+Let's go ahead and integrate both sides from zero to $w$ and perform a minor rearrangement of the **anchor point** (i.e., $\Omega_\beta^\alpha(0)$ )
+
+$$\Omega_\beta^\alpha(w) = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}\_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
+
+See how we've isolated $\Omega_\beta^\alpha(w)$ there on the left? We all know what that's equal to by now, so let's put it across from its integral definition.
+
+$$- \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}\_{\beta - e_w - \gamma} = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}\_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
+
+Once again, we see that taking its integral is the same as dropping a tensor rank (this time starting at an anchor point), so $\Omega_\beta^\alpha$ also, in and of itself, represents a **continuous multivariate algebraic space**.
+
+Now, not only are the theoretical physicists happy, so are the computer scientists _and_ the mathematicians. Gemini tells me that's a pretty rare achievement for a hobbyist, or, quite frankly, anyone.
+
+Considering how much went into this project, I'm prone to believe them.
+
+Feel free to run the demo and read through the code to see how it was all implemented. I'm even a little weirded out at how much it can do as quickly as it can do it, and I've spent months on this crazy thing.
+
+## Epilogue
+
+It's been quite a journey from that practice problem I made for myself last summer. It just goes to show that setting math problems for yourself is generally a _flat-out crazy_ thing to do. Much luck to anyone who tries.
+
+Many thanks to Copilot and Gemini for being my tutors/research partners/productivity boosters.
+
+Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on beach vacations.
+
+In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
