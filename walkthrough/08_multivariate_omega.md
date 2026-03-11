@@ -204,16 +204,16 @@ The recursive operator mirrors the structure of **Bell polynomial set partitioni
 
 ### Outside-In
 
-For the lexicographical path $x \to x \to y \to y$, the final $y$-derivative is the outermost operation, so we define our 4-element set $S = [1, 2, 3, 4]$ as:
+For the lexicographical path $x \to x \to y \to y$, the final $y$-derivative is the outermost operation, so we define our 4-element set $S = \left\lbrace 1, 2, 3, 4 \right\rbrace$ as:
 
 * **1:** $y$ (The fourth step, applied last)
 * **2:** $y$ (The third step)
 * **3:** $x$ (The second step)
 * **4:** $x$ (The first step, applied first)
 
-### Rules, Rules, Always with the Rules
+### Rules, Rules, Rules!
 
-With $S = [1, 2, 3, 4]$, we partition the set into all 15 possible geometric blocks (the Bell number $B_4 = 15$). To translate these abstract integer partitions into our polynomial string, we apply the following six rules:
+With $S = \left\lbrace 1, 2, 3, 4 \right\rbrace$, we partition the set into all 15 possible geometric blocks (the Bell number $B_4 = 15$). To translate these abstract integer partitions into our polynomial string, we apply the following six rules:
 
 1. **The Root Anchor:** The mathematical root of any block is its *minimum* integer.
 2. **Base Variable Designation:** The integer value of the root dictates the base function ($1 \text{ or } 2 \implies y$; $3 \text{ or } 4 \implies x$).
@@ -224,66 +224,55 @@ With $S = [1, 2, 3, 4]$, we partition the set into all 15 possible geometric blo
 
 ### Group 1: 1-Block Partitions ($|P|=1$, Sign: $+$)
 
-* **Partition 1:** $[1, 2, 3, 4]$
-* The single block has root $1 \implies y$ base. It contains the highest root ($4$), making it a $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
-* *Result:* $+ G^{(y)}_{(2,1)}$
+**Partition 1:** $\left\lbrace 1, 2, 3, 4 \right\rbrace$
+- The single block has root $1 \implies y$ base. It contains the highest root ($4$), making it a $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
+- *Result:* $+ G^{(y)}_{(2,1)}$
 
 ### Group 2: 2-Block Partitions ($|P|=2$, Sign: $-$)
 
-* **Partitions 2 & 3:** $[1, 2, 3], [4]$ and $[1, 2, 4], [3]$
-* Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. The $F$-block in both contains root $1(y)$ with one $x$ and one $y$.
-* *Result:* $- 2 F^{(y)}_{(1,1)} G^{(x)}$
+**Partitions 2 & 3:** $\left\lbrace 1, 2, 3 \right\rbrace, \left\lbrace 4 \right\rbrace$ and $\left\lbrace 1, 2, 4 \right\rbrace, \left\lbrace 3 \right\rbrace$
+- Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. The $F$-block in both contains root $1(y)$ with one $x$ and one $y$.
+- *Result:* $- 2 F^{(y)}_{(1,1)} G^{(x)}$
 
+**Partition 4:** $\left\lbrace 1, 3, 4 \right\rbrace, \left\lbrace 2 \right\rbrace$
+- Highest root is $2 \implies G^{(y)}$. The $F$-block has root $1(y)$ with two $x$'s.
+- *Result:* $- F^{(y)}_{(2,0)} G^{(y)}$
 
-* **Partition 4:** $[1, 3, 4], [2]$
-* Highest root is $2 \implies G^{(y)}$. The $F$-block has root $1(y)$ with two $x$'s.
-* *Result:* $- F^{(y)}_{(2,0)} G^{(y)}$
+**Partition 5:** $\left\lbrace 2, 3, 4 \right\rbrace, \left\lbrace 1 \right\rbrace$
+- Highest root is $2$. Block is $\left\lbrace 2(y), 3(x), 4(x) \right\rbrace \implies G^{(y)}_{(2,0)}$. The isolated $F$-block is $\left\lbrace 1(y) \right\rbrace \implies F^{(y)}$.
+- *Result:* $- F^{(y)} G^{(y)}_{(2,0)}$
 
+**Partition 6:** $\left\lbrace 1, 2 \right\rbrace, \left\lbrace 3, 4 \right\rbrace$
+- Highest root is $3$. Block $\left\lbrace 3(x), 4(x) \right\rbrace \implies G^{(x)}\_{(1,0)}$. The $F$-block $\left\lbrace 1(y), 2(y) \right\rbrace \implies F^{(y)}_{(0,1)}$.
+- *Result:* $- F^{(y)}\_{(0,1)} G^{(x)}_{(1,0)}$
 
-* **Partition 5:** $[2, 3, 4], [1]$
-* Highest root is $2$. Block is $[2(y), 3(x), 4(x)] \implies G^{(y)}_{(2,0)}$. The isolated $F$-block is $[1(y)] \implies F^{(y)}$.
-* *Result:* $- F^{(y)} G^{(y)}_{(2,0)}$
-
-
-* **Partition 6:** $[1, 2], [3, 4]$
-* Highest root is $3$. Block $[3(x), 4(x)] \implies G^{(x)}\_{(1,0)}$. The $F$-block $[1(y), 2(y)] \implies F^{(y)}_{(0,1)}$.
-* *Result:* $- F^{(y)}\_{(0,1)} G^{(x)}_{(1,0)}$
-
-
-* **Partitions 7 & 8:** $[1, 3], [2, 4]$ and $[1, 4], [2, 3]$
-* Highest root is $2$. Block contains $[y, x] \implies G^{(y)}\_{(1,0)}$. $F$-block contains $[y, x] \implies F^{(y)}_{(1,0)}$.
-* *Result:* $- 2 F^{(y)}\_{(1,0)} G^{(y)}_{(1,0)}$
-
-
+**Partitions 7 & 8:** $\left\lbrace 1, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace$ and $\left\lbrace 1, 4 \right\rbrace, \left\lbrace 2, 3 \right\rbrace$
+- Highest root is $2$. Block contains $\left\lbrace y, x \right\rbrace \implies G^{(y)}\_{(1,0)}$. $F$-block contains $\left\lbrace y, x \right\rbrace \implies F^{(y)}_{(1,0)}$.
+- *Result:* $- 2 F^{(y)}\_{(1,0)} G^{(y)}_{(1,0)}$
 
 ### Group 3: 3-Block Partitions ($|P|=3$, Sign: $+$)
 
-* **Partition 9:** $[1, 2], [3], [4]$
-* Highest root $4 \implies G^{(x)}$. Root $1$ block is $[1(y), 2(y)] \implies F^{(y)}_{(0,1)}$. Root $3$ block is $[3(x)] \implies F^{(x)}$.
-* *Result:* $+ F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$
+* **Partition 9:** $\left\lbrace 1, 2 \right\rbrace, \left\lbrace 3 \right\rbrace, \left\lbrace 4 \right\rbrace$
+- Highest root $4 \implies G^{(x)}$. Root $1$ block is $\left\lbrace 1(y), 2(y) \right\rbrace \implies F^{(y)}_{(0,1)}$. Root $3$ block is $\left\lbrace 3(x) \right\rbrace \implies F^{(x)}$.
+- *Result:* $+ F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$
 
+**Partitions 10 & 11:** $\left\lbrace 1, 3 \right\rbrace, \left\lbrace 2 \right\rbrace, \left\lbrace 4 \right\rbrace$ and $\left\lbrace 1, 4 \right\rbrace, \left\lbrace 2 \right\rbrace, \left\lbrace 3 \right\rbrace$
+- Highest root gives $G^{(x)}$. Root $1$ block has one $x \implies F^{(y)}_{(1,0)}$. Root $2$ block is $\left\lbrace 2(y) \right\rbrace \implies F^{(y)}$.
+- *Result:* $+ 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$
 
-* **Partitions 10 & 11:** $[1, 3], [2], [4]$ and $[1, 4], [2], [3]$
-* Highest root gives $G^{(x)}$. Root $1$ block has one $x \implies F^{(y)}_{(1,0)}$. Root $2$ block is $[2(y)] \implies F^{(y)}$.
-* *Result:* $+ 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$
+**Partitions 12 & 13:** $\left\lbrace 2, 3 \right\rbrace, \left\lbrace 1 \right\rbrace, \left\lbrace 4 \right\rbrace$ and $\left\lbrace 2, 4 \right\rbrace, \left\lbrace 1 \right\rbrace, \left\lbrace 3 \right\rbrace$
+- Highest root gives $G^{(x)}$. Root $1$ block is $\left\lbrace 1(y) \right\rbrace \implies F^{(y)}$. Root $2$ block has one $x \implies F^{(y)}_{(1,0)}$.
+- *Result:* $+ 2 F^{(y)} F^{(y)}_{(1,0)} G^{(x)}$
 
-
-* **Partitions 12 & 13:** $[2, 3], [1], [4]$ and $[2, 4], [1], [3]$
-* Highest root gives $G^{(x)}$. Root $1$ block is $[1(y)] \implies F^{(y)}$. Root $2$ block has one $x \implies F^{(y)}_{(1,0)}$.
-* *Result:* $+ 2 F^{(y)} F^{(y)}_{(1,0)} G^{(x)}$
-
-
-* **Partition 14:** $[3, 4], [1], [2]$
-* Highest root $3$ block is $[3(x), 4(x)] \implies G^{(x)}_{(1,0)}$. Roots $1$ and $2$ are single $y$'s $\implies F^{(y)} F^{(y)}$.
-* *Result:* $+ F^{(y)} F^{(y)} G^{(x)}_{(1,0)}$
-
-
+**Partition 14:** $\left\lbrace 3, 4 \right\rbrace, \left\lbrace 1 \right\rbrace, \left\lbrace 2 \right\rbrace$
+- Highest root $3$ block is $\left\lbrace 3(x), 4(x) \right\rbrace \implies G^{(x)}_{(1,0)}$. Roots $1$ and $2$ are single $y$'s $\implies F^{(y)} F^{(y)}$.
+- *Result:* $+ F^{(y)} F^{(y)} G^{(x)}_{(1,0)}$
 
 ### Group 4: 4-Block Partitions ($|P|=4$, Sign: $-$)
 
-* **Partition 15:** $[1], [2], [3], [4]$
-* Highest root $4 \implies G^{(x)}$. The remaining single-element blocks ordered by root yield $F^{(y)}$, $F^{(y)}$, and $F^{(x)}$.
-* *Result:* $- F^{(y)} F^{(y)} F^{(x)} G^{(x)}$
+**Partition 15:** $\left\lbrace 1 \right\rbrace, \left\lbrace 2 \right\rbrace, \left\lbrace 3 \right\rbrace, \left\lbrace 4 \right\rbrace$
+- Highest root $4 \implies G^{(x)}$. The remaining single-element blocks ordered by root yield $F^{(y)}$, $F^{(y)}$, and $F^{(x)}$.
+- *Result:* $- F^{(y)} F^{(y)} F^{(x)} G^{(x)}$
 
 Feel free to match each resulting term with the initial list.
 
@@ -407,7 +396,7 @@ Moreover, the $\beta$ vector in $\Omega_\beta^\alpha$ has some duplicates betwee
 
 Our lexicographic ordering convention of $x \to y \to z \to$ etc. only allows certain partials of $G^{(w)}$ to filter through, so our answer as to which $\Omega_\beta^\alpha$ polynomials we allow the algorithm to calculate comes from a dramatically slimmed-down version of our new Bell partitioning scheme that flawlessly calculated $\Gamma_{(2,2)}$.
 
-We still have to work from outside-in, so
+We still have to work from outside-in, so again we define our 4-element set $S = \left\lbrace 1, 2, 3, 4 \right\rbrace$ as:
 
 * **1:** $y$ (The fourth step, applied last)
 * **2:** $y$ (The third step)
@@ -426,31 +415,31 @@ Note that the rules regarding ordering and overall sign have been removed since 
 
 ### Group 1: 1-Block Partitions
 
-* **Partition 1:** $[1, 2, 3, 4]$
-* The single block has root $1 \implies y$ base. The highest root ($4$) determines the $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
-* *Result:* $G^{(y)}_{(2,1)}$
+**Partition 1:** $\left\lbrace 1, 2, 3, 4 \right\rbrace$
+- The single block has root $1 \implies y$ base. The highest root ($4$) determines the $G$-factor. The remaining elements are one $y$ ($2$) and two $x$'s ($3, 4$).
+- *Result:* $G^{(y)}_{(2,1)}$
 
 ### Group 2: 2-Block Partitions
 
-* **Partitions 2 & 3:** $[1, 2, 3], [4]$ and $[1, 2, 4], [3]$
-* Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. Ignore all other blocks.
-* *Result:* $G^{(x)}$
+**Partitions 2 & 3:** $\left\lbrace 1, 2, 3 \right\rbrace, \left\lbrace 4 \right\rbrace$ and $\left\lbrace 1, 2, 4 \right\rbrace, \left\lbrace 3 \right\rbrace$
+- Highest roots are $4$ and $3$, giving an isolated $G^{(x)}$ factor. Ignore all other blocks.
+- *Result:* $G^{(x)}$
 
-* **Partition 4:** $[1, 3, 4], [2]$
-* Highest root is $2 \implies G^{(y)}$. Ignore the other block.
-* *Result:* $G^{(y)}$
+**Partition 4:** $\left\lbrace 1, 3, 4 \right\rbrace, \left\lbrace 2 \right\rbrace$
+- Highest root is $2 \implies G^{(y)}$. Ignore the other block.
+- *Result:* $G^{(y)}$
 
-* **Partition 5:** $[2, 3, 4], [1]$
-* Highest root is $2$. Block is $[2(y), 3(x), 4(x)] \implies G^{(y)}_{(2,0)}$. Ignore the other block.
-* *Result:* $G^{(y)}_{(2,0)}$
+**Partition 5:** $\left\lbrace 2, 3, 4 \right\rbrace, \left\lbrace 1 \right\rbrace$
+- Highest root is $2$. Block is $\left\lbrace 2(y), 3(x), 4(x) \right\rbrace \implies G^{(y)}_{(2,0)}$. Ignore the other block.
+- *Result:* $G^{(y)}_{(2,0)}$
 
-* **Partition 6:** $[1, 2], [3, 4]$
-* Highest root is $3$. Block $[3(x), 4(x)] \implies G^{(x)}\_{(1,0)}$. Ignore the other block.
-* *Result:* $G^{(x)}_{(1,0)}$
+**Partition 6:** $\left\lbrace 1, 2 \right\rbrace, \left\lbrace 3, 4 \right\rbrace$
+- Highest root is $3$. Block $\left\lbrace 3(x), 4(x) \right\rbrace \implies G^{(x)}_{(1,0)}$. Ignore the other block.
+- *Result:* $G^{(x)}_{(1,0)}$
 
-* **Partitions 7 & 8:** $[1, 3], [2, 4]$ and $[1, 4], [2, 3]$
-* Highest root is $2$. Block contains $[y, x] \implies G^{(y)}\_{(1,0)}$. Ignore all other blocks.
-* *Result:* $G^{(y)}_{(1,0)}$
+**Partitions 7 & 8:** $\left\lbrace 1, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace$ and $\left\lbrace 1, 4 \right\rbrace, \left\lbrace 2, 3 \right\rbrace$
+- Highest root is $2$. Block contains $\left\lbrace y, x \right\rbrace \implies G^{(y)}_{(1,0)}$. Ignore all other blocks.
+- *Result:* $G^{(y)}_{(1,0)}$
 
 And that's it. We've reached six distinct terms at the end of processing group 2, so we're done mapping out which $G_\alpha^{(w)}$ terms get an $\Omega_\beta^\alpha$ in the jet space.
 
@@ -564,7 +553,7 @@ The most elegant feature of this algorithm is how it handles the very first vari
 By abandoning the Bell sets for the final code execution, the script runs exactly as many loop iterations as there are valid coordinates. For a dense 4-D state like $\Gamma_{(2,2,2,2)}$, instead of sifting through 4,140 integer partitions, the engine simply pre-allocates exactly 44 dictionary keys, handing a perfectly clean tensor skeleton over to the recursive $\Omega$ summation engine.
 
 ---
-## Wait. Where's the Math?
+### Where's the (Mathematical) Beef?
 
 That's the code, but we need mathematical language to go with it. The selection of valid jet space $G_\alpha^{(w)}$ addresses has clear mathematical rules, so there's a mathematical way to state them.
 
@@ -607,40 +596,41 @@ Now we finally don't have any duplicate $\beta$ vectors for $\Omega$, so it pass
 
 ### Time after Time
 
-We create something called a **Chronologically Constrained Index Set**. Let's call it $C_\alpha$.
+We create something called a **Chronologically Constrained Index Set**, denoted as $\hat{A}_\alpha$.
 
-We start by letting $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index that defines a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$. Because the base modules of the differential ring depend on a dimensional axis, the standard hyper-rectangle $0 \le \beta \le \alpha$ contains many chronologically invalid phantom states as represented by the zeroes in the above matrix representation.
+We start by letting $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index that defines a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$.
 
-We define $C_\alpha$ as the **Constrained Index Set** of allowable jet space coordinates to satisfy the sequence that the derivative operator spawns.
+Because the base modules of the differential ring depend on a dimensional axis, the standard hyper-rectangle $0 \le \beta \le \alpha$ contains many chronologically invalid phantom states as represented by the zeroes in the above matrix representation.
 
-The set $C_\alpha$ is the union of path-dependent subsets that their active root axis (i.e., $x_k$) partitioned. For every dimension $k \in \{1, 2, \dots, d\}$ where $\alpha_k > 0$, _two conditions_ generate the valid multi-index coordinates ($\beta$) paired with root axis ($x_k$):
+We define $\hat{A}_\alpha$ as the **Constrained Index Set** of allowable jet space coordinates to satisfy the sequence that the derivative operator spawns.
+
+The set $\hat{A}_\alpha$ is the union of path-dependent subsets, partitioned by their active root axis (i.e., $x_k$). For every dimension $k \in \left\lbrace 1, 2, \dots, d \right\rbrace$ where $\alpha_k > 0$, *two conditions* generate the valid multi-index coordinates ($\beta$) paired with the root axis ($x_k$):
 
 **1. The Anchor State**
 The upper chronological boundary where all prior axes have reached their target state, and the current root axis is shifted by exactly one derivative:
 
+$$\mathcal{S}_{k, \text{anchor}} = \left\lbrace (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
-$$\mathcal{S}_{k, \text{anchor}} = \left\[ (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\]$$
-
-This state is represented by **Group 1** (e.g., **Partition 1:** $[1, 2, 3, 4]$), but this time, we don't need to load a bunch of Bell polynomial sets to produce it.
+This state is represented by **Group 1** (e.g., **Partition 1:** $\left\lbrace 1, 2, 3, 4 \right\rbrace$), but this time, we don't need to load a bunch of Bell polynomial sets to produce it.
 
 **2. The Historical Web**
 The cumulative routing history where prior axes occupy any valid state within their bounds, and the current root axis accounts for the remaining lower-order derivatives (provided $\alpha_k > 1$):
 
-$$\mathcal{S}_{k, \text{web}} = \left\[ (x_k, \beta) \mid 0 \le \beta_j \le \alpha_j \text{ for } j < k, \quad 0 \le \beta_k \le \alpha_k - 2, \quad \beta_j = 0 \text{ for } j > k \right\]$$
+$$\mathcal{S}_{k, \text{web}} = \left\lbrace (x_k, \beta) \mid 0 \le \beta_j \le \alpha_j \text{ for } j < k, \quad 0 \le \beta_k \le \alpha_k - 2, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
-Logically, by process of elimination, the historical web must comprise **Group 2** (e.g., **all other partitions**: $[1, 2, 3], [4]$; $[1, 2, 4], [3]$; $[1, 3, 4], [2]$; $[2, 3, 4], [1]$; $[1, 2], [3, 4]$; $[1, 3], [2, 4]$; and $[1, 4], [2, 3]$ ), produced, again, _without calling a single Bell polynomial_.
+Logically, by process of elimination, the historical web must comprise **Group 2** (e.g., **all other partitions**: $\left\lbrace 1, 2, 3 \right\rbrace, \left\lbrace 4 \right\rbrace$; $\left\lbrace 1, 2, 4 \right\rbrace, \left\lbrace 3 \right\rbrace$; $\left\lbrace 1, 3, 4 \right\rbrace, \left\lbrace 2 \right\rbrace$; $\left\lbrace 2, 3, 4 \right\rbrace, \left\lbrace 1 \right\rbrace$; $\left\lbrace 1, 2 \right\rbrace, \left\lbrace 3, 4 \right\rbrace$; $\left\lbrace 1, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace$; and $\left\lbrace 1, 4 \right\rbrace, \left\lbrace 2, 3 \right\rbrace$), produced, again, *without calling a single Bell polynomial*.
 
 The full set of allowable jet space addresses is the union of these two chronological subsets across all dimensions:
 
-$$C\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
+$$\hat{A}\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
 
 So we evaluate the master polynomial state over this constrained path to produce $\Gamma_\alpha$:
 
-$$\Gamma_\alpha = \sum_{(x_k, \beta) \in C\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
-Of course, $\Phi_\alpha$ is accumulated in the same fashion except with $\Omega_{\alpha - \beta}^\alpha$ appended to $F^{(x_k)}\_{\beta}$ via the constrained convolution, represented as:
+Of course, $\Phi_\alpha$ is accumulated in the same fashion except with $\Omega_{\alpha - \beta}^\alpha$ appended to $F^{(x_k)}_{\beta}$ via the constrained convolution, represented as:
 
-$$\Phi_\alpha = \sum_{(x_k, \beta) \in C\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+$$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
 
 ## ...and (Finally) the (Complete) Omega
