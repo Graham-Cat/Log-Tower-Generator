@@ -634,15 +634,13 @@ The full set of allowable jet space addresses is the union of these two chronolo
 
 $$C\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
 
-So we evaluate the master polynomial state over this constrained path:
+So we evaluate the master polynomial state over this constrained path to produce $\Gamma_\alpha$:
 
-$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \mathcal{A}\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\text{idx}}^\alpha$$
+$$\Gamma_\alpha = \sum_{(x_k, \beta) \in C\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
-where $\text{idx}$ is the lower-index mapping applied to the $\Omega$ matrix for that coordinate.
+Of course, $\Phi_\alpha$ is accumulated in the same fashion except with $\Omega_{\alpha - \beta}^\alpha$ appended to $F^{(x_k)}\_{\beta}$ via the constrained convolution, represented as:
 
-Of course, $\Phi_\alpha$ is accumulated in the same fashion.
-
-$$\Phi_\alpha = \sum_{(x_k, \beta) \in \mathcal{A}\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\text{idx}}^\alpha$$
+$$\Phi_\alpha = \sum_{(x_k, \beta) \in C\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
 
 ## ...and (Finally) the (Complete) Omega
