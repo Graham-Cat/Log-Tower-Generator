@@ -1,104 +1,93 @@
-# Appendix: Mathematical Notation & Definitions
+# Appendix: Mathematical Notation & Definitions (v2.0.0)
 
-This appendix serves as a glossary for the specific notation used throughout the **Log-Tower Generator** walkthrough. While most symbols follow standard calculus conventions, some (like the module operators and sector definitions) are specific to the F/G-sector symmetry framework.
+This appendix serves as a glossary for the specific notation used throughout the **$P(A_\alpha)$ Log-Tower Generator** walkthrough. While most symbols follow standard multivariate calculus conventions, the module operators, constrained index sets, and sector definitions are specific to the $F/G$-sector symmetry framework operating across $n$-dimensional jet space.
 
-## The Closed Alphabet $\{ R, h, F, G, u, v \}$
-The complete family of objects that are **closed under differentiation** with regard to $A_n$:
+## The Closed Alphabet $\left\lbrace R, h, F, G, u, v \right\rbrace$
+
+The complete family of objects that are **closed under partial differentiation** across orthogonal variables $X = (x_1, x_2, \dots, x_d)$:
 
 | Symbol | Definition | Role | Description |
-| :--- | :--- | :--- | :--- |
-| **$A$** | $\log_f(g^h)$ | **Target Function** | the primary function being differentiated; satisfies the identity $A = Rh$ |
-| **$R$** | $\frac{\ln g}{\ln f}$ | **The Spine** | the ratio of logs acting as the scaffold; satisfies $R' = G - RF$ |
-| **$h$** | $h(x)$ | **The Exponent** | the exponent function in the tower $g(x)^{h(x)}$ |
-| **$F$** | $\frac{f'}{f \ln f}$ | **Base Module** | represents the relative rate of change of the base scaled by its log |
-| **$G$** | $\frac{g'}{g \ln f}$ | **Input Module** | represents the relative rate of change of the input scaled by the base log |
-| **$u$** | $\frac{f'}{f}$ | **Log Derivative** | the standard logarithmic derivative of the base function $f(x)$ |
-| **$v$** | $\frac{g'}{g}$ | **Log Derivative** | the standard logarithmic derivative of the input function $g(x)$ |
+| --- | --- | --- | --- |
+| **$A$** | $\log_f(g^h)$ | **Target Function** | the primary multivariate function being differentiated |
+| **$R$** | $\frac{\ln g(X)}{\ln f(X)}$ | **The Spine** | the ratio of logs acting as the scaffold |
+| **$h$** | $h(X)$ | **The Exponent** | the exponent function in the tower $g(X)^{h(X)}$ |
+| **$F^{(w)}$** | $\frac{f_w}{f \ln f}$ | **Base Module** | the relative rate of change of the base scaled by its log, rooted in dimension $w$ |
+| **$G^{(w)}$** | $\frac{g_w}{g \ln f}$ | **Input Module** | the relative rate of change of the input scaled by the base log, rooted in dimension $w$ |
+| **$u^{(w)}$** | $\frac{f_w}{f}$ | **Log Derivative** | the logarithmic derivative of the base function $f(X)$ along dimension $w$ |
+| **$v^{(w)}$** | $\frac{g_w}{g}$ | **Log Derivative** | the logarithmic derivative of the input function $g(X)$ along dimension $w$ |
 
 > **Note: Spine vs. Modules**
-> While $R$ is part of the closed alphabet (its derivative $R'$ remains expressible within the set), it functions as the **scaffold** or **spine** of the tower. The components $F, G, u, v$ act as **modules**—algebraic building blocks that drive the evolution of $R$.
+> While $R$ is part of the closed alphabet, it functions as the **scaffold**. The directional components $F^{(w)}, G^{(w)}, u^{(w)}, v^{(w)}$ act as **modules**—algebraic building blocks that drive the evolution of $R$ across any dimension $w$.
 
-## Derivative Notation
-To keep equations compact, this walkthrough uses subscript notation for derivative orders in the canonical forms.
+## Multi-Index Derivative Notation
+
+To keep equations compact in jet space, this walkthrough uses multi-index notation $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ for spatial gradients.
 
 | Symbol | Equivalent | Description |
-| :--- | :--- | :--- |
-| **$y_n$** | $\frac{d^n y}{dx^n}$ | the $n$-th derivative of a function $y$ with respect to $x$ |
-| **$h_k$** |  | the $k$-th derivative of the exponent $h$ |
-| **$F_n$** | $\frac{d^n} {dx^n} \frac{f'}{f \ln f}$ | the $n$-th derivative of **Base Module** $F$ (See Note 1) |
-| **$G_n$** | $\frac{d^n} {dx^n} \frac{g'}{g \ln f}$ | the $n$-th derivative of **Input Module** $G$ (See Note 1) |
-| **$F^{(n)}$** | $\frac{f_n}{f \ln f}$ | the $n$-th order **Base Module** (See Note 1) |
-| **$G^{(n)}$** | $\frac{g_n}{g \ln f}$ | the $n$-th order **Input Module** (See Note 1) |
-| **$u^{(n)}$** | $\frac{f_n}{f}$ | the $n$-th order **Base Ratio Module** (See Note 1) |
-| **$v^{(n)}$** | $\frac{g_n}{g}$ | the $n$-th order **Input Ratio Module** (See Note 1) |
-
-> **Note 1:** The notation $F^\text{(n)}$ refers to the **module order**, not the $n$-th derivative of the function $F(x)$ itself.
-> * $F^\text{(n)} = \frac{f_n}{f \ln f}$
-> * $\frac{d^n} {dx^n}(F) = F_n$ (the derivative of the module)
+| --- | --- | --- |
+| **$y_\alpha$** or **$D^\alpha y$** |  | the $\alpha$-th mixed partial derivative of the function $y(X)$ |
+| **$h_\alpha$** |  | the $\alpha$-th mixed partial derivative of the exponent $h(X)$ |
+| **$F^{(w)}_\alpha$** | $D^\alpha F^{(w)}$ | the $\alpha$-th mixed partial derivative of the $w$-rooted **Base Module** |
+| **$G^{(w)}_\alpha$** | $D^\alpha G^{(w)}$ | the $\alpha$-th mixed partial derivative of the $w$-rooted **Input Module** |
+| **$e_w$** | $(0, \dots, 1, \dots, 0)$ | the standard basis vector representing a single derivative shift in dimension $w$ |
 
 ## Structural Variables
-Variables used to define the recursive architecture of the derivative:
+
+Variables used to define the multidimensional recursive architecture:
 
 | Symbol | Definition | Description |
-| :--- | :--- | :--- |
-| **$A$** | $\log_f(g^h)$ | the primary function being differentiated |
-| **$A_{\text{nG}}$** | $\sum \binom{n}{k} h_k \Gamma_{n-k-1}$ | the **G-Sector**: the total sum of terms generated by the input $g$ (Particular Solution) |
-| **$A_{\text{nF}}$** | $\sum \binom{n}{k} h_k \Phi_{n-k-1}$ | the **F-Sector**: the total sum of terms generated by the base $f$ (Homogeneous Solution) |
-| **$\Gamma_n$** | (Recursive) | the recursive coefficients within the G-Sector |
-| **$\Phi_n$** | (Recursive) | the recursive coefficients within the F-Sector |
-| **$\Omega_{m,n}$** | (Recursive) | the F-Kernel: a cached coefficient grid representing the system's "drag" |
-
-## Operators & Maps
-Shorthand for the symmetry operations that generate new terms:
-
-| Symbol | Operation | Description |
-| :--- | :--- | :--- |
-| **$G \mapsto F$** | Map | Replace every instance of $G$ and its derivatives with $F$ and its derivatives. Used to generate $\Phi_n$ from $\Gamma_n$. |
-| **$R \mapsto G$** | Induction | The process where taking the derivative of $R$ "forces" a $G$ term into the next sector ($R' = G - RF$). |
+| --- | --- | --- |
+| **$P(A_\alpha)$** | $D^\alpha \left(h \frac{\ln g}{\ln f}\right)$ | the master generator for the $\alpha$-th partial differential of the target function |
+| **$\hat{A}_\alpha$** | $\bigcup \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$ | the **Constrained Index Set** of chronologically valid jet space coordinates |
+| **$\Gamma_\alpha$** | (Recursive) | the recursive polynomial state within the **G-Sector** |
+| **$\Phi_\alpha$** | (Recursive) | the recursive polynomial state within the **F-Sector** |
+| **$\Omega^\alpha_\beta$** | (Recursive) | the multidimensional **F-Kernel**: a cached tensor grid representing system "drag" |
 
 ## Identity Reference
-Key differential equations driving the system:
 
-1. **The Fundamental Identity:**
+Key differential equations and step-operators driving the $n$-dimensional system:
 
-$$R' = G - RF$$
-   
-   (Analogous to the linear ODE $y' + Py = Q$)
-
-2. **The Module Recursive Derivatives:**
-   (Relating the derivative of a module order to the next order in the sequence)
-   
-$$\frac{d}{dx}F^{(n)} = F^{(n+1)} - F^{(n)}(u + F)$$
-   
-$$\frac{d}{dx}G^{(n)} = G^{(n+1)} - G^{(n)}(v + F)$$
-
-3. **The Ratio Module Recursions:**
-   (The internal recursion for the simple log-derivatives of the base and input)
-   
-$$\frac{d}{dx} u^{(n)} = u^{(n+1)}-u^{(n)}u$$
-   
-$$\frac{d}{dx} v^{(n)} = v^{(n+1)}-v^{(n)}v$$
-
-4. **The Canonical Generator Form:**
-   
-$$A_n = R(h_n - A_{\text{nF}}) + A_{\text{nG}}$$
-
-5. **The Sector Recursion ($\Gamma_n$)**
-   The recursive engine for the G-Sector coefficients.
-   
-**General Formula:**
-   
-$$\Gamma_n  = \sum_{m=0}^{n} G_{n-m} \Omega_{m, n+1}$$
-
-**The Omega Kernel ($\Omega$):**
-   
-$$\Omega_{m,n} = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j, \ n-1-j}$$
-
-(Base case: $\Omega_{0,n} = 1$ for all $n \ge 0$)
+**1. The Fundamental Dimensional Identity:**
+For any dimension $w$:
 
 
-**Expanded Examples:**
-* $\Gamma_0 = G$
-* $\Gamma_1 = G_1 - GF$
-* $\Gamma_2 = G_2 - G_1F - G(2F_1 - F^2)$
-* $\Gamma_3 = G_3 - G_2F - G_1(3F_1 - F^2) - G(3F_2 - 5FF_1 + F^3)$
+$$R_w = G^{(w)} - R F^{(w)}$$
+
+**2. The Log Derivative Unit Template:**
+For any log unit $\mu \in \left\lbrace u, v \right\rbrace$ and its dimensional superscripts:
+
+
+$$\frac{\partial}{\partial w} \mu^{(\alpha)} = \mu^{(\text{index} + 1_w)} - \mu^{(\alpha)}\mu^{(w)}$$
+
+**3. The Base Module Template:**
+For any module $M \in \left\lbrace F, G \right\rbrace$ and its corresponding log unit $\mu \in \left\lbrace u, v \right\rbrace$:
+
+
+$$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\text{index} + 1_w + 1_z)} - M^{(\text{index} + 1_w)}\left(\mu^{(z)} + F^{(z)}\right)$$
+
+**4. The Derivative Shift Operators:**
+To advance the polynomial states along a spatial gradient:
+
+
+$$\Gamma_\alpha = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$$
+
+$$\Phi_\alpha = \frac{\partial}{\partial w}\Phi_{\alpha - e_w} - \Phi_{\alpha - e_w} F^{(w)}$$
+
+$$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
+
+**5. The Multidimensional Omega Kernel ($\Omega$):**
+
+
+$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
+
+
+(Base case: $\Omega_\emptyset^\alpha = 1$)
+
+**6. The Constrained Sector Accumulation:**
+The evaluation of the master polynomial states over the $\hat{A}_\alpha$ routing history:
+
+
+$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} G^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+
+$$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} F^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+
