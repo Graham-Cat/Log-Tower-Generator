@@ -6,7 +6,7 @@ While we have gone through quite a bit, all we've done so far is create and opti
 
 If you look around the room you're in, you might notice that it's three-dimensional. I assume looking around took some time, so there's apparently a fourth dimension, too. Whaddaya know?
 
-Without taking the generator at least 2-D, there's not much use for it except as a curiosity, and without including $x$, $y$, $z$, and $t$ in its final form, its true power (providing a straightforward, factorized, and optimized QFT and perturbation theory testing tool) will never be realized.
+Without taking the generator at least 2-D, there's not much use for it except as a curiosity, and without including $x$, $y$, $z$, and $t$ in its final form, its true power (providing a straightforward, factorized, and optimized multidimensional scientific testing tool) will never be realized.
 
 So, let's dive in -- at least partially.
 
@@ -34,17 +34,11 @@ $$\frac{\partial^{n_x+n_y}}{\partial x^{n_x}\partial y^{n_y}} A(x,y) = \frac{\pa
 
 We begin by defining $G^{(x)}$, $G^{(y)}$, $F^{(x)}$, and $F^{(y)}$ as
 
-$$G^{(x)} = \frac{g_x}{g\text{ln}f}$$
-$$G^{(y)} = \frac{g_y}{g\text{ln}f}$$
-$$F^{(x)} = \frac{f_x}{f\text{ln}f}$$
-$$F^{(y)} = \frac{f_y}{f\text{ln}f}$$
+$$G^{(x)} = \frac{g_x}{g\text{ln}f} \quad G^{(y)} = \frac{g_y}{g\text{ln}f} \quad F^{(x)} = \frac{f_x}{f\text{ln}f} \quad F^{(y)} = \frac{f_y}{f\text{ln}f}$$
 
 Where
 
-$$g_x = \frac{\partial}{\partial x}g(x,y)$$
-$$g_y = \frac{\partial}{\partial y}g(x,y)$$
-$$f_x = \frac{\partial}{\partial x}f(x,y)$$
-$$f_y = \frac{\partial}{\partial y}f(x,y)$$
+$$g_x = \frac{\partial}{\partial x}g(x,y) \quad g_y = \frac{\partial}{\partial y}g(x,y) \quad f_x = \frac{\partial}{\partial x}f(x,y) \quad f_y = \frac{\partial}{\partial y}f(x,y)$$
 
 Since the complexity of the generator is rooted in understanding derivatives of $R = \frac{\text{ln}g}{\text{ln}f}$, let's start by analyzing it in two dimensions.
 
@@ -91,7 +85,7 @@ Since $F^{(x)}F^{(y)} = F^{(y)}F^{(x)}$ we can remove them from both sides, leav
 
 $$F^{(x)}\_{(0,1)} = F^{(y)}_{(1,0)}$$
 
-Using the definitions $F^{(x)} = \frac{f_x}{f \ln f}$ and $F^{(y)} = \frac{f_y}{f \ln f}$:
+Using the definitions $F^{(x)} = \frac{f_x}{f \text{ln} f}$ and $F^{(y)} = \frac{f_y}{f \text{ln} f}$:
 
 $$F^{(x)}\_{(0,1)} = \frac{\partial}{\partial y}\left( \frac{f_x}{f \ln f} \right) = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f}$$
 
@@ -126,13 +120,13 @@ $$R_{(1,1)} = G^{(x)}\_{\text{(0,1)}} - F^{(x)}\_{\text{(0,1)}}R - F^{(x)}R\_{\t
 
 Moreover, the above representations of the partial derivatives of $F^{(x)}$, $F^{(y)}$, $G^{(x)}$, and $G^{(y)}$ reinforce that, even when we expand to two dimensions, the closed family endures. Note that:
 
-$$\frac{\partial}{\partial y} F^{(x)} = F^{(x)}_{(0,1)} = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f} = F^{(1,1)} - F^{(0,1)}\left(u^{(x)} + F^{(x)}\right)$$
+$$\frac{\partial}{\partial y} F^{(x)} = F^{(x)}\_{(0,1)} = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f} = F^{(1,1)} - F^{(0,1)}\left(u^{(x)} + F^{(x)}\right)$$
 
-$$\frac{\partial}{\partial x} F^{(y)} = F^{(y)}_{(1,0)} = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f} = F^{(1,1)} - F^{(1,0)}\left(u^{(y)} + F^{(y)}\right)$$
+$$\frac{\partial}{\partial x} F^{(y)} = F^{(y)}\_{(1,0)} = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f} = F^{(1,1)} - F^{(1,0)}\left(u^{(y)} + F^{(y)}\right)$$
 
-$$\frac{\partial}{\partial y} G^{(x)} = G^{(x)}_{(0,1)} = \frac{g_{xy}}{g \ln f} - \frac{g_x}{g}\cdot\frac{g_y}{g \ln f} - \frac{g_x}{g \ln f}\cdot\frac{g_y}{g \ln f} = G^{(1,1)} - G^{(0,1)}\left(v^{(x)} + F^{(x)}\right)$$
+$$\frac{\partial}{\partial y} G^{(x)} = G^{(x)}\_{(0,1)} = \frac{g_{xy}}{g \ln f} - \frac{g_x}{g}\cdot\frac{g_y}{g \ln f} - \frac{g_x}{g \ln f}\cdot\frac{g_y}{g \ln f} = G^{(1,1)} - G^{(0,1)}\left(v^{(x)} + F^{(x)}\right)$$
 
-$$\frac{\partial}{\partial x} G^{(y)} = G^{(y)}_{(1,0)} = \frac{g_{yx}}{g \ln f} - \frac{g_y}{g}\cdot\frac{g_x}{g \ln f} - \frac{g_y}{g \ln f}\cdot\frac{g_x}{g \ln f} = G^{(1,1)} - G^{(1,0)}\left(v^{(y)} + F^{(y)}\right)$$
+$$\frac{\partial}{\partial x} G^{(y)} = G^{(y)}\_{(1,0)} = \frac{g_{yx}}{g \ln f} - \frac{g_y}{g}\cdot\frac{g_x}{g \ln f} - \frac{g_y}{g \ln f}\cdot\frac{g_x}{g \ln f} = G^{(1,1)} - G^{(1,0)}\left(v^{(y)} + F^{(y)}\right)$$
 
 When expanding higher-order mixed partial derivatives, the number of base identities explodes. Instead of listing out all twelve permutations for our 2-D modules ($F$ and $G$) and log derivative units ($u$ and $v$), we can condense them into two universal templates. 
 
@@ -140,7 +134,7 @@ Let $w$ represent the variable we are taking the derivative of with respect to (
 
 Also, let $(\alpha)$ represent the base $(n_x, n_y)$ coordinate above, allowing for $n$ dimensions instead of just two.
 
-Incrementing an index with respect to a variable is denoted simply by adding $1_w$ or $1_z$ to the base $(\alpha)$ coordinate.
+Incrementing an index with respect to a variable is denoted by adding $1_w$ or $1_z$ to the base $(\alpha)$ coordinate.
 
 **1. The Log Derivative Unit Template**
 For any log unit $\mu \in \{u, v\}$ associated with its respective function ($f$ or $g$), the partial derivative with respect to $w$ is:
@@ -278,7 +272,7 @@ Take some time to understand this notation. Feel free to read the description ov
 
 ### Understanding $R_{(n_x,n_y)}$
 
-As before with our 1-D work, understanding how to expand $\Omega$ into a multivariate solution will require understanding derivatives of $R$, but this time we need to understand a matrix of partial derivatives instead of simply understanding $R_n$.
+As before with our 1-D work, understanding how to expand $\Omega$ into a multivariate solution will require understanding derivatives of $R$, but this time we need to understand a matrix of partial derivatives instead of only understanding $R_n$.
 
 Recall from above that we now have two base identities, one for $R_{(1,0)}$ and one for $R_{(0,1)}$:
 
@@ -408,7 +402,7 @@ $$\frac{\partial}{\partial x} R = R_{(1,0)} = G^{(x)} - F^{(x)}R = \Gamma_{(1,0)
 
 $$\frac{\partial}{\partial x} R = R_{(0,1)} = G^{(y)} - F^{(y)}R = \Gamma_{(0,1)} - \Phi_{(0,1)}R$$
 
-Whoa. Wait a minute. Weren't the first expressions of $\Gamma$ and $\Phi$ flat zero subscripts in our 1-D work? Yep. They were. Those subscripts were designed to match Bell notation, indicating how many times the derivative operator was applied to the module.
+Whoa. Wait a minute. Weren't the first expressions of $\Gamma$ and $\Phi$ flat zero subscripts in our 1-D work? Yep. They were. Those subscripts were designed to match Bell notation attached to the 0-th base and input modules.
 
 Now that we're working in two dimensions, the underlying multivariate structure has turned $A(x,y)$ into a matrix run by vectors and they need somewhere to start.
 
