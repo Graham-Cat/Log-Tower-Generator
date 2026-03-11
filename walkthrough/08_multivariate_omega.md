@@ -651,8 +651,6 @@ Before we unveil the n-dimensional generator fully optimized for industrial scie
 
 Time to metaphorically stretch the bedsheets and toss last week's laundry into the back of the hall closet before the relatives arrive.
 
-### Space Truckin'
-
 We proved that $\Gamma_\alpha$ and $\Phi_\alpha$ worked together to create a continuous multidimensional algebraic space expressed in the identity $R_\alpha = \Gamma_\alpha - R_\emptyset\Phi_\alpha$ at the end of Part 7. We also learned all the way back in Part 5 that, at least in one dimension, $\Omega_m^n$ represented the algebraic core of both $\Gamma_n$ and $\Phi_n$.
 
 Hmm. Do you think that continuous space may have emerged from properties of $\Omega_\beta^\alpha$? That it might represent a multidimensional algebraic space in and of itself, thereby natively transferring its status on to $\Gamma_\alpha$ and $\Phi_\alpha$ from their algebraic core outward? That we were so busy building the generator based on experimentally observing patterns that we missed seeing the analytical reason it all works even though it was staring us dead in the face the entire time?
@@ -698,6 +696,8 @@ However, using the primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1}
 Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them, leading to the stealthy $\Omega_m^n$ derivative shift operator that has the ability to function in 1-D through **phantom expressions**:
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
+
+### Space Truckin'
 
 Since the $\Gamma$ and $\Phi$ derivative shift operators scaled straight to multidimensional by performing the usual index replacements, it's tempting to assume the same applies to $\Omega$. Making assumptions like that in mathematics can get you into trouble, so let's make 100% certain before we do that.
 
