@@ -1,66 +1,182 @@
-# Log-Tower Generator v2.0.0
+### **Header / Badges**
 
-[](https://www.google.com/search?q=https://doi.org/PLACEHOLDER) *(Make sure to update this with your new Zenodo link!)*
+* **DOI / Zenodo Badge:** (Placeholder for the v2.0.0 release link)
+* **Title:** Log‑Tower-Generator Framework (v2.0.0)
+* **Subtitle:** *A Canonical, Self‑Similar Algebra for Multidimensional Logarithmic Derivative Towers*
 
-### Overview
-
-The Log-Tower Generator is a high-performance, multidimensional differential ring generator designed to completely bypass the $O(n!)$ combinatorial explosion traditionally associated with multivariable product rules (e.g., Faà di Bruno's formula and Bell polynomials).
-
-By utilizing a highly efficient, path-dependent step-operator approach, this engine translates continuous spatial gradients into discrete, multi-index algebra.
-
-### Industrial Architecture & Jet Space Integration
-
-Version 2.0.0 upgrades the generator from a 1-D recursive tool into a full $n$-dimensional tensor framework. It is natively structured to integrate with **Jet Space** architectures.
-
-Instead of executing computationally lethal symbolic calculus on the fly, the Log-Tower algorithm acts as a combinatorial router. It allows high-performance computing (HPC) environments to calculate massive, multivariable composite derivatives—such as testing millions of $g(X)$ candidate functions against a static $f(X)$ denominator—using $O(1)$ database lookups.
-
-**Primary Use Cases:**
-
-* **Physics-Informed Neural Networks (PINNs):** Bypassing deep automatic differentiation (AutoDiff) graphs for high-order multivariable derivatives to accelerate training.
-* **Aerospace / Fluid Dynamics:** Optimizing multivariable tensor calculations for complex Navier-Stokes simulations.
-* **Quantum Chemistry:** Efficiently testing massive sets of multivariable electron wavefunction approximations.
-
-### Under the Hood
-
-This generator is built using **Python** and **SymPy**. The parallel assembly logic ensures that both the $\Phi_\alpha$ and $\Gamma_\alpha$ states are calculated and rolled up simultaneously, maximizing CPU cache locality and eliminating the need for expensive post-processing Abstract Syntax Tree (AST) traversals.
 
 ---
 
-### About the Project & Maintenance Status
+# **Motivation**
 
-This framework was developed by an independent mathematics hobbyist. It began in the summer of 2025 as a passionate exploration into closed differential families and rapidly evolved into the multidimensional matrix architecture presented here.
+Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}{\ln f}$ leads to a severe combinatorial explosion. In a single-variable context, the raw higher-order derivatives quickly become opaque. This complexity scales exponentially, tangling the multi-index contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
 
-**Please Note:** This is a passion project managed by a single independent researcher with limited bandwidth. While the mathematics are rigorously proven and the core architecture is stable, this repository is not managed like a corporate software product.
+The **Log-Tower-Generator v2.0.0** resolves combinatorial explosion by mapping spatial gradients into a canonical normal form over a **multidimensional jet space** for mixed partial derivatives, extending the stable F/G-sector symmetry into $n$-dimensions. By isolating the distinct "forcing" and "decay" dynamics across any orthogonal variable, the framework reorganizes the expansion into:
 
-* Bug reports and pull requests are welcome and will be reviewed as time permits.
-* Highly specific feature requests or demands for custom edge-case implementations may not be accommodated.
+* **Sector Decomposition:** Splitting the multidimensional solution into a homogeneous $\Phi_\alpha$ sector and a particular $\Gamma_\alpha$ sector.
+* **Chronological Routing:** Bypassing processor-intensive Bell polynomial combinatorics and generic geometric bounding. The new architecture uses a **Chronological Step-Operator Engine** to construct a **Constrained Index Set** ($\hat{A}_\alpha$), eliminating path-independent "phantom states" from the calculation.
+* **Tensor Caching:** Pre-calculating the system's multidimensional "Drag" as a cached F-Kernel ($\Omega^\alpha_\beta$) across a tensor grid, independent of the input signal.
+* **Linear Superposition:** Generating the final mixed partial differential $P(A_\alpha)$ as a clean linear combination of these modular, $w$-rooted components.
 
-If you use this architecture in your research, simulations, or ML models, please cite the Zenodo DOI provided above.
+This approach reveals deep structural symmetries in multivariate derivative towers. It provides a lightning-fast, closed-form mapping mechanism that draws parallels to Lie-operator expansions, offering highly optimized solutions for symbolic computation, differential algebra, and asymptotic analysis.
 
 ---
 
-# **Contributing**
+# **Core Objects**
 
-Contributions are welcome.
-Open an issue or submit a pull request if you have:
+Let $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index defining a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$.
 
-- mathematical insights
-- simplifications
-- symbolic optimizations
-- documentation improvements
+For the multidimensional expansion, we define our base functions and modular components as follows:
 
-## License
+* **The Base & Input:** $f(X)$, $g(X)$, and $h(X)$ are differentiable multivariate functions.
+* **The Spine ($R_\alpha$):** The $\alpha$-th mixed partial derivative of the logarithmic scaffold $\frac{\ln g(X)}{\ln f(X)}$.
+* **The Scaling Module ($h_\alpha$):** The $\alpha$-th mixed partial derivative of the exponent function $h(X)$.
+* **The Base Module ($F^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{f_w}{f \ln f}$, representing the relative rate of change of the base, strictly rooted in dimension $w$.
+* **The Input Module ($G^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{g_w}{g \ln f}$, representing the relative rate of change of the input, strictly rooted in dimension $w$.
 
-This project utilizes a dual-license strategy to cover both the software implementation and the theoretical work:
+To manage the combinatorial complexity of the expansion, we define three structural operators that absorb all induced cross-sector structure and form the backbone of the canonical expansion:
 
-### Software (Code)
-The source code (files within `src/` and `tests/`) is licensed under the **MIT License**. See the `LICENSE` file for details.
+* **$\Gamma_\alpha$ (The G-Sector):** The recursive multidimensional polynomial state accounting for the forcing input of the numerator.
+* **$\Phi_\alpha$ (The F-Sector):** The homogeneous component accounting for the internal dynamics of the denominator.
+* **$\Omega^\alpha_\beta$ (The F-Kernel):** A cached tensor grid representing the system's "drag," calculated completely independent of the input signal.
 
-### Content (Theory & Documentation)
-The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretical discoveries (specifically the F/G-sector symmetry and related alphabet) are licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+Finally, to cleanly navigate the jet space, we introduce:
+
+* **The Constrained Index Set ($\hat{A}_\alpha$):** A strictly bounded set of chronologically valid coordinates generated by the Anchor and Historical Web logic, bypassing generic geometric loops to eliminate path-independent phantom states.
+
+---
+
+# **Domain Constraints**
+
+To ensure the multidimensional Log-Tower expression $A(X) = h(X) \frac{\ln g(X)}{\ln f(X)}$ remains well-defined across the spatial domain, the following conditions must be satisfied for all points in $X$:
+
+* **Positivity:** Both $f(X) > 0$ and $g(X) > 0$ must hold to satisfy the requirements of the real-valued natural logarithm.
+* **Non-Vanishing Denominator:** $f(X) \neq 1$ is required to prevent a zero-valued denominator in the quotient $\ln f(X)$.
+* **Multivariate Singularity Analysis:** Special consideration is required along any spatial gradient where $f(X) \to 1$, $f(X) \to 0$, or $g(X) \to 0$. Depending on the local behavior of $h(X)$ and the directional logarithmic growth rates, these regions may represent functional poles, branch cuts, or removable singularities requiring multidimensional limit-based evaluation.
+
+---
+
+# **The $P(A_\alpha)$ Jet Space Generator**
+
+For any multi-index $\alpha > 0$, the $P(A_\alpha)$ generator evaluates the mixed partial differential of the multidimensional Log-Tower function. Specifically, it generates partial differentials of the form:
+
+$$ \frac{\partial^{(n_{x_1}+n_{x_2}+\dots+n_{x_m})}}{\partial x_1^{n_{x_1}}\partial x_2^{n_ {x_2}}\dots\partial x_m^{n_{x_m}}} \left(h(x_1,x_2,\dots,x_m)\frac{\text{ln}g(x_1,x_2,\dots,x_m)}{\text{ln}f(x_1,x_2,\dots,x_m)}\right)$$
+
+Where $f(X)$, $g(X)$, and $h(X)$ are $m$-dimensional differentiable functions.
+
+### **The Conceptual Form (Sector Decomposition)**
+
+To understand the structural symmetry of the derivatives, the generator can be expressed as a linear superposition of multi-index convolutions. Utilizing the generalized Leibniz rule, the polynomial is assembled by separating the distinct "forcing" and "decay" sectors:
+
+$$P(A_\alpha) = R \left[ h_\alpha - \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Phi_{\alpha - \beta} \right] + \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Gamma_{\alpha - \beta}$$
+
+This cleanly maps how the individual modular components contribute to the total jet space structure:
+
+* **Raw $h$-sector ($h_\alpha$):** The direct $\alpha$-th mixed partial derivative of the scaling function $h(X)$.
+* **Recursively corrected F-sector ($\Phi_\alpha$):** The homogeneous component accounting for the internal dynamics of the denominator $f(X)$.
+* **Recursively corrected G-sector ($\Gamma_\alpha$):** The particular component accounting for the forcing input of the numerator $g(X)$.
+
+### **The Computational Form (The Master Equation)**
+
+Because the multidimensional module states are strictly anchored by the base cases $\Phi_\emptyset = -1$ and $\Gamma_\emptyset = 0$, the raw scaling sector is completely absorbed into the boundary of the summation.
+
+This collapses the entire expansion into a single, highly efficient computational form:
+
+$$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R \Phi_{\alpha-\beta} \big)$$
+
+By utilizing this canonical framework, the $P(A_\alpha)$ generator maps the mixed partial derivatives directly. It completely bypasses the combinatorial tangles of repeatedly applying the quotient rule across multiple orthogonal axes, yielding an elegant, closed-form expansion ready for algorithmic evaluation.
+
+---
+
+# **The Engine: Anchor/Web Logic & Tensor Caching**
+
+While the $P(A_\alpha)$ generator maps the master superposition, generating the underlying $\Gamma_\alpha$ and $\Phi_\alpha$ states in multidimensional jet space requires carefully navigating the derivative routing history.
+
+In v1.0.0, the single-variable expansion relied heavily on generic index bound loops which produce invalid, path-independent mixed-partial branches in a multidimensional environment. While Bell set partitions present a solution that navigates this path dependency, they can lead to combinatorial explosion. Instead v2.0.0 utilizes a **Chronological Step-Operator Engine**.
+
+This engine enforces a strict right-to-left spatial gradient sequence (e.g., $x \to x \to y \to y$), where the root axis $w$ of any module is dictated strictly by this chronology rather than abstract geometry.
+
+### **The Constrained Index Set ($\hat{A}_\alpha$)**
+
+Instead of calculating all possible geometric partitions and filtering them, the engine directly constructs a strictly bounded **Constrained Index Set** ($\hat{A}_\alpha$) of chronologically valid jet space coordinates.
+
+For every dimension $k$ where $\alpha_k > 0$, the set is generated by the union of two path-dependent subsets:
+
+1. **The Anchor State ($\mathcal{S}_{k, \text{anchor}}$):** The upper chronological boundary where the current root axis is shifted by exactly one derivative, and all prior axes have reached their target state.
+2. **The Historical Web ($\mathcal{S}_{k, \text{web}}$):** The cumulative routing history where the root axis accounts for the remaining lower-order derivatives, and prior axes occupy any valid state within their bounds.
+
+$$\hat{A}\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
+
+### **The Multidimensional F-Kernel ($\Omega^\alpha_\beta$)**
+
+To evaluate the paths defined by $\hat{A}_\alpha$, the system separates the "Input Signal" ($G$) from the "System Structure" ($\Omega$).
+
+The coefficients $\Omega^\alpha_\beta$ represent the multidimensional "Drag" of the system—purely a function of the denominator $f(X)$. They form a stable tensor grid that is cached and reused to build both sectors. The entire kernel is populated by the recursive convolution:
+
+$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
+
+(With the base case $\Omega_\emptyset^\alpha = 1$)
+
+### **Constrained Sector Accumulation**
+
+With the $\hat{A}_\alpha$ index set mapped and the $\Omega$ tensor cached, the combinatorial tangles are completely eliminated. The engine evaluates the master polynomial states over this constrained path using localized discrete convolutions.
+
+The G-sector and F-sector states are seamlessly accumulated as:
+
+$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} G^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+
+$$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} F^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+
+By evaluating only the valid anchor and web states, the algorithm dynamically prunes the dependency tree, allowing for the lightning-fast generation of high-order mixed partial sequences.
+
+---
 
 
-[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+# **Corollary: The Spine Projection**
 
-**Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
-> [Christopher Feick]. (2026). *Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry*. (https://github.com/Graham-Cat/Log-Tower-Generator).
+Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, this multidimensional derivative structure also implies that the "Spine" derivative $R_\alpha$ (the mixed partial derivative of the logarithmic scaffold $\frac{\ln g}{\ln f}$) is simply the projection of the sectors onto the base.
+
+Assuming the final step of the spatial gradient is taken with respect to dimension $w$, the $\alpha$-th derivative of the spine is given by:
+
+$$P(R_\alpha) = \Gamma_{\alpha} - R \Phi_{\alpha}$$
+
+This confirms that the complex behavior of the underlying logarithmic ratio is deterministically evolved from the exact same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
+
+---
+
+# **Walkthrough & Documentation**
+
+The full narrative of how these equations were derived—spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0—is available in the repository documentation.
+
+The walkthrough is broken down into 8 parts and covers:
+
+* The foundational proofs for the closed alphabet and F/G-sector symmetry.
+* The transition from standard recursive algorithms to discrete convolution.
+* The pruning of generic geometric index loops and Bell set partitions.
+* The formal Python implementation of the Chronological Step-Operator Engine and the $\hat{A}_\alpha$ constrained cache.
+
+You can begin reading the documentation [here](https://github.com/Graham-Cat/Log-Tower-Generator/tree/main/walkthrough).
+
+---
+
+### **Installation & Quick Start**
+
+* **Prerequisites:** Python 3.8+ and SymPy.
+* **Setup Instructions:** Standard `git clone`, virtual environment setup, and `pip install -e .` commands.
+* **Verification:** Instructions for running the test suite to validate the multidimensional convolution engine.
+* **Demo:** Command to run a sample script expanding a mixed partial derivative.
+
+### **Features (What's New in v2.0.0)**
+
+* Highlight the transition to the Chronological Step-Operator Engine.
+* Emphasize the performance upgrade (e.g., bypassing geometric multi-index bound loops and Bell combinatorics for lightning-fast valid path generation).
+
+### **Contributing**
+
+* Standard call for mathematical insights, SymPy optimizations, and pull requests.
+
+### **License**
+
+* **Software:** MIT License.
+* **Content (Theory & Docs):** CC BY 4.0 (with the updated 2026 attribution block including the F/G-sector symmetry and $P(A_\alpha)$ generator concepts).
+
