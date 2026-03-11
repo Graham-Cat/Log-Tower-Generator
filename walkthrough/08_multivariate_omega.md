@@ -215,11 +215,11 @@ For the lexicographical path $x \to x \to y \to y$, the final $y$-derivative is 
 
 With $S = [1, 2, 3, 4]$, we partition the set into all 15 possible geometric blocks (the Bell number $B_4 = 15$). To translate these abstract integer partitions into our polynomial string, we apply the following six rules:
 
-1. **The Root Anchor:** The mathematical root of any block is strictly its *minimum* integer.
+1. **The Root Anchor:** The mathematical root of any block is its *minimum* integer.
 2. **Base Variable Designation:** The integer value of the root dictates the base function ($1 \text{ or } 2 \implies y$; $3 \text{ or } 4 \implies x$).
 3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block dictate the derivative subscript (e.g., if a $y$-rooted block contains two $x$-integers, the subscript is $(2,0)$ ).
-4. **The $G$-Genesis Rule:** The base function $G$ is assigned strictly to the block containing the **highest root** in the entire partition. All other blocks default to $F$ factors.
-5. **Chronological Ordering:** Factors are multiplied in strictly ascending order of their roots (Root $1 \to$ Root $2 \to \dots$).
+4. **The $G$-Genesis Rule:** The base function $G$ is assigned to the block containing the **highest root** in the entire partition. All other blocks default to $F$ factors.
+5. **Chronological Ordering:** Factors are multiplied in ascending order of their roots (Root $1 \to$ Root $2 \to \dots$).
 6. **The Alternating Sign:** The overall sign of the translated partition is $(-1)^{|P|-1}$, where $|P|$ is the total number of blocks in the partition.
 
 ### Group 1: 1-Block Partitions ($|P|=1$, Sign: $+$)
@@ -394,11 +394,16 @@ $$\Gamma_{(2,2)} = \begin{bmatrix}
     1  
 \end{bmatrix}$$
 
+> [!NOTE]
+> This matrix representation is for *illustrative purposes only*. The algorithm does not include actual matrix multiplication.
+
 Things are shaping up nicely so far. We have two grids here, one with each dimension ($x$ and $y$) represented and attached to every $G_\alpha$ combination we could possibly need for this $\alpha$.
 
 But if we look at the known terms in $\Gamma_{(2,2)}$ above, the only $G$ terms present are $G^{(x)}$, $G^{(y)}$, $G^{(x)}\_{(1,0)}$, $G^{(y)}\_{(1,0)}$, $G^{(y)}\_{(2,0)}$, and $G^{(y)}_{(2,1)}$.
 
 That's six $G$ -terms and 12 slots, so half of them are empty. Does that mean half of these $\Omega_\beta^\alpha$ values are zero? But that can't be. There are non-zero vector designations in the superscripts and subscripts, so the $\Omega_\beta^\alpha$ values must have polynomials attached to them, and even where there are zeroes, we know that $\Omega_\emptyset^\alpha = 1$.
+
+Moreover, the $\beta$ vector in $\Omega_\beta^\alpha$ has some duplicates between the matrices, which makes no sense. See how $(0,0)$, $(0,1)$, and $(1,0)$ show up in both? That can't be right.
 
 Our lexicographic ordering convention of $x \to y \to z \to$ etc. only allows certain partials of $G^{(w)}$ to filter through, so our answer as to which $\Omega_\beta^\alpha$ polynomials we allow the algorithm to calculate comes from a dramatically slimmed-down version of our new Bell partitioning scheme that flawlessly calculated $\Gamma_{(2,2)}$.
 
@@ -415,7 +420,7 @@ The new rule set becomes
 2. **Base Variable Designation:** The integer value of the root still dictates the base function.
 3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block still dictate the derivative subscript.
 4. **The $G$-Genesis Rule:** The base function $G$ is still assigned to the block containing the highest root in the partition. All other blocks are *ignored*.
-5. **The Group 2 Exit Rule:** Once group 2 is done processing, exit the algorithm.
+5. **The Group 2 Exit Rule:** Once group 2 is done processing, *exit the algorithm*.
 
 Note that the rules regarding ordering and overall sign have been removed since all results are positive by definition and there is only one term in each result, so ordering doesn't apply.
 
@@ -451,13 +456,13 @@ And that's it. We've reached six distinct terms at the end of processing group 2
 
 Why only process groups one and two?
 
-Every element in the timeline is numbered outside-in, meaning the last chronological step is always assigned the integer 1. Because of the $G$-Genesis Rule (the block with the highest root becomes the $G$-term), the location of the integer 1 controls everything.
+Every element in the timeline is numbered outside-in, meaning the last chronological step is always assigned the integer 1. Because of the $G$-Genesis Rule (the block with the highest root becomes the $G$-term), the location of the integer 1 determines which block is assigned the $G_\alpha^{(w)}$.
 
 Group 1 is unique because if a block contains the integer 1, its root is 1. Because 1 is the lowest possible integer, the only way for it to be the "highest root" of the partition is if there are literally no other roots to compete with it.
 
-Group 2 contains everything else because one can always form this block in a 2-block partition by putting $B$ on one side, and lumping every other timeline element (including 1) into a single "garbage" block on the other side, so group 2 ($|P|=2$) mathematically guarantees the discovery of every other possible $G$-block.
+Group 2 determines all other $G_\alpha^{(w)}$ because one can always form this block in a 2-block partition by putting the salient root on one side, and lumping every other timeline element (including 1) into a single "garbage" block on the other side, so group 2 ($|P|=2$) mathematically guarantees the discovery of every other possible $G$-block.
 
-If you move to a 3-block partition ($|P|=3$), we are simply taking the "garbage" block from Group 2 (the one containing 1) and shattering it into two smaller pieces which provides no new information.
+If you move to a 3-block partition ($|P|=3$), we are simply taking the "garbage" block from Group 2 (the one containing 1) and breaking it into two smaller pieces which provides no new information.
 
 This process natively produces the precise number of distinct, allowable jet space addresses required. That number is defined by the following equation:
 
@@ -563,13 +568,52 @@ By abandoning the Bell sets for the final code execution, the script runs exactl
 
 That's the code, but we need mathematical language to go with it. The selection of valid jet space $G_\alpha^{(w)}$ addresses has clear mathematical rules, so there's a mathematical way to state them.
 
-### The Chronologically Constrained Index Set $\mathcal{A}_\alpha$
+Let's take a look at that matrix representation again, this time with only the valid jet space addresses listed as allowable and all others zeroed out so we can get a visual representation of what the above code is telling Python the right $G_\alpha^{(w)}$ 's to feed into the sum are.
 
-We start by letting $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index that defines a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$. Because the base modules of the differential ring depend on a dimensional axis, the standard hyper-rectangle $0 \le \beta \le \alpha$ contains many chronologically invalid phantom states as discussed earlier.
+$$\Gamma_{(2,2)} = \begin{bmatrix}
+    1 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    0 & 0 & G_{(1,0)}^{(x)}\Omega_{(0,2)}^{(2,2)} \\
+    0 & 0 & G_{(0,0)}^{(x)}\Omega_{(1,2)}^{(2,2)} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    1  \\
+    1  \\
+    1
+\end{bmatrix}
++
+\begin{bmatrix}
+    1 & 1 & 1 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    G_{(2,1)}^{(y)}\Omega_{(0,0)}^{(2,2)} & 0 \\
+    G_{(1,1)}^{(y)}\Omega_{(1,0)}^{(2,2)} & 0 \\
+    G_{(0,1)}^{(y)}\Omega_{(2,0)}^{(2,2)} & G_{(0,0)}^{(y)}\Omega_{(2,1)}^{(2,2)} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    1  \\
+    1  
+\end{bmatrix}$$
 
-We define $\mathcal{A}_\alpha$ as the **Constrained Index Set** of allowable Jet Space coordinates to satisfy the sequence that the derivative operator spawns.
+> [!NOTE]
+> Again, the algorithm does *not* function via matrix multiplication. The above matrices just provide a visually digestible representation of the end sum.
 
-The set $\mathcal{A}_\alpha$ is the union of path-dependent subsets partitioned by their active root axis $x_k$. For every dimension $k \in \{1, 2, \dots, d\}$ where $\alpha_k > 0$, the valid multi-index coordinates $\beta$ paired with root axis $x_k$ are generated by two conditions:
+Now we finally don't have any duplicate $\beta$ vectors for $\Omega$, so it passes that smell test. This is definitely the right sum, but how do we express it in mathematical terms? It's not a discrete convolution, so the rule set for developing the allowable addresses isn't a straight line. How the heck do we generalize this process so it works for all partials and all dimensionalities?
+
+### Time after Time
+
+We create something called a **Chronologically Constrained Index Set**. Let's call it $C_\alpha$.
+
+We start by letting $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index that defines a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$. Because the base modules of the differential ring depend on a dimensional axis, the standard hyper-rectangle $0 \le \beta \le \alpha$ contains many chronologically invalid phantom states as represented by the zeroes in the above matrix representation.
+
+We define $C_\alpha$ as the **Constrained Index Set** of allowable jet space coordinates to satisfy the sequence that the derivative operator spawns.
+
+The set $C_\alpha$ is the union of path-dependent subsets that their active root axis (i.e., $x_k$) partitioned. For every dimension $k \in \{1, 2, \dots, d\}$ where $\alpha_k > 0$, _two conditions_ generate the valid multi-index coordinates ($\beta$) paired with root axis ($x_k$):
 
 **1. The Anchor State**
 The upper chronological boundary where all prior axes have reached their target state, and the current root axis is shifted by exactly one derivative:
@@ -577,18 +621,20 @@ The upper chronological boundary where all prior axes have reached their target 
 
 $$\mathcal{S}_{k, \text{anchor}} = \left\[ (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\]$$
 
+This state is represented by **Group 1** (e.g., **Partition 1:** $[1, 2, 3, 4]$), but this time, we don't need to load a bunch of Bell polynomial sets to produce it.
 
 **2. The Historical Web**
 The cumulative routing history where prior axes occupy any valid state within their bounds, and the current root axis accounts for the remaining lower-order derivatives (provided $\alpha_k > 1$):
 
 $$\mathcal{S}_{k, \text{web}} = \left\[ (x_k, \beta) \mid 0 \le \beta_j \le \alpha_j \text{ for } j < k, \quad 0 \le \beta_k \le \alpha_k - 2, \quad \beta_j = 0 \text{ for } j > k \right\]$$
 
-The full set of allowable Jet Space addresses is the union of these chronological subsets across all dimensions:
+Logically, by process of elimination, the historical web must comprise **Group 2** (e.g., **all other partitions**: $[1, 2, 3], [4]$; $[1, 2, 4], [3]$; $[1, 3, 4], [2]$; $[2, 3, 4], [1]$; $[1, 2], [3, 4]$; $[1, 3], [2, 4]$; and $[1, 4], [2, 3]$ ), produced, again, _without calling a single Bell polynomial_.
 
+The full set of allowable jet space addresses is the union of these two chronological subsets across all dimensions:
 
-$$\mathcal{A}\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
+$$C\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
 
-So the master polynomial state is evaluated over this constrained path:
+So we evaluate the master polynomial state over this constrained path:
 
 $$\Gamma_\alpha = \sum_{(x_k, \beta) \in \mathcal{A}\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\text{idx}}^\alpha$$
 
@@ -599,10 +645,9 @@ Of course, $\Phi_\alpha$ is accumulated in the same fashion.
 $$\Phi_\alpha = \sum_{(x_k, \beta) \in \mathcal{A}\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\text{idx}}^\alpha$$
 
 
-
 ## ...and (Finally) the (Complete) Omega
 
-Before we unveil the n-dimensional generator fully optimized specifically for industrial use, we have some last-minute math cleanup to do so that we can prove conclusively that we are indeed mathematically "allowed" to use the multidimensional $\Omega_\beta^\alpha$ recursion to generate partial derivatives of $A = h(X)\frac{\text{ln}g(X)}{\text{ln}f(X)}$.
+Before we unveil the n-dimensional generator fully optimized for industrial scientific use, we have some last-minute math cleanup to do so that we can prove conclusively that we are indeed mathematically "allowed" to use the multidimensional $\Omega_\beta^\alpha$ recursion to generate partial derivatives of $A = h(X)\frac{\text{ln}g(X)}{\text{ln}f(X)}$.
 
 Time to metaphorically stretch the bedsheets and toss last week's laundry into the back of the hall closet before the relatives arrive.
 
@@ -642,7 +687,7 @@ $$\Omega_4^5 - (\Omega_3^4)' = (-4F_3 + 9F_2 F + 8F_1^2 - 9F_1 F^2 + F^4) - (-3F
 
 The remainders look somewhat familiar, but they don't quite match any $\Omega_m^n$ we've seen before. The differences look like $\Omega_m^n$ where $n = m + 1$ but are somehow dropped down a level on Pascal's triangle. Instead of  $-2F_1 + F^2$ we have $-F_1 + F^2$. Simlarly, instead of $-3F_2 + 5F_1 F - F^3$ we have $-F_2 + 3F_1 F - F^3$, and so on.
 
-Here, it looks as if these are $\Omega_m^n$ where $m=n$ which don't exist in 1-D in practice since there, the maximum practical value for $m$ was $n - 1$.
+Here, it looks as if these are $\Omega_m^n$ where $m=n$, which is really odd since they don't exist anywhere in our 1-D work. The maximum practical value for $m$ was $n - 1$ back when we were just working with $x$.
 
 However, using the primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$ to calculate $\Omega_2^2$, $\Omega_3^3$, and $\Omega_4^4$, we get:
 
@@ -650,7 +695,7 @@ However, using the primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1}
 * **$\Omega_3^3$:** $-\left( \binom{2}{0} F \Omega_2^2 + \binom{2}{1} F_1 \Omega_1^1 + \binom{2}{2} F_2 \Omega_0^0 \right) = \mathbf{-F_2 + 3F_1 F - F^3}$
 * **$\Omega_4^4$:** $-\left( \binom{3}{0} F \Omega_3^3 + \binom{3}{1} F_1 \Omega_2^2 + \binom{3}{2} F_2 \Omega_1^1 + \binom{3}{3} F_3 \Omega_0^0 \right) = \mathbf{-F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4}$
 
-Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them, leading to the $\Omega_m^n$ derivative shift operator that has the ability to function in 1-D through **phantom expressions**:
+Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them, leading to the stealthy $\Omega_m^n$ derivative shift operator that has the ability to function in 1-D through **phantom expressions**:
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
