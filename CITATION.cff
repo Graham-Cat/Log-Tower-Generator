@@ -4,21 +4,19 @@ authors:
   - family-names: "Feick"
     given-names: "Christopher"
     email: "iamnotreallyacat@gmail.com"
-title: "Log-Tower-Generator: A Discrete Convolution Engine for Higher-Order Log-Derivatives"
-version: 1.0.0
-date-released: 2026-02-04
+title: "Log-Tower-Generator: A Multidimensional Jet Space Engine for High-Order Mixed Partial Derivatives"
+version: 2.0.0
+date-released: 2026-03-12
 abstract: >
-  A Python library implementing a discrete convolution engine for generating 
-  Log-Tower polynomials P(An) and P(Rn). This tool replaces recursive 
-  differentiation with a cached F-Kernel (Omega) approach, enabling O(n^3) 
-  complexity for high-order derivatives of h·ln(g)/ln(f). It includes a 
-  verification suite and supports symbolic output via SymPy.
+  A Python framework implementing a Chronological Step-Operator Engine to calculate exact n-dimensional mixed partial derivatives of Log-Tower functions, P(A_alpha) and P(R_alpha). Version 2.0.0 completely bypasses the combinatorial explosion of the quotient rule by using Anchor and Historical Web routing logic to build a constrained index set. It utilizes asymmetric tensor caching (the Omega tensor) to decouple the denominator's computational drag, and integrates SymEngine's C++ backend for high-speed symbolic calculation and algebraic verification.
 keywords:
   - mathematics
   - differential-algebra
-  - polynomials
+  - jet-space
+  - multi-index-notation
+  - tensor-caching
+  - symengine
   - sympy
   - log-tower
-  - discrete-convolution
 license: MIT
 repository-code: "https://github.com/Graham-Cat/Log-Tower-Generator"
