@@ -170,12 +170,65 @@ You can begin reading the documentation [here](https://github.com/Graham-Cat/Log
 
 ---
 
-### **Installation & Quick Start**
+## **Installation & Quick Start**
 
-* **Prerequisites:** Python 3.8+ and SymPy.
-* **Setup Instructions:** Standard `git clone`, virtual environment setup, and `pip install -e .` commands.
-* **Verification:** Instructions for running the test suite to validate the multidimensional convolution engine.
-* **Demo:** Command to run a sample script expanding a mixed partial derivative.
+### **Prerequisites**
+
+* Python 3.8 or higher
+* Git
+
+### **Installation**
+
+Clone the repository and install the framework via pip. The core package automatically installs `sympy` and `symengine`.
+
+```bash
+# Clone the repository
+git clone https://github.com/Graham-Cat/Log-Tower-Generator.git
+cd Log-Tower-Generator
+
+# Install the core engine
+pip install .
+
+# Optional: Install with testing and visualization tools
+pip install .[test,viz]
+
+```
+
+### **Quick Start**
+
+The v2.0.0 architecture uses a persistent class-based state machine (`LogTowerGenerator`) to maintain the $\Omega^\alpha_\beta$ tensor cache.
+
+Here is a minimal example calculating a 3D mixed-partial derivative:
+
+```python
+import symengine as se
+from log_tower_generator import LogTowerGenerator
+
+# 1. Define the spatial dimensions and pure abstract functions
+x, y, z = se.symbols('x y z')
+f = se.Function('f')(x, y, z)
+g = se.Function('g')(x, y, z)
+h = se.Function('h')(x, y, z)
+
+# 2. Instantiate the Chronological Step-Operator Engine
+generator = LogTowerGenerator((x, y, z), f, g)
+
+# 3. Define the multi-index for the derivative (e.g., a 4th-order mixed partial)
+alpha = (2, 1, 1)
+
+# --- Option A: The Spine Bypass ---
+# Calculates P(R_alpha) directly, bypassing the multi-index convolution loop
+poly_R_alpha = generator.get_R_alpha(alpha)
+print(f"P(R_alpha) = {poly_R_alpha}")
+
+# --- Option B: The Master Generator ---
+# Calculates P(A_alpha) using the complete h(X) convolution sequence
+poly_A_alpha = generator.get_A_alpha(alpha, h)
+print(f"P(A_alpha) = {poly_A_alpha}")
+
+```
+
+For a more comprehensive walkthrough of the engine's output formatting and SymPy handoffs, run the included `demo.py` script.
 
 ---
 
