@@ -1,44 +1,57 @@
 """
-Log Tower Generator - Quick Start Demo (v1.0)
+Log-Tower-Generator - Quick Start Demo (v2.0.0)
 ---------------------------------------------
-This script demonstrates how to generate P(A_n) and P(R_n) polynomials
-using the optimized Convolution Engine.
+This script demonstrates how to generate multidimensional mixed-partial 
+derivatives P(A_alpha) and P(R_alpha) using the Chronological Step-Operator Engine.
 
 Usage:
     python demo.py
 """
 
-from sympy import init_printing
-# Import the new functional interface
-from src import generate_A_n, generate_R_n
+import symengine as se
+import sympy as sp
+from log_tower_generator import LogTowerGenerator
 
 def run_demo():
-    # Enable pretty printing for nicer console output (e.g., F[0] instead of F_0)
-    init_printing(use_unicode=True)
+    # Enable SymPy pretty printing for console output
+    sp.init_printing(use_unicode=True)
 
-    print("=== Log Tower Generator Demo (Convolution Engine) ===")
+    print("=== Log-Tower-Generator Demo (v2.0.0 Jet Space Engine) ===\n")
 
-    # 1. Configuration
-    N = 3
-    print(f"\n[1] Configuration: Generating polynomials for N = {N}")
-
-    # 2. Generate P(A_n)
-    # The new engine handles symbol creation internally.
-    # It uses IndexedBase symbols: h[n], F[n], G[n], R[0]
-    print(f"[2] Generating P(A_{N})...")
-    poly_An = generate_A_n(N)
+    # 1. Configuration: Define 3D spatial variables and abstract functions
+    print("[1] Configuration: Setting up 3D Jet Space (x, y, z)...")
+    x, y, z = se.symbols('x y z')
+    vars = (x, y, z)
     
-    print(f"\n--- Result: P(A_{N}) ---")
-    # We expand the result to ensure terms are grouped clearly
-    print(poly_An.expand())
+    f = se.Function('f')(x, y, z)
+    g = se.Function('g')(x, y, z)
+    h = se.Function('h')(x, y, z)
 
-    # 3. Generate P(R_n)
-    # Formula: P(R_n) = Gamma_{n-1} - R0 * Phi_{n-1}
-    print(f"\n[3] Generating P(R_{N})...")
-    poly_Rn = generate_R_n(N)
+    # Instantiate the generator
+    generator = LogTowerGenerator(vars, f, g)
+
+    # Define the multi-index alpha for the derivative
+    alpha = (2, 1, 1)  # 4th-order mixed partial
+    print(f"    Target multi-index alpha = {alpha}\n")
+
+    # 2. Generate P(R_alpha) [The Spine Bypass]
+    print(f"[2] Generating P(R_alpha) for alpha = {alpha}...")
+    print("    (Bypassing multi-index convolution via the Spine Projection Corollary)")
+    poly_R_alpha = generator.get_R_alpha(alpha)
     
-    print(f"\n--- Result: P(R_{N}) ---")
-    print(poly_Rn.expand())
+    print(f"\n--- Result: P(R_alpha) ---")
+    # Cast back to SymPy for beautiful console formatting
+    sp.pprint(sp.sympify(poly_R_alpha))
+    print("\n" + "="*60 + "\n")
+
+    # 3. Generate P(A_alpha) [The Master Generator]
+    print(f"[3] Generating P(A_alpha) for alpha = {alpha}...")
+    print("    (Executing the complete multi-index convolution loop)")
+    poly_A_alpha = generator.get_A_alpha(alpha, h)
+    
+    print(f"\n--- Result: P(A_alpha) ---")
+    sp.pprint(sp.sympify(poly_A_alpha))
+    print("\n=== Demo Complete ===")
 
 if __name__ == "__main__":
     run_demo()
