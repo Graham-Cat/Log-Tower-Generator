@@ -611,14 +611,26 @@ The upper chronological boundary where all prior axes have reached their target 
 
 $$\mathcal{S}_{k, \text{anchor}} = \left\lbrace (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
-This state begins by choosing $G^{(x)}\_{(1,0)}$ as its $x$ anchor because 1) there is no $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0, and 2) $n_{x_k} - 1 = 2 - 1 = 1$. It also chooses $G^{(y)}\_{(2,1)}$ as its $y$ anchor because 1) by the time the ordering gets to $y$, there are two $x$ 's in the lexicographic history, and 2) $n_{y_k} - 1 = 2 - 1 = 1$. Both match the Bell set partition results _without calling a single Bell set_.
+This state begins by choosing $G^{(x)}\_{(1,0)}$ as its $x$ anchor because
+- there is no $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0, and
+- $n_{x_k} - 1 = 2 - 1 = 1$.
+
+It also chooses $G^{(y)}\_{(2,1)}$ as its $y$ anchor because 
+- by the time the ordering gets to $y$, there are two $x$ 's in the lexicographic history, and
+- $n_{y_k} - 1 = 2 - 1 = 1$.
+
+Both match the Bell set partition results _without calling a single Bell set_.
 
 **2. The Historical Web**
 The cumulative routing history where prior axes occupy any valid state within their bounds, and the current root axis accounts for the remaining lower-order derivatives (provided $\alpha_k > 1$):
 
 $$\mathcal{S}_{k, \text{web}} = \left\lbrace (x_k, \beta) \mid 0 \le \beta_j \le \alpha_j \text{ for } j < k, \quad 0 \le \beta_k \le \alpha_k - 2, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
-Now that the histories are completely unlocked, those with any numbers lower than the anchor are allowable. The only $G^{(x)}$ that is lower than $G^{(x)}\_{(1,0)}$ with $y$ locked at 0 is $G^{(x)}\_{(0,0)}$, so it is selected. Similarly, the only $y$ that is less than 1 is 0 and now $x$ can range from 0 to 2 because there are two in the history for $y$. That's why it selects $G^{(y)}\_{(0,0)}$, $G^{(y)}\_{(1,0)}$, and $G^{(y)}\_{(2,0)}$. All are correct and all are selected once again _without calling a single Bell polynomial_.
+Now that the histories are completely unlocked, those with any numbers lower than the anchor are allowable.
+- The only $G^{(x)}$ that is lower than $G^{(x)}\_{(1,0)}$ with $y$ locked at 0 is $G^{(x)}\_{(0,0)}$, so it is selected.
+- Similarly, the only $y$ that is less than 1 is 0 and now $x$ can range from 0 to 2 because there are two in the history for $y$, so it selects $G^{(y)}\_{(0,0)}$, $G^{(y)}\_{(1,0)}$, and $G^{(y)}\_{(2,0)}$.
+
+All are correct and all are selected once again _without calling a single Bell polynomial_.
 
 The full set of allowable jet space addresses is the union of these two chronological subsets across all dimensions:
 
