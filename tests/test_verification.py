@@ -1,101 +1,85 @@
-"""
-Verification Suite (v1.0.0)
-----------------------------------
-Verifies the LogTowerGenerator (Convolution Engine) by separating 
-"Structure Generation" from "Value Substitution."
-
-Adapts generator.py export style (IndexedBase) to the verification logic.
-"""
-
-import unittest
+import pytest
+import symengine as se
 import sympy as sp
-import sys
-import os
+from log_tower_generator import LogTowerGenerator
 
-# Ensure we can import from src
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# --- Fixtures for reusable pure abstract functions ---
+@pytest.fixture
+def base_symbols():
+    x, y, z = se.symbols('x y z')
+    f = se.Function('f')(x, y, z)
+    g = se.Function('g')(x, y, z)
+    h = se.Function('h')(x, y, z)
+    return (x, y, z), f, g, h
 
-# Import the specific generator function and the symbol bases used within it
-from src.generator import generate_A_n, F, G_base, H_base, R_base
-
-class TestLogTowerRobust(unittest.TestCase):
+# --- 1. Test Base Boundaries ---
+def test_base_cases(base_symbols):
+    """Verifies that the empty multi-index boundaries return correct base states."""
+    vars, f, g, _ = base_symbols
+    generator = LogTowerGenerator(vars, f, g)
     
-    @classmethod
-    def setUpClass(cls):
-        print("\n[Setup] Initializing Robust Environment...")
-        cls.x = sp.symbols('x')
-        cls.f = sp.Function('f')(cls.x)
-        cls.g = sp.Function('g')(cls.x)
-        cls.h = sp.Function('h')(cls.x)
-        
-        # 1. Real Derivatives (The "Values")
-        cls.log_f = sp.log(cls.f)
-        cls.log_g = sp.log(cls.g)
-        cls.R_real = cls.log_g / cls.log_f
-        
-        # Base module definitions
-        F_val = sp.diff(cls.f, cls.x) / (cls.f * cls.log_f)
-        G_val = sp.diff(cls.g, cls.x) / (cls.g * cls.log_f)
-        
-        # Calculate lists of Real Expressions using Brute Force
-        MAX_N = 6 
-        cls.h_real = [cls.h]
-        cls.F_real = [F_val]
-        cls.G_real = [G_val]
-        
-        for i in range(MAX_N):
-            cls.h_real.append(sp.diff(cls.h_real[-1], cls.x))
-            cls.F_real.append(sp.diff(cls.F_real[-1], cls.x))
-            cls.G_real.append(sp.diff(cls.G_real[-1], cls.x))
+    empty_alpha = (0, 0, 0)
+    
+    # Check internal base states
+    assert generator._get_phi(empty_alpha) == -1
+    assert generator._get_gamma(empty_alpha) == 0
 
-    def _verify_n(self, n):
-        print(f"\n--- Verifying P(A_{n}) with Convolution Engine ---")
-        
-        # A. Calculate True Derivative (Brute Force)
-        A_original = self.R_real * self.h
-        print(f"1. Calculating Brute Force Derivative (Order {n})...")
-        A_true = sp.diff(A_original, self.x, n)
-        
-        # B. Generate Polynomial Structure using the new Generator
-        print(f"2. Generating Polynomial Structure...")
-        # The new generator uses internal IndexedBase symbols (F, G_base, H_base)
-        A_poly_structure = generate_A_n(n)
-        
-        # C. Substitute Real Values into the Structure
-        print(f"3. Substiting Real Derivatives into Structure...")
-        
-        # Create substitution dictionary mapping the Generator's keys to Real Values
-        subs_dict = {R_base[0]: self.R_real}
-        
-        for k in range(n + 1):
-            # Map IndexedBase[k] -> RealList[k]
-            subs_dict[H_base[k]] = self.h_real[k]
-            subs_dict[F[k]]      = self.F_real[k]
-            subs_dict[G_base[k]] = self.G_real[k]
-            
-        A_candidate = A_poly_structure.subs(subs_dict)
-        
-        # D. Verify
-        print("4. Simplifying Difference...")
-        # We simplify the difference to handle complex log expansions
-        diff_val = sp.simplify(A_candidate - A_true)
-        
-        if diff_val == 0:
-            print(f"[SUCCESS] P(A_{n}) matches exactly.")
-        else:
-            # Failure output for debugging
-            print(f"[FAILURE] Mismatch at N={n}")
-            print(f"Difference: {diff_val}")
-            self.fail(f"Mismatch at N={n}")
+# --- 2. Test 1D Master Generator ---
+def test_1d_generator(base_symbols):
+    """Verifies a 3rd-order derivative strictly along the x-axis."""
+    vars, f, g, h = base_symbols
+    generator = LogTowerGenerator(vars, f, g)
+    
+    x = vars[0]
+    alpha = (3, 0, 0)
+    
+    # Brute Force
+    A = h * (se.log(g) / se.log(f))
+    brute_force = se.diff(A, x, 3)
+    
+    # Generator
+    P_A_alpha = generator.get_A_alpha(alpha, h)
+    
+    # Algebraic Zero-Test
+    diff_sp = sp.sympify(brute_force - P_A_alpha)
+    assert sp.cancel(diff_sp) == 0
 
-    def test_A3(self):
-        self._verify_n(3)
+# --- 3. Test Multidimensional Spine Bypass ---
+def test_multidimensional_spine(base_symbols):
+    """Verifies the P(R_alpha) corollary bypass for a 3D mixed partial."""
+    vars, f, g, _ = base_symbols
+    generator = LogTowerGenerator(vars, f, g)
+    
+    x, y, z = vars
+    alpha = (1, 1, 1) # Lightweight 3D mixed-partial
+    
+    # Brute Force (Spine only)
+    R = se.log(g) / se.log(f)
+    brute_force = se.diff(R, x, 1, y, 1, z, 1)
+    
+    # Generator Bypass
+    P_R_alpha = generator.get_R_alpha(alpha)
+    
+    # Algebraic Zero-Test
+    diff_sp = sp.sympify(brute_force - P_R_alpha)
+    assert sp.cancel(diff_sp) == 0
 
-    def test_A4(self):
-        self._verify_n(4)
-
-    def test_A5(self):
-        self._verify_n(5)
-
-if __name__ == "__main__":
-    unittest.main()
+# --- 4. Test Multidimensional Master Generator ---
+def test_multidimensional_master(base_symbols):
+    """Verifies the P(A_alpha) multi-index convolution for a 3D mixed partial."""
+    vars, f, g, h = base_symbols
+    generator = LogTowerGenerator(vars, f, g)
+    
+    x, y, z = vars
+    alpha = (2, 1, 1) # 4th-order 3D mixed-partial
+    
+    # Brute Force
+    A = h * (se.log(g) / se.log(f))
+    brute_force = se.diff(A, x, 2, y, 1, z, 1)
+    
+    # Generator
+    P_A_alpha = generator.get_A_alpha(alpha, h)
+    
+    # Algebraic Zero-Test
+    diff_sp = sp.sympify(brute_force - P_A_alpha)
+    assert sp.cancel(diff_sp) == 0
