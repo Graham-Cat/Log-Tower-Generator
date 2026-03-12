@@ -697,6 +697,34 @@ Huh. There they are. They didn't exist over in 1-D-land but the recursion allows
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
+It's surprisingly easy to prove. Might as well put it here. It just takes three EGF index moves.
+
+Our hypothesis test is straightforward to visualize if we put it right next to a slightly rearranged form of the above operator.
+
+$$\frac{d}{dx} \Omega_{m-1}^{n-1} = \Omega_{m}^{n} -  \Omega_{m}^{n-1}$$
+
+$$y\frac{\partial}{\partial t}\overline{\omega} = \frac{\partial}{\partial x} \overline{\omega} - \overline{\omega}$$
+
+We're hypothesizing that, based on the definition of our EGF (i.e., $\overline{\omega} = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$) the difference between the formal partial derivative with respect to $x$ of $\overline{\omega}$ and itself is equal to multiplying $y$ by the spatial derivative of $\overline{\omega}$. Note how we add a $y$ on the left to indicate movement in $m$ from the term on the far right while the $\frac{\partial}{\partial x}$ indicates movement in $n$ from the term on the far right.
+
+More formally, we're hypothesizing that taking $\overline{\omega}$ 's physical derivative ($\partial t$) drags the system forward along the $y$ -axis, which translates into advancing its formal mathematical state ($\partial x$).
+
+Let's plug our established EGF into the hypothesis and see how it works out:
+
+$$y\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^m$ = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial x} \Omega_m^n \frac{x^n}{n!}y^m$ - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
+
+Now move the indices related to $y$ and $\frac{\partial}{\partial x}$
+
+$$\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^{m+1} = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^{n-1}}{(n-1)!}y^m - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
+
+Now adjust to the appropriate states that create a common EGF term among all that we can divide both sides of the equation by:
+
+$$\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_{m-1}^{n-1} \frac{x^{n-1}}{(n-1)!}y^{m} = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^{n-1}}{(n-1)!}y^m - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^{n-1} \frac{x^{n-1}}{(n-1)!}y^m$$
+
+Then divide out the EGF term and we get our identity:
+
+$$\frac{\partial}{\partial x}\Omega_{m-1}^{n-1} = \Omega_m^n - \Omega_m^{n-1}$$
+
 ### Space Truckin'
 
 Since the $\Gamma$ and $\Phi$ derivative shift operators scaled straight to multidimensional by performing the usual index replacements, it's tempting to assume the same applies to $\Omega$. Making assumptions like that in mathematics can get you into trouble, so let's make 100% certain before we do that.
