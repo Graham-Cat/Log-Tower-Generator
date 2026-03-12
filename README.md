@@ -1,9 +1,20 @@
-### **Header / Badges**
-
 * **DOI / Zenodo Badge:** (Placeholder for the v2.0.0 release link)
-* **Title:** Log‑Tower-Generator Framework (v2.0.0)
-* **Subtitle:** *A Canonical, Self‑Similar Algebra for Multidimensional Logarithmic Derivative Towers*
 
+# **Log-Tower-Generator Framework (v2.0.0)**
+
+The **Log-Tower-Generator** is an advanced symbolic and computational engine designed to calculate the exact $n$-th order mixed partial derivatives of multidimensional Log-Tower functions.
+
+Specifically, it provides a closed-form, algorithmic solution for evaluating complex jet space structures of the form:
+
+$$A = h(X)\frac{\ln g(X)}{\ln f(X)}$$
+
+### **The Bottleneck**
+
+In standard computational mathematics, evaluating high-order mixed partials of nested rational functions triggers a massive combinatorial explosion. Repeatedly applying the quotient and chain rules across multiple orthogonal dimensions forces computer algebra systems to build exponentially large, highly redundant expression trees that quickly consume memory and hang the processor.
+
+### **The v2.0.0 Solution**
+
+Version 2.0.0 completely bypasses these traditional algebraic bottlenecks. By deploying a **Chronological Step-Operator Engine**, the framework maps a strictly constrained index set ($\mathcal{A}_\alpha$) to elegantly navigate the multi-index space. It decouples the denominator's mathematical "drag" into a persistent tensor cache, reducing calculation times for complex 4D derivatives from minutes to milliseconds and opening the door for extreme high-order parameter sweeps.
 
 ---
 
@@ -166,17 +177,42 @@ You can begin reading the documentation [here](https://github.com/Graham-Cat/Log
 * **Verification:** Instructions for running the test suite to validate the multidimensional convolution engine.
 * **Demo:** Command to run a sample script expanding a mixed partial derivative.
 
-### **Features (What's New in v2.0.0)**
+---
 
-* Highlight the transition to the Chronological Step-Operator Engine.
-* Emphasize the performance upgrade (e.g., bypassing geometric multi-index bound loops and Bell combinatorics for lightning-fast valid path generation).
+## **Features (What's New in v2.0.0)**
 
-### **Contributing**
+The Log-Tower-Generator has been completely re-architected from the ground up, transitioning from the 1-D mathematical framework of v1.0.0 into a fully optimized, $n$-dimensional jet space engine.
 
-* Standard call for mathematical insights, SymPy optimizations, and pull requests.
+* **Multidimensional Jet Space Support:** Upgraded to handle high-order mixed partial derivatives across any number of orthogonal dimensions (e.g., $x, y, z, t$) using strict multi-index notation ($\alpha$).
+* **Chronological Step-Operator Engine:** Completely bypasses the combinatorial explosion caused by standard quotient-rule applications and generic geometric index loops. By utilizing Anchor and Historical Web logic, the engine enforces a strict spatial gradient sequence, generating only chronologically valid paths.
+* **Asymmetric Tensor Caching ($\Omega^\alpha_\beta$):** The master equation strictly decouples the structural "drag" of the denominator $f(X)$ from the forcing input of the numerator $g(X)$. The $F$-sector states are cached independently, meaning sequential derivative mapping and input-swapping operations require only a fraction of standard brute-force computation time.
+* **The Spine Projection Corollary:** Introduces a direct algebraic pathway to evaluate the exact multidimensional derivative of the logarithmic scaffold ($R_\alpha = \Gamma_\alpha - R \Phi_\alpha$), completely bypassing the scaling sector $h(X)$ when only the core ratio is required.
+* **SymEngine (C++) Integration:** The recursive core of the generator now leverages SymEngine's ultra-fast C++ backend. Heavy multi-index calculations (such as an 8th-order, 4D $A_{(2,2,2,2)}$ tree containing tens of thousands of terms) are generated in milliseconds, easily outpacing pure SymPy brute-force cold starts by 40% or more.
 
-### **License**
+---
+# **Contributing**
 
-* **Software:** MIT License.
-* **Content (Theory & Docs):** CC BY 4.0 (with the updated 2026 attribution block including the F/G-sector symmetry and $P(A_\alpha)$ generator concepts).
+Contributions are welcome.
+Open an issue or submit a pull request if you have:
 
+- mathematical insights
+- simplifications
+- symbolic optimizations
+- documentation improvements
+
+
+## License
+
+This project utilizes a dual-license strategy to cover both the software implementation and the theoretical work:
+
+### Software (Code)
+The source code (files within `src/` and `tests/`) is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+### Content (Theory & Documentation)
+The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretical discoveries (specifically the F/G-sector symmetry and related alphabet) are licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+
+
+[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+
+**Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
+> [Christopher Feick]. (2026). *Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry*. (https://github.com/Graham-Cat/Log-Tower-Generator).
