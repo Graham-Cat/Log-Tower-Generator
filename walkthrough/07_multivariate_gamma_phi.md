@@ -404,15 +404,15 @@ $$y^{(n)}(x) = \frac{d}{dx} \left[ y^{(n-1)}(x) \right] = \frac{d}{dx} \left[ - 
 
 and then apply the product rule to obtain
 
-$$y^{(n)}(x) = - \Phi\_{n-1}'(x) y(x) - \Phi_{n-1}(x) y'(x)$$
+$$y^{(n)}(x) = - \Phi_{n-1}'(x) y(x) - \Phi_{n-1}(x) y'(x)$$
 
 Substituting $y'(x) = -\overline{f}(x)y(x)$ into the right side and factoring out the common $-y(x)$ term gives us
 
-$$y^{(n)}(x) = - \Big[ \Phi\_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x) \Big] y(x)$$
+$$y^{(n)}(x) = - \Big[ \Phi_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x) \Big] y(x)$$
 
 By directly comparing this to our structural hypothesis $y^{(n)}(x) = - \Phi_n(x) y(x)$, we extract the algebraic term for $\Phi_n$:
 
-$$\Phi\_n(x) = \Phi\_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x)$$
+$$\Phi_n(x) = \Phi_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x)$$
 
 Now we evaluate as a discrete combinatorial operator at the origin (dropping the $x$ notation and returning to $F_0$) which yields our target $\Phi_n$ shift axiom:
 
@@ -518,7 +518,7 @@ $$\int_0^w \frac{\partial}{\partial \tau} \Phi_\gamma(\dots \tau \dots) d\tau = 
 
 The LHS resolves into $\Phi_\gamma$ evaluated from 0 to $w$ giving us our explicit integral generator on the RHS:
 
-$$\Phi_\gamma \Big|\_{0}^{w} = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
+$$\Phi_\gamma \Big|_{0}^{w} = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
 
 Let's watch this alternative polynomial generator in action by running the first two levels through it.
 
@@ -536,7 +536,7 @@ $$\Phi_{e_w}(w) - \Phi_{e_w}(0) = \int_0^w \frac{\partial}{\partial \tau} F^{(\t
 
 So integrating a direct derivative gives us the function back as expected:
 
-$$\Phi_{e_w}(w) - \Phi_{e_w}(0) = F^{(w)} \Big|\_{0}^{w}$$
+$$\Phi_{e_w}(w) - \Phi_{e_w}(0) = F^{(w)} \Big|_{0}^{w}$$
 
 Since the first order works, let's push it one step further to see if the integral generates the correct higher-order polynomial.
 
@@ -544,11 +544,11 @@ Let $\gamma = 2e_w$ this time.
 
 The summation now steps through $\beta = \vec{0}$ and $\beta = e_w$.
 
-$$\Phi_{2e_w} \Big|\_{0}^{w} = - \int_0^w \left[ \binom{2}{0} \left( D^{2e_w} F^{(\tau)} \right) \Phi_{\vec{0}} + \binom{2}{1} \left( D^{e_w} F^{(\tau)} \right) \Phi_{e_w} \right] d\tau$$
+$$\Phi_{2e_w} \Big|_{0}^{w} = - \int_0^w \left[ \binom{2}{0} \left( D^{2e_w} F^{(\tau)} \right) \Phi_{\vec{0}} + \binom{2}{1} \left( D^{e_w} F^{(\tau)} \right) \Phi_{e_w} \right] d\tau$$
 
 Now we substitute our base case $\Phi_{\vec{0}} = -1$ and our newly integrated $\Phi_{e_w} = F^{(\tau)}$:
 
-$$\Phi_{2e_w} \Big|\_{0}^{w} = - \int_0^w \left[ - \frac{\partial^2}{\partial \tau^2} F^{(\tau)} + 2 \left( \frac{\partial}{\partial \tau} F^{(\tau)} \right) F^{(\tau)} \right] d\tau$$
+$$\Phi_{2e_w} \Big|_{0}^{w} = - \int_0^w \left[ - \frac{\partial^2}{\partial \tau^2} F^{(\tau)} + 2 \left( \frac{\partial}{\partial \tau} F^{(\tau)} \right) F^{(\tau)} \right] d\tau$$
 
 Let's move the negative sign into the integral. Notice what happens to the terms inside:
 
@@ -558,7 +558,7 @@ So the integral of the second derivative is the first derivative as expected.
 
 Using the reverse chain rule, the integral of $-2 F^{(\tau)} \frac{\partial}{\partial \tau} F^{(\tau)}$ is $-(F^{(\tau)})^2$, so
 
-$$\Phi_{2e_w}(w) - \Phi_{2e_w}(0) = \left[ F^{(w)}_{(1,0)} - (F^{(w)})^2 \right] \Bigg|\_{0}^{w}$$
+$$\Phi_{2e_w}(w) - \Phi_{2e_w}(0) = \left[ F^{(w)}_{(1,0)} - (F^{(w)})^2 \right] \Bigg|_{0}^{w}$$
 
 which shows that $\Phi_{2e_w} = F^{(w)}_{(1,0)} - (F^{(w)})^2$. From our 1-D work $\Phi_2 = F_1 - F^2$, so we've been here before.
 
@@ -566,11 +566,11 @@ Needless to say, the same thing happens when we subject the corresponding $\Gamm
 
 To save some space, let's skip straight to $\Gamma_{2e_w}$
 
-$$\Gamma_{2e_w} \Big|\_{0}^{w} = \int_0^w \left[ D^{2e_w} G^{(\tau)} + \Phi_{2e_w}(\tau) G^{(\tau)} - F^{(\tau)}\Gamma_{2e_w}(\tau) - \sum_{0 \le \beta < 2e_w} \binom{2}{\beta} \left( D^{2e_w - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
+$$\Gamma_{2e_w} \Big|_{0}^{w} = \int_0^w \left[ D^{2e_w} G^{(\tau)} + \Phi_{2e_w}(\tau) G^{(\tau)} - F^{(\tau)}\Gamma_{2e_w}(\tau) - \sum_{0 \le \beta < 2e_w} \binom{2}{\beta} \left( D^{2e_w - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
 
 Let's plug our known values into each of these four blocks:
 
-$D^{2e_w} G^{(\tau)} = G^{(\tau)}\_2$
+$$D^{2e_w} G^{(\tau)} = G^{(\tau)}_2$$
 
 We've already proved $\Phi_{2e_w} = F^{(\tau)}\_1 - (F^{(\tau)})^2$. Multiplying by $G^{(\tau)}$ gives: $F^{(\tau)}\_1 G^{(\tau)} - (F^{(\tau)})^2 G^{(\tau)}$
 
@@ -578,7 +578,7 @@ Multiplying $\Gamma_{2e_w}$ by $-F^{(\tau)}$ gives: $-F^{(\tau)} G^{(\tau)}\_1 +
 
 The index, $\beta$, steps through $\vec{0}$ and $e_w$. Since $\Gamma_{\vec{0}} = 0$ and $\Gamma_{e_w} = G^{(\tau)}$, the sum expands to:
 
-$$- \left[ 1 \cdot F^{(\tau)}_2 (0) + 2 \cdot F^{(\tau)}_1 (G^{(\tau)}) \right] = -2 F^{(\tau)}\_1 G^{(\tau)}$$
+$$- \left[ 1 \cdot F^{(\tau)}_2 (0) + 2 \cdot F^{(\tau)}_1 (G^{(\tau)}) \right] = -2 F^{(\tau)}_1 G^{(\tau)}$$
 
 Now, let's place all of those expanded blocks back inside the integral:
 
@@ -604,7 +604,7 @@ The block $\left[ F^{(\tau)}_1 G^{(\tau)} + F^{(\tau)} G^{(\tau)}_1 \right]$ is 
 
 Collapsing the integral via the reverse product rule leaves us with:
 
-$$\Gamma_{2e_w}(w) - \Gamma_{2e_w}(0) = \left[ G^{(\tau)}_1 - F^{(\tau)} G^{(\tau)} \right] \Bigg|\_{0}^{w}$$
+$$\Gamma_{2e_w}(w) - \Gamma_{2e_w}(0) = \left[ G^{(\tau)}_1 - F^{(\tau)} G^{(\tau)} \right] \Bigg|_{0}^{w}$$
 
 Therefore,
 
