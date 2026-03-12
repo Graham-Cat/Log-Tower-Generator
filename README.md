@@ -268,4 +268,5 @@ The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretica
 [![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
 **Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
-> [Christopher Feick]. (2026). *Log-Tower-Generator: An explicit n-th derivative generator for h⋅ln(g)/ln(f) via F/G-sector symmetry*. (https://github.com/Graham-Cat/Log-Tower-Generator).
+
+Feick, Christopher. (2026). Log-Tower-Generator: A Multidimensional Jet Space Engine for High-Order Mixed Partial Derivatives. GitHub. https://github.com/Graham-Cat/Log-Tower-Generator
