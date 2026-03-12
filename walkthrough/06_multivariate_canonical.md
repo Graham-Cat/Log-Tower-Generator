@@ -53,9 +53,9 @@ $$\frac{\partial}{\partial y} R = R_{(0,1)} = G^{(y)} - F^{(y)}R$$
 
 There are two ways to express $R_{(1,1)}$:
 
-$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}\_{\text{(0,1)}} - F^{(x)}\_{\text{(0,1)}}R - F^{(x)}R\_{\text{(0,1)}}$$
+$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{\text{(0,1)}} - F^{(x)}_{\text{(0,1)}}R - F^{(x)}R_{\text{(0,1)}}$$
 
-$$\frac{\partial}{\partial x} R_{(0,1)} = R_{(1,1)} = G^{(y)}\_{\text{(1,0)}} - F^{(y)}\_{\text{(1,0)}}R - F^{(y)}R\_{\text{(1,0)}}$$
+$$\frac{\partial}{\partial x} R_{(0,1)} = R_{(1,1)} = G^{(y)}_{\text{(1,0)}} - F^{(y)}_{\text{(1,0)}}R - F^{(y)}R_{\text{(1,0)}}$$
 
 Note how changing the $x$ 's to $y$ 's impacts the subscripts.
 
@@ -63,45 +63,45 @@ For the sake of satisfying Clairaut’s theorem (or Schwarz's theorem) for mixed
 
 We start by substituting the definition of $R_{(0,1)} = G^{(y)} - F^{(y)}R$ into the first equation:
 
-$$R_{(1,1)} = G^{(x)}\_{(0,1)} - F^{(x)}\_{(0,1)}R - F^{(x)}\left[ G^{(y)} - F^{(y)}R \right]$$
+$$R_{(1,1)} = G^{(x)}_{(0,1)} - F^{(x)}_{(0,1)}R - F^{(x)}\left[ G^{(y)} - F^{(y)}R \right]$$
 
 Distribute $F^{(x)}$ and group the terms:
 
-$$R_{(1,1)} = \underbrace{\left[ G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} \right]}\_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} \right]}_{\text{Coefficient Term } (\Phi)}$$
+$$R_{(1,1)} = \underbrace{\left[ G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} \right]}_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} \right]}_{\text{Coefficient Term } (\Phi)}$$
 
 Then we substitute the definition of $R_{(1,0)} = G^{(x)} - F^{(x)}R$ into the second equation:
 
-$$R_{(1,1)} = G^{(y)}\_{(1,0)} - F^{(y)}_{(1,0)}R - F^{(y)}\left[ G^{(x)} - F^{(x)}R \right]$$
+$$R_{(1,1)} = G^{(y)}_{(1,0)} - F^{(y)}_{(1,0)}R - F^{(y)}\left[ G^{(x)} - F^{(x)}R \right]$$
 
 Distribute $F^{(y)}$ and group the terms:
 
-$$R_{(1,1)} = \underbrace{\left[ G^{(y)}_{(1,0)} - F^{(y)}G^{(x)} \right]}\_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(y)}_{(1,0)} - F^{(y)}F^{(x)} \right]}_{\text{Coefficient Term } (\Phi)}$$
+$$R_{(1,1)} = \underbrace{\left[ G^{(y)}_{(1,0)} - F^{(y)}G^{(x)} \right]}_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(y)}_{(1,0)} - F^{(y)}F^{(x)} \right]}_{\text{Coefficient Term } (\Phi)}$$
 
 Proving that the coefficient terms ($\Phi$) are equal will be a good start, so let's show that
 
-$$F^{(x)}\_{(0,1)} - F^{(x)}F^{(y)} = F^{(y)}_{(1,0)} - F^{(y)}F^{(x)}$$
+$$F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} = F^{(y)}_{(1,0)} - F^{(y)}F^{(x)}$$
 
 Since $F^{(x)}F^{(y)} = F^{(y)}F^{(x)}$ we can remove them from both sides, leaving us with the need to prove that
 
-$$F^{(x)}\_{(0,1)} = F^{(y)}_{(1,0)}$$
+$$F^{(x)}_{(0,1)} = F^{(y)}_{(1,0)}$$
 
 Using the definitions $F^{(x)} = \frac{f_x}{f \text{ln} f}$ and $F^{(y)} = \frac{f_y}{f \text{ln} f}$:
 
-$$F^{(x)}\_{(0,1)} = \frac{\partial}{\partial y}\left( \frac{f_x}{f \ln f} \right) = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f}$$
+$$F^{(x)}_{(0,1)} = \frac{\partial}{\partial y}\left( \frac{f_x}{f \ln f} \right) = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f}$$
 
 and
 
-$$F^{(y)}\_{(1,0)} = \frac{\partial}{\partial x}\left( \frac{f_y}{f \ln f} \right) = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f}$$
+$$F^{(y)}_{(1,0)} = \frac{\partial}{\partial x}\left( \frac{f_y}{f \ln f} \right) = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f}$$
 
 Cursory inspection and application of the commutative property of multiplication and Clairaut’s theorem (i.e., $f_{xy} = f_{yx}$) shows these two expressions to be equivalent.
 
 The independent ($\Gamma$) terms don't have the benefit of immediate cancellation since $G^{(x)}F^{(y)} \neq G^{(y)}F^{(x)}$, so let's write the whole thing out:
 
-$$G^{(x)}\_{(0,1)} - F^{(x)}G^{(y)} = {G^{(y)}}\_{(1,0)} - F^{(y)}G^{(x)}$$
+$$G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} = {G^{(y)}}_{(1,0)} - F^{(y)}G^{(x)}$$
 
 Using definitions $G^{(x)} = \frac{g_x}{g \ln f}$ and $G^{(y)} = \frac{g_y}{g \ln f}$:
 
-$${G^{(x)}}\_{(0,1)} = \frac{\partial}{\partial y}\left( \frac{g_x}{g \ln f} \right) = \frac{g_{xy}}{g \ln f} - \frac{g_x g_y}{g^2 \ln f} - \frac{g_x f_y}{g f \ln^2 f}$$
+$${G^{(x)}}_{(0,1)} = \frac{\partial}{\partial y}\left( \frac{g_x}{g \ln f} \right) = \frac{g_{xy}}{g \ln f} - \frac{g_x g_y}{g^2 \ln f} - \frac{g_x f_y}{g f \ln^2 f}$$
 
 Then we subtract the product term $F^{(x)}G^{(y)} = \frac{f_x g_y}{f g \ln^2 f}$ to complete the LHS:
 
@@ -114,19 +114,19 @@ $$\Gamma_{\text{RHS}} = \frac{g_{yx}}{g \ln f} - \frac{g_y}{g}\cdot\frac{g_x}{g 
 
 Again, these two expressions are clearly equivalent proving that 
 
-$$R_{(1,1)} = G^{(x)}\_{\text{(0,1)}} - F^{(x)}\_{\text{(0,1)}}R - F^{(x)}R\_{\text{(0,1)}} = G^{(y)}\_{\text{(1,0)}} - F^{(y)}\_{\text{(1,0)}}R - F^{(y)}R\_{\text{(1,0)}}$$
+$$R_{(1,1)} = G^{(x)}_{\text{(0,1)}} - F^{(x)}_{\text{(0,1)}}R - F^{(x)}R_{\text{(0,1)}} = G^{(y)}_{\text{(1,0)}} - F^{(y)}_{\text{(1,0)}}R - F^{(y)}R_{\text{(1,0)}}$$
 
 ### Multivariate Module Magic
 
 Moreover, the above representations of the partial derivatives of $F^{(x)}$, $F^{(y)}$, $G^{(x)}$, and $G^{(y)}$ reinforce that, even when we expand to two dimensions, the closed family endures. Note that:
 
-$$\frac{\partial}{\partial y} F^{(x)} = F^{(x)}\_{(0,1)} = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f} = F^{(1,1)} - F^{(0,1)}\left(u^{(x)} + F^{(x)}\right)$$
+$$\frac{\partial}{\partial y} F^{(x)} = F^{(x)}_{(0,1)} = \frac{f_{xy}}{f \ln f} - \frac{f_x}{f}\cdot\frac{f_y}{f \ln f} - \frac{f_x}{f \ln f}\cdot\frac{f_y}{f \ln f} = F^{(1,1)} - F^{(0,1)}\left(u^{(x)} + F^{(x)}\right)$$
 
-$$\frac{\partial}{\partial x} F^{(y)} = F^{(y)}\_{(1,0)} = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f} = F^{(1,1)} - F^{(1,0)}\left(u^{(y)} + F^{(y)}\right)$$
+$$\frac{\partial}{\partial x} F^{(y)} = F^{(y)}_{(1,0)} = \frac{f_{yx}}{f \ln f} - \frac{f_y}{f}\cdot\frac{f_x}{f \ln f} - \frac{f_y}{f \ln f}\cdot\frac{f_x}{f \ln f} = F^{(1,1)} - F^{(1,0)}\left(u^{(y)} + F^{(y)}\right)$$
 
-$$\frac{\partial}{\partial y} G^{(x)} = G^{(x)}\_{(0,1)} = \frac{g_{xy}}{g \ln f} - \frac{g_x}{g}\cdot\frac{g_y}{g \ln f} - \frac{g_x}{g \ln f}\cdot\frac{g_y}{g \ln f} = G^{(1,1)} - G^{(0,1)}\left(v^{(x)} + F^{(x)}\right)$$
+$$\frac{\partial}{\partial y} G^{(x)} = G^{(x)}_{(0,1)} = \frac{g_{xy}}{g \ln f} - \frac{g_x}{g}\cdot\frac{g_y}{g \ln f} - \frac{g_x}{g \ln f}\cdot\frac{g_y}{g \ln f} = G^{(1,1)} - G^{(0,1)}\left(v^{(x)} + F^{(x)}\right)$$
 
-$$\frac{\partial}{\partial x} G^{(y)} = G^{(y)}\_{(1,0)} = \frac{g_{yx}}{g \ln f} - \frac{g_y}{g}\cdot\frac{g_x}{g \ln f} - \frac{g_y}{g \ln f}\cdot\frac{g_x}{g \ln f} = G^{(1,1)} - G^{(1,0)}\left(v^{(y)} + F^{(y)}\right)$$
+$$\frac{\partial}{\partial x} G^{(y)} = G^{(y)}_{(1,0)} = \frac{g_{yx}}{g \ln f} - \frac{g_y}{g}\cdot\frac{g_x}{g \ln f} - \frac{g_y}{g \ln f}\cdot\frac{g_x}{g \ln f} = G^{(1,1)} - G^{(1,0)}\left(v^{(y)} + F^{(y)}\right)$$
 
 When expanding higher-order mixed partial derivatives, the number of base identities explodes. Instead of listing out all twelve permutations for our 2-D modules ($F$ and $G$) and log derivative units ($u$ and $v$), we can condense them into two universal templates. 
 
@@ -284,9 +284,9 @@ $$\frac{\partial}{\partial y} R = R_{(0,1)} = G^{(y)} - F^{(y)}R$$
 
 Also recall that both formulations of $R_{(1,1)}$
 
-$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}\_{(0,1)} - F^{(x)}\_{(0,1)}R - F^{(x)}R\_{(0,1)}$$
+$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{(0,1)} - F^{(x)}_{(0,1)}R - F^{(x)}R_{(0,1)}$$
 
-$$\frac{\partial}{\partial x} R_{(0,1)} = R_{(1,1)} = G^{(y)}\_{(1,0)} - F^{(y)}\_{(1,0)}R - F^{(y)}R\_{(1,0)}$$
+$$\frac{\partial}{\partial x} R_{(0,1)} = R_{(1,1)} = G^{(y)}_{(1,0)} - F^{(y)}_{(1,0)}R - F^{(y)}R_{(1,0)}$$
 
 are algebraically equivalent. If you swap all the $x$ and $y$ indices, you get the same expression.
 
@@ -296,25 +296,25 @@ Since we will be using this assumption for the rest of the walkthrough, let's gi
 
 So, to get to $R_{(1,1)}$ we take this path
 
-$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}\_{(0,1)} - F^{(x)}\_{(0,1)}R - F^{(x)}R\_{(0,1)}$$
+$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{(0,1)} - F^{(x)}_{(0,1)}R - F^{(x)}R_{(0,1)}$$
 
 Again, let's take some partial derivatives and see where this path takes us:
 
-$$\frac{\partial}{\partial x} R_{(1,1)} = R_{(2,1)} = G^{(x)}\_{(1,1)} - F^{(x)}\_{(1,1)}R - F^{(x)}\_{(0,1)}R_{(1,0)} - F^{(x)}_{(1,0)}R\_{(0,1)}- F^{(x)}R\_{(1,1)}$$
+$$\frac{\partial}{\partial x} R_{(1,1)} = R_{(2,1)} = G^{(x)}_{(1,1)} - F^{(x)}_{(1,1)}R - F^{(x)}_{(0,1)}R_{(1,0)} - F^{(x)}_{(1,0)}R_{(0,1)}- F^{(x)}R_{(1,1)}$$
 
-$$\frac{\partial}{\partial y} R_{(2,1)} = R_{(2,2)} = G^{(x)}\_{(1,2)} - F^{(x)}\_{(1,2)}R - 2F^{(x)}\_{(1,1)}R_{(0,1)} - F^{(x)}\_{(0,2)}R_{(1,0)} - F^{(x)}\_{(1,0)}R\_{(0,2)} - 2F^{(x)}_{(0,1)}R\_{(1,1)}- F^{(x)}R\_{(1,2)}$$
+$$\frac{\partial}{\partial y} R_{(2,1)} = R_{(2,2)} = G^{(x)}_{(1,2)} - F^{(x)}_{(1,2)}R - 2F^{(x)}_{(1,1)}R_{(0,1)} - F^{(x)}_{(0,2)}R_{(1,0)} - F^{(x)}_{(1,0)}R_{(0,2)} - 2F^{(x)}_{(0,1)}R_{(1,1)}- F^{(x)}R_{(1,2)}$$
 
-$$\frac{\partial}{\partial x} R_{(2,2)} = R_{(3,2)} =   G^{(x)}\_{(2,2)} - F^{(x)}\_{(2,2)}R_{(0,0)} - 2F^{(x)}\_{(2,1)}R_{(0,1)} - F^{(x)}\_{(2,0)}R_{(0,2)} - 2F^{(x)}\_{(1,2)}R_{(1,0)} - 4F^{(x)}\_{(1,1)}R_{(1,1)} - 2F^{(x)}\_{(1,0)}R_{(1,2)} - F^{(x)}\_{(0,2)}R_{(2,0)} - 2F^{(x)}\_{(0,1)}R_{(2,1)} - F^{(x)}\_{(0,0)}R_{(2,2)}$$
+$$\frac{\partial}{\partial x} R_{(2,2)} = R_{(3,2)} =   G^{(x)}_{(2,2)} - F^{(x)}_{(2,2)}R_{(0,0)} - 2F^{(x)}_{(2,1)}R_{(0,1)} - F^{(x)}_{(2,0)}R_{(0,2)} - 2F^{(x)}_{(1,2)}R_{(1,0)} - 4F^{(x)}_{(1,1)}R_{(1,1)} - 2F^{(x)}_{(1,0)}R_{(1,2)} - F^{(x)}_{(0,2)}R_{(2,0)} - 2F^{(x)}_{(0,1)}R_{(2,1)} - F^{(x)}_{(0,0)}R_{(2,2)}$$
 
 
 Unsurprisingly, we find ourselves going down a similar rabbit hole as before, but this time we perform the operation on the partial identity with respect to $x$:
 
-$$R_{(1,1)} = G^{(x)}\_{(0,1)} - \begin{bmatrix}
+$$R_{(1,1)} = G^{(x)}_{(0,1)} - \begin{bmatrix}
     1 
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-    F^{(x)}\_{(0,1)}R_{(0,0)} & F^{(x)}\_{(0,0)}R_{(0,1)} 
+    F^{(x)}_{(0,1)}R_{(0,0)} & F^{(x)}_{(0,0)}R_{(0,1)} 
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
@@ -322,13 +322,13 @@ $$R_{(1,1)} = G^{(x)}\_{(0,1)} - \begin{bmatrix}
     1
 \end{bmatrix}$$
 
-$$R_{(2,1)} = G^{(x)}\_{(1,1)} - \begin{bmatrix}
+$$R_{(2,1)} = G^{(x)}_{(1,1)} - \begin{bmatrix}
     1 & 1 
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-    F^{(x)}\_{(1,1)}R_{(0,0)} & F^{(x)}\_{(1,0)}R_{(0,1)} \\
-    F^{(x)}\_{(0,1)}R_{(1,0)} & F^{(x)}\_{(0,0)}R_{(1,1)}
+    F^{(x)}_{(1,1)}R_{(0,0)} & F^{(x)}_{(1,0)}R_{(0,1)} \\
+    F^{(x)}_{(0,1)}R_{(1,0)} & F^{(x)}_{(0,0)}R_{(1,1)}
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
@@ -336,13 +336,13 @@ $$R_{(2,1)} = G^{(x)}\_{(1,1)} - \begin{bmatrix}
     1
 \end{bmatrix}$$
 
-$$R_{(2,2)} = G^{(x)}\_{(1,2)} - \begin{bmatrix}
+$$R_{(2,2)} = G^{(x)}_{(1,2)} - \begin{bmatrix}
     1 & 1 
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-    F^{(x)}\_{(1,2)}R_{(0,0)} & F^{(x)}\_{(1,1)}R_{(0,1)} & F^{(x)}\_{(1,0)}R_{(0,2)} \\
-    F^{(x)}\_{(0,2)}R_{(1,0)} & F^{(x)}\_{(0,1)}R_{(1,1)} & F^{(x)}\_{(0,0)}R_{(1,2)}
+    F^{(x)}_{(1,2)}R_{(0,0)} & F^{(x)}_{(1,1)}R_{(0,1)} & F^{(x)}_{(1,0)}R_{(0,2)} \\
+    F^{(x)}_{(0,2)}R_{(1,0)} & F^{(x)}_{(0,1)}R_{(1,1)} & F^{(x)}_{(0,0)}R_{(1,2)}
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
@@ -352,14 +352,14 @@ $$R_{(2,2)} = G^{(x)}\_{(1,2)} - \begin{bmatrix}
 \end{bmatrix}$$
 
 
-$$R_{(3,2)} = G^{(x)}\_{(2,2)} - \begin{bmatrix}
+$$R_{(3,2)} = G^{(x)}_{(2,2)} - \begin{bmatrix}
     1 & 2 & 1
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-    F^{(x)}\_{(2,2)}R_{(0,0)} & F^{(x)}\_{(2,1)}R_{(0,1)} & F^{(x)}\_{(2,0)}R_{(0,2)} \\
-    F^{(x)}\_{(1,2)}R_{(1,0)} & F^{(x)}\_{(1,1)}R_{(1,1)} & F^{(x)}\_{(1,0)}R_{(1,2)} \\
-    F^{(x)}\_{(0,2)}R_{(2,0)} & F^{(x)}\_{(0,1)}R_{(2,1)} & F^{(x)}\_{(0,0)}R_{(2,2)}
+    F^{(x)}_{(2,2)}R_{(0,0)} & F^{(x)}_{(2,1)}R_{(0,1)} & F^{(x)}_{(2,0)}R_{(0,2)} \\
+    F^{(x)}_{(1,2)}R_{(1,0)} & F^{(x)}_{(1,1)}R_{(1,1)} & F^{(x)}_{(1,0)}R_{(1,2)} \\
+    F^{(x)}_{(0,2)}R_{(2,0)} & F^{(x)}_{(0,1)}R_{(2,1)} & F^{(x)}_{(0,0)}R_{(2,2)}
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
@@ -416,7 +416,7 @@ Let's look at $R_{(1,1)}$ to see how $\Gamma$ and $\Phi$ evolve through $(n_x,n_
 
 Recall from earlier,
 
-$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}\_{\text{(0,1)}} - F^{(x)}\_{\text{(0,1)}}R - F^{(x)}R\_{\text{(0,1)}} = \underbrace{\left[ G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} \right]}\_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} \right]}_{\text{Coefficient Term } (\Phi)}$$
+$$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{\text{(0,1)}} - F^{(x)}_{\text{(0,1)}}R - F^{(x)}R_{\text{(0,1)}} = \underbrace{\left[ G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} \right]}_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} \right]}_{\text{Coefficient Term } (\Phi)}$$
 
 So, that means
 
@@ -572,7 +572,7 @@ $$A_{nG} = \sum_{k=0}^{n-1} \binom{n}{k} h_k \Gamma_{n-k-1}$$
 
 This allows us to write an explicit multivariate formulation of $A_\alpha$ in the canonical form:
 
-$$A_\alpha = R(h_\alpha - A_{\alpha F}) + A_{\alpha G} = R\left(h_\alpha - \sum\_{\beta \leq \alpha,\beta \neq \alpha} \binom{\alpha}{\beta}  \Phi_{\alpha - \beta} D^\beta h\right) + \sum_{\beta \leq \alpha,\beta \neq \alpha} \binom{\alpha}{\beta}  \Gamma_{\alpha - \beta} D^\beta h$$
+$$A_\alpha = R(h_\alpha - A_{\alpha F}) + A_{\alpha G} = R\left(h_\alpha - \sum_{\beta \leq \alpha,\beta \neq \alpha} \binom{\alpha}{\beta}  \Phi_{\alpha - \beta} D^\beta h\right) + \sum_{\beta \leq \alpha,\beta \neq \alpha} \binom{\alpha}{\beta}  \Gamma_{\alpha - \beta} D^\beta h$$
 
 Note how $h_\alpha$ sits outside the _F_-sector summation. Since $\Gamma_{(0,0)} = 0$ and $\Phi_{(0,0)} = -1$, the case where $\beta = \alpha$ naturally ejects $R h_\alpha$ out of the sums.
 
