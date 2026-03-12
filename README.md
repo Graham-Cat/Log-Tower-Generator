@@ -155,6 +155,22 @@ This confirms that the complex behavior of the underlying logarithmic ratio is d
 
 ---
 
+## **Performance Benchmarks**
+
+The v2.0.0 architecture completely bypasses the combinatorial explosion inherent to standard quotient-rule applications by decoupling the mathematical drag of the denominator into the $\Omega^\alpha_\beta$ tensor cache.
+
+### **1. The "Warm Cache" Flatline**
+When mapping a chronological sequence of multi-index derivatives, the standard brute-force method curves upwards exponentially as it reconstructs the quotient tree from scratch. The $P(A_\alpha)$ generator pulls from the persistent F and G sectors, reducing the calculation time of subsequent high-order states to effectively zero.
+
+![Cumulative Time: Sequential Path Execution](assets/warm_cache_flatline.png)
+
+### **2. Isolating the Drag (Input Swapping)**
+Because the F-sector's recursive shift operator ($\Phi_\alpha$) is mathematically blind to the numerator, the heavy computational drag of $f(X)$ is cached once and never recalculated. When evaluating a new input function $g(X)$ against a static base, the generator avoids massive redundant processing.
+
+![Cumulative Time: Input Swapping](assets/input_swapping_drag.png)
+
+---
+
 # **Walkthrough & Documentation**
 
 The full narrative of how these equations were derived—spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0—is available in the repository documentation.
