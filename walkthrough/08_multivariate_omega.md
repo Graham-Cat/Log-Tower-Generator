@@ -36,7 +36,7 @@ $$\Omega^n_m = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega^{n-1-j}_{m-1-j}$$
 
 $$\downarrow \downarrow \downarrow \downarrow$$
 
-$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
+$$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
 
 Huh. Seems like we just replaced the Roman lettering with Greek, added a superscript for labelling all $F$ modules in a partial derivative framework, and substituted in a tensor subtraction where we used to have a $-1$.
 
@@ -58,13 +58,13 @@ Our corrected 1-D convolution updated to include multi-indices seemed natural to
 
 So, we start with:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \Omega^\alpha_\beta$$
 
 The first step went really well. Let’s look at a first-order pure derivative, setting $\alpha = (1, 0)$ and stepping back along the $x$-axis so $w=1$ and $e_1 = (1, 0)$.
 
 The bounds of our sum become $0 \leq \beta \leq (0, 0)$, leaving us with exactly one term:
 
-$$\Gamma_{(1,0)} = G^{(x)}\_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
+$$\Gamma_{(1,0)} = G^{(x)}_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
 
 The result is promising, right? It's the proper multidimensional analog to our 1-D baseline $\Gamma_1 = G_0 \Omega_0^1$. It was clean, elegant, and mapped correctly.
 
@@ -74,11 +74,11 @@ Let's evaluate $\alpha = (1, 1)$. Because this is a mixed derivative, our formul
 
 Let's test Path 1 (stepping back along $x$):
 
-$$\Gamma_{(1,1)} \big|\_{x\text{-path}} = G^{(x)}\_{(0,1)} \Omega^{(1,1)}_{(0,0)} + G^{(x)}_{(0,0)} \Omega^{(1,1)}_{(0,1)}$$
+$$\Gamma_{(1,1)} \big|_{x\text{-path}} = G^{(x)}_{(0,1)} \Omega^{(1,1)}_{(0,0)} + G^{(x)}_{(0,0)} \Omega^{(1,1)}_{(0,1)}$$
 
 Now, let's test Path 2 (stepping back along $y$):
 
-$$\Gamma_{(1,1)} \big|\_{y\text{-path}} = G^{(y)}\_{(1,0)} \Omega^{(1,1)}\_{(0,0)} + G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
+$$\Gamma_{(1,1)} \big|_{y\text{-path}} = G^{(y)}_{(1,0)} \Omega^{(1,1)}_{(0,0)} + G^{(y)}_{(0,0)} \Omega^{(1,1)}_{(1,0)}$$
 
 Assuming standard continuous mixed partials (Clairaut's theorem), the first terms match perfectly since $G^{(x)}\_{(0,1)} = G^{(y)}\_{(1,0)}$. But look at the second terms. We are left with $G^{(x)}\_{(0,0)} \Omega^{(1,1)}\_{(0,1)}$ versus $G^{(y)}\_{(0,0)} \Omega^{(1,1)}_{(1,0)}$.
 
@@ -92,13 +92,13 @@ If choosing a single path $w$ breaks the symmetry, then maybe we need to try ave
 
 Let $P(\alpha)$ be the set of valid dimensions $w$ where we can step backward (i.e., $\alpha_w > 0$), and $|P(\alpha)|$ be the number of those paths.
 
-$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}\_{\alpha - \beta - e_w} \text{ } \Omega^\alpha_\beta \right)$$
+$$\Gamma_\alpha = \frac{1}{|P(\alpha)|} \sum_{w \in P(\alpha)} \left( \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta - e_w} \text{ } \Omega^\alpha_\beta \right)$$
 
 After the gruesome fate that befell Victim 1, applying this to the mixed second derivative $\alpha = (1,1)$ seemed much more promising.
 
 If we take the two diverging paths, sum them, and divide by $2$:
 
-$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|\_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
+$$\Gamma_{(1,1)} = \frac{1}{2} \left( \Gamma_{(1,1)} \big|_{x\text{-path}} + \Gamma_{(1,1)} \big|_{y\text{-path}} \right)$$
 
 When expanding the $\Omega^{(1,1)}$ terms, the asymmetrical parts counterbalanced. The fractions combined into whole integers, and the resulting polynomial matched the $F/G$-sector decomposition expected for a mixed second derivative. It was symmetric, it was elegant, and it worked.
 
@@ -120,7 +120,7 @@ Since elegance didn't seem to work, it was time to try brute force. Forcing the 
 
 The convolution executed as:
 
-$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}\_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
+$$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_{w_{max}}} G^{(w_{max})}_{\alpha - \beta - e_{w_{max}}} \Omega^\alpha_\beta$$
 
 At a strictly computational level, this chugged along like a dream. Because there was only ever one legal path to traverse, there were no divergent cross-terms to reconcile. Testing on dense higher-order derivatives like $\alpha = (1, 1, 1)$ and $\alpha = (2, 2)$ gave consistent, repeatable polynomials with integer coefficients. No phantom fractions, no ambiguity. Had we brute-forced our way past the tensor grid's defenses?
 
@@ -142,11 +142,11 @@ Then came $\Gamma_{(2,1)}$, and the engine ground to yet another sputtering halt
 
 _Shift operator output along x-path:_
 
-$$\Gamma_{(2,1)} = G^{(x)}\_{(1,1)} - F^{(x)}\_{(0,1)} G^{(x)} - F^{(x)}\_{(1,0)} G^{(y)} - F^{(x)} G^{(x)}_{(0,1)} + (F^{(x)})^2 G^{(y)}$$
+$$\Gamma_{(2,1)} = G^{(x)}_{(1,1)} - F^{(x)}_{(0,1)} G^{(x)} - F^{(x)}_{(1,0)} G^{(y)} - F^{(x)} G^{(x)}_{(0,1)} + (F^{(x)})^2 G^{(y)}$$
 
 _Rank 2 tensor output:_
 
-$$[\vec{\mathbf{\Gamma}}_{(2,1)}]^x = G^{(x)}\_{(1,1)} - F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)} - F^{(x)}\_{(0,1)} G^{(x)}\_{(1,0)} - F^{(x)}\_{(1,1)} G^{(x)} + F^{(x)} F^{(x)}\_{(0,1)} G^{(x)} + F^{(x)}_{(1,0)} F^{(y)} G^{(y)}$$
+$$[\vec{\mathbf{\Gamma}}_{(2,1)}]^x = G^{(x)}_{(1,1)} - F^{(x)}_{(1,0)} G^{(y)}_{(0,1)} - F^{(x)}_{(0,1)} G^{(x)}_{(1,0)} - F^{(x)}_{(1,1)} G^{(x)} + F^{(x)} F^{(x)}_{(0,1)} G^{(x)} + F^{(x)}_{(1,0)} F^{(y)} G^{(y)}$$
 
 Not even close. The continuous operator correctly paired first-order $F$ derivatives with base $G$ modules (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}$), while the tensor operator paired base $F$ modules with first-order $G$ derivatives backwards (e.g., $- F^{(x)}\_{(1,0)} G^{(y)}\_{(0,1)}$). Worse, the tensor spawned a second-order $F$ derivative ($- F^{(x)}_{(1,1)} G^{(x)}$) that didn't exist in the correct continuous expansion, meaning we had an **index assignment** mismatch.
 
@@ -184,13 +184,13 @@ $$\Gamma_{(2,2)} = G^{(y)}_{(2,1)}$$
 
 $$- 2 F^{(y)}_{(1,1)} G^{(x)}$$
 
-$$- F^{(y)}\_{(0,1)} G^{(x)}\_{(1,0)} + F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$$
+$$- F^{(y)}_{(0,1)} G^{(x)}_{(1,0)} + F^{(y)}_{(0,1)} F^{(x)} G^{(x)}$$
 
 $$- F^{(y)}_{(2,0)} G^{(y)}$$
 
-$$- 2 F^{(y)}\_{(1,0)} G^{(y)}\_{(1,0)} + 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$$
+$$- 2 F^{(y)}_{(1,0)} G^{(y)}_{(1,0)} + 2 F^{(y)}_{(1,0)} F^{(y)} G^{(x)}$$
 
-$$- F^{(y)} G^{(y)}\_{(2,0)} + 2 F^{(y)} F^{(y)}\_{(1,0)} G^{(x)} + F^{(y)} F^{(y)} G^{(x)}_{(1,0)} - F^{(y)} F^{(y)} F^{(x)} G^{(x)}$$
+$$- F^{(y)} G^{(y)}_{(2,0)} + 2 F^{(y)} F^{(y)}_{(1,0)} G^{(x)} + F^{(y)} F^{(y)} G^{(x)}_{(1,0)} - F^{(y)} F^{(y)} F^{(x)} G^{(x)}$$
 
 [^1]: The detailed execution of the operator is listed in [this](https://github.com/Graham-Cat/log-tower-v2-staging/blob/v2-development/notebooks/Gamma_2%2C2_recursive.md) (obviously AI generated) appendix.
 
@@ -634,15 +634,15 @@ All are correct and all are selected once again _without calling a single Bell p
 
 The full set of allowable jet space addresses is the union of these two chronological subsets across all dimensions:
 
-$$\hat{A}\_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}\_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
+$$\hat{A}_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
 
 So we evaluate the master polynomial state over this constrained path to produce $\Gamma_\alpha$:
 
-$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} G^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+$$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} G^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
 Of course, $\Phi_\alpha$ is accumulated in the same fashion except with $\Omega_{\alpha - \beta}^\alpha$ appended to $F^{(x_k)}_{\beta}$ via the constrained convolution, represented as:
 
-$$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}\_\alpha} F^{(x_k)}\_{\beta} \Omega_{\alpha - \beta}^\alpha$$
+$$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} F^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
 
 ## ...and (Finally) the (Complete) Omega
@@ -751,11 +751,11 @@ $$\frac{\partial}{\partial w} \Omega_\beta^\alpha = \Omega_{\beta + e_w}^{\alpha
 
 Let's go ahead and integrate both sides from zero to $w$ and perform a minor rearrangement of the **anchor point** (i.e., $\Omega_\beta^\alpha(0)$ )
 
-$$\Omega_\beta^\alpha(w) = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}\_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
+$$\Omega_\beta^\alpha(w) = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
 
 See how we've isolated $\Omega_\beta^\alpha(w)$ there on the left? We all know what that's equal to by now, so let's put it across from its integral definition.
 
-$$- \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}\_\gamma \Omega^{\alpha - e_w - \gamma}\_{\beta - e_w - \gamma} = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}\_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
+$$- \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma} = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
 
 Once again, we see that taking its integral is the same as dropping a tensor rank (this time starting at an anchor point), so $\Omega_\beta^\alpha$ also, in and of itself, represents a **continuous multivariate algebraic space**.
 
