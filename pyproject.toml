@@ -4,8 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "log_tower_generator"
-version = "1.0.0"
-description = "A generator for Log-Tower polynomials P(An) and P(Rn)"
+version = "2.0.0"
+description = "A multidimensional jet space engine for high-order mixed partial Log-Tower derivatives P(A_alpha) and P(R_alpha)"
 authors = [{name = "Christopher Feick", email = "iamnotreallyacat@gmail.com"}]
-dependencies = ["sympy"]
+dependencies = [
+    "sympy>=1.12",
+    "symengine>=0.11.0"
+]
 requires-python = ">=3.8"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0.0"]
+viz = ["matplotlib>=3.7.0"]
