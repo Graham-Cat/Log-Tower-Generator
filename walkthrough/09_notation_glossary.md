@@ -25,7 +25,7 @@ To keep equations compact in jet space, this walkthrough uses multi-index notati
 
 | Symbol | Equivalent | Description |
 | --- | --- | --- |
-| **$y_\alpha$** or **$D^\alpha y$** |  | the $\alpha$-th mixed partial derivative of the function $y(X)$ |
+| **$y_\alpha$**  | **$D^\alpha y$** | the $\alpha$-th mixed partial derivative of the function $y(X)$ |
 | **$h_\alpha$** |  | the $\alpha$-th mixed partial derivative of the exponent $h(X)$ |
 | **$F^{(w)}_\alpha$** | $D^\alpha F^{(w)}$ | the $\alpha$-th mixed partial derivative of the $w$-rooted **Base Module** |
 | **$G^{(w)}_\alpha$** | $D^\alpha G^{(w)}$ | the $\alpha$-th mixed partial derivative of the $w$-rooted **Input Module** |
@@ -63,7 +63,7 @@ $$\frac{\partial}{\partial w} \mu^{(\alpha)} = \mu^{(\text{index} + 1_w)} - \mu^
 For any module $M \in \left\lbrace F, G \right\rbrace$ and its corresponding log unit $\mu \in \left\lbrace u, v \right\rbrace$:
 
 
-$$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\text{index} + 1_w + 1_z)} - M^{(\text{index} + 1_w)}\left(\mu^{(z)} + F^{(z)}\right)$$
+$$\frac{\partial}{\partial w} M^{(z)} = M^{(\text{index} + 1_w + 1_z)} - M^{(\text{index} + 1_w)}\left(\mu^{(z)} + F^{(z)}\right)$$
 
 **4. The Derivative Shift Operators:**
 To advance the polynomial states along a spatial gradient:
@@ -73,13 +73,15 @@ $$\Gamma_\alpha = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alph
 
 $$\Phi_\alpha = \frac{\partial}{\partial w}\Phi_{\alpha - e_w} - \Phi_{\alpha - e_w} F^{(w)}$$
 
+(Base cases: $\Gamma_\emptyset = 0$ and $\Phi_\emptyset = -1$)
+
 $$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
+
+(Base case: $\Omega_\emptyset^\alpha = 1$)
 
 **5. The Multidimensional Omega Kernel ($\Omega$):**
 
-
 $$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
-
 
 (Base case: $\Omega_\emptyset^\alpha = 1$)
 
