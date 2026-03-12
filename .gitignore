@@ -1,5 +1,24 @@
+# Python caches
 __pycache__/
 *.pyc
-.DS_Store
+*.pyo
+
+# Virtual Environments
 venv/
+env/
 .env
+
+# Build & Distribution Artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Testing Tools
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
