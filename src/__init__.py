@@ -1,25 +1,15 @@
-# src/__init__.py
+"""
+Log-Tower-Generator Framework
 
-__version__ = "1.0.0"
+An advanced symbolic and computational engine designed to calculate the exact 
+n-th order mixed partial derivatives of multidimensional Log-Tower functions 
+using a Chronological Step-Operator Engine.
+"""
 
-# Import functional generator and the symbol bases
-from .generator import (
-    generate_A_n,
-    generate_R_n,
-    omega_cache_generator,
-    F,
-    G_base,
-    H_base,
-    R_base
-)
+__version__ = "2.0.0"
 
-# Define what gets exported when someone does "from src import *"
+from .generator import LogTowerGenerator
+
 __all__ = [
-    'generate_A_n',
-    'generate_R_n',
-    'omega_cache_generator',
-    'F',
-    'G_base',
-    'H_base',
-    'R_base'
+    "LogTowerGenerator"
 ]
