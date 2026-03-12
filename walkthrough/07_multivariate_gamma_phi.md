@@ -102,7 +102,7 @@ $$P(R_n) = \Gamma_n - R\Phi_n$$
 
 which lines up much better with its established multidimensional form,
 
-$$P(R_\alpha) = \Gamma_\alpha - R_0 \Phi_\alpha$$
+$$P(R_\alpha) = \Gamma_\alpha - R_\emptyset \Phi_\alpha$$
 
 Since $P(A_n)$ has been established as
 
@@ -110,13 +110,13 @@ $$P(A_n) = \sum_{k=0}^n \binom{n}{k} h_kR_{n-k}$$
 
 our new 1-D generator form becomes
 
-$$P(A_n) = \sum_{k=0}^{n} \binom{n}{k} h_k \big( \Gamma_{n-k} - R_0 \Phi_{n-k} \big)$$
+$$P(A_n) = \sum_{k=0}^{n} \binom{n}{k} h_k \big( \Gamma_{n-k} - R\Phi_{n-k} \big)$$
 
 which is now a clean binomial convolution of $h_k$ and values of $\Gamma_{n-k}$ and $\Phi_{n-k}$.
 
 Similarly, the multidimensional form is most efficiently represented as
 
-$$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R_0 \Phi_{\alpha-\beta} \big)$$
+$$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R_\emptyset \Phi_{\alpha-\beta} \big)$$
 
 ## So What?
 
@@ -330,11 +330,11 @@ $$\overline{\gamma}(X) = \overline{r}(X) + R_0 \overline{\phi}(X)$$
 
 Similarly the **multivariate coefficient extraction operator** can now be used in place of its 1-D counterpart. Since $\frac{X^\alpha}{\alpha!}$ forms the orthogonal basis for the multi-variable Maclaurin series, the operator distributes across the linear sum:
 
-$$\left[\frac{X^\alpha}{\alpha!}\right]\overline{r}(X) = \left[\frac{X^\alpha}{\alpha!}\right]\overline{\gamma}(X) - R_0 \left[\frac{X^\alpha}{\alpha!}\right]\overline{\phi}(X)$$
+$$\left[\frac{X^\alpha}{\alpha!}\right]\overline{r}(X) = \left[\frac{X^\alpha}{\alpha!}\right]\overline{\gamma}(X) - R_\emptyset \left[\frac{X^\alpha}{\alpha!}\right]\overline{\phi}(X)$$
 
 Because every multi-index term is independent of the others, we can safely slide our coefficient extractor straight through the plus and minus signs without worrying about cross-contamination from other derivative orders, which, by definition, yields our target corollary:
 
-$$R_\alpha = \Gamma_\alpha - R_0 \Phi_\alpha$$
+$$R_\alpha = \Gamma_\alpha - R_\emptyset \Phi_\alpha$$
 
 ## One (Multidimensional) Ring to Rule Them All
 
@@ -346,7 +346,7 @@ This pattern displayed itself early on in my multivariate work, so it's not some
 
 Recall from our 2-D work that
 
-$$R_{(1,1)} = \left[ {G^{(x)}}_{(0,1)} - F^{(x)}G^{(y)} \right] - R \left[ {F^{(x)}}_{(0,1)} - F^{(x)}F^{(y)} \right]$$
+$$R_{(1,1)} = \left[ {G^{(x)}}_{(0,1)} - F^{(x)}G^{(y)} \right] - R_\emptyset \left[ {F^{(x)}}_{(0,1)} - F^{(x)}F^{(y)} \right]$$
 
 To get to $R_{(2,1)}$ we differentiate with respect to $x$:
 
@@ -468,7 +468,7 @@ Since all $\Gamma_\alpha$ and $\Phi_\alpha$ can be constructed from their lower 
 
 ## What Goes up Must Come Down
 
-We've been doing a lot of work on differentiating, starting on the bottom rungs of the differential order and clamboring our way upward, but the only place integrals have popped up so far is when we're closing mathematical forms. 
+We've been doing a lot of work on differentiating, starting on the bottom rungs of the differential order and clambering our way upward, but the only place integrals have popped up so far is when we're closing mathematical forms. 
 
 No worries, integration-hawks. That's about to change right now.
 
@@ -476,7 +476,7 @@ No worries, integration-hawks. That's about to change right now.
 
 You may have noticed that we now have two equivalent multivariate operators that produce $\Gamma_\alpha$, one standard recursion and one derivative shift operator.
 
-So, let's go ahead put them across from each other on either side of an equals sign. To help shorten the equations a bit, let's set $\alpha - e_w = \gamma$:
+So, let's put them across from each other on either side of an equals sign. To help shorten the equations a bit, let's set $\alpha - e_w = \gamma$:
 
 $$\frac{\partial}{\partial w} \Gamma_\gamma - \Phi_\gamma G^{(w)} = D^\gamma G^{(w)} - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} (D^{\gamma - \beta} F^{(w)}) \Gamma_\beta$$
 
@@ -494,7 +494,7 @@ Once again, moving the $\Phi_\gamma F^{(w)}$ term to the RHS displays the same t
 
 $$\frac{\partial}{\partial w} \Phi_\gamma = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} (D^{\gamma - \beta} F^{(w)}) \Phi_\beta$$
 
-This equation in no uncertain terms tells us that _every derivative of_ $\Phi\_\alpha$ _is the multi-index binomial convolution between the partial derivatives of_ $-F^{(w)}$ _and its own corresponding lower-order states_.
+This equation in no uncertain terms tells us that _every derivative of_ $\Phi\_\gamma$ _is the multi-index binomial convolution between the partial derivatives of_ $-F^{(w)}$ _and its own corresponding lower-order states_.
 
 ### Fraternité
 
@@ -614,7 +614,7 @@ So, the $\Phi$ and $\Gamma$ sectors appear together as counterweights. The polyn
 
 ### Liberté
 
-Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turn these integrals into an integration by parts shearing machine, utilizing **linear Volterra equations of the second kind**
+Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turns these integrals into an integration by parts shearing machine, utilizing **linear Volterra equations of the second kind**
 
 $$f(x) = g(x) + \lambda \int_{a}^{x} K(x, t) f(t) dt$$
 
@@ -622,7 +622,7 @@ Where
 
 - $f(x)$ is the unknown function,
 - $g(x)$ is a given function (often representing the "source" or "initial" state),
-- $\lambda$ is A scalar parameter, and
+- $\lambda$ is a scalar parameter, and
 - $K(x, t)$ is the kernel,
 
 but this section is already too long, so I'll leave you with one last thought.
@@ -641,4 +641,4 @@ and then do the same for $\Gamma_\gamma$
 
 $$D^{\gamma - e_w} G^{(w)} - \sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Gamma_\beta = \int_0^w \left[ D^\gamma G^{(\tau)} + \Phi_\gamma(\tau) G^{(\tau)} - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} \left( D^{\gamma - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
 
-which shows that dropping a tensor index is the same as integrating across that dimension's continuous path, meaning we're looking at a **proven multidimensional continuous space**.
+which shows that dropping a discrete tensor index is mathematically equivalent to integrating across that dimension's continuous path, meaning we're looking at a **proven multidimensional continuous space**.
