@@ -612,11 +612,11 @@ The upper chronological boundary where all prior axes have reached their target 
 $$\mathcal{S}_{k, \text{anchor}} = \left\lbrace (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
 This state begins by choosing $G^{(x)}\_{(1,0)}$ as its $x$ anchor because
-- there is no $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0, and
+- there is **zero** $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0, and
 - $n_{x_k} - 1 = 2 - 1 = 1$.
 
 It also chooses $G^{(y)}\_{(2,1)}$ as its $y$ anchor because 
-- by the time the ordering gets to $y$, there are two $x$ 's in the lexicographic history, and
+- by the time the ordering gets to $y$, there are **two** $x$ 's in the lexicographic history, and
 - $n_{y_k} - 1 = 2 - 1 = 1$.
 
 Both match the Bell set partition results _without calling a single Bell set_.
