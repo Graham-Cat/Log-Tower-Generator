@@ -30,7 +30,7 @@ The Log-Tower-Generator has been completely re-architected from the ground up, t
 
 ---
 
-# **Motivation**
+## **Motivation**
 
 Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}{\ln f}$ leads to a severe combinatorial explosion. In a single-variable context, the raw higher-order derivatives quickly become opaque. This complexity scales exponentially with added dimensions, tangling the multi-index contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
 
@@ -45,7 +45,7 @@ This approach reveals deep structural symmetries in multivariate derivative towe
 
 ---
 
-# **Core Objects**
+## **Core Objects**
 
 Let $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ be a multi-index defining a spatial gradient across a set of orthogonal variables $X = (x_1, x_2, \dots, x_d)$.
 
@@ -69,7 +69,7 @@ Finally, to cleanly navigate the jet space, we introduce:
 
 ---
 
-# **Domain Constraints**
+## **Domain Constraints**
 
 To ensure the multidimensional Log-Tower expression $A(X) = h(X) \frac{\ln g(X)}{\ln f(X)}$ remains well-defined across the spatial domain, the following conditions must be satisfied for all points in $X$:
 
@@ -79,7 +79,7 @@ To ensure the multidimensional Log-Tower expression $A(X) = h(X) \frac{\ln g(X)}
 
 ---
 
-# **The $P(A_\alpha)$ Jet Space Generator**
+## **The $P(A_\alpha)$ Jet Space Generator**
 
 For any multi-index $\alpha > 0$, the $P(A_\alpha)$ generator evaluates the mixed partial differential of the multidimensional Log-Tower function. Specifically, it generates partial differentials of the form:
 
@@ -111,7 +111,7 @@ By utilizing this canonical framework, the $P(A_\alpha)$ generator maps the mixe
 
 ---
 
-# **The Engine: Anchor/Web Logic & Tensor Caching**
+## **The Engine: Anchor/Web Logic & Tensor Caching**
 
 While the $P(A_\alpha)$ generator maps the master superposition, generating the underlying $\Gamma_\alpha$ and $\Phi_\alpha$ states in multidimensional jet space requires carefully navigating the derivative routing history.
 
@@ -155,7 +155,7 @@ By evaluating only the valid anchor and web states, the algorithm dynamically pr
 ---
 
 
-# **Corollary: The Spine Projection**
+## **Corollary: The Spine Projection**
 
 Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, this multidimensional derivative structure also implies that the "Spine" derivative $R_\alpha$ (the mixed partial derivative of the logarithmic scaffold $\frac{\ln g}{\ln f}$) is simply the projection of the sectors onto the base.
 
@@ -183,7 +183,7 @@ Because the F-sector's recursive shift operator ($\Phi_\alpha$) is mathematicall
 
 ---
 
-# **Walkthrough & Documentation**
+## **Walkthrough & Documentation**
 
 The full narrative of how these equations were derived—spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0—is available in the repository documentation.
 
@@ -260,7 +260,7 @@ For a more comprehensive walkthrough of the engine's output formatting and SymPy
 
 ---
 
-# **Contributing**
+## **Contributing**
 
 Contributions are welcome.
 Open an issue or submit a pull request if you have:
