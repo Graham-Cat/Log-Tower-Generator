@@ -150,7 +150,7 @@ In one dimension, we can use $\Gamma_n = \sum G_{n-m-1} \Omega^n_m$ since the "r
 
 In a multidimensional environment, however, that symmetry shatters. By forcing the remaining multi-index vector $(\alpha - e_i - \beta)$ onto $\vec{\mathbf{G}}$, the tensor equation artificially inflated the derivatives of $G$ while starving $F$, wrecking the geometric reality.
 
-So, the discrete convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous recursive $\Gamma_\alpha$ and $\Phi_\alpha$ shift operators as the undisputed heavyweight champions of holding the multidimensional tensor grid together.
+So, the index bound convolution, while elegant in 1-D, was betraying itself as a specialized **algebraic shadow**, leaving the continuous recursive $\Gamma_\alpha$ and $\Phi_\alpha$ shift operators as the undisputed heavyweight champions of holding the multidimensional tensor grid together.
 
 But computing the shift operator for every generation is computationally heavy to use at scale. It will work well for spot calculations with small $n$, but performing heavy-duty work in fields like quantum chemistry, neural networking, and aerospace engineering would melt processors due to the millions of recursive calculations required to create even a small useful dataset.
 
@@ -168,7 +168,7 @@ Let's begin by coming up with a standard form of $\Gamma_{(2,2)}$ to test agains
 
 Since we're working with partial derivatives, the order in which we take them doesn't matter. To standardize, let's make a strict **lexicographical ordering** rule that we'll exhaust all $x$ 's first, then $y$ 's, then $z$ 's, etc. within the framework of the **derivative shift operator**. That way, while each $\Gamma_\alpha$ and $\Phi_\alpha$ will have several algebraically equivalent forms, they will only have one representative from their class. It'll prevent confusion and keep any databases we create free of redundant clutter.
 
-This ordering is not in and of itself what got us into trouble earlier (the discrete convolution engine was) so it's a safe policy to adopt.
+This ordering is not in and of itself what got us into trouble earlier (extending the index bound convolution directly to multi-index was) so it's a safe policy to adopt.
 
 Recall the _recursive_ operator is given by
 
@@ -584,7 +584,7 @@ $$\Gamma_{(2,2)} = \begin{bmatrix}
 > [!NOTE]
 > As before, the engine does *not* use matrix multiplication. This simply provides a visual map of the surviving path-dependent coordinates versus the zeroed-out phantom states.
 
-Now we finally don't have any duplicate $\beta$ vectors for $\Omega$, so it passes that smell test. This is definitely the right sum, but how do we express it in mathematical terms? It's not a discrete convolution, so the rule set for developing the allowable addresses isn't a straight line. How the heck do we generalize this process so it works for all partials and all dimensionalities?
+Now we finally don't have any duplicate $\beta$ vectors for $\Omega$, so it passes that smell test. This is definitely the right sum, but how do we express it in mathematical terms if the rule set for developing the allowable addresses isn't a straight line?
 
 ### Time after Time
 
