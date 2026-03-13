@@ -24,10 +24,6 @@ $$\Gamma_{n} = \sum_{m=0}^{n-1}G_{n-m-1}\Omega_m^n$$
 
 Note how the equation still only calls $\Omega_m^n$, so the $\Omega$ recursion doesn't need to be changed at all. Since the caching algorithm exists independently of $\Gamma$ and $\Phi$ indexing, it's already sitting pretty.
 
-Although we never explicitly created the formula for $\Phi_n$ before, instead relying on $G \mapsto F$ to create it, let's go ahead and put it here.
-
-$$\Phi_{n} = \sum_{m=0}^{n-1}F_{n-m-1}\Omega_m^n$$
-
 It's finally time to promote $\Omega_m^n$ to multivariate status and take it for a test drive.
 
 ### $\Omega$ Transformation
@@ -162,15 +158,15 @@ If the symmetric factoring optimization $\Omega_\beta^\alpha$ has to offer is ev
 
 ## To the Moaning and the Groaning of the Bells
 
-Bell polynomial expressions are notoriously processor heavy, so they're not an option to be turned to lightly when CPU load is at a premium. While exceptional at predicting outcomes of repeated application of the product rule (_a la_ Faà di Bruno), their inherent combinatorial explosion when calculating higher-order derivatives makes it an unwieldy tool at best (and, at worst, a research killer) to implement.
+Bell polynomial expressions are notoriously processor heavy, so they're not an option to be turned to lightly when CPU load is at a premium. While exceptional at predicting outcomes of repeated application of the product rule (_a la_ Faà di Bruno), their inherent combinatorial explosion when calculating higher-order derivatives makes it an unwieldy tool to implement at best and, at worst, a research killer.
 
-Let's do a quick runthrough of how **Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
+Let's do a quick run-through of how **Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
 
 Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after our myriad, fatal algorithmic catastrophes.
 
 Let's begin by coming up with a standard form of $\Gamma_{(2,2)}$ to test against.
 
-Since we're working with partial derivatives, the order in which we take them doesn't matter. To standardize, let's make a strict **lexicographical ordering** rule that we'll exhaust all $x$ 's first, then $y$ 's, then $z$ 's, etc. within the framework of the **derivative shift operator**. That way, while each $\Gamma_\alpha$ and $\Phi_\alpha$ will have several algebraically equvialent forms, they will only have one representative from their class. It'll prevent confusion and keep any databases we create free of redundant clutter.
+Since we're working with partial derivatives, the order in which we take them doesn't matter. To standardize, let's make a strict **lexicographical ordering** rule that we'll exhaust all $x$ 's first, then $y$ 's, then $z$ 's, etc. within the framework of the **derivative shift operator**. That way, while each $\Gamma_\alpha$ and $\Phi_\alpha$ will have several algebraically equivalent forms, they will only have one representative from their class. It'll prevent confusion and keep any databases we create free of redundant clutter.
 
 This ordering is not in and of itself what got us into trouble earlier (the discrete convolution engine was) so it's a safe policy to adopt.
 
@@ -282,7 +278,7 @@ So, why don't we just use this algorithm to create every $\Gamma_\alpha$ and $\P
 
 Because we're not just stopping at two dimensions and a net depth of four. To be properly useful, we need this tool to function in four dimensions to a net depth of at least eight, or possibly _many_ more when performing Taylor-style approximations.
 
-Let's have a look at how many partitions a processor would have wrangle just to get to the second partial on each of four dimensions:
+Let's have a look at how many partitions a processor would have to wrangle just to get to the second partial on each of four dimensions:
 
 - $B_4$ (like $\Gamma_{(2,2)}$ above) = 15 partitions
 - $B_5$ = 52 partitions
@@ -294,17 +290,15 @@ Let's not forget that these partitions would be needed to calculate a _single_ $
 
 The geometric explosion here is obvious. It would be a sure-fire processor killer in the context of large-scale use, like an aerospace corporation pitting a hypersonic fin design against tens (or even hundreds) of thousands of varying pressure and temperature conditions or a drug corporation testing a vast array of electron density fluctuations against a specific nanosurface.
 
-So why are we even bothering to talk about this kind of set partitioning in this context at all?
+So, how do we sail over this combinatorial monster?
 
-Because _if you only have to do it **once**_ instead of millions of times, all of a sudden, the CPU cost becomes much more palatable.
-
-That's where a database construct known as a **Jet Space** comes in incredibly handy.
+Would you believe me if I told you, "In a jet"?
 
 ## The Jet Set
 
 If you've never heard of a "jet space" before, you're in for a treat -- not just because the concept is interesting and useful, but also because it's highly intuitive to understand and doesn't require anything more than knowledge of what a partial derivative is to get completely.
 
-A jet space is like a mathematical canvass -- a vast, empty grid consisting of all possible mixed partials that you can use as an address routing service. You can hook whatever single derivative expression you want in whatever algorithmic manner you wish to any address in the space. It's a rigorously structured, multi-dimensional cache which allows users to _replace calculus operations with instant memory retrievals_.
+A jet space is like a mathematical canvas -- a vast, empty grid consisting of all possible mixed partials that you can use as an address routing service. You can hook whatever single derivative expression you want in whatever algorithmic manner you wish to any address in the space. It's a rigorously structured, multi-dimensional cache which allows users to _replace calculus operations with instant memory retrievals_.
 
 In standard calculus, a derivative is an *algebraic operation* performed on a function. You take $f(x)$ and apply an operator to get $f'(x)$.
 
@@ -339,9 +333,7 @@ By treating this geometric space as a database, algorithms gain massive efficien
 * **Combinatorial Memoization:** Recursive structures often require the same derivative terms multiple times across different branches of a calculation. A jet space guarantees that a specific derivative is calculated _only once_. If an algorithm requests an address that does not exist, the router calculates it, stores it permanently at that coordinate, and then serves it.
 * **Symbolic Cleanliness:** Treating derivatives as independent variables prevents automated symbolic engines (like SymPy) from prematurely expanding or collapsing chain-rule expressions before the algorithm has finished assembling the terms, preventing simplification subroutines from "melting" functions together too early.
 
-So, jet spaces turn differential engines into rockets in terms of processing speed over the course of thousands of lookups. Of course, there's a computational cost for setting up the space, so if you're only going to do a small number of operations, this is generally not the way to go.
-
-But once you're set up to run derivatives on 100,000 $\text{ln} g(X)^{h(X)}$ forcing functions against a single given base $\text{ln} f(X)$ function, the processor savings are massive.
+So, jet spaces turn differential engines into rockets in terms of processing speed. Once you're set up to run derivatives on 100,000 $\text{ln} g(X)^{h(X)}$ forcing functions against a single given base $\text{ln} f(X)$ function, the processor savings are massive.
 
 We now have all the tools we need, but there's one crucial piece missing.
 
@@ -579,9 +571,9 @@ $$\Gamma_{(2,2)} = \begin{bmatrix}
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-    G_{(2,1)}^{(y)}\Omega_{(0,0)}^{(2,2)} & 0 \\
-    G_{(1,1)}^{(y)}\Omega_{(1,0)}^{(2,2)} & 0 \\
-    G_{(0,1)}^{(y)}\Omega_{(2,0)}^{(2,2)} & G_{(0,0)}^{(y)}\Omega_{(2,1)}^{(2,2)} 
+    G_{(2,1)}^{(y)}\Omega_{(0,0)}^{(2,2)} & G_{(2,0)}^{(y)}\Omega_{(0,1)}^{(2,2)} \\
+    0 & G_{(1,0)}^{(y)}\Omega_{(1,1)}^{(2,2)} \\
+    0 & G_{(0,0)}^{(y)}\Omega_{(2,1)}^{(2,2)} 
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
@@ -590,7 +582,7 @@ $$\Gamma_{(2,2)} = \begin{bmatrix}
 \end{bmatrix}$$
 
 > [!NOTE]
-> Again, the algorithm does *not* function via matrix multiplication. The above matrices just provide a visually digestible representation of the end sum.
+> As before, the engine does *not* use matrix multiplication. This simply provides a visual map of the surviving path-dependent coordinates versus the zeroed-out phantom states.
 
 Now we finally don't have any duplicate $\beta$ vectors for $\Omega$, so it passes that smell test. This is definitely the right sum, but how do we express it in mathematical terms? It's not a discrete convolution, so the rule set for developing the allowable addresses isn't a straight line. How the heck do we generalize this process so it works for all partials and all dimensionalities?
 
@@ -683,7 +675,7 @@ $$\Omega_3^4 - (\Omega_2^3)' = (-3F_2 + 5F_1 F - F^3) - (-2F_2 + 2F_1 F) = -F_2 
 
 $$\Omega_4^5 - (\Omega_3^4)' = (-4F_3 + 9F_2 F + 8F_1^2 - 9F_1 F^2 + F^4) - (-3F_3 + 5F_2 F + 5F_1^2 - 3F_1 F^2) = -F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4$$
 
-The remainders look somewhat familiar, but they don't quite match any $\Omega_m^n$ we've seen before. The differences look like $\Omega_m^n$ where $n = m + 1$ but are somehow dropped down a level on Pascal's triangle. Instead of  $-2F_1 + F^2$ we have $-F_1 + F^2$. Simlarly, instead of $-3F_2 + 5F_1 F - F^3$ we have $-F_2 + 3F_1 F - F^3$, and so on.
+The remainders look somewhat familiar, but they don't quite match any $\Omega_m^n$ we've seen before. The differences look like $\Omega_m^n$ where $n = m + 1$ but are somehow dropped down a level on Pascal's triangle. Instead of  $-2F_1 + F^2$ we have $-F_1 + F^2$. Similarly, instead of $-3F_2 + 5F_1 F - F^3$ we have $-F_2 + 3F_1 F - F^3$, and so on.
 
 Here, it looks as if these are $\Omega_m^n$ where $m=n$, which is really odd since they don't exist anywhere in our 1-D work. The maximum practical value for $m$ was $n - 1$ back when we were just working with $x$.
 
@@ -693,11 +685,11 @@ However, using the primary recursion definition $\Omega_m^n = - \sum_{j=0}^{m-1}
 * **$\Omega_3^3$:** $-\left( \binom{2}{0} F \Omega_2^2 + \binom{2}{1} F_1 \Omega_1^1 + \binom{2}{2} F_2 \Omega_0^0 \right) = \mathbf{-F_2 + 3F_1 F - F^3}$
 * **$\Omega_4^4$:** $-\left( \binom{3}{0} F \Omega_3^3 + \binom{3}{1} F_1 \Omega_2^2 + \binom{3}{2} F_2 \Omega_1^1 + \binom{3}{3} F_3 \Omega_0^0 \right) = \mathbf{-F_3 + 4F_2 F + 3F_1^2 - 6F_1 F^2 + F^4}$
 
-Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them, leading to the stealthy $\Omega_m^n$ derivative shift operator that has the ability to function in 1-D through **phantom expressions**:
+Huh. There they are. They didn't exist over in 1-D-land but the recursion allows us to create them there, leading to the stealthy $\Omega_m^n$ derivative shift operator that has the ability to function through **phantom expressions** that exist purely in the recursive connective tissue, never appearing in the final evaluated polynomials:
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
-It's surprisingly easy to prove. Might as well put it here. It just takes three EGF index moves.
+This identity is surprisingly easy to prove. Might as well put it here. It just takes three EGF index moves.
 
 Our hypothesis test is straightforward to visualize if we put it right next to a slightly rearranged form of the above operator.
 
@@ -711,7 +703,7 @@ More formally, we're hypothesizing that taking $\overline{\omega}$ 's physical d
 
 Let's plug our established EGF into the hypothesis and see how it works out:
 
-$$y\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^m$ = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial x} \Omega_m^n \frac{x^n}{n!}y^m$ - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
+$$y\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^m = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial x} \Omega_m^n \frac{x^n}{n!}y^m - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
 
 Now move the indices related to $y$ and $\frac{\partial}{\partial x}$
 
@@ -733,15 +725,19 @@ These are the three boxes we need to check before we move ahead:
 
 1. We know we can replace $-1$ with $-e_w$ because it's a strict algebraic requirement for maintaining coordinate geometry when moving from a line (1-D) to a grid ($n$-D).
 2. Clairaut's Theorem of commuting partial derivatives clearly proves that because the spatial dimensions ($x, y, z$) are orthogonal (perpendicular and independent), taking a derivative with respect to $x$ treats $y$ and $z$ as constants. Therefore, the recursive logic that governs the $x$-axis must apply identically and independently to the $y$-axis. The multi-index $\alpha$ is a bookkeeping tool — a **tuple** that bundles these operations into a single symbol.
-3. And last, but certainly not least, everything we've done regarding recursions is based on the **General Leibniz rule**, which is based on the standard product rule.
+3. And last, but certainly not least, everything we've done regarding recursions is based on the General Leibniz rule. Because partial derivatives commute, the standard product rule scales into multidimensional tensor space using the exact same structural equation:
 
 $$\frac{d^n}{dx^n}(uv) = \sum_{k=0}^n \binom{n}{k} u^{(k)} v^{(n-k)}$$
 
-It proves that because partial derivatives commute, the product rule scales into multidimensional tensor space using the exact same structural equation:
+$$\downarrow \downarrow \downarrow \downarrow$$
 
 $$D^\alpha(uv) = \sum_{\gamma \leq \alpha} \binom{\alpha}{\gamma} (D^\gamma u) (D^{\alpha - \gamma} v)$$
 
 So we now have our multidimensional shift operator for $\Omega_\beta^\alpha$,
+
+$$\Omega_m^n = \frac{\partial}{\partial x}\Omega_{m-1}^{n-1} + \Omega_m^{n-1}$$
+
+$$\downarrow \downarrow \downarrow \downarrow$$
 
 $$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
 
@@ -753,9 +749,9 @@ Let's go ahead and integrate both sides from zero to $w$ and perform a minor rea
 
 $$\Omega_\beta^\alpha(w) = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
 
-See how we've isolated $\Omega_\beta^\alpha(w)$ there on the left? We all know what that's equal to by now, so let's put it across from its integral definition.
+See how we've isolated $\Omega_\beta^\alpha(w)$ there on the left? We all know what that's equal to by now, so let's put it across from its integral definition, move the anchor point back, and multiply through by -1.
 
-$$- \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma} = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
+$$\Omega_\beta^\alpha(0) + \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma} =  \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
 
 Once again, we see that taking its integral is the same as dropping a tensor rank (this time starting at an anchor point), so $\Omega_\beta^\alpha$ also, in and of itself, represents a **continuous multivariate algebraic space**.
 
