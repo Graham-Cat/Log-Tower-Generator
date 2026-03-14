@@ -86,8 +86,8 @@ For the multidimensional expansion, we define our base functions and modular com
 * **The Base & Input:** $f(X)$, $g(X)$, and $h(X)$ are differentiable multivariate functions.
 * **The Spine ($R_\alpha$):** The $\alpha$-th mixed partial derivative of the logarithmic scaffold $\frac{\ln g(X)}{\ln f(X)}$.
 * **The Scaling Module ($h_\alpha$):** The $\alpha$-th mixed partial derivative of the exponent function $h(X)$.
-* **The Base Module ($F^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{f_w}{f \ln f}$, representing the relative rate of change of the base, strictly rooted in dimension $w$.
-* **The Input Module ($G^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{g_w}{g \ln f}$, representing the relative rate of change of the input, strictly rooted in dimension $w$.
+* **The Base Module ($F^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{f_w}{f \ln f}$ representing the relative rate of change of the base, strictly rooted in dimension $w$.
+* **The Input Module ($G^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{g_w}{g \ln f}$ representing the relative rate of change of the input, strictly rooted in dimension $w$.
 
 To manage the combinatorial complexity of the expansion, we define three structural operators that absorb all induced cross-sector structure and form the backbone of the canonical expansion:
 
