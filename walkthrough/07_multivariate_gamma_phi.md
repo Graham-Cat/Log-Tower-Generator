@@ -134,11 +134,7 @@ But, of course, we're not quite done.
 
 ### Closing Time Again and Again
 
-Closing our new 1-D equations for $\Gamma_n$ and $\Phi_n$ will be a simple exercise now that we know how. Also, since the recursions are cleaner, the math will be easier to parse.
-
-You might be asking, "Why bother closing these in one dimension when a multidimensional closure automatically covers the 1-D case?"
-
-Now that things are cleaned up, we'll get a clearer picture of the 1-D structure during the closing process.
+Closing our new 1-D equations for $\Gamma_n$ and $\Phi_n$ will be a simple exercise now that we know how. Also, since the recursions are cleaner, the math will be easier to parse, so we'll get a clearer picture of the 1-D structure during the closing process.
 
 We define our usual EGFs as
 
