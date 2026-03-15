@@ -33,7 +33,7 @@ Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}
 The **Log-Tower Generator v2.0.0** resolves combinatorial explosion by mapping spatial gradients into a canonical normal form over a **multidimensional jet space** for mixed partial derivatives, extending the stable F/G-sector symmetry into $n$-dimensions. By isolating the distinct "forcing" and "decay" dynamics across any orthogonal variable, the framework reorganizes the expansion into:
 
 * **Sector Decomposition:** Splitting the multidimensional solution into a homogeneous $\Phi_\alpha$ sector and a particular $\Gamma_\alpha$ sector utilizing their fundamental underlying symmetry.
-* **Chronological Routing:** Bypassing processor-intensive Bell polynomial combinatorics and generic geometric bounding. The new architecture uses a **Chronological Step-Operator Engine** to construct a **Constrained Index Set** ($\hat{A}_\alpha$), eliminating path-independent "phantom states" from the calculation.
+* **Chronological Routing:** Bypassing processor-intensive Bell polynomial combinatorics and generic geometric bounding using a **Chronological Step-Operator Engine** to construct a **Constrained Index Set** ($\hat{A}_\alpha$), eliminating path-independent "phantom states" from the calculation.
 * **Tensor Caching:** Pre-calculating the system's multidimensional "drag" as a cached F-Kernel ($\Omega^\alpha_\beta$) across a tensor grid, independent of the input signal.
 * **Linear Superposition:** Generating the final mixed partial differential $P(A_\alpha)$ as a clean linear combination of these modular, $w$-rooted components.
 
@@ -48,7 +48,7 @@ The $P(A_\alpha)$ generator is a versatile piece of mathematical architecture. I
 Potential uses include:
 
 ### 1. Machine Learning & Computational Architecture
-* **Physics-Informed Neural Networks (PINNs):** Acting as a custom gradient layer to replace standard Automatic Differentiation (AutoDiff). By computing exact, high-order mixed partial derivatives natively as vectorized tensor convolutions, it mitigates exponential memory costs and numerical instability inherent in deep physical simulations.
+* **Physics-Informed Neural Networks (PINNs):** Acting as a custom gradient layer to replace standard Automatic Differentiation (AutoDiff), mitigating exponential memory costs and numerical instability inherent in deep physical simulations by computing exact, high-order mixed partial derivatives natively as vectorized tensor convolutions.
 * **Memoized Tensor Caching:** Utilizing the forward-filling multidimensional $\Omega$ cache to feed pre-computed lower-order states into the network, drastically accelerating the backward pass.
 
 ### 2. Theoretical Physics
@@ -120,7 +120,7 @@ For any multi-index $\alpha > 0$, the $P(A_\alpha)$ generator evaluates the mixe
 
 $$ \frac{\partial^{(n_{x_1}+n_{x_2}+\dots+n_{x_m})}}{\partial x_1^{n_{x_1}}\partial x_2^{n_ {x_2}}\dots\partial x_m^{n_{x_m}}} \left(h(x_1,x_2,\dots,x_m)\frac{\text{ln}g(x_1,x_2,\dots,x_m)}{\text{ln}f(x_1,x_2,\dots,x_m)}\right)$$
 
-Where $f(X)$, $g(X)$, and $h(X)$ are $m$-dimensional differentiable functions.
+where $f(X)$, $g(X)$, and $h(X)$ are $m$-dimensional differentiable functions.
 
 ### **The Conceptual Form (Sector Decomposition)**
 
@@ -198,11 +198,11 @@ The algorithm dynamically prunes the dependency tree by evaluating only the vali
 
 Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, this multidimensional derivative structure also implies that the "Spine" derivative $R_\alpha$ (the mixed partial derivative of the logarithmic scaffold $\frac{\ln g}{\ln f}$) is the projection of the sectors onto the base.
 
-Assuming the final step of the spatial gradient is taken with respect to dimension $w$, the $\alpha$-th derivative of the spine is given by:
+Assuming the final step of the spatial gradient is taken with respect to dimension $w$, the $\alpha$-th derivative of the spine is:
 
 $$P(R_\alpha) = \Gamma_{\alpha} - R \Phi_{\alpha}$$
 
-This identity confirms that the complex behavior of the underlying logarithmic ratio is deterministically evolved from the same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
+This identity confirms that the complex behavior of the underlying logarithmic ratio evolves deterministically from the same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
 
 ---
 
@@ -224,7 +224,7 @@ Because the F-sector's recursive shift operator ($\Phi_\alpha$) is mathematicall
 
 ## **Walkthrough & Documentation**
 
-The full narrative of how these equations were derived — spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0 — is available in the repository documentation.
+The full narrative behind deriving the generator — spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0 — is available in the repository documentation.
 
 The walkthrough is broken down into 8 parts and covers:
 
