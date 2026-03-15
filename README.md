@@ -1,8 +1,8 @@
 * **DOI / Zenodo Badge:** (Placeholder for the v2.0.0 release link)
 
-# **Log-Tower-Generator Framework (v2.0.0)**
+# **Log-Tower Generator Framework (v2.0.0)**
 
-The **Log-Tower-Generator** is an advanced symbolic and computational engine designed to calculate the exact $n$-th order mixed partial derivatives of multidimensional Log-Tower functions.
+The **Log-Tower Generator** is an advanced symbolic and computational engine designed to calculate the exact $n$-th order mixed partial derivatives of multidimensional Log-Tower functions.
 
 Specifically, it provides a closed-form, algorithmic solution for evaluating complex jet space structures of the form:
 
@@ -16,7 +16,7 @@ Version 2.0.0 bypasses these algebraic bottlenecks. By deploying a **Chronologic
 
 ## **Features (What's New in v2.0.0)**
 
-The Log-Tower-Generator has been fully re-architected, transitioning from the 1-D mathematical framework of v1.0.0 into a fully optimized, $n$-dimensional jet space engine.
+The Log-Tower Generator has been fully re-architected, transitioning from the 1-D mathematical framework of v1.0.0 into a fully optimized, $n$-dimensional jet space engine.
 
 * **Multidimensional Jet Space Support:** Upgraded to handle high-order mixed partial derivatives across any number of orthogonal dimensions (e.g., $x, y, z, t$) using multi-index notation ($\alpha$).
 * **Chronological Step-Operator Engine:** Bypasses combinatorial explosion that standard quotient-rule applications and generic geometric index loops cause. The engine utilizes a spatial gradient sequence (Anchor and Historical Web logic) efficiently generating only chronologically valid paths.
@@ -30,7 +30,7 @@ The Log-Tower-Generator has been fully re-architected, transitioning from the 1-
 
 Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}{\ln f}$ leads to combinatorial explosion. In a single-variable context, the raw higher-order derivatives quickly become opaque. This complexity scales exponentially with added dimensions, tangling the multi-index contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
 
-The **Log-Tower-Generator v2.0.0** resolves combinatorial explosion by mapping spatial gradients into a canonical normal form over a **multidimensional jet space** for mixed partial derivatives, extending the stable F/G-sector symmetry into $n$-dimensions. By isolating the distinct "forcing" and "decay" dynamics across any orthogonal variable, the framework reorganizes the expansion into:
+The **Log-Tower Generator v2.0.0** resolves combinatorial explosion by mapping spatial gradients into a canonical normal form over a **multidimensional jet space** for mixed partial derivatives, extending the stable F/G-sector symmetry into $n$-dimensions. By isolating the distinct "forcing" and "decay" dynamics across any orthogonal variable, the framework reorganizes the expansion into:
 
 * **Sector Decomposition:** Splitting the multidimensional solution into a homogeneous $\Phi_\alpha$ sector and a particular $\Gamma_\alpha$ sector utilizing their fundamental underlying symmetry.
 * **Chronological Routing:** Bypassing processor-intensive Bell polynomial combinatorics and generic geometric bounding. The new architecture uses a **Chronological Step-Operator Engine** to construct a **Constrained Index Set** ($\hat{A}_\alpha$), eliminating path-independent "phantom states" from the calculation.
@@ -325,4 +325,4 @@ The mathematical derivations, "Walkthrough" narratives, diagrams, and theoretica
 
 **Attribution:** If you adapt or redistribute the theoretical concepts from this repository, please cite as:
 
-Feick, Christopher. (2026). Log-Tower-Generator: A Multidimensional Jet Space Engine for High-Order Mixed Partial Derivatives. GitHub. https://github.com/Graham-Cat/Log-Tower-Generator
+Feick, Christopher. (2026). Log-Tower Generator: A Multidimensional Jet Space Engine for High-Order Mixed Partial Derivatives. GitHub. https://github.com/Graham-Cat/Log-Tower-Generator
