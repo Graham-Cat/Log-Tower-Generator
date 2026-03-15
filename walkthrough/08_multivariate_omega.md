@@ -58,7 +58,7 @@ $$\Gamma_\alpha = \sum_{0 \leq \beta \leq \alpha - e_w} G^{(w)}_{\alpha - \beta 
 
 The first step went really well. Let’s look at a first-order pure derivative, setting $\alpha = (1, 0)$ and stepping back along the $x$-axis so $w=1$ and $e_1 = (1, 0)$.
 
-The bounds of our sum become $0 \leq \beta \leq (0, 0)$, leaving us with exactly one term:
+The bounds of our sum become $0 \leq \beta \leq (0, 0)$, leaving us with one term:
 
 $$\Gamma_{(1,0)} = G^{(x)}_{(0,0)} \Omega^{(1,0)}_{(0,0)}$$
 
@@ -122,7 +122,7 @@ At a strictly computational level, this chugged along like a dream. Because ther
 
 Yeah, no. We hadn't. While we had bypassed path dependency, the underlying geometry was in tatters.
 
-Forcing a specific path (say, always exhausting $z$-derivatives, then $y$, then $x$) stripped the resulting $\Gamma_\alpha$ of its coordinate independence. Swapping $x$ and $y$ indices provided an entirely different polynomial. The matrix was just an artifact of whatever alphabet we arbitrarily chose.
+Forcing a specific path (say, always exhausting $z$-derivatives, then $y$, then $x$) stripped the resulting $\Gamma_\alpha$ of its coordinate independence. Swapping $x$ and $y$ indices spawned an entirely different polynomial. The matrix was just an artifact of whatever alphabet we arbitrarily chose.
 
 Worse still, this method completely shattered the continuous multidimensional space we just spent Part 7 proving existed for this n-dimensional algebraic fractal expression. The Volterra integral equations that establish the continuity of the $\Gamma / \Phi$ differential ring rely on **isotropic geometry** (i.e., no single dimension can hold a privileged position in the integration limits). Yet the lexicographical algorithm inherently weighted the "first" chosen dimension differently than the "last" when used in the context of our linear convolution. Forcing an artificial hierarchy onto a continuous space shredded its algebraic fabric.
 
@@ -599,28 +599,28 @@ We define $\hat{A}_\alpha$ as the **Constrained Index Set** of allowable jet spa
 The set $\hat{A}_\alpha$ is the union of path-dependent subsets, partitioned by their active root axis (i.e., $x_k$). For every dimension $k \in \left\lbrace 1, 2, \dots, d \right\rbrace$ where $\alpha_k > 0$, *two conditions* generate the valid multi-index coordinates ($\beta$) paired with the root axis ($x_k$):
 
 **1. The Anchor State**
-The upper chronological boundary where all prior axes have reached their target state, and the current root axis is shifted by exactly one derivative:
+The upper chronological boundary where all prior axes have reached their target state, and the current root axis is shifted by one derivative:
 
 $$\mathcal{S}_{k, \text{anchor}} = \left\lbrace (x_k, \beta) \mid \beta_j = \alpha_j \text{ for } j < k, \quad \beta_k = \alpha_k - 1, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
 This state begins by choosing $G^{(x)}\_{(1,0)}$ as its $x$ anchor because
-- there is **zero** $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0, and
-- $n_{x_k} - 1 = 2 - 1 = 1$.
+- there is **zero** $y$ history yet in an $x \to x \to y \to y$ lexicographic ordering, so $y$ is locked at 0 (i.e., $\beta_j = 0 \text{ for } j > k$ ), and
+- $n_{x} - 1 = 2 - 1 = 1$ (i.e., $\beta_k = \alpha_k - 1$ ).
 
 It also chooses $G^{(y)}\_{(2,1)}$ as its $y$ anchor because 
-- by the time the ordering gets to $y$, there are **two** $x$ 's in the lexicographic history, and
-- $n_{y_k} - 1 = 2 - 1 = 1$.
+- by the time the ordering gets to $y$, there are **two** $x$ 's in the lexicographic history (i.e., $\beta_j = \alpha_j \text{ for } j < k$ ), and
+- $n_{y} - 1 = 2 - 1 = 1$ (i.e., $\beta_k = \alpha_k - 1$ ).
 
 Both match the Bell set partition results _without calling a single Bell set_.
 
 **2. The Historical Web**
-The cumulative routing history where prior axes occupy any valid state within their bounds, and the current root axis accounts for the remaining lower-order derivatives (provided $\alpha_k > 1$):
+The cumulative routing history where prior axes occupy any valid state within their bounds, and the current root axis accounts for the remaining lower-order derivatives (assuming $\alpha_k > 1$):
 
 $$\mathcal{S}_{k, \text{web}} = \left\lbrace (x_k, \beta) \mid 0 \le \beta_j \le \alpha_j \text{ for } j < k, \quad 0 \le \beta_k \le \alpha_k - 2, \quad \beta_j = 0 \text{ for } j > k \right\rbrace$$
 
 Now that the histories are completely unlocked, those with any numbers lower than the anchor are allowable.
-- The only $G^{(x)}$ that is lower than $G^{(x)}\_{(1,0)}$ with $y$ locked at 0 is $G^{(x)}\_{(0,0)}$, so it is selected.
-- Similarly, the only $y$ that is less than 1 is 0 and now $x$ can range from 0 to 2 because there are two in the history for $y$, so it selects $G^{(y)}\_{(0,0)}$, $G^{(y)}\_{(1,0)}$, and $G^{(y)}\_{(2,0)}$.
+- The only $G^{(x)}$ that is lower than $G^{(x)}\_{(1,0)}$ with $y$ locked at 0 is $G^{(x)}\_{(0,0)}$ (i.e., $\quad 0 \le \beta_k \le \alpha_k - 2$ ), so it is selected.
+- Similarly, the only $y$ that is less than 1 is 0 and now $x$ can range from 0 to 2 because there are two in the history for $y$, so it selects $G^{(y)}\_{(0,0)}$, $G^{(y)}\_{(1,0)}$, and $G^{(y)}\_{(2,0)}$ (i.e., $0 \le \beta_j \le \alpha_j \text{ for } j < k$ ).
 
 All are correct and all are selected once again _without calling a single Bell polynomial_.
 
