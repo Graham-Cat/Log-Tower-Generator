@@ -24,7 +24,7 @@ Our work in the last section also established that $R_\alpha = \Gamma_\alpha - \
 
 $$\Gamma_\alpha - \Phi_\alpha R = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) (\Gamma_\beta - \Phi_\beta R)$$
 
-To extract $\Gamma_\alpha$, we simply isolate the terms independent of $R$. Conceptually, you can think of this like using MS Word's find and replace function to delete all the $-\Phi_\alpha R$ and $-\Phi_\beta R$ terms.
+To extract $\Gamma_\alpha$, we simply isolate the terms independent of $R$. Conceptually, you can think of this like using MS Word's "Find and Replace" function to delete all the $-\Phi_\alpha R$ and $-\Phi_\beta R$ terms.
 
 $$\Gamma_\alpha = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) \Gamma_\beta$$
 
@@ -32,7 +32,7 @@ And that's it. That's the $\Gamma_\alpha$ **shift operator**.
 
 This mathematical manipulation sure beats parsing waterfall diagrams.
 
-Let's also derive the $\Phi_\alpha$ **shift operator** in parallel by isolating the $R$ coefficients and multiplying by $-1$, which produces
+Let's also derive the $\Phi_\alpha$ **shift operator** in parallel by isolating the $R$ coefficients and multiplying by $-1$, which produces:
 
 $$\Phi_\alpha = - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) \Phi_\beta$$
 
@@ -52,9 +52,9 @@ Since the multivariate form should work for $n$ variables (including $n=1$, of c
 
 Recall that in our 1-D work, we set $\Gamma_0 = G_0$ and $\Phi_0 = F_0$. Instead, in our multivariate work, we discovered the necessity of setting different base cases below the floor of our 1-D work in the form of $\Gamma_{(0,0)} = 0$ and $\Phi_{(0,0)} = -1$
 
-Let's re-index our 1-D work, setting $\Gamma_0 = 0$ and $\Phi_0 = -1$ to see if the equations line up better with our multivariate work.
+Let's re-index our 1-D work, setting $\Gamma_0 = 0$ and $\Phi_0 = -1$, to see if the equations line up better with our multivariate work.
 
-If we set $\Gamma_0$ to 0, we get
+If we set $\Gamma_0$ to 0, we get:
 
 $$ \Gamma_0 = 0 $$
 
@@ -66,7 +66,7 @@ $$ \Gamma_3 = G_2 - \Gamma_2F - 2\Gamma_1F_1 - 1\Gamma_0F_2 $$
 
 $$ \Gamma_4 = G_3 - \Gamma_3F - 3\Gamma_2F_1 - 3\Gamma_1F_2 - 1\Gamma_0F_3 $$
 
-Or, more succinctly,
+or, more succinctly,
 
 $$\Gamma_n = G_{n-1} - \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} \Gamma_k$$
 
@@ -82,7 +82,7 @@ $$\Phi_2 = - \Phi_1 F - \Phi_0 F_1$$
 $$\Phi_3 = - \Phi_2 F - 2\Phi_1 F_1 - 1\Phi_0 F_2$$
 $$\Phi_4 = - \Phi_3 F - 3\Phi_2 F_1 - 3\Phi_1 F_2 - 1\Phi_0 F_3$$
 
-Which leads to 
+which leads to:
 
 $$\Phi_n = - \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} \Phi_k$$
 
@@ -96,7 +96,7 @@ Since we've re-indexed our formulas for $\Gamma_n$ and $\Phi_n$ and developed mu
 
 ### It's _Deja Vu_ All Over Again
 
-Since $\Gamma_n$ and $\Phi_n$ have advanced by one, the corollary to the generator now becomes
+Since $\Gamma_n$ and $\Phi_n$ have advanced by one, the corollary to the generator now becomes:
 
 $$P(R_n) = \Gamma_n - R\Phi_n$$
 
@@ -104,27 +104,27 @@ which lines up much better with its established multidimensional form,
 
 $$P(R_\alpha) = \Gamma_\alpha - R_\emptyset \Phi_\alpha$$
 
-Since $P(A_n)$ has been established as
+Since $P(A_n)$ has been established as:
 
 $$P(A_n) = \sum_{k=0}^n \binom{n}{k} h_kR_{n-k}$$
 
-our new 1-D generator form becomes
+our new 1-D generator form becomes:
 
 $$P(A_n) = \sum_{k=0}^{n} \binom{n}{k} h_k \big( \Gamma_{n-k} - R\Phi_{n-k} \big)$$
 
 which is now a clean binomial convolution of $h_k$ and values of $\Gamma_{n-k}$ and $\Phi_{n-k}$.
 
-Similarly, the multidimensional form is most efficiently represented as
+Similarly, the multidimensional form is most efficiently represented as:
 
 $$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R_\emptyset \Phi_{\alpha-\beta} \big)$$
 
 ## So What?
 
-Since we have the most efficiently presented multidimensional form of $P(A_\alpha)$ possible and a bulletproof way to produce all $\Gamma_\alpha$ and $\Phi_\alpha$, we've not only achieved our goal of being able to produce
+Since we have the most efficiently presented multidimensional form of $P(A_\alpha)$ possible and a bulletproof way to produce all $\Gamma_\alpha$ and $\Phi_\alpha$, we've not only achieved our goal of being able to produce:
 
 $$\frac{\partial^{(n_x+n_y+n_z+n_t)}}{\partial x^{n_x} \partial y^{n_y} \partial z^{n_z} \partial t^{n_t}} A(x,y,z,t) = \frac{\partial^{(n_x+n_y+n_z+n_t)}}{\partial x^{n_x} \partial y^{n_y} \partial z^{n_z}  \partial t^{n_t}} \left(h(x,y,z,t)\frac{\text{ln}g(x,y,z,t)}{\text{ln}f(x,y,z,t)}\right)$$
 
-but we've also blown _literally infinitely_ past it and can now create
+but we've also blown _literally infinitely_ past it and can now create:
 
 $$\frac{\partial^{(n_{x_1}+n_{x_2}+\dots+n_{x_m})}}{\partial x_1^{n_{x_1}}\partial x_2^{n_{x_2}}\dots\partial x_m^{n_{x_m}} } A(x_1,x_2,\dots,x_m) = \frac{\partial^{(n_{x_1}+n_{x_2}+\dots+n_{x_m})}}{\partial x_1^{n_{x_1}}\partial x_2^{n_{x_2}}\dots\partial x_m^{n_{x_m}}} \left(h(x_1,x_2,\dots,x_m)\frac{\text{ln}g(x_1,x_2,\dots,x_m)}{\text{ln}f(x_1,x_2,\dots,x_m)}\right)$$
 
@@ -136,13 +136,13 @@ But, of course, we're not quite done.
 
 Closing our new 1-D equations for $\Gamma_n$ and $\Phi_n$ will be a simple exercise now that we know how. Also, since the recursions are cleaner, the math will be easier to parse, so we'll get a clearer picture of the 1-D structure during the closing process.
 
-We define our usual EGFs as
+We define our usual EGFs as:
 
 $$\overline{\gamma}(x) = \sum_{n=0}^{\infty} \Gamma_n \frac{x^n}{n!} \quad \text{,} \quad \overline{\phi}(x) = \sum_{n=0}^{\infty} \Phi_n \frac{x^n}{n!} \quad \text{,} \quad  \overline{g}(x) = \sum_{n=0}^{\infty} G_n \frac{x^n}{n!} \quad \text{and} \quad  \overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
 Let's start this time by closing $\Phi_n$.
 
-Our recursion starts as
+Our recursion starts as:
 
 $$\Phi_n = - \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} \Phi_k$$
 
@@ -150,19 +150,19 @@ Since there's an $n-1$ in the binomial, we already know to start by multiplying 
 
 $$\sum_{n=1}^{\infty} \Phi_n \frac{x^{n-1}}{(n-1)!} = -\sum_{n=1}^{\infty} \frac{x^{n-1}}{(n-1)!} \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} \Phi_k$$
 
-As before, we use the fact that $\binom{n-1}{k} = \frac{(n-1)!}{k!(n-1-k)!}$ and some clever exponent adding and subtracting to get
+As before, we use the fact that $\binom{n-1}{k} = \frac{(n-1)!}{k!(n-1-k)!}$ and some clever exponent adding and subtracting to get:
 
 $$RHS = -\sum_{n=1}^{\infty} \sum_{k=0}^{n-1} F_{n-k-1}\frac{x^{n-k-1}}{(n-k-1)!} \Phi_k\frac{x^{k}}{k!}$$
 
-Which is an exact convolution of $-\overline{f}$ and $\overline{\phi}$.
+which is an exact convolution of $-\overline{f}$ and $\overline{\phi}$.
 
-The LHS clearly represents $\frac{d}{dx} \overline{\phi}$, so we have
+The LHS clearly represents $\frac{d}{dx} \overline{\phi}$, so we have:
 
 $$\frac{d}{dx} \overline{\phi}(x) = - \overline{f}(x)\overline{\phi}(x)$$
 
 Even though we have a base case of $\Phi_0 = -1$, when we take the derivative of $\overline{\phi}$ to build our differential equation, the constant term $\Phi_0$ is eliminated. Since there are no orphaned terms on the right, there is no straggling $e^x$ this time around.
 
-This yields the linear first-order ODE
+This yields the linear first-order ODE:
 
 $$y' + \overline{f}(x)y = 0$$
 
@@ -174,11 +174,11 @@ $$H(x) = \int_0^x \overline{f}(t) dt$$
 
 Note that evaluating this at $x=0$ naturally yields $H(0) = 0$.
 
-Now we multiply through by the integrating factor
+Now we multiply through by the integrating factor:
 
 $$y' e^{H(x)} + \overline{f}(x) y e^{H(x)} = 0$$
 
-By the reverse product rule, the left-hand side condenses into a single derivative
+By the reverse product rule, the left-hand side condenses into a single derivative:
 
 $$\frac{d}{dx} \left[ y(x) e^{H(x)} \right] = 0$$
 
@@ -200,7 +200,7 @@ which gives us the generalized closed form:
 
 $$y(x) = -e^{-H(x)}$$
 
-When we write it with the explicit integral, we get
+When we write it with the explicit integral, we get:
 
 $$\overline{\phi}(x) = -e^{-\int_0^x \overline{f}(t) dt}$$
 
@@ -210,7 +210,7 @@ Until now, we haven't calculated $H(x) = \int_0^x \overline{f}(t) dt$ explicitly
 
 To integrate $H(x)$, we first need to recognize the continuous function that $\overline{f}(x)$ represents.
 
-The EGFs we've been defining to close our recursions are of the form
+The EGFs we've been defining to close our recursions are of the form:
 
 $$\overline{f}(x) = \sum_{n=0}^{\infty} F_n \frac{x^n}{n!}$$
 
@@ -222,15 +222,15 @@ This is the literal textbook definition of a Maclaurin series, which is the spec
 
 [^1]: Knowledge of the inner workings of Taylor and Maclaurin series will be assumed in this part. Those who would like a primer should head to the good people at openstax [here](https://openstax.org/books/calculus-volume-2/pages/6-3-taylor-and-maclaurin-series) .
 
-Assuming $f(x)$ is stable around $f(0)$, which it must be for the sector decomposition to hold, the infinite Maclaurin series reduces to
+Assuming $f(x)$ is stable around $f(0)$, which it must be for the sector decomposition to hold, the infinite Maclaurin series reduces to:
 
 $$\overline{f}(t) = \sum_{n=0}^{\infty} \left[ \frac{d^n}{dt^n} \left( \frac{f'(t)}{f(t) \ln(f(t))} \right) \right]_{t=0} \frac{t^n}{n!} = \frac{f'(t)}{f(t)\ln(f(t))}$$
 
-This particular function is straightforward to integrate through $u$ substitution. Let $u = ln(f(t))$ and, therefore, $du = \frac{f'(t)}{f(t)}dt$, so
+This particular function is straightforward to integrate through $u$ substitution. Let $u = ln(f(t))$ and, therefore, $du = \frac{f'(t)}{f(t)}dt$, so,
 
 $$\int_0^x \left( \frac{f'(t)}{f(t) \ln(f(t))} \right) dt = \int_{\text{ln} f(0)}^{\text{ln} f(x)} \frac{du}{u} = \left. \text{ln}(u) \right|_{\text{ln} f(0)}^{\text{ln} f(x)}$$
 
-Which evaluates to
+which evaluates to:
 
 $$\int_0^x \overline{f}(t) dt = \ln(\ln(f(x))) - \ln(\ln(f(0)))$$
 
@@ -238,9 +238,9 @@ Substituting this expression directly into the exponent of the integrating facto
 
 $$\overline{\phi}(x) = - \frac{\ln(f(0))}{\ln(f(x))}$$
 
-Recognizing the EGFs we've been working with as Maclaurin series simplifies the closure of $\Gamma_n$.
+recognizing the EGFs we've been working with as Maclaurin series simplifies the closure of $\Gamma_n$.
 
-Recall that
+Recall that:
 
 $$\Gamma_n = G_{n-1} - \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} \Gamma_k$$
 
@@ -252,7 +252,7 @@ Going through the usual process and recalling the base case $\Gamma_0 = 0$, isol
 
 $$\overline{\gamma}(x) = e^{-H(x)} \int_0^x \overline{g}(t) e^{H(t)} dt$$
 
-We already know the integrating factor and its inverse evaluate to
+We already know the integrating factor and its inverse evaluate to:
 
 $$e^{H(t)} = \frac{\ln(f(t))}{\ln(f(0))} \quad \text{and} \quad e^{-H(x)} = \frac{\ln(f(0))}{\ln(f(x))}$$
 
@@ -260,7 +260,7 @@ Since $\overline{g}(t) = \frac{g'(t)}{g(t) \ln(f(t))}$, substituting into the in
 
 $$\overline{g}(t) e^{H(t)} = \left( \frac{g'(t)}{g(t) \ln(f(t))} \right) \left( \frac{\ln(f(t))}{\ln(f(0))} \right) = \frac{g'(t)}{g(t) \ln(f(0))}$$
 
-Integrating it from $0$ to $x$ yields
+Integrating it from $0$ to $x$ yields:
 
 $$\int_0^x \frac{g'(t)}{g(t) \ln(f(0))} dt = \frac{1}{\ln(f(0))} \left[ \ln(g(x)) - \ln(g(0)) \right]$$
 
@@ -280,15 +280,15 @@ Assuming $\overline{r}(x) = \sum_{n=0}^{\infty}R_n\frac{x^n}{n!}$ and recognizin
 
 $$\overline{\gamma}(x) = \frac{\ln(g(x))}{\ln(f(x))} - \frac{\ln(g(0))}{\ln(f(0))}\cdot\frac{\ln(f(0))}{\ln(f(x))} = \overline{r}(x) + R_0 \overline{\phi}(x)$$
 
-which implies that
+which implies that:
 
 $$\overline{r}(x) = \overline{\gamma}(x) - R_0 \overline{\phi}(x)$$
 
-Therefore, extracting any $R_n$ requires only applying the coefficient extraction operator to all EGFs, so
+Therefore, extracting any $R_n$ requires only applying the coefficient extraction operator to all EGFs, so:
 
 $$\left[\frac{x^n}{n!}\right]\overline{r}(x) = \left[\frac{x^n}{n!}\right]\overline{\gamma}(x) - R_0 \left[\frac{x^n}{n!}\right]\overline{\phi}(x)$$
 
-Which automatically leads to 
+Which automatically leads to:
 
 $$R_n = \Gamma_n - R_0 \Phi_n$$
 
@@ -302,7 +302,7 @@ We'll start formally establishing the multivariate equivalents of our EGFs and t
 
 Let $X = (x_1, x_2, \dots, x_d)$ represent our $d$-dimensional spatial vector, and $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_d)$ represent our multi-index.
 
-Now we standardize multi-index power and factorial notations
+Now we standardize multi-index power and factorial notations:
 
 $${X}^\alpha = x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_d^{\alpha_d} \quad \text{and} \quad \alpha! = \alpha_1! \alpha_2! \cdots \alpha_d!$$
 
@@ -340,7 +340,7 @@ This pattern displayed itself early on in my multivariate work, so it's not some
 
 ### More Pattern-Finding
 
-Recall from our 2-D work that
+Recall from our 2-D work that:
 
 $$R_{(1,1)} = \left[ {G^{(x)}}_{(0,1)} - F^{(x)}G^{(y)} \right] - R_\emptyset \left[ {F^{(x)}}_{(0,1)} - F^{(x)}F^{(y)} \right]$$
 
@@ -362,19 +362,19 @@ $$ \frac{\partial}{\partial y} R_{(1,1)} = R_{(1,2)} = \left[ \frac{\partial}{\p
 
 Note that removing the $(x)$ and $(y)$ superscripts from $F$ and $G$ while reverting partials to $\frac{d}{dx}$ and summing the $\Gamma$ and $\Phi$ subscripts cause both $R_{(2,1)}$ and $R_{(1,2)}$ to collapse to $R_3$.
 
-This observation leads us to believe that 
+This observation leads us to believe that:
 
 $$\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$$
 
-and
+and:
 
 $$\Phi_{\alpha} = \frac{\partial}{\partial w}\Phi_{\alpha - e_w} - \Phi_{\alpha - e_w} F^{(w)}$$
 
-and therefore 
+and therefore:
 
 $$\Gamma_{n} = \frac{d}{dx}\Gamma_{n - 1} - \Phi_{n-1} G$$
 
-and
+and:
 
 $$\Phi_{n} = \frac{d}{dx}\Phi_{n - 1} - \Phi_{n - 1} F$$
 
@@ -398,11 +398,11 @@ To find the $(n)$-th state, we can take the formal derivative of the $(n-1)$-th 
 
 $$y^{(n)}(x) = \frac{d}{dx} \left[ y^{(n-1)}(x) \right] = \frac{d}{dx} \left[ - \Phi_{n-1}(x) y(x) \right]$$
 
-and then apply the product rule to obtain
+and then apply the product rule to obtain:
 
 $$y^{(n)}(x) = - \Phi_{n-1}'(x) y(x) - \Phi_{n-1}(x) y'(x)$$
 
-Substituting $y'(x) = -\overline{f}(x)y(x)$ into the right side and factoring out the common $-y(x)$ term gives us
+Substituting $y'(x) = -\overline{f}(x)y(x)$ into the right side and factoring out the common $-y(x)$ term gives us:
 
 $$y^{(n)}(x) = - \Big[ \Phi_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x) \Big] y(x)$$
 
@@ -434,11 +434,11 @@ and applying the product rule:
 
 $$z^{(n)}(x) = \Gamma_{n-1}'(x) - \Phi_{n-1}'(x) z(x) - \Phi_{n-1}(x) z'(x)$$
 
-Substitute the continuous ODE, $z'(x) = \overline{g}(x) - \overline{f}(x)z(x)$, into the equation:
+Then we substitute the continuous ODE, $z'(x) = \overline{g}(x) - \overline{f}(x)z(x)$, into the equation:
 
 $$z^{(n)}(x) = \Gamma_{n-1}'(x) - \Phi_{n-1}'(x) z(x) - \Phi_{n-1}(x) \big( \overline{g}(x) - \overline{f}(x)z(x) \big)$$
 
-Distribute and group the non-homogeneous terms (those without $z$) and the homogeneous terms (those with $z$):
+and distribute and group the non-homogeneous terms (those without $z$) and the homogeneous terms (those with $z$):
 
 $$z^{(n)}(x) = \Big[ \Gamma_{n-1}'(x) - \Phi_{n-1}(x)\overline{g}(x) \Big] - \Big[ \Phi_{n-1}'(x) - \Phi_{n-1}(x)\overline{f}(x) \Big] z(x)$$
 
@@ -482,11 +482,11 @@ $$\frac{\partial}{\partial w} \Gamma_\gamma = D^\gamma G^{(w)} + \Phi_\gamma G^{
 
 Rearranging the $\Phi$ term to the RHS proves that the derivative of a $\Gamma$ term is a closed algebraic loop. To find $\frac{\partial}{\partial w} \Gamma_\gamma$, one does not need to apply symbolic differentiation to a massive polynomial; we just need to call the cached values for $\Gamma_\gamma$ and $\Phi_\gamma$, add the derivative of $G$, and run a truncated sum of the lower tower.
 
-Doing the same thing for the $\Phi_\alpha$ operators produces
+Doing the same thing for the $\Phi_\alpha$ operators produces:
 
 $$\frac{\partial}{\partial w} \Phi_\gamma - \Phi_\gamma F^{(w)} = - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} (D^{\gamma - \beta} F^{(w)}) \Phi_\beta$$
 
-Once again, moving the $\Phi_\gamma F^{(w)}$ term to the RHS displays the same truth as we just discovered with $\Gamma_\alpha$. This time, though, due to the homogeneity of $\Phi_\alpha$, this term is identical to the top term of the sum, so it cancels, leaving us with a telling identity of
+Once again, moving the $\Phi_\gamma F^{(w)}$ term to the RHS displays the same truth as we just discovered with $\Gamma_\alpha$. This time, though, due to the homogeneity of $\Phi_\alpha$, this term is identical to the top term of the sum, so it cancels, leaving us with a telling identity of:
 
 $$\frac{\partial}{\partial w} \Phi_\gamma = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} (D^{\gamma - \beta} F^{(w)}) \Phi_\beta$$
 
@@ -498,7 +498,7 @@ If we can take derivatives in the ring to climb the order ladder, we should be a
 
 Volterra integration involves integrating when unknown functions comprise some or all of the integrand. In this case, we're using **linear Volterra equations of the first kind** to assemble polynomials made of unknown differentiable functions.
 
-This kind of Volterra integration is of the form
+This kind of Volterra integration is of the form:
 
 $$g(x) = \int_{a}^{x} K(x, t) f(t) dt$$
 
@@ -594,7 +594,7 @@ If we group the last two terms:
 
 $$= \int_0^w \bigg( \left[ G^{(\tau)}_2 \right] - \left[ F^{(\tau)}_1 G^{(\tau)} + F^{(\tau)} G^{(\tau)}_1 \right] \bigg)  d\tau$$
 
-We see that the integral of $G^{(\tau)}\_2$ is $G^{(\tau)}\_1$.
+we see that the integral of $G^{(\tau)}\_2$ is $G^{(\tau)}\_1$.
 
 The block $\left[ F^{(\tau)}_1 G^{(\tau)} + F^{(\tau)} G^{(\tau)}_1 \right]$ is the expansion of the product rule for $\frac{\partial}{\partial \tau} \left( F^{(\tau)} G^{(\tau)} \right)$.
 
@@ -610,11 +610,11 @@ So, the $\Phi$ and $\Gamma$ sectors appear together as counterweights. The polyn
 
 ### Liberté
 
-Now we are free to use integration methods to develop polynomials within the ring. At some point I hope to write a section on how substituting in the multidimensional derivative shift operators turns these integrals into an integration by parts shearing machine, utilizing **linear Volterra equations of the second kind**
+Now we are free to use integration methods to develop polynomials within the ring. One could write a section on how substituting in the multidimensional derivative shift operators turns these integrals into an integration by parts shearing machine, utilizing **linear Volterra equations of the second kind**:
 
 $$f(x) = g(x) + \lambda \int_{a}^{x} K(x, t) f(t) dt$$
 
-Where
+where
 
 - $f(x)$ is the unknown function,
 - $g(x)$ is a given function (often representing the "source" or "initial" state),
@@ -629,11 +629,11 @@ $$\Phi_\gamma = - \sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta
 
 $$\Phi_\gamma = - \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
 
-Let's set them equal and drop the negative sign on each side
+Let's set them equal and drop the negative sign on each side:
 
 $$\sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Phi_\beta = \sum_{0 \le \beta < \gamma} \binom{\gamma}{\beta} \int_0^w \left( D^{\gamma - \beta} F^{(\tau)} \right) \Phi_\beta(\tau) d\tau$$
 
-and then do the same for $\Gamma_\gamma$
+and then do the same for $\Gamma_\gamma$:
 
 $$D^{\gamma - e_w} G^{(w)} - \sum_{0 \le \beta \le \gamma - e_w} \binom{\gamma - e_w}{\beta} (D^{\gamma - e_w - \beta} F^{(w)}) \Gamma_\beta = \int_0^w \left[ D^\gamma G^{(\tau)} + \Phi_\gamma(\tau) G^{(\tau)} - \sum_{0 \le \beta \le \gamma} \binom{\gamma}{\beta} \left( D^{\gamma - \beta} F^{(\tau)} \right) \Gamma_\beta(\tau) \right] d\tau$$
 
