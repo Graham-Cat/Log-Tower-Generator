@@ -4,7 +4,7 @@ With as much as we've gone through in this repo, you might think we've accomplis
 
 While we have gone through quite a bit, all we've done so far is create and optimize the generator with respect to a single variable, $x$.
 
-If you look around the room you're in, you might notice that it's three-dimensional. I assume looking around took some time, so there's apparently a fourth dimension, too. Whaddaya know?
+If you look around the room you're in, you might notice that it's three-dimensional. Looking around took some time, so there's apparently a fourth dimension, too. Whaddaya know?
 
 Without taking the generator at least 2-D, there's not much use for it except as a curiosity, and without including $x$, $y$, $z$, and $t$ in its final form, its true power (providing a straightforward, factorized, and optimized multidimensional scientific testing tool) will never be realized.
 
@@ -14,7 +14,7 @@ So, let's dive in -- at least partially.
 
 Making the derivative generator function n-dimensionally requires developing its ability to take **partial** derivatives with respect to each variable.
 
-That means, instead of entering $f(x)$, $g(x)$, and $h(x)$ and asking the generator for the n-th derivative of $A(x) = h(x)\frac{\text{ln}g(x)}{\text{ln}f(x)}$ we'll need to be able to enter $f(x,y,z,t)$, $g(x,y,z,t)$, and $h(x,y,z,t)$ and ask for the function that provides $n_x$ -th, $n_y$ -th, $n_z$ -th, and $n_t$ -th *partial* derivatives with respect to $x$, $y$, $z$, and $t$ of $A(x,y,z,t) = h(x,y,z,t)\frac{\text{ln}g(x,y,z,t)}{\text{ln}f(x,y,z,t)}$ all at the same time.
+That means instead of entering $f(x)$, $g(x)$, and $h(x)$ and asking the generator for the n-th derivative of $A(x) = h(x)\frac{\text{ln}g(x)}{\text{ln}f(x)}$ we'll need to be able to enter $f(x,y,z,t)$, $g(x,y,z,t)$, and $h(x,y,z,t)$ and ask for the function that provides $n_x$ -th, $n_y$ -th, $n_z$ -th, and $n_t$ -th *partial* derivatives with respect to $x$, $y$, $z$, and $t$ of $A(x,y,z,t) = h(x,y,z,t)\frac{\text{ln}g(x,y,z,t)}{\text{ln}f(x,y,z,t)}$ all at the same time.
 
 In other words, by the time we're done we should be able to ask for 
 
@@ -34,11 +34,11 @@ $$\frac{\partial^{n_x+n_y}}{\partial x^{n_x}\partial y^{n_y}} A(x,y) = \frac{\pa
 
 We begin by defining $G^{(x)}$, $G^{(y)}$, $F^{(x)}$, and $F^{(y)}$ as
 
-$$G^{(x)} = \frac{g_x}{g\text{ln}f} \quad G^{(y)} = \frac{g_y}{g\text{ln}f} \quad F^{(x)} = \frac{f_x}{f\text{ln}f} \quad F^{(y)} = \frac{f_y}{f\text{ln}f}$$
+$$G^{(x)} = \frac{g_x}{g\text{ln}f} \quad , \quad G^{(y)} = \frac{g_y}{g\text{ln}f} \quad , \quad F^{(x)} = \frac{f_x}{f\text{ln}f} \quad \text{and} \quad F^{(y)} = \frac{f_y}{f\text{ln}f}$$
 
-Where
+where
 
-$$g_x = \frac{\partial}{\partial x}g(x,y) \quad g_y = \frac{\partial}{\partial y}g(x,y) \quad f_x = \frac{\partial}{\partial x}f(x,y) \quad f_y = \frac{\partial}{\partial y}f(x,y)$$
+$$g_x = \frac{\partial}{\partial x}g(x,y) \quad , \quad g_y  = \frac{\partial}{\partial y}g(x,y) \quad , \quad  f_x = \frac{\partial}{\partial x}f(x,y) \quad \text{and} \quad f_y = \frac{\partial}{\partial y}f(x,y)$$
 
 Since the complexity of the generator is rooted in understanding derivatives of $R = \frac{\text{ln}g}{\text{ln}f}$, let's start by analyzing it in two dimensions.
 
@@ -51,7 +51,7 @@ and
 $$\frac{\partial}{\partial y} R = R_{(0,1)} = G^{(y)} - F^{(y)}R$$
 
 
-There are two ways to express $R_{(1,1)}$:
+there are two ways to express $R_{(1,1)}$:
 
 $$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{\text{(0,1)}} - F^{(x)}_{\text{(0,1)}}R - F^{(x)}R_{\text{(0,1)}}$$
 
@@ -65,15 +65,15 @@ We start by substituting the definition of $R_{(0,1)} = G^{(y)} - F^{(y)}R$ into
 
 $$R_{(1,1)} = G^{(x)}_{(0,1)} - F^{(x)}_{(0,1)}R - F^{(x)}\left[ G^{(y)} - F^{(y)}R \right]$$
 
-Distribute $F^{(x)}$ and group the terms:
+Then we distribute $F^{(x)}$ and group the terms:
 
 $$R_{(1,1)} = \underbrace{\left[ G^{(x)}_{(0,1)} - F^{(x)}G^{(y)} \right]}_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(x)}_{(0,1)} - F^{(x)}F^{(y)} \right]}_{\text{Coefficient Term } (\Phi)}$$
 
-Then we substitute the definition of $R_{(1,0)} = G^{(x)} - F^{(x)}R$ into the second equation:
+Now let's substitute the definition of $R_{(1,0)} = G^{(x)} - F^{(x)}R$ into the second equation:
 
 $$R_{(1,1)} = G^{(y)}_{(1,0)} - F^{(y)}_{(1,0)}R - F^{(y)}\left[ G^{(x)} - F^{(x)}R \right]$$
 
-Distribute $F^{(y)}$ and group the terms:
+Next, we distribute $F^{(y)}$ and group the terms:
 
 $$R_{(1,1)} = \underbrace{\left[ G^{(y)}_{(1,0)} - F^{(y)}G^{(x)} \right]}_{\text{Independent Term } (\Gamma)} - R \cdot \underbrace{\left[ F^{(y)}_{(1,0)} - F^{(y)}F^{(x)} \right]}_{\text{Coefficient Term } (\Phi)}$$
 
@@ -252,7 +252,7 @@ This is known as the **General (or Multivariate) Leibniz Rule**, expressed using
 
 Don't be intimidated by the odd look to it if you've never seen this kind of notation before. If you understand the matrices above and what a derivative is, you already get the gist of it, even if you don't know precisely what the definition of each part of the notation is.
 
-$\alpha$ represents the pair of indices, $(n_x,n_y)$, and $D^\alpha$ is the derivative operator, meaning that $D^\alpha (Rh)$ represents the $n_x$ -th and $n_y$ -th partial derivative with respect to $x$ and $y$ of $A=Rh$ in the 2-D case. Instead of having an index, $n$, we now have a vector, $\alpha = (n_x,n_y)$.
+In 2-D, $\alpha$ represents the pair of indices, $(n_x,n_y)$, and $D^\alpha$ is the derivative operator, meaning that $D^\alpha (Rh)$ represents the $n_x$ -th and $n_y$ -th partial derivative with respect to $x$ and $y$ of $A=Rh$. Instead of having an index, $n$, we now have a vector, $\alpha = (n_x,n_y)$.
 
 Note that if the equation were referring to a 4-D system, $\alpha$ would be $(n_x,n_y,n_z,n_t)$ and $D^\alpha (Rh)$ would represent a partial derivative with respect to $x$, $y$, $z$ and $t$.
 
@@ -268,7 +268,7 @@ $D^\beta h$ above represents $h_{(k_x,k_y)}$ and $D^{\alpha-\beta}R$ represents 
 
 In essence, when you're looking at that notation, you're looking at a binomially-weighted, _n_-dimensional matrix of mixed partials.
 
-Take some time to understand this notation. Feel free to read the description over a few times if this is new to you. It will feature prominently for the balance of the walkthrough.
+Feel free to read this section over a few times if this is new to you since the notation here will feature prominently for the balance of the walkthrough.
 
 ### Understanding $R_{(n_x,n_y)}$
 
@@ -294,7 +294,7 @@ For the sake of brevity, going forward, instead of presenting both paths, we are
 
 Since we will be using this assumption for the rest of the walkthrough, let's give it a name: the **_x_-convention**.
 
-So, to get to $R_{(1,1)}$ we take this path
+So, to get to $R_{(1,1)}$ we take this path:
 
 $$\frac{\partial}{\partial y} R_{(1,0)} = R_{(1,1)} = G^{(x)}_{(0,1)} - F^{(x)}_{(0,1)}R - F^{(x)}R_{(0,1)}$$
 
@@ -376,11 +376,11 @@ which looks eerily similar to our 1-D expression for $R_n$
 
 $$R_n = G_\text{n-1}- \sum_{k=0}^{n-1} \binom{n-1}{k} F_{n-k-1} R_k$$
 
-At the point where there are no partials with respect to $x$ to take, this equation will be represented as
+At the point where there are no partials with respect to $x$ to take, this equation will be represented as:
 
 $$D^\alpha R = D^{\alpha - e_y} G^{(y)} - \sum_{0 \le \beta \le \alpha - e_y} \binom{\alpha - e_y}{\beta} (D^{\alpha - e_y - \beta} F^{(y)}) (D^\beta R)$$
 
-So, a more general form of the multivariate formula will be represented as 
+So, a more general form of the multivariate formula will be represented as:
 
 $$D^\alpha R = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) (D^\beta R)$$
 
@@ -388,7 +388,7 @@ where $w$ represents whichever dimension is invoked. Since $w$ can be any dimens
 
 
 
-Those who looked back to see what the formula was listed as in Part 3 will note that the $F$ and the $R$ have switched places. Because the entire $n-1$ row of pascal's triangle is invoked in the formula, we're allowed to do that because they are symmetrical (i.e., rows like 1,2,1 and 1,3,3,1 are symmetrical whereas the truncated verions like 1,2 and 1,3,3 that we see in the $\Gamma_n$ expression are not). Counting from one side or the other makes no difference to this convolution.
+Those who looked back to see what the formula was listed as in Part 3 will note that the $F$ and the $R$ have switched places. Because the entire $n-1$ row of Pascal's triangle is invoked in the formula, we're allowed to do that because they are symmetrical (i.e., rows like 1,2,1 and 1,3,3,1 are symmetrical whereas the truncated verions like 1,2 and 1,3,3 that we see in the $\Gamma_n$ expression are not). Counting from one side or the other makes no difference to this convolution.
 
 Now, we need to express everything in terms of $R$, which necessitates understanding the makeup of $\Gamma$ and $\Phi$ and how they fit into _G_- and _F_-sector composition.
 
@@ -426,7 +426,7 @@ Before we move on, let's first recall what $R_2$ looked like from our 1-D work:
 
 $$R_2 = (G_1-GF) - (F_1-FF)R = \Gamma_1 - \Phi_1 R$$
 
-And now $A_2$:
+and now $A_2$:
 
 $$A_2 = R(h_2 - (2h_1F + h(F_1 - FF))) + (2h_1G + h(G_1 - GF)) = R(h_2 - (2h_1\Phi_0 + h\Phi_1)) + (2h_1\Gamma_0 + h\Gamma_1)$$
 
@@ -470,7 +470,7 @@ $$(\Gamma_{(0,0)} - \Phi_{(0,0)}R)h_{(1,1)} = Rh_{(1,1)}$$
 > Make special note of these values for $\Gamma_{(0,0)}$ and $\Phi_{(0,0)}$. They will be critical in understanding the entire multivariate structure.
 
 
-Matrix addition rules naturally lead to the form
+Matrix addition rules naturally lead to the form:
 
 $$A_{(1,1)} = \begin{bmatrix}
     1 & 1 
@@ -493,7 +493,7 @@ R \cdot
     1
 \end{bmatrix}$$
 
-But, since $\Gamma_{(0,0)} = 0$ and $\Phi_{(0,0)} = -1$,
+However, since $\Gamma_{(0,0)} = 0$ and $\Phi_{(0,0)} = -1$,
 
 $$A_{(1,1)} = \begin{bmatrix}
     1 & 1 
@@ -543,7 +543,7 @@ R \cdot
     1
 \end{bmatrix}$$
 
-And, since this matrix multiplication is distributive, we can express our new 2-D _G_-sector as
+Since this matrix multiplication is distributive, we can express our new 2-D _G_-sector as:
 
 $$A_{(2,3)G} = \begin{bmatrix}
     1 & 2 & 1 
@@ -562,7 +562,7 @@ $$A_{(2,3)G} = \begin{bmatrix}
     1
 \end{bmatrix}$$
 
-which allows us to write an explicit multivariate form for the G-sector as
+which allows us to write an explicit multivariate form for the G-sector as:
 
 $$A_{\alpha G} = \sum_{\beta \leq \alpha,\beta \neq \alpha} \binom{\alpha}{\beta}  \Gamma_{\alpha - \beta} D^\beta h$$
 
