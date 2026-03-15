@@ -8,72 +8,75 @@ Specifically, it provides a closed-form, algorithmic solution for evaluating com
 
 $$A = h(X)\frac{\ln g(X)}{\ln f(X)}$$
 
-### **The Bottleneck**
+In standard computational mathematics, evaluating high-order mixed partials of nested rational functions triggers combinatorial explosion. Repeatedly applying the quotient and chain rules across multiple orthogonal dimensions forces computer algebra systems to build exponentially large expression trees riddled with redundancies that quickly consume memory and processing power.
 
-In standard computational mathematics, evaluating high-order mixed partials of nested rational functions triggers a massive combinatorial explosion. Repeatedly applying the quotient and chain rules across multiple orthogonal dimensions forces computer algebra systems to build exponentially large, highly redundant expression trees that quickly consume memory and hang the processor.
-
-### **The v2.0.0 Solution**
-
-Version 2.0.0 completely bypasses these traditional algebraic bottlenecks. By deploying a **Chronological Step-Operator Engine**, the framework maps a strictly constrained index set ($\mathcal{A}_\alpha$) to elegantly navigate the multi-index space. It decouples the denominator's mathematical "drag" into a persistent tensor cache, reducing calculation times for complex 4D derivatives from minutes to milliseconds and opening the door for extreme high-order parameter sweeps.
+Version 2.0.0 bypasses these algebraic bottlenecks. By deploying a **Chronological Step-Operator Engine**, the framework maps a constrained index set ($\mathcal{A}_\alpha$) to navigate the multi-index space with full efficiency. It decouples the denominator's mathematical "drag" into a tensor cache, reducing calculation times for complex 4-D derivatives from minutes to milliseconds, opening the door for higher-order parameter sweeps.
 
 ---
 
 ## **Features (What's New in v2.0.0)**
 
-The Log-Tower-Generator has been completely re-architected from the ground up, transitioning from the 1-D mathematical framework of v1.0.0 into a fully optimized, $n$-dimensional jet space engine.
+The Log-Tower-Generator has been fully re-architected, transitioning from the 1-D mathematical framework of v1.0.0 into a fully optimized, $n$-dimensional jet space engine.
 
-* **Multidimensional Jet Space Support:** Upgraded to handle high-order mixed partial derivatives across any number of orthogonal dimensions (e.g., $x, y, z, t$) using strict multi-index notation ($\alpha$).
-* **Chronological Step-Operator Engine:** Completely bypasses the combinatorial explosion caused by standard quotient-rule applications and generic geometric index loops. By utilizing Anchor and Historical Web logic, the engine enforces a strict spatial gradient sequence, generating only chronologically valid paths.
-* **Asymmetric Tensor Caching ($\Omega^\alpha_\beta$):** The master equation strictly decouples the structural "drag" of the denominator $f(X)$ from the forcing input of the numerator $g(X)$. The $F$-sector states are cached independently, meaning sequential derivative mapping and input-swapping operations require only a fraction of standard brute-force computation time.
-* **The Spine Projection Corollary:** Introduces a direct algebraic pathway to evaluate the exact multidimensional derivative of the logarithmic scaffold ($R_\alpha = \Gamma_\alpha - R \Phi_\alpha$), completely bypassing the scaling sector $h(X)$ when only the core ratio is required.
-* **SymEngine (C++) Integration:** The recursive core of the generator now leverages SymEngine's ultra-fast C++ backend. Heavy multi-index calculations (such as an 8th-order, 4D $A_{(2,2,2,2)}$ tree containing tens of thousands of terms) are generated in milliseconds, easily outpacing pure SymPy brute-force cold starts by 40% or more.
+* **Multidimensional Jet Space Support:** Upgraded to handle high-order mixed partial derivatives across any number of orthogonal dimensions (e.g., $x, y, z, t$) using multi-index notation ($\alpha$).
+* **Chronological Step-Operator Engine:** Bypasses combinatorial explosion that standard quotient-rule applications and generic geometric index loops cause. The engine utilizes a spatial gradient sequence (Anchor and Historical Web logic) efficiently generating only chronologically valid paths.
+* **Asymmetric Tensor Caching ($\Omega^\alpha_\beta$):** The master equation decouples the structural "drag" of the denominator $f(X)$ from the forcing input of the numerator $g(X)$. The $F$-sector states are cached independently, meaning sequential derivative mapping and input-swapping operations require only a fraction of standard brute-force computation.
+* **The Spine Projection Corollary:** Introduces a direct algebraic pathway to evaluate the multidimensional derivative of the logarithmic scaffold ($R_\alpha = \Gamma_\alpha - R \Phi_\alpha$), bypassing the scaling sector $h(X)$ when only the core ratio is under consideration.
+* **SymEngine (C++) Integration:** The recursive core of the generator now leverages SymEngine's ultra-fast C++ backend. Heavy multi-index calculations (such as an 8th-order, 4-D $A_{(2,2,2,2)}$ tree containing tens of thousands of terms) are generated in milliseconds, outpacing SymPy brute-force cold starts by 40% or more.
 
 ---
 
 ## **Motivation**
 
-Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}{\ln f}$ leads to a severe combinatorial explosion. In a single-variable context, the raw higher-order derivatives quickly become opaque. This complexity scales exponentially with added dimensions, tangling the multi-index contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
+Directly differentiating "Log-Tower" expressions of the form $A = h \frac{\ln g}{\ln f}$ leads to combinatorial explosion. In a single-variable context, the raw higher-order derivatives quickly become opaque. This complexity scales exponentially with added dimensions, tangling the multi-index contributions of $f$, $g$, and $h$ into complex, unstructured expressions.
 
 The **Log-Tower-Generator v2.0.0** resolves combinatorial explosion by mapping spatial gradients into a canonical normal form over a **multidimensional jet space** for mixed partial derivatives, extending the stable F/G-sector symmetry into $n$-dimensions. By isolating the distinct "forcing" and "decay" dynamics across any orthogonal variable, the framework reorganizes the expansion into:
 
-* **Sector Decomposition:** Splitting the multidimensional solution into a homogeneous $\Phi_\alpha$ sector and a particular $\Gamma_\alpha$ sector.
+* **Sector Decomposition:** Splitting the multidimensional solution into a homogeneous $\Phi_\alpha$ sector and a particular $\Gamma_\alpha$ sector utilizing their fundamental underlying symmetry.
 * **Chronological Routing:** Bypassing processor-intensive Bell polynomial combinatorics and generic geometric bounding. The new architecture uses a **Chronological Step-Operator Engine** to construct a **Constrained Index Set** ($\hat{A}_\alpha$), eliminating path-independent "phantom states" from the calculation.
-* **Tensor Caching:** Pre-calculating the system's multidimensional "Drag" as a cached F-Kernel ($\Omega^\alpha_\beta$) across a tensor grid, independent of the input signal.
+* **Tensor Caching:** Pre-calculating the system's multidimensional "drag" as a cached F-Kernel ($\Omega^\alpha_\beta$) across a tensor grid, independent of the input signal.
 * **Linear Superposition:** Generating the final mixed partial differential $P(A_\alpha)$ as a clean linear combination of these modular, $w$-rooted components.
 
-This approach reveals deep structural symmetries in multivariate derivative towers. It provides a lightning-fast, closed-form mapping mechanism that draws parallels to Lie-operator expansions, offering highly optimized solutions for symbolic computation, differential algebra, and asymptotic analysis.
+This approach reveals deep structural symmetries in multivariate derivative towers. It provides a rapid, closed-form mapping mechanism that draws parallels to Lie-operator expansions, offering highly optimized solutions for symbolic computation, differential algebra, and asymptotic analysis.
 
 ---
 
 ## Use Cases & Applications
 
-The $P(A_\alpha)$ generator is a remarkably versatile piece of mathematical architecture. Because it perfectly maps the exact topological gradients of logarithmic-fractional functions without the combinatorial explosion that usually blocks this kind of math, it scales seamlessly from pure theoretical proofs to physical engineering problems.
+The $P(A_\alpha)$ generator is a versatile piece of mathematical architecture. It maps topological gradients of logarithmic-fractional functions without the combinatorial explosion that often impedes such analysis, scaling from pure theoretical proofs to physical engineering problems.
+
+Potential uses include:
 
 ### 1. Machine Learning & Computational Architecture
-* **Physics-Informed Neural Networks (PINNs):** Acts as a custom gradient layer to replace standard Automatic Differentiation (AutoDiff). By computing exact, high-order mixed partial derivatives natively as vectorized tensor convolutions, it eliminates the exponential memory costs and numerical instability inherent in deep physical simulations.
-* **Memoized Tensor Caching:** Utilizes the forward-filling multidimensional $\Omega$ cache to feed pre-computed lower-order states into the network, drastically accelerating the backward pass.
+* **Physics-Informed Neural Networks (PINNs):** Acting as a custom gradient layer to replace standard Automatic Differentiation (AutoDiff). By computing exact, high-order mixed partial derivatives natively as vectorized tensor convolutions, it mitigates exponential memory costs and numerical instability inherent in deep physical simulations.
+* **Memoized Tensor Caching:** Utilizing the forward-filling multidimensional $\Omega$ cache to feed pre-computed lower-order states into the network, drastically accelerating the backward pass.
 
-### 2. Applied Physics, Geophysics & Astrophysics
-* **Astrophysics (Compressible Navier-Stokes):** Utilizes the dynamic gas density field as the amplitude modulator $h(X)$ to map the violently shifting fractal geometries of supernova shockwaves, the viscous shear in black hole accretion disks, and the supersonic interstellar turbulence driving molecular cloud collapse.
-* **Spatiotemporal Turbulence (Fluid Dynamics):** Maps the constantly shifting, multidimensional scaling exponents of turbulent kinetic energy using massive continuous datasets like the Johns Hopkins Turbulence Databases.
-* **Dynamic Fractal Complexity:** Calculates the higher-order spatial gradients of structural breakdown in complex, evolving climate systems, such as sea ice fragmentation or cloud cover perimeters.
-* **Econophysics (Non-Linear Elasticity):** Functions as a precision tool to extract the high-order sensitivities (the "Greeks") of multi-variable market elasticity and demand surfaces from high-frequency trading data.
+### 2. Theoretical Physics
+* **Hopf Algebras & Admissible Cuts:** The $\hat{A}\_\alpha$ constrained index set acts as a highly optimized, path-dependent coproduct operator. By isolating the chronological Anchor State and the Historical Web, the generator naturally executes the "admissible cuts" defined by the Connes-Kreimer Hopf algebra, bypassing the unphysical "phantom states" (or theoretical infinities) generated by standard geometric multi-index bounding.
+* **Coupled Recursive Systems:** Asymmetric decoupling of the structural $\Omega_\beta^\alpha$ tensor cache from the forcing input of the $G$-sector mathematically mirrors the combinatorial shuffling algebras used to solve coupled DSEs. This decoupling allows for the rapid asymptotic analysis of high-order logarithmic quantum corrections without triggering geometric processor hang.
+* **The Rota-Baxter Bridge:** The foundational proof within the generator — that dropping a discrete tensor index is mathematically equivalent to integrating across a continuous path via Volterra integration — provides a direct computational execution of Rota-Baxter algebras, formally bridging the discrete combinatorics of path-dependent derivative routing with the continuous topological space of the quantum field.
 
-### 3. Advanced Industrial & Mechanical Engineering
-* **Advanced Manufacturing (Cold Spray):** Maps the exact aerodynamic shear forces and shock diamond expansions in supersonic metal powder deposition nozzles.
-* **Industrial Power Generation:** Isolates the complex mixed-partial derivatives of shockwaves interacting with the boundary layers of transonic turbine blades to predict microscopic metal fatigue.
-* **Medical Technology:** Models the physical fragmentation and multidimensional dispersion boundaries of highly compressible, supersonic liquid streams in needle-free jet injectors.
-* **Structural Safety (Blast Mitigation):** Isolates the exact nodes of maximum multidimensional shear force in refracting, non-linear explosive shockfronts as they interact with physical infrastructure.
+### 3. Applied Physics, Geophysics & Astrophysics
+* **Astrophysics (Compressible Navier-Stokes):** Mapping fractal geometries of supernova shockwaves, the viscous shear in black hole accretion disks, and the supersonic interstellar turbulence driving molecular cloud collapse using the amplitude modulator $h(X)$ to represent the dynamic gas density field.
+* **Spatiotemporal Turbulence (Fluid Dynamics):** Mapping the shifting multidimensional scaling exponents of turbulent kinetic energy using massive continuous datasets like the Johns Hopkins Turbulence Databases.
+* **Dynamic Fractal Complexity:** Calculating the higher-order spatial gradients of structural breakdown in complex, evolving climate systems, such as sea ice fragmentation or cloud cover perimeters.
+* **Econophysics (Non-Linear Elasticity):** Extracting high-order sensitivities (the "Greeks") of multi-variable market elasticity and demand surfaces from high-frequency trading data.
 
-### 4. Aerospace Engineering
-* **Hypersonic Boundary Layer Transition:** Pinpoints the exact high-order geometric inflection points where plasma boundary layers fracture into turbulence over re-entry vehicles and scramjets.
-* **Rocket Engine Combustion Instability:** Maps the precise spatial gradients of acoustic pressure amplification inside liquid rocket combustion chambers to disrupt resonant feedback loops.
-* **Aeroacoustics (Supersonic Jet Noise):** Extracts the exact multidimensional source terms of damaging Mach wave radiation and acoustic frequencies born from turbulent exhaust plumes.
+### 4. Advanced Industrial & Mechanical Engineering
+* **Advanced Manufacturing (Cold Spray):** Mapping aerodynamic shear forces and shock diamond expansions in supersonic metal powder deposition nozzles.
+* **Industrial Power Generation:** Isolating mixed-partial derivatives of shockwaves interacting with the boundary layers of transonic turbine blades to predict microscopic metal fatigue.
+* **Medical Technology:** Modelling physical fragmentation and multidimensional dispersion boundaries of compressible, supersonic liquid streams in needle-free jet injectors.
+* **Structural Safety (Blast Mitigation):** Isolating nodes of maximum multidimensional shear force in refracting, non-linear explosive shockfronts as they interact with physical infrastructure.
 
-### 5. Pure Mathematics
-* **Differential Algebra & Picard-Vessiot Theory:** Acts as a master theorem for the ideal generated by logarithmic-fractional functions. By assembling $\Gamma_\alpha$ and $\Phi_\alpha$ via the $\Omega$-governed constrained tensor summations over $\hat{A}_\alpha$, it generates closed-form algebraic blueprints required to prove whether complex PDEs have exact Liouvillian solutions.
-* **Analytic Number Theory:** Extracts exact, high-order arithmetic residues of multi-variable zeta functions without generating path-independent geometric errors.
-* **Complex Geometry:** Isolates the non-vanishing curvature terms of complex manifolds (the Levi form) to precisely calculate high-order topological invariants near logarithmic asymptotes.
+### 5. Aerospace Engineering
+* **Hypersonic Boundary Layer Transition:** Pinpointing high-order geometric inflection points where plasma boundary layers fracture into turbulence over re-entry vehicles and scramjets.
+* **Rocket Engine Combustion Instability:** Mapping spatial gradients of acoustic pressure amplification inside liquid rocket combustion chambers to disrupt resonant feedback loops.
+* **Aeroacoustics (Supersonic Jet Noise):** Extracting multidimensional source terms of damaging Mach wave radiation and acoustic frequencies from exhaust plumes.
+
+### 6. Pure Mathematics
+* **Differential Algebra & Picard-Vessiot Theory:** Acting as a master theorem for the ideal generated by logarithmic-fractional functions. By assembling $\Gamma_\alpha$ and $\Phi_\alpha$ via the $\Omega$-governed constrained tensor summations over $\hat{A}_\alpha$, it generates closed-form algebraic blueprints required to prove whether complex PDEs have exact Liouvillian solutions.
+* **Analytic Number Theory:** Extracting high-order arithmetic residues of multi-variable zeta functions without generating path-independent geometric errors.
+* **Complex Geometry:** Isolating non-vanishing curvature terms of complex manifolds (the Levi form) to calculate high-order topological invariants near logarithmic asymptotes.
 
 ---
 
@@ -86,8 +89,8 @@ For the multidimensional expansion, we define our base functions and modular com
 * **The Base & Input:** $f(X)$, $g(X)$, and $h(X)$ are differentiable multivariate functions.
 * **The Spine ($R_\alpha$):** The $\alpha$-th mixed partial derivative of the logarithmic scaffold $\frac{\ln g(X)}{\ln f(X)}$.
 * **The Scaling Module ($h_\alpha$):** The $\alpha$-th mixed partial derivative of the exponent function $h(X)$.
-* **The Base Module ($F^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{f_w}{f \ln f}$ representing the relative rate of change of the base, strictly rooted in dimension $w$.
-* **The Input Module ($G^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{g_w}{g \ln f}$ representing the relative rate of change of the input, strictly rooted in dimension $w$.
+* **The Base Module ($F^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{f_w}{f \ln f}$ representing the relative rate of change of the base rooted in dimension $w$.
+* **The Input Module ($G^{(w)}_\alpha$):** The $\alpha$-th mixed partial derivative of $\frac{g_w}{g \ln f}$ representing the relative rate of change of the input rooted in dimension $w$.
 
 To manage the combinatorial complexity of the expansion, we define three structural operators that absorb all induced cross-sector structure and form the backbone of the canonical expansion:
 
@@ -95,9 +98,9 @@ To manage the combinatorial complexity of the expansion, we define three structu
 * **$\Phi_\alpha$ (The F-Sector):** The homogeneous component accounting for the internal dynamics of the denominator.
 * **$\Omega^\alpha_\beta$ (The F-Kernel):** A cached tensor grid representing the system's "drag," calculated completely independent of the input signal.
 
-Finally, to cleanly navigate the jet space, we introduce:
+Finally, to navigate the jet space efficiently, we introduce:
 
-* **The Constrained Index Set ($\hat{A}_\alpha$):** A strictly bounded set of chronologically valid coordinates generated by the Anchor and Historical Web logic, bypassing generic geometric loops to eliminate path-independent phantom states.
+* **The Constrained Index Set ($\hat{A}_\alpha$):** A bounded set of chronologically valid coordinates generated by the Anchor and Historical Web logic, bypassing generic geometric loops to eliminate path-independent phantom states.
 
 ---
 
@@ -125,7 +128,7 @@ To understand the structural symmetry of the derivatives, the generator can be e
 
 $$P(A_\alpha) = R \left[ h_\alpha - \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Phi_{\alpha - \beta} \right] + \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Gamma_{\alpha - \beta}$$
 
-This cleanly maps how the individual modular components contribute to the total jet space structure:
+This equation maps how the individual modular components contribute to the total jet space structure:
 
 * **Raw $h$-sector ($h_\alpha$):** The direct $\alpha$-th mixed partial derivative of the scaling function $h(X)$.
 * **Recursively corrected F-sector ($\Phi_\alpha$):** The homogeneous component accounting for the internal dynamics of the denominator $f(X)$.
@@ -133,13 +136,11 @@ This cleanly maps how the individual modular components contribute to the total 
 
 ### **The Computational Form (The Master Equation)**
 
-Because the multidimensional module states are strictly anchored by the base cases $\Phi_\emptyset = -1$ and $\Gamma_\emptyset = 0$, the raw scaling sector is completely absorbed into the boundary of the summation.
-
-This collapses the entire expansion into a single, highly efficient computational form:
+Because the multidimensional module states are anchored by the base cases $\Phi_\emptyset = -1$ and $\Gamma_\emptyset = 0$, the raw scaling sector is absorbed into the boundary of the summation which collapses the expansion into its computational form:
 
 $$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R \Phi_{\alpha-\beta} \big)$$
 
-By utilizing this canonical framework, the $P(A_\alpha)$ generator maps the mixed partial derivatives directly. It completely bypasses the combinatorial tangles of repeatedly applying the quotient rule across multiple orthogonal axes, yielding an elegant, closed-form expansion ready for algorithmic evaluation.
+The $P(A_\alpha)$ generator maps the mixed partial derivatives directly utilizing this canonical framework. It bypasses the combinatorial tangles of repeatedly applying the quotient rule across multiple orthogonal axes, yielding a closed-form expansion ready for algorithmic evaluation.
 
 ---
 
@@ -147,15 +148,15 @@ By utilizing this canonical framework, the $P(A_\alpha)$ generator maps the mixe
 
 While the $P(A_\alpha)$ generator maps the master superposition, generating the underlying $\Gamma_\alpha$ and $\Phi_\alpha$ states in multidimensional jet space requires carefully navigating the derivative routing history.
 
-In v1.0.0, the single-variable expansion relied heavily on generic index bound loops which produce invalid, path-independent mixed-partial branches in a multidimensional environment. While Bell set partitions present a solution that navigates this path dependency, they can lead to combinatorial explosion. Instead v2.0.0 utilizes a **Chronological Step-Operator Engine**.
+In v1.0.0, the single-variable expansion relied heavily on generic index bound loops which produce invalid, path-independent mixed-partial branches in a multidimensional environment. While Bell set partitions present a solution that navigates this path dependency, they lead to combinatorial explosion. Instead v2.0.0 utilizes a **Chronological Step-Operator Engine**.
 
-This engine enforces a strict right-to-left spatial gradient sequence (e.g., $x \to x \to y \to y$), where the root axis $w$ of any module is dictated strictly by this chronology rather than abstract geometry.
+This engine enforces a right-to-left spatial gradient sequence (e.g., $x \to x \to y \to y$), where the root axis $w$ of any module is dictated by this chronology rather than abstract geometry.
 
 ### **The Constrained Index Set ($\hat{A}_\alpha$)**
 
 Instead of calculating all possible geometric partitions and filtering them, the engine directly constructs a strictly bounded **Constrained Index Set** ($\hat{A}_\alpha$) of chronologically valid jet space coordinates.
 
-For every dimension $k$ where $\alpha_k > 0$, the set is generated by the union of two path-dependent subsets:
+The union of two path-dependent subsets generates the set for every dimension $k$ where $\alpha_k > 0$:
 
 $$\hat{A}_\alpha = \bigcup_{\substack{k=1 \\ \alpha_k > 0}}^d \left( \mathcal{S}_{k, \text{anchor}} \cup \mathcal{S}_{k, \text{web}} \right)$$
 
@@ -172,7 +173,7 @@ $$\mathcal{S}_{k, \text{web}} = \left\lbrace (x_k, \beta) \mid 0 \le \beta_j \le
 
 To evaluate the paths defined by $\hat{A}_\alpha$, the system separates the "Input Signal" ($G$) from the "System Structure" ($\Omega$).
 
-The coefficients $\Omega^\alpha_\beta$ represent the multidimensional "Drag" of the system—purely a function of the denominator $f(X)$. They form a stable tensor grid that is cached and reused to build both sectors. The entire kernel is populated by the recursive convolution:
+The coefficients $\Omega^\alpha_\beta$ represent the multidimensional "drag" of the system — purely a function of the denominator $f(X)$. They form a stable tensor grid that is cached and reused to build both sectors. The entire kernel is populated by the recursive convolution:
 
 $$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_w}{\gamma} F^{(w)}_\gamma \Omega^{\alpha - e_w - \gamma}_{\beta - e_w - \gamma}$$
 
@@ -180,15 +181,15 @@ $$\Omega^\alpha_\beta = - \sum_{0 \leq \gamma \leq \beta - e_w} \binom{\alpha-e_
 
 ### **Constrained Sector Accumulation**
 
-With the $\hat{A}_\alpha$ index set mapped and the $\Omega$ tensor cached, the combinatorial tangles are completely eliminated. The engine evaluates the master polynomial states over this constrained path using localized discrete convolutions.
+Mapping the $\hat{A}_\alpha$ index set and caching the $\Omega$ tensor eliminates combinatorial tangles. The engine evaluates the master polynomial states over this constrained path using localized discrete convolutions.
 
-The G-sector and F-sector states are seamlessly accumulated as:
+The G-sector and F-sector states accumulate as:
 
 $$\Gamma_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} G^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
 $$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} F^{(x_k)}_{\beta} \Omega_{\alpha - \beta}^\alpha$$
 
-By evaluating only the valid anchor and web states, the algorithm dynamically prunes the dependency tree, allowing for the lightning-fast generation of high-order mixed partial sequences.
+The algorithm dynamically prunes the dependency tree by evaluating only the valid anchor and web states, allowing for rapid generation of high-order mixed partial sequences.
 
 ---
 
@@ -207,10 +208,10 @@ This confirms that the complex behavior of the underlying logarithmic ratio is d
 
 ## **Performance Benchmarks**
 
-The v2.0.0 architecture completely bypasses the combinatorial explosion inherent to standard quotient-rule applications by decoupling the mathematical drag of the denominator into the $\Omega^\alpha_\beta$ tensor cache.
+The v2.0.0 architecture bypasses the combinatorial explosion inherent to standard quotient-rule applications by decoupling the mathematical drag of the denominator into the $\Omega^\alpha_\beta$ tensor cache.
 
 ### **1. The "Warm Cache" Flatline**
-When mapping a chronological sequence of multi-index derivatives, the standard brute-force method curves upwards exponentially as it reconstructs the quotient tree from scratch. The $P(A_\alpha)$ generator pulls from the persistent F and G sectors, reducing the calculation time of subsequent high-order states to effectively zero.
+When mapping a chronological sequence of multi-index derivatives, the standard brute-force method curves upwards exponentially as it reconstructs the quotient tree from scratch. The $P(A_\alpha)$ generator pulls from the persistent F and G sectors, reducing the calculation time of subsequent high-order states.
 
 ![Cumulative Time: Sequential Path Execution](assets/warm_cache_flatline.png)
 
@@ -223,7 +224,7 @@ Because the F-sector's recursive shift operator ($\Phi_\alpha$) is mathematicall
 
 ## **Walkthrough & Documentation**
 
-The full narrative of how these equations were derived—spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0—is available in the repository documentation.
+The full narrative of how these equations were derived — spanning from the 1-D F/G-sector origins in v1.0.0 to the fully optimized, multidimensional jet space architecture of v2.0.0 — is available in the repository documentation.
 
 The walkthrough is broken down into 8 parts and covers:
 
