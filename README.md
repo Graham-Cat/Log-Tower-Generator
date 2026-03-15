@@ -128,7 +128,7 @@ To understand the structural symmetry of the derivatives, the generator can be e
 
 $$P(A_\alpha) = R \left[ h_\alpha - \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Phi_{\alpha - \beta} \right] + \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Gamma_{\alpha - \beta}$$
 
-This equation maps how the individual modular components contribute to the total jet space structure:
+This function maps how the individual modular components contribute to the total jet space structure:
 
 * **Raw $h$-sector ($h_\alpha$):** The direct $\alpha$-th mixed partial derivative of the scaling function $h(X)$.
 * **Recursively corrected F-sector ($\Phi_\alpha$):** The homogeneous component accounting for the internal dynamics of the denominator $f(X)$.
@@ -196,13 +196,13 @@ The algorithm dynamically prunes the dependency tree by evaluating only the vali
 
 ## **Corollary: The Spine Projection**
 
-Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, this multidimensional derivative structure also implies that the "Spine" derivative $R_\alpha$ (the mixed partial derivative of the logarithmic scaffold $\frac{\ln g}{\ln f}$) is simply the projection of the sectors onto the base.
+Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, this multidimensional derivative structure also implies that the "Spine" derivative $R_\alpha$ (the mixed partial derivative of the logarithmic scaffold $\frac{\ln g}{\ln f}$) is the projection of the sectors onto the base.
 
 Assuming the final step of the spatial gradient is taken with respect to dimension $w$, the $\alpha$-th derivative of the spine is given by:
 
 $$P(R_\alpha) = \Gamma_{\alpha} - R \Phi_{\alpha}$$
 
-This confirms that the complex behavior of the underlying logarithmic ratio is deterministically evolved from the exact same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
+This identity confirms that the complex behavior of the underlying logarithmic ratio is deterministically evolved from the same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
 
 ---
 
