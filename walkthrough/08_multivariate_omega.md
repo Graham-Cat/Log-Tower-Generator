@@ -689,7 +689,7 @@ Huh. There they are. They didn't exist over in 1-D-land but the recursion allows
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
-This identity is surprisingly easy to prove. We might as well go through it here since it just takes three EGF index moves.
+This identity is surprisingly easy to prove. We might as well go through it here since it just takes two EGF index moves.
 
 Our hypothesis test is straightforward to visualize if we put it right next to a slightly rearranged form of the above operator.
 
