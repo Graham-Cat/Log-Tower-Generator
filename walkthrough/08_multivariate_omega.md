@@ -769,4 +769,4 @@ Many thanks to Copilot and Gemini for being my tutors/research partners/producti
 
 Thanks also to my understanding family who were clearly weirded out by my fixation on messing around in Desmos while scribbling lengthy differential algebra equations into notebooks late nights while on beach vacations.
 
-In particular, thanks to my loving wife, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
+In particular, thanks to my loving wife and editor, Bonnie, whose patience with my months-long obsession appears to have known no bounds.
