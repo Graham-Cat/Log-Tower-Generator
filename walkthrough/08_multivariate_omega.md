@@ -8,7 +8,7 @@ It's time to wrap up our multidimensional expansion, so let's get to it.
 
 ## $\Omega$ Gets a Promotion
 
-Recall that our 1-D version of the $\Omega_m^n$ recursion is given by
+Recall that our 1-D version of the $\Omega_m^n$ recursion is given by:
 
 $$\Omega_m^n = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega_{m-1-j}^{n-1-j}$$
 
@@ -26,7 +26,7 @@ Note how the equation still only calls $\Omega_m^n$, so the $\Omega$ recursion d
 
 It's finally time to promote $\Omega_m^n$ to multivariate status and take it for a test drive.
 
-### $\Omega$ Transformation
+### $\Omega$ Transformation:
 
 $$\Omega^n_m = - \sum_{j=0}^{m-1} \binom{n-1}{j} F_j \Omega^{n-1-j}_{m-1-j}$$
 
@@ -112,7 +112,7 @@ Instead of whole numbers, the matrix was suddenly littered with unresolvable pha
 
 ### Victim 3: Strict Lexicographical Forcing with Naive Multi-Index Substitution
 
-Since elegance didn't seem to work, it was time to try brute force. Forcing the naive multi-index substitution of our linear convolution algorithm to evaluate indices in a strict lexicographical order, for example, always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$, could reasonably have fit the bill.
+Since elegance didn't seem to work, it was time to try brute force. Imposing a strict lexicographical order on the naive multi-index substitution of our linear convolution algorithm (e.g., always stepping backward along the highest available dimension $w_{max}$ where $\alpha_w > 0$) could reasonably have fit the bill.
 
 The convolution executed as:
 
@@ -162,7 +162,7 @@ Bell polynomial expressions are notoriously processor heavy, so they're not an o
 
 Let's do a quick run-through of how **Bell Polynomial Set Partitioning** has the ability to snipe $\Gamma_\alpha$ expressions in two dimensions without repeatedly applying the product rule so we can at least know how it works in this context.
 
-Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after our myriad, fatal algorithmic catastrophes.
+Since pushing to $\Gamma_{(2,1)}$ toppled our earlier experiments, let's push even harder to $\Gamma_{(2,2)}$ so we can finally establish some mathematical certainty after our myriad fatal algorithmic catastrophes.
 
 Let's begin by coming up with a standard form of $\Gamma_{(2,2)}$ to test against.
 
@@ -170,7 +170,7 @@ Since we're working with partial derivatives, the order in which we take them do
 
 This ordering is not in and of itself what got us into trouble earlier (extending the index bound convolution directly to multi-index was) so it's a safe policy to adopt.
 
-Recall the _recursive_ operator is given by
+Recall the _recursive_ operator is given by:
 
 $$\Gamma_\alpha = D^{\alpha - e_w} G^{(w)} - \sum_{0 \le \beta \le \alpha - e_w} \binom{\alpha - e_w}{\beta} (D^{\alpha - e_w - \beta} F^{(w)}) \Gamma_\beta$$
 
@@ -190,7 +190,7 @@ $$- F^{(y)} G^{(y)}_{(2,0)} + 2 F^{(y)} F^{(y)}_{(1,0)} G^{(x)} + F^{(y)} F^{(y)
 
 [^1]: The detailed execution of the operator is listed in [this](https://github.com/Graham-Cat/log-tower-v2-staging/blob/v2-development/notebooks/Gamma_2%2C2_recursive.md) (obviously AI generated) appendix.
 
-Even a cursory look at the AI-generated appendix shows that under a lexicographic $x \to y$ generation of terms by the proven **derivative shift operator**
+Even a cursory look at the AI-generated appendix shows that under a lexicographic $x \to y$ generation of terms by the proven **derivative shift operator**:
 
 $$\Gamma_{\alpha} = \frac{\partial}{\partial w}\Gamma_{\alpha - e_w} - \Phi_{\alpha - e_w} G^{(w)}$$
 
@@ -213,7 +213,7 @@ With $S = \left\lbrace 1, 2, 3, 4 \right\rbrace$, we partition the set into all 
 
 1. **The Root Anchor:** The mathematical root of any block is its *minimum* integer.
 2. **Base Variable Designation:** The integer value of the root dictates the base function ($1 \text{ or } 2 \implies y$; $3 \text{ or } 4 \implies x$).
-3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block dictate the derivative subscript (e.g., if a $y$-rooted block contains two $x$-integers, the subscript is $(2,0)$ ).
+3. **Subscript Generation:** The count and type of the *non-root* integers inside a specific block dictate the derivative subscript. For example, if a $y$-rooted block contains two $x$-integers, the subscript is (2,0).
 4. **The $G$-Genesis Rule:** The base function $G$ is assigned to the block containing the **highest root** in the entire partition. All other blocks default to $F$ factors.
 5. **Chronological Ordering:** Factors are multiplied in ascending order of their roots (Root $1 \to$ Root $2 \to \dots$).
 6. **The Alternating Sign:** The overall sign of the translated partition is $(-1)^{|P|-1}$, where $|P|$ is the total number of blocks in the partition.
@@ -459,7 +459,7 @@ We now have a *dramatically* reduced Bell set partitioning mechanism that can pr
 
 Not quite. Wouldn't it be worth just a *bit* more effort to be free of the Bell sets altogether, creating a true $O(S)$ generator for the valid jet space addresses? We saw how geometric explosion can bog down processors and, in the above algorithm, we're invoking the Bell set partitioning and then _ignoring_ almost all of it.
 
-That doesn't seem optimized to me.
+That doesn't seem optimized, does it?
 
 Even a _partially_ tamed combinatorial beast is still only partially tamed.
 
@@ -549,7 +549,7 @@ By abandoning the Bell sets for the final code execution, the script runs exactl
 
 That's the code, but we need mathematical language to go with it. The selection of valid jet space $G_\alpha^{(w)}$ addresses has clear mathematical rules, so there's a mathematical way to state them.
 
-Let's take a look at that matrix representation again, this time with only the valid jet space addresses listed as allowable and all others zeroed out so we can get a visual representation of what the above code is telling Python the right $G_\alpha^{(w)}$ 's to feed into the sum are.
+Let's take a look at that matrix representation again, this time with only the valid jet space addresses listed as allowable and all others zeroed out so we can get a visual representation of what the above code is telling Python the right $G_\alpha^{(w)}$ 's to feed into the sum are:
 
 $$\Gamma_{(2,2)} = \begin{bmatrix}
     1 & 1
@@ -689,7 +689,7 @@ Huh. There they are. They didn't exist over in 1-D-land but the recursion allows
 
 $$\Omega_{m}^{n} = \frac{d}{dx} \Omega_{m-1}^{n-1} + \Omega_{m}^{n-1}$$
 
-This identity is surprisingly easy to prove. Might as well put it here. It just takes three EGF index moves.
+This identity is surprisingly easy to prove. We might as well go through it here since it just takes three EGF index moves.
 
 Our hypothesis test is straightforward to visualize if we put it right next to a slightly rearranged form of the above operator.
 
@@ -705,7 +705,7 @@ Let's plug our established EGF into the hypothesis and see how it works out:
 
 $$y\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^m = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial x} \Omega_m^n \frac{x^n}{n!}y^m - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
 
-Now move the indices related to $y$ and $\frac{\partial}{\partial x}$
+Now move the indices related to $y$ and $\frac{\partial}{\partial x} \quad \text{:}$
 
 $$\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \frac{\partial}{\partial t}\Omega_m^n \frac{x^n}{n!}y^{m+1} = \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^{n-1}}{(n-1)!}y^m - \sum_{m=0}^{\infty}\sum_{n=0}^{\infty} \Omega_m^n \frac{x^n}{n!}y^m$$
 
@@ -741,11 +741,11 @@ $$\downarrow \downarrow \downarrow \downarrow$$
 
 $$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
 
-Some slight rearrangement and re-indexing gives us the equivalent form,
+Some slight rearrangement and re-indexing gives us the equivalent form:
 
 $$\frac{\partial}{\partial w} \Omega_\beta^\alpha = \Omega_{\beta + e_w}^{\alpha + e_w} - \Omega_{\beta + e_w}^\alpha$$
 
-Let's go ahead and integrate both sides from zero to $w$ and perform a minor rearrangement of the **anchor point** (i.e., $\Omega_\beta^\alpha(0)$ )
+Let's go ahead and integrate both sides from zero to $w$ and perform a minor rearrangement of the **anchor point** (i.e., $\Omega_\beta^\alpha(0)$ ):
 
 $$\Omega_\beta^\alpha(w) = \Omega_\beta^\alpha(0) - \int_0^w \left[ \Omega_{\beta + e_w}^\alpha(t) + \sum_{0 \leq \gamma \leq \beta} \binom{\alpha}{\gamma} F^{(w)}_\gamma(t) \Omega^{\alpha - \gamma}_{\beta - \gamma}(t) \right] dt$$
 
