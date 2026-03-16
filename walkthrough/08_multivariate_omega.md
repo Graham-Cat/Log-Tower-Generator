@@ -463,7 +463,7 @@ That doesn't seem optimized, does it?
 
 Even a _partially_ tamed combinatorial beast is still only partially tamed.
 
-### Beauty sans Beast
+### Beauty sans the Beast
 
 The final piece of this giant, multidimensional differential generator puzzle that led to the optimized use of $\Omega_\beta^\alpha$ came from Gemini's algorithmically-derived follow-up question shortly after providing tutoring services regarding Bell polynomial set partitioning in this context. It asked,
 
