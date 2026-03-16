@@ -1,4 +1,4 @@
-* **DOI / Zenodo Badge:** (Placeholder for the v2.0.0 release link)
+[![DOI](https://zenodo.org/badge/1137909460.svg)](https://doi.org/10.5281/zenodo.18318465)
 
 # **Log-Tower Generator Framework (v2.0.0)**
 
