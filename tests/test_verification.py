@@ -1,7 +1,7 @@
 import pytest
 import symengine as se
 import sympy as sp
-from log_tower_generator import LogTowerGenerator
+from src.generator import LogTowerGenerator
 
 # --- Fixtures for reusable pure abstract functions ---
 @pytest.fixture
