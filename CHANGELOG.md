@@ -2,6 +2,10 @@
 
 All notable changes to the **Log-Tower-Generator** will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## **2026-03-16**
+
+* Corrected location of module in testing suite
+
 ## **[2.0.0] - 2026-03-12**
 
 *Major Architectural Overhaul: The Log-Tower-Generator has been completely rebuilt from a 1-dimensional discrete sequence generator into a fully optimized, n-dimensional jet space mathematical engine.*
