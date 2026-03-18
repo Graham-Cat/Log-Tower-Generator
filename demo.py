@@ -10,7 +10,7 @@ Usage:
 
 import symengine as se
 import sympy as sp
-from log_tower_generator import LogTowerGenerator
+from src.generator import LogTowerGenerator
 
 def run_demo():
     # Enable SymPy pretty printing for console output
