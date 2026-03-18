@@ -269,7 +269,7 @@ Here is a minimal example calculating a 3D mixed-partial derivative:
 
 ```python
 import symengine as se
-from log_tower_generator import LogTowerGenerator
+from src.generator import LogTowerGenerator
 
 # 1. Define the spatial dimensions and pure abstract functions
 x, y, z = se.symbols('x y z')
