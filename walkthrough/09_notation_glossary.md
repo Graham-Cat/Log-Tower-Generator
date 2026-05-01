@@ -51,7 +51,7 @@ Key differential equations and step-operators driving the $n$-dimensional system
 For any dimension $w$:
 
 
-$$R_w = G^{(w)} - R F^{(w)}$$
+$$R_w = G^{(w)} - R_\emptyset F^{(w)}$$
 
 **2. The Log Derivative Unit Template:**
 For any log unit $\mu \in \left\lbrace u, v \right\rbrace$ and its dimensional superscripts:
