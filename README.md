@@ -21,7 +21,7 @@ The Log-Tower Generator has been fully re-architected, transitioning from the 1-
 * **Multidimensional Jet Space Support:** Upgraded to handle high-order mixed partial derivatives across any number of orthogonal dimensions (e.g., $x, y, z, t$) using multi-index notation ($\alpha$).
 * **Chronological Step-Operator Engine:** Bypasses combinatorial explosion that standard quotient-rule applications and generic geometric index loops cause. The engine utilizes a spatial gradient sequence (Anchor and Historical Web logic) efficiently generating only chronologically valid paths.
 * **Asymmetric Tensor Caching ($\Omega^\alpha_\beta$):** The master equation decouples the structural "drag" of the denominator $f(X)$ from the forcing input of the numerator $g(X)$. The $F$-sector states are cached independently, meaning sequential derivative mapping and input-swapping operations require only a fraction of standard brute-force computation.
-* **The Spine Projection Corollary:** Introduces a direct algebraic pathway to evaluate the multidimensional derivative of the logarithmic scaffold ($R_\alpha = \Gamma_\alpha - R \Phi_\alpha$), bypassing the scaling sector $h(X)$ when only the core ratio is under consideration.
+* **The Spine Projection Corollary:** Introduces a direct algebraic pathway to evaluate the multidimensional derivative of the logarithmic scaffold ($R_\alpha = \Gamma_\alpha - R_\emptyset \Phi_\alpha$), bypassing the scaling sector $h(X)$ when only the core ratio is under consideration.
 * **SymEngine (C++) Integration:** The recursive core of the generator now leverages SymEngine's ultra-fast C++ backend. Heavy multi-index calculations (such as an 8th-order, 4-D $A_{(2,2,2,2)}$ tree containing tens of thousands of terms) are generated in milliseconds, outpacing SymPy brute-force cold starts by 40% or more.
 
 ---
@@ -126,7 +126,7 @@ where $f(X)$, $g(X)$, and $h(X)$ are $m$-dimensional differentiable functions.
 
 To understand the structural symmetry of the derivatives, the generator can be expressed as a linear superposition of multi-index convolutions. Utilizing the generalized Leibniz rule, the polynomial is assembled by separating the distinct "forcing" and "decay" sectors:
 
-$$P(A_\alpha) = R \left[ h_\alpha - \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Phi_{\alpha - \beta} \right] + \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Gamma_{\alpha - \beta}$$
+$$P(A_\alpha) = R_\emptyset \left[ h_\alpha - \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Phi_{\alpha - \beta} \right] + \sum_{\beta < \alpha} \binom{\alpha}{\beta} h_\beta \Gamma_{\alpha - \beta}$$
 
 This function maps how the individual modular components contribute to the total jet space structure:
 
@@ -138,7 +138,7 @@ This function maps how the individual modular components contribute to the total
 
 Because the multidimensional module states are anchored by the base cases $\Phi_\emptyset = -1$ and $\Gamma_\emptyset = 0$, the raw scaling sector is absorbed into the boundary of the summation which collapses the expansion into its computational form:
 
-$$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R \Phi_{\alpha-\beta} \big)$$
+$$P(A_\alpha) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \big( \Gamma_{\alpha-\beta} - R_\emptyset \Phi_{\alpha-\beta} \big)$$
 
 The $P(A_\alpha)$ generator maps the mixed partial derivatives directly utilizing this canonical framework. It bypasses the combinatorial tangles of repeatedly applying the quotient rule across multiple orthogonal axes, yielding a closed-form expansion ready for algorithmic evaluation.
 
@@ -200,7 +200,7 @@ Because the $P(A_\alpha)$ generator is built on the closed modular alphabet, thi
 
 Assuming the final step of the spatial gradient is taken with respect to dimension $w$, the $\alpha$-th derivative of the spine is:
 
-$$P(R_\alpha) = \Gamma_{\alpha} - R \Phi_{\alpha}$$
+$$P(R_\alpha) = \Gamma_{\alpha} - R_\emptyset \Phi_{\alpha}$$
 
 This identity confirms that the complex behavior of the underlying logarithmic ratio evolves deterministically from the same cached $\Omega$ tensor and constrained $\hat{A}_\alpha$ index set as the master Log-Tower function itself.
 
