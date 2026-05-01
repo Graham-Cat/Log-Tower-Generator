@@ -638,7 +638,7 @@ $$\Phi_\alpha = \sum_{(x_k, \beta) \in \hat{A}_\alpha} F^{(x_k)}_{\beta} \Omega_
 
 leading to a new structural form for the generator:
 
-$$D^\alpha \left( h \frac{\ln g}{\ln f} \right) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \sum_{(x_k, \gamma) \in \hat{A}_{\alpha-\beta}} \Omega_{(\alpha-\beta)-\gamma}^{\alpha-\beta} \big( G^{(x_k)}_{\gamma} - R F^{(x_k)}_{\gamma} \big)$$
+$$D^\alpha \left( h \frac{\ln g}{\ln f} \right) = \sum_{\beta \le \alpha} \binom{\alpha}{\beta} h_\beta \sum_{(x_k, \gamma) \in \hat{A}_{\alpha-\beta}} \Omega_{(\alpha-\beta)-\gamma}^{\alpha-\beta} \big( G^{(x_k)}_{\gamma} - R_\emptyset F^{(x_k)}_{\gamma} \big)$$
 
 
 ## ...and (Finally) the (Complete) Omega
