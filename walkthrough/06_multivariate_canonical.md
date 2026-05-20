@@ -148,7 +148,7 @@ $$\frac{\partial}{\partial w} \mu^{(\alpha)} = \mu^{(\text{index} + 1_w)} - \mu^
 **2. The Base Module Template**
 For any module $M \in \{F, G\}$ associated with its respective log unit $\mu \in \{u, v\}$, the partial derivative of $M^{(z)}$ with respect to $w$ is:
 
-$$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\text{index} + 1_w + 1_z)} - M^{(\text{index} + 1_w)}\left(\mu^{(z)} + F^{(z)}\right)$$
+$$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\alpha + 1_w + 1_z)} - M^{(z)}_{(\alpha)}\left(\mu^{(w)} + F^{(w)}\right)$$
 
 *Applied examples:*
 * $$\frac{\partial}{\partial y} F^{(x)}_{(n_x,n_y)} = F^{(n_x + 1,n_y + 1)} - F^{(n_x,n_y + 1)}\left(u^{(x)} + F^{(x)}\right)$$
@@ -157,7 +157,7 @@ $$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\text{index} + 1_w + 1_z)
 
 These two simple rules dictate the entire multivariate module expansion, proving that no matter how many dimensions we add, the closed family remains intact. [^1]
 
-[^1]: To help me avoid bloating the repo with obvious proofs, feel free to expand the templates and confirm a few examples.
+[^1]: Mathematical proof validating the attached template is included [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/template_proofs.md).
 
 
 ## 2-D Foundation of the Log-Tower
