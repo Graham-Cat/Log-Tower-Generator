@@ -157,7 +157,7 @@ $$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\alpha + 1_w + 1_z)} - M^
 
 These two simple rules dictate the entire multivariate module expansion, proving that no matter how many dimensions we add, the closed family remains intact. [^1]
 
-[^1]: Mathematical proof validating the attached template is included [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/template_proofs.md).
+[^1]: Mathematical proof validating the Log Derivative Unit and Base Module templates is included [here](https://github.com/Graham-Cat/Log-Tower-Generator/blob/main/notebooks/template_proofs.md).
 
 
 ## 2-D Foundation of the Log-Tower
