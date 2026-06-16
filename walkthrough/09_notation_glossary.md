@@ -75,7 +75,7 @@ $$\Phi_\alpha = \frac{\partial}{\partial w}\Phi_{\alpha - e_w} - \Phi_{\alpha - 
 
 (Base cases: $\Gamma_\emptyset = 0$ and $\Phi_\emptyset = -1$)
 
-$$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial x} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
+$$\Omega_{\beta}^{\alpha} = \frac{\partial}{\partial w} \Omega_{\beta-e_w}^{\alpha-e_w} + \Omega_{\beta}^{\alpha-e_w}$$
 
 (Base case: $\Omega_\emptyset^\alpha = 1$)
 
