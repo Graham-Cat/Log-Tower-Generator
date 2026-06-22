@@ -1,7 +1,7 @@
 ### Formal Proofs of Multivariate Module Expansion
 
 To guarantee the topological integrity of the Universal Operating System across $n$-dimensions, we rigorously prove the two foundational derivative templates using the multivariate quotient rule.
-
+ 
 ---
 
 #### 1. Proof of the Log Derivative Unit Template
