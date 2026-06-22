@@ -55,7 +55,9 @@ $$
 \frac{\partial}{\partial w} M^{(\beta)} = M^{(\beta + 1_w)} - M^{(\beta)} \left( \mu^{(1_w)} + F^{(1_w)} \right)
 $$
 
-*(Note: When $\beta$ is represented as a root axis and a multi-index, such as $\beta = \alpha + 1_z$, this equates exactly to $\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\alpha + 1_w + 1_z)} - M^{(z)}_{(\alpha)}\left(\mu^{(w)} + F^{(w)}\right)$).*
+Note: When $\beta$ is represented as a root axis and a multi-index, such as $\beta = \alpha + 1_z$, it equates to 
+
+$$\frac{\partial}{\partial w} M^{(z)}_{(\alpha)} = M^{(\alpha + 1_w + 1_z)} - M^{(z)}_{(\alpha)}\left(\mu^{(w)} + F^{(w)}\right)$$
 
 **Proof:**
 We define the base module $M$ at an arbitrary historical path $\beta$:
